@@ -1,0 +1,94 @@
+import React, { Component } from 'react';
+
+import Database from '../services/database/database';
+
+import { Card, CardHeader, CardBody, Row, Col, Jumbotron } from 'reactstrap';
+
+import ViewOneTitle from '../titles/ViewOneTitle';
+
+import RecordCell from './recordCell';
+import RecordLinks from './recordLinks';
+import Plugin from './Plugin';
+
+
+
+class ReadTitle extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      rec: false
+    };
+  }
+
+  componentDidMount(){
+    const tb = this.props.match.params.table;
+    Database.getOne(tb, this.props.match.params.id, (d) =>{
+      this.setState({
+        rec: d
+      });
+    });
+  }
+
+  renderPlugins(all_plugins) {
+    Object.keys(all_plugins);
+  }
+
+  renderTemplate(tb, record) {
+    switch (tb) {
+      case 'titles':
+        return <ViewOneTitle record={ this.state.rec } />
+        break;
+      default:
+        return(
+          <div className="container">
+            <Row className="mt-2">
+              <Col sm="8">
+                <Card>
+                  <CardHeader>
+                    <h3>paths.{ this.state.rec.metadata.stripped_table }.{ record.core.id }</h3>
+                  </CardHeader>
+                  <CardBody>
+                    {
+                      Object.keys(record.fields).map( (i, k) => {
+                        return <RecordCell label={record.fields[i]} val={ record.core[i] } key={k} />
+                      })
+                    }
+                    {
+                      Object.keys(this.state.rec.allPlugins).map( (i, k) => {
+                        return <Plugin name={i} key={k} data={this.state.rec.allPlugins[i]} />
+                      } )
+                    }
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col xs="4">
+                <RecordLinks links={ this.state.rec.coreLinks } />
+              </Col>
+            </Row>
+          </div>
+        )
+    }
+  }
+
+  render() {
+    if (!this.state.rec) {
+      return (<div>Loading...</div>)
+    }
+
+    return (
+      <div>
+        <Jumbotron style={ {padding: 10} }>
+    			<div className="container">
+	    			<h1>{ this.state.rec.metadata.table_label }</h1>
+  				</div>
+  			</Jumbotron>
+        { this.renderTemplate(this.state.rec.metadata.stripped_table, this.state.rec) }
+
+        <pre>{ JSON.stringify(this.state.rec, false, 2)}</pre>
+      </div>
+    );
+  }
+}
+
+export default ReadTitle;
