@@ -1,0 +1,20 @@
+import React, { Component } from 'react';
+
+import SubHead from '../subHead/subHead';
+
+class ManuscriptPage extends Component {
+
+render() {
+  return (
+    <div>
+      <SubHead tblabel="Manuscripts" tb="manuscripts" text="" />
+
+      <div className="container">
+          Here you will soon find some more information about coptic manuscripts!
+      </div>
+    </div>
+  );
+  }
+}
+
+export default ManuscriptPage;

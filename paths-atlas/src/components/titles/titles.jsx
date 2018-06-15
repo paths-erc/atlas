@@ -10,7 +10,7 @@ class TitlePage extends Component {
         <SubHead tblabel="Titles" tb="titles" text="" />
 
         <div className="container">
-            Here you will (hopefully) soon find some more information about coptic titles!
+            Here you will soon find some more information about coptic titles!
         </div>
   		</div>
     );

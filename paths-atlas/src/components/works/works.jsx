@@ -10,7 +10,7 @@ render() {
       <SubHead tblabel="Works" tb="works" text="" />
 
       <div className="container">
-          Here you will (hopefully) soon find some more information about coptic works!
+          Here you will soon find some more information about coptic works!
       </div>
     </div>
   );
