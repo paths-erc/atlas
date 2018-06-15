@@ -66,7 +66,7 @@ export default class Atlas extends Component {
 
     this.refs.places.leafletElement.eachLayer( (layer) => {
       let found = false;
-      for (const value of Object.entries(layer.feature.properties)) {
+      for (const value of Object.values(layer.feature.properties)) {
         if (value && value.toLowerCase().includes(searchKey.toLowerCase())){
           found = true;
         }
@@ -87,7 +87,7 @@ export default class Atlas extends Component {
 
           <Sidebar id="sidebar" collapsed={this.state.collapsed} selected={this.state.selected}
                    onOpen={this.onOpen.bind(this)} onClose={this.onClose.bind(this)}
-                   closeIcon="fa fa-times-circle">
+                   closeIcon="fa fa-caret-left">
             <Tab id="home" header="Home" icon="fa fa-home">
               <InputGroup>
                 <InputGroupAddon addonType="prepend">
