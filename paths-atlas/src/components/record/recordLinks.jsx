@@ -24,7 +24,7 @@ class RecordLinks extends Component {
   }
 
   render() {
-    const links = this.props.links;
+    const links = this.props.links || [];
 
     return (
       <Card>
