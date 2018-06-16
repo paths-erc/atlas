@@ -8,6 +8,7 @@ import ViewOneTitle from '../titles/ViewOneTitle';
 
 import RecordCell from './recordCell';
 import RecordLinks from './recordLinks';
+import UserLinks from './UserLinks';
 import Plugin from './Plugin';
 
 
@@ -31,7 +32,11 @@ class ReadTitle extends Component {
   }
 
   renderPlugins(all_plugins) {
-    Object.keys(all_plugins);
+    if (typeof allPlugins !== 'undefined') {
+      Object.keys(all_plugins).map( (i, k) => {
+        return <Plugin name={i} key={k} data={this.state.rec.allPlugins[i]} />
+      } );
+    }
   }
 
   renderTemplate(tb, record) {
@@ -54,16 +59,13 @@ class ReadTitle extends Component {
                         return <RecordCell label={record.fields[i]} val={ record.core[i] } key={k} />
                       })
                     }
-                    {
-                      Object.keys(this.state.rec.allPlugins).map( (i, k) => {
-                        return <Plugin name={i} key={k} data={this.state.rec.allPlugins[i]} />
-                      } )
-                    }
+                    { this.renderPlugins(this.state.rec.allPlugins) }
                   </CardBody>
                 </Card>
               </Col>
               <Col xs="4">
                 <RecordLinks links={ this.state.rec.coreLinks } />
+                <UserLinks links={ this.state.rec.userLinks } />
               </Col>
             </Row>
           </div>
