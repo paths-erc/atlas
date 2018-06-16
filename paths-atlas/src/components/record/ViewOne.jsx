@@ -64,7 +64,7 @@ class ReadTitle extends Component {
                 </Card>
               </Col>
               <Col xs="4">
-                <RecordLinks links={ this.state.rec.coreLinks } />
+                <RecordLinks links={ this.state.rec.coreLinks } backLinks={this.state.rec.backLinks} />
                 <UserLinks links={ this.state.rec.userLinks } />
               </Col>
             </Row>
