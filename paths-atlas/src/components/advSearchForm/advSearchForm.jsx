@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { FormGroup, Input, Row, Col, Button } from 'reactstrap';
 
 import Database from '../services/database/database';
-import PreviewFlds from '../services/previewFlds/previewFlds';
+
+import Cfg from '../services/Cfg/Cfg';
 
 import SubHead from '../subHead/subHead';
 
@@ -26,6 +27,12 @@ class AdvSearchForm extends Component {
       this.setState({ fields: data });
       this.setState({ tb: tb });
     });
+  }
+
+  getLabel(tb){
+    if (this.state.tb) {
+      return Cfg[this.state.tb].label;
+    }
   }
 
   render() {
@@ -65,7 +72,9 @@ class AdvSearchForm extends Component {
     ];
     return (
       <div>
-        <SubHead tb={ this.state.tb } tblabel={ PreviewFlds.get(this.state.tb).label } text="Advanced search" />
+        <SubHead tb={ this.state.tb }
+          tblabel={ this.getLabel() }
+          text="Advanced search" />
 
 
       	<div className="mt-3 container">

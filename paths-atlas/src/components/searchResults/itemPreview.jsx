@@ -4,7 +4,7 @@ import { Row, Col, Table, Card, CardBody, CardHeader, ButtonGroup, Button } from
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-import PreviewFlds from '../services/previewFlds/previewFlds';
+import Cfg from '../services/Cfg/Cfg';
 
 class ItemPreviewWrapper extends Component {
 
@@ -22,8 +22,8 @@ class ItemPreview extends Component {
     const el = this.props.record;
     const flds = this.props.fields;
     const tb = this.props.tb;
-    const preview_flds = PreviewFlds.get(tb).fields;
-    const id_field = PreviewFlds.get(tb).id_field;
+    const preview_flds = Cfg[tb].preview;
+    const id_field = Cfg[tb].id_field;
 
     return (
       <Col sm="4">
