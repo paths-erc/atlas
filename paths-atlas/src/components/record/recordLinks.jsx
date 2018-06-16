@@ -26,6 +26,10 @@ class RecordLinks extends Component {
   render() {
     const links = this.props.links || [];
 
+    if (typeof links === 'undefined' || links.length < 1) {
+      return null;
+    }
+
     return (
       <Card>
         <CardHeader>
