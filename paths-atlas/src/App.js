@@ -13,6 +13,7 @@ import AdvSearchForm from './components/advSearchForm/advSearchForm'
 import Titles from './components/titles/titles'
 import Works from './components/works/works'
 import Manuscripts from './components/manuscripts/manuscripts'
+import Authors from './components/Authors/Authors'
 import ViewOne from './components/record/ViewOne'
 
 
@@ -30,6 +31,7 @@ class App extends Component {
             <Route path='/titles' component={Titles} />
             <Route path='/works' component={Works} />
             <Route path='/manuscripts' component={Manuscripts} />
+            <Route path='/authors' component={Authors} />
 
             <Route exact path='/results/:table/:type' component={SearchResults} />
             <Route exact path='/search/:table/' component={AdvSearchForm} />
