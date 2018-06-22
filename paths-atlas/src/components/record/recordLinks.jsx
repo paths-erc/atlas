@@ -45,6 +45,10 @@ class RecordLinks extends Component {
 
     return Object.entries(backLinks).map(
       ([tb, arr], i) => {
+        if (arr.length < 1){
+          return false;
+        }
+        
         let id_arr = [];
         arr.forEach( e => {
           id_arr.push(e.id);

@@ -9,6 +9,7 @@ import ViewOneTitle from '../titles/ViewOneTitle';
 import RecordCell from './recordCell';
 import RecordLinks from './recordLinks';
 import UserLinks from './UserLinks';
+import Files from './Files';
 import Plugin from './Plugin';
 
 
@@ -64,6 +65,7 @@ class ReadTitle extends Component {
                 </Card>
               </Col>
               <Col xs="4">
+                <Files files={ this.state.rec.fullFiles } />
                 <RecordLinks links={ this.state.rec.coreLinks } backLinks={this.state.rec.backLinks} />
                 <UserLinks links={ this.state.rec.userLinks } />
               </Col>

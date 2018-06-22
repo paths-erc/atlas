@@ -40,6 +40,9 @@ class UserLinks extends Component {
             {
               links.map(
                 (l, i) => {
+                  if (l.tb === 'paths__files') {
+                    return false;
+                  }
                   return <ListGroupItem key={i} tag="a" href={ this.makeHref(l.tb, l.ref_id) }>
                     <FontAwesomeIcon icon="external-link-square-alt" />  { Cfg[l.tb.replace('paths__', '')].label } #{ l.ref_id }
                   </ListGroupItem>
