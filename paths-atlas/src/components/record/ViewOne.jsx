@@ -4,6 +4,8 @@ import Database from '../services/database/database';
 
 import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 
+import SubHead from '../subHead/subHead';
+
 import ViewOneTitle from '../titles/ViewOneTitle';
 
 import RecordCell from './recordCell';
@@ -48,6 +50,9 @@ class ReadTitle extends Component {
       default:
         return(
           <div className="container">
+
+            <SubHead tb={ tb } tblabel={this.state.rec.metadata.table_label} text="View record" />
+
             <Row className="mt-2">
               <Col sm="8">
                 <Card>
