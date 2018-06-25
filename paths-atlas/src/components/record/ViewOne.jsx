@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Database from '../services/database/database';
 
-import { Card, CardHeader, CardBody, Row, Col, Jumbotron } from 'reactstrap';
+import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 
 import ViewOneTitle from '../titles/ViewOneTitle';
 
@@ -82,11 +82,6 @@ class ReadTitle extends Component {
 
     return (
       <div>
-        <Jumbotron style={ {padding: 10} }>
-    			<div className="container">
-	    			<h1>{ this.state.rec.metadata.table_label }</h1>
-  				</div>
-  			</Jumbotron>
         { this.renderTemplate(this.state.rec.metadata.stripped_table, this.state.rec) }
 
         <pre>{ JSON.stringify(this.state.rec, false, 2)}</pre>
