@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Alert } from 'reactstrap';
+
 import queryString from 'qs'
 
 import Database from '../services/database/database';
@@ -49,7 +51,6 @@ class SearchResults extends Component {
 
   componentDidMount(prevProps, prevState){
     const qstring = queryString.parse(this.props.location.search, {ignoreQueryPrefix: true});
-
     const tb = this.props.match.params.table;
     const type = this.props.match.params.type;
 
@@ -60,6 +61,47 @@ class SearchResults extends Component {
     if (!this.state.result) {
       return <div className="container">Loading... </div>;
     }
+
+    if(this.state.result.type === 'error') {
+      return (
+        <div>
+          <div className="container">
+            <Alert color="danger" className="mt-5">
+                <h4 className="alert-heading">We are so sorry!</h4>
+                <p>Some thing went terribly wrong. Please report this error to
+                <a href="https://github.com/paths-erc/atlas/issues">our public repository</a> in order to get it fixes ASAP.</p>
+            </Alert>
+            <div>
+              <p>Please file the current URL:</p>
+
+              <Alert color="info" className="border p-3 m-2 ml-4">{ window.location.href }</Alert>
+              <p>and the following error message</p>
+              <Alert color="info" className="border p-3 m-2 ml-4">
+                <pre>
+                {this.state.result.text}
+                </pre>
+              </Alert>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    if(this.state.result.head.total_rows === 0) {
+      return (
+        <div>
+          <SubHead tb={ this.state.result.head.stripped_table } tblabel={this.state.result.head.table_label } text="Search results" />
+            <div className="container">
+
+              <Alert color="warning" className="mt-5">
+                  <h4 className="alert-heading">Ooops!</h4>
+                  No result found. Please reformulate the query.
+              </Alert>
+            </div>
+        </div>
+      )
+    }
+
 
     return (
     	<div>
