@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import queryString from 'query-string';
+import queryString from 'qs';
 import {Pagination, PaginationItem, PaginationLink} from 'reactstrap';
 
 import SqlModal from '../SqlModal/SqlModal';
@@ -20,7 +20,7 @@ function build_object(props, path)
     curr_page = props.curr_page;
 
     if (typeof props.query === 'string') {
-      query = queryString.parse(this.props.location.search)
+      query = queryString.parse(this.props.location.search, {ignoreQueryPrefix: true})
     } else {
       query = {};
     }

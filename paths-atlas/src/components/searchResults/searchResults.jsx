@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import queryString from 'query-string'
+import queryString from 'qs'
 
 import Database from '../services/database/database';
 import SubHead from '../subHead/subHead';
@@ -18,18 +18,19 @@ class SearchResults extends Component {
     this.changeState = this.changeState.bind(this);
   }
 
-  changeState(tb, type, qs){
+  changeState(tb, type, qstring){
 
     if (type === 'adv') {
-      Database.getAdv(tb, qs, false, d => {
+      qstring.adv = queryString.stringify(qstring.adv);
+      Database.getAdv(tb, qstring, false, d => {
         this.setState({ result: d });
       });
     } else if (type === 'encoded') {
-      Database.getByEncodedSql(tb, qs.q_encoded, qs.page, d => {
+      Database.getByEncodedSql(tb, qstring.q_encoded, qstring.page, d => {
         this.setState({ result: d });
       });
     } else if (type === 'all') {
-      Database.getAll(tb, qs.page, d => {
+      Database.getAll(tb, qstring.page, d => {
         this.setState({ result: d });
       });
     } else {
@@ -39,20 +40,20 @@ class SearchResults extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    const qs = queryString.parse(nextProps.location.search);
+    const qstring = queryString.parse(nextProps.location.search, {ignoreQueryPrefix: true});
     const tb = nextProps.match.params.table;
     const type = nextProps.match.params.type;
 
-    this.changeState(tb, type, qs);
+    this.changeState(tb, type, qstring);
   }
 
   componentDidMount(prevProps, prevState){
+    const qstring = queryString.parse(this.props.location.search, {ignoreQueryPrefix: true});
 
-    const qs = queryString.parse(this.props.location.search);
     const tb = this.props.match.params.table;
     const type = this.props.match.params.type;
 
-    this.changeState(tb, type, qs);
+    this.changeState(tb, type, qstring);
   }
 
   render() {
