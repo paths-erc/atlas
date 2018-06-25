@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 
+import SubHead from '../subHead/subHead';
+
 import RecordCell from '../record/recordCell';
 import RecordLinks from '../record/recordLinks';
 
@@ -19,6 +21,9 @@ class ReadTitle extends Component {
 
     return (
       <div>
+
+        <SubHead tblabel="Titles" tb="titles" text="" />
+
         <div className="container">
           <Row className="mt-2">
             <Col sm="8">
