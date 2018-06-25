@@ -48,7 +48,7 @@ class RecordLinks extends Component {
         if (arr.length < 1){
           return false;
         }
-        
+
         let id_arr = [];
         arr.forEach( e => {
           id_arr.push(e.id);

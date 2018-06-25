@@ -24,6 +24,8 @@ class Plugin extends Component {
                   Object.keys(d).map( (f, fi) => {
                     if ( Cfg[name].fields[f] ) {
                       return <RecordCell val={d[f]} label={ Cfg[name].fields[f].label } key={fi} />
+                    } else {
+                      return null;
                     }
                   })
                 }<hr /></CardBody>)
