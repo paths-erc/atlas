@@ -14,6 +14,7 @@ import Titles from './components/titles/titles'
 import Works from './components/works/works'
 import Manuscripts from './components/manuscripts/manuscripts'
 import Authors from './components/Authors/Authors'
+import Colophons from './components/Colophons/Colophons'
 import ViewOne from './components/record/ViewOne'
 
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route path='/works' component={Works} />
             <Route path='/manuscripts' component={Manuscripts} />
             <Route path='/authors' component={Authors} />
+            <Route path='/colophons' component={Colophons} />
 
             <Route exact path='/results/:table/:type' component={SearchResults} />
             <Route exact path='/search/:table/' component={AdvSearchForm} />
