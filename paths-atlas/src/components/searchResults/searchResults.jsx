@@ -27,6 +27,10 @@ class SearchResults extends Component {
       Database.getAdv(tb, qstring, false, d => {
         this.setState({ result: d });
       });
+    } else if (type === 'simple') {
+      Database.getStr(tb, qstring.string, qstring.page, d => {
+        this.setState({ result: d });
+      });
     } else if (type === 'encoded') {
       Database.getByEncodedSql(tb, qstring.q_encoded, qstring.page, d => {
         this.setState({ result: d });
@@ -68,8 +72,7 @@ class SearchResults extends Component {
           <div className="container">
             <Alert color="danger" className="mt-5">
                 <h4 className="alert-heading">We are so sorry!</h4>
-                <p>Some thing went terribly wrong. Please report this error to
-                <a href="https://github.com/paths-erc/atlas/issues">our public repository</a> in order to get it fixes ASAP.</p>
+                <p>Some thing went terribly wrong. Please report this error to <a href="https://github.com/paths-erc/atlas/issues">our public repository</a> in order to get it fixes as soon as possible.</p>
             </Alert>
             <div>
               <p>Please file the current URL:</p>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-import { FormGroup, Input, Row, Col, Button } from 'reactstrap';
+import { FormGroup, Input, Button, Row, Col } from 'reactstrap';
 
 import Database from '../services/database/database';
 
 import Cfg from '../services/Cfg/Cfg';
 
 import SubHead from '../subHead/subHead';
+
+import AdvSearchRow from './AdvSearchRow';
 
 
 
@@ -16,7 +18,9 @@ class AdvSearchForm extends Component {
     super(props);
     this.state = {
       tb: null,
-      fields: null
+      fields: null,
+      rows: ['aa'],
+      context: 'Simple search'
     };
   }
 
@@ -35,92 +39,93 @@ class AdvSearchForm extends Component {
     }
   }
 
+  onAdd(){
+    const k = 'aa' + new Date().getTime();
+    this.setState({ rows: this.state.rows.concat(k)});
+  }
+
+  onRemove(k){
+    let newArr = this.state.rows;
+    newArr.splice(k, 1);
+    if (this.state.rows.length > 0) {
+      this.setState({ rows: newArr });
+    }
+  }
+
+  toggleSearch(){
+    this.setState({
+      context: this.state.context === 'Simple search' ? 'Advanced search': 'Simple search'
+    });
+  }
+
+  reverseContext(){
+    return this.state.context === 'Simple search' ? 'Advanced search': 'Simple search';
+  }
+
+  showSearch(){
+    if(this.state.context === 'Simple search') {
+      return this.simpleSearch();
+    } else {
+      return this.advancedSearch();
+    }
+  }
+
+  simpleSearch(){
+    return (
+      <div>
+        <form action={'/results/' + this.state.tb + '/simple'} method="get" id="searchTitles" className="form">
+          <Row>
+            <Col xs={8}>
+              <FormGroup>
+                <Input type="input" placeholder="Enter value" name="string" autoComplete="off" />
+              </FormGroup>
+            </Col>
+            <Col xs={4}>
+              <Button type="submit" color="success" block >Search!</Button>
+            </Col>
+          </Row>
+        </form>
+      </div>
+    );
+  }
+
+  advancedSearch(){
+    return (<form action={'/results/' + this.state.tb + '/adv'} method="get" id="searchTitles" className="form">
+
+      {
+        this.state.rows.map((e, i)=>{
+          return <AdvSearchRow
+            key={i}
+            indexKey={i}
+            indexValue={e}
+            fields={this.state.fields}
+            onAdd={ this.onAdd.bind(this) }
+            onRemove={ this.onRemove.bind(this) }
+            rows={this.state.rows}
+            />
+        })
+      }
+
+      <Button type="submit" color="success" block>Search!</Button>
+    </form>)
+  }
+
   render() {
     if (! this.state.fields) {
       return <div>Loading... </div>;
     }
 
-    const operators = [
-      {
-        'k': 'LIKE',
-        'v': 'Contains'
-      },
-      {
-        'k': '=',
-        'v': 'Is exactly'},
-      {
-        'k': 'NOT LIKE',
-        'v': 'Does not contain'},
-      {
-        'k': 'starts_with',
-        'v': 'Starts with'},
-      {
-        'k': 'ends_with',
-        'v': 'Ends with'},
-      {
-        'k': 'is_empty',
-        'v': 'Is empty'},
-      {
-        'k': 'is_not_empty',
-        'v': 'Is not empty'},
-      {
-        'k': '>',
-        'v': 'Is bigger than'},
-      {
-        'k': '<',
-        'v': 'Is smaller than'}
-    ];
     return (
       <div>
         <SubHead tb={ this.state.tb }
           tblabel={ this.getLabel() }
-          text="Advanced search" />
+          text={ this.state.context } />
 
 
       	<div className="mt-3 container">
-          <form action={'/results/' + this.state.tb + '/adv'} method="get" id="searchTitles" className="form">
-            <Row>
-              <Col xs={4}>
-                <FormGroup>
-                  <Input type="select" name="adv[aa][fld]">
-                    {this.state.fields.map( (f, i) => {
-                      return <option key={i} value={f.fullname}>{ f.label }</option>;
-                    } ) }
-                  </Input>
-                </FormGroup>
-              </Col>
-
-              <Col xs={2}>
-                <FormGroup>
-                  <Input type="select" placeholder="select" name="adv[aa][operator]">
-                    {operators.map( (f, i) => {
-                      return <option key={i} value={f.k}>{ f.v }</option>;
-                    } ) }
-                  </Input>
-                </FormGroup>
-              </Col>
-
-              <Col xs={4}>
-                <FormGroup>
-                  <Input type="input" placeholder="Enter value" name="adv[aa][value]" />
-                </FormGroup>
-              </Col>
-
-              <Col xs={1}>
-                <FormGroup>
-                  <Button type="button" color="info" block>AND</Button>
-                </FormGroup>
-              </Col>
-
-              <Col xs={1}>
-                <FormGroup>
-                  <Button type="button" color="info" block>OR</Button>
-                </FormGroup>
-              </Col>
-            </Row>
-            <Button type="submit" color="success" block>Search!</Button>
-          </form>
+          { this.showSearch() }
           <hr />
+          <Button type="button" color="warning" onClick={ this.toggleSearch.bind(this) }>{ this.reverseContext() }</Button>
   		  </div>
       </div>
     );

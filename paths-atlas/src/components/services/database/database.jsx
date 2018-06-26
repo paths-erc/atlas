@@ -22,6 +22,16 @@ export default class Database {
     this.getData(tb, data, d => { cb(d); }, true);
   }
 
+  static getStr(tb, string, page, cb)
+  {
+    this.getData(tb, {
+      verb: 'search',
+      type: 'fast',
+      string: string,
+      page: page
+    }, d => { cb(d); }, true);
+  }
+
   static getByEncodedSql(tb, sql, page, cb)
   {
       this.getData(tb, {

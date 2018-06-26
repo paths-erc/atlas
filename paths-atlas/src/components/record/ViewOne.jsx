@@ -86,10 +86,8 @@ class ReadTitle extends Component {
     }
 
     return (
-      <div>
+      <div className="mb-5">
         { this.renderTemplate(this.state.rec.metadata.stripped_table, this.state.rec) }
-
-        <pre>{ JSON.stringify(this.state.rec, false, 2)}</pre>
       </div>
     );
   }
