@@ -88,7 +88,7 @@ export default {
                 "name": "issinglefrag",
                 "label": "Is preserved in a single fragment?",
                 "type": "boolean",
-                "help": "Set to 1\/yes if manuscript is conserved in only one sigle fragment"
+                "help": "Set to 1/yes if manuscript is conserved in only one sigle fragment"
             },
             "stratigraphy": {
                 "name": "stratigraphy",
@@ -107,7 +107,7 @@ export default {
             },
             "dialect": {
                 "name": "dialect",
-                "label": "Dialects \/ languages",
+                "label": "Dialects / languages",
                 "type": "multi_select",
                 "vocabulary_set": "dialects"
             },
@@ -155,7 +155,7 @@ export default {
             },
             "leaftotextant": {
                 "name": "leaftotextant",
-                "label": "Number of ancient extant leaves\/tablets",
+                "label": "Number of ancient extant leaves/tablets",
                 "type": "text"
             },
             "fragtot": {
@@ -170,7 +170,7 @@ export default {
             },
             "leaftotestimated": {
                 "name": "leaftotestimated",
-                "label": "Estimated number of leaves\/tablets",
+                "label": "Estimated number of leaves/tablets",
                 "type": "text",
                 "check": [
                     "int"
@@ -283,12 +283,12 @@ export default {
             },
             "prophw": {
                 "name": "prophw",
-                "label": "Proportion height\/width",
+                "label": "Proportion height/width",
                 "type": "text"
             },
             "propwt": {
                 "name": "propwt",
-                "label": "Proportion written\/total page space",
+                "label": "Proportion written/total page space",
                 "type": "text",
                 "check": [
                     "int"
@@ -386,7 +386,7 @@ export default {
             },
             "structuralsigns": {
                 "name": "structuralsigns",
-                "label": "Punctuation and structural\/logical signs",
+                "label": "Punctuation and structural/logical signs",
                 "type": "multi_select",
                 "vocabulary_set": "punctuation_signs"
             },
@@ -1027,7 +1027,7 @@ export default {
             },
             "dialect": {
                 "name": "dialect",
-                "label": "Dialects \/ Languages",
+                "label": "Dialects / Languages",
                 "type": "multi_select",
                 "vocabulary_set": "dialects"
             },
@@ -1365,7 +1365,7 @@ export default {
             },
             "historicalreference": {
                 "name": "historicalreference",
-                "label": "Historical connections \/ references",
+                "label": "Historical connections / references",
                 "type": "long_text"
             },
             "datefrom": {
@@ -1587,7 +1587,7 @@ export default {
             },
             "journal": {
                 "name": "journal",
-                "label": "Journal\/book",
+                "label": "Journal/book",
                 "type": "combo_select",
                 "get_values_from_tb": "paths__biblio:journal"
             },
@@ -2009,7 +2009,7 @@ export default {
             },
             "pp": {
                 "name": "pp",
-                "label": "f.\/ff. and\/or p.\/pp.",
+                "label": "f./ff. and/or p./pp.",
                 "type": "text"
             },
             "sort": {

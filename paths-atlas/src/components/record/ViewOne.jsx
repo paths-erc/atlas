@@ -45,8 +45,7 @@ class ReadTitle extends Component {
   renderTemplate(tb, record) {
     switch (tb) {
       case 'titles':
-        return <ViewOneTitle record={ this.state.rec } />
-        break;
+        return (<ViewOneTitle record={ this.state.rec } />);
       default:
         return(
           <div className="container">
