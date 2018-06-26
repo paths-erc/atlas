@@ -22,7 +22,7 @@ class ReadTitle extends Component {
     return (
       <div>
 
-        <SubHead tblabel="Titles" tb="titles" text="" />
+        <SubHead tblabel="Titles" tb="titles" text="View record" />
 
         <div className="container">
           <Row className="mt-2">

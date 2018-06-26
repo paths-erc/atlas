@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron } from 'reactstrap';
+import { Jumbotron, Badge } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
 
@@ -13,9 +13,9 @@ class SubHead extends Component {
 
     return (
       <div>
-        <Jumbotron style={ {padding: 10} }>
+        <Jumbotron className="p-4">
           <div className="container">
-            <h1>{ tblabel } { text ? <span className="subText">| <small>{text}</small></span> : false}
+            <h1><Badge color="dark" className="float-right">{ tblabel }</Badge> { text ? <span className="subText"> {text}</span> : false}
             </h1>
           </div>
         </Jumbotron>

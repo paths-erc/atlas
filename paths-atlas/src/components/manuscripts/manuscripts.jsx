@@ -7,7 +7,7 @@ class ManuscriptPage extends Component {
 render() {
   return (
     <div>
-      <SubHead tblabel="Manuscripts" tb="manuscripts" text="" />
+      <SubHead tblabel="Manuscripts" tb="manuscripts" text="Introduction" />
 
       <div className="container">
           Here you will soon find some more information about coptic manuscripts!

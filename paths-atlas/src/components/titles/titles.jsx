@@ -7,7 +7,7 @@ class TitlePage extends Component {
   render() {
     return (
     	<div>
-        <SubHead tblabel="Titles" tb="titles" text="" />
+        <SubHead tblabel="Titles" tb="titles" text="Introduction" />
 
         <div className="container">
             Here you will soon find some more information about coptic titles!
