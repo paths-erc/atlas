@@ -6,7 +6,7 @@ import queryString from 'qs'
 
 import Database from '../services/database/database';
 import SubHead from '../subHead/subHead';
-import {PaginateResult, PaginateResultSummary} from '../paginateResult/paginateResult';
+import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
 
 import { ItemPreview, ItemPreviewWrapper } from './itemPreview';
 
@@ -24,7 +24,7 @@ class SearchResults extends Component {
 
     if (type === 'adv') {
       qstring.adv = queryString.stringify(qstring.adv);
-      Database.getAdv(tb, qstring, false, d => {
+      Database.getAdv(tb, qstring, qstring.page, d => {
         this.setState({ result: d });
       });
     } else if (type === 'simple') {
@@ -113,9 +113,18 @@ class SearchResults extends Component {
 
         <div className="container">
 
-          <PaginateResultSummary head={this.state.result.head} />
+          <PaginateResultSummary
+            totalRows={this.state.result.head.total_rows}
+            page={this.state.result.head.page}
+            query={this.state.result.head.query_arrived}
+          />
 
-          <PaginateResult head={this.state.result.head} path={this.props.location.pathname} />
+        <PaginateResult
+            path={this.props.location.pathname}
+            search={ this.props.location.search }
+            totalRows={this.state.result.head.total_rows}
+            page={this.state.result.head.page}
+          />
 
           <ItemPreviewWrapper>
           { this.state.result.records.map( (e, i) => {

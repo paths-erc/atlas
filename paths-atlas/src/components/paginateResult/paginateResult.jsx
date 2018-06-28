@@ -1,46 +1,26 @@
 import React, { Component } from 'react';
-import queryString from 'qs';
+import qs from 'qs';
 import {Pagination, PaginationItem, PaginationLink} from 'reactstrap';
 
 import SqlModal from '../SqlModal/SqlModal';
 
-function build_object(props, path)
+
+function build_object(path, queryString, tot_rows, curr_page = 1)
 {
-  let tot_rows,
-    curr_page,
-    query,
-    tot_pages,
-    rpp = 30,
-    result = [];
 
-  path += '/../encoded';
+  const rpp = 30;
 
-  if (props.tot_rows && props.curr_page) {
-    tot_rows = props.tot_rows;
-    curr_page = props.curr_page;
+  let tot_pages = Math.ceil(tot_rows / rpp);
+  let result = [];
 
-    if (typeof props.query === 'string') {
-      query = queryString.parse(this.props.location.search, {ignoreQueryPrefix: true})
-    } else {
-      query = {};
-    }
-  } else if (props.total_rows) {
-    tot_rows =  props.total_rows;
-    curr_page =  props.page && props.page !== 'false' ? props.page : 1;
-
-    query = {
-      tb : props.stripped_table,
-      q_encoded :  props.query_encoded
-    };
-  }
-
-  tot_pages = Math.ceil(tot_rows / rpp);
   curr_page = parseInt(curr_page, 10);
 
+  let qString = qs.parse(queryString, {ignoreQueryPrefix: true});
+
   if (curr_page - 2 > 0 ) {
-    query.page = 1;
+    qString.page = 1;
     result.push({
-      href :  path + '?' + queryString.stringify(query),
+      href :  path + '?' + qs.stringify(qString),
       text : 1
     });
   }
@@ -56,27 +36,27 @@ function build_object(props, path)
 
   // -1 page
   if (curr_page - 1 > 0 ) {
-    query.page = (curr_page - 1);
+    qString.page = (curr_page - 1);
     result.push({
-      href : path + '?' + queryString.stringify(query),
-      text : query.page
+      href : path + '?' + qs.stringify(qString),
+      text : qString.page
     });
   }
 
   // current page
-  query.page = curr_page;
+  qString.page = curr_page;
   result.push({
-    href : path + '?' + queryString.stringify(query),
+    href : path + '?' + qs.stringify(qString),
     active : true,
     text : curr_page
   });
 
   // +1 page
   if (curr_page + 1 < tot_pages ) {
-    query.page = (curr_page + 1);
+    qString.page = (curr_page + 1);
     result.push({
-      href : path + '?' + queryString.stringify(query),
-      text : query.page
+      href : path + '?' + qs.stringify(qString),
+      text : qString.page
     });
   }
 
@@ -90,10 +70,10 @@ function build_object(props, path)
   }
 
   if (curr_page !== tot_pages ) {
-    query.page = (tot_pages);
+    qString.page = (tot_pages);
     result.push({
-      href : path + '?' + queryString.stringify(query),
-      text : query.page
+      href : path + '?' + qs.stringify(qString),
+      text : qString.page
     });
   }
 
@@ -103,7 +83,13 @@ function build_object(props, path)
 class PaginateResult extends Component {
 
   render() {
-    const result = build_object(this.props.head, this.props.path);
+
+    const result = build_object(
+      this.props.path,
+      this.props.search,
+      this.props.totalRows,
+      this.props.page
+    );
 
     return (
       <Pagination>
@@ -131,16 +117,16 @@ class PaginateResultSummary extends Component {
 
   render() {
 
-    const curr_page =  this.props.head.page && this.props.head.page !== 'false' ? this.props.head.page : 1;
+    const curr_page =  this.props.page ? this.props.page : 1;
     const start_at = curr_page * 30 - 30 + 1;
-    const up_to = (curr_page * 30) < this.props.head.total_rows ? curr_page * 30 : this.props.head.total_rows;
+    const up_to = (curr_page * 30) < this.props.totalRows ? curr_page * 30 : this.props.totalRows;
 
     return (
       <div className="mb-3">
         Showing records <span className="badge badge-primary">
         { start_at } –  { up_to } </span> of <span className="badge badge-success">
-        { this.props.head.total_rows }</span> records found
-        &nbsp;<SqlModal sql={this.props.head.query_arrived}/>
+        { this.props.totalRows }</span> records found
+        &nbsp;<SqlModal sql={this.props.query}/>
       </div>
     );
 
