@@ -7,6 +7,7 @@ import L from 'leaflet';
 
 import Header from "../mainLayout/header/header"
 import Database from '../services/database/database';
+import ListPlaces from './ListPlaces';
 
 
 
@@ -22,7 +23,8 @@ export default class Atlas extends Component {
     this.state = {
       collapsed: false,
       selected: 'home',
-      places: null
+      places: null,
+      filteredPlaces: false
     };
   }
 
@@ -61,8 +63,28 @@ export default class Atlas extends Component {
     );
   }
 
+  filterPlacesByIdArray(ids) {
+    let filteredPlaces = [];
+
+    this.refs.places.leafletElement.eachLayer( (layer) => {
+      if (ids.indexOf(layer.feature.properties.id) > -1) {
+        layer.getElement().style.display = 'inline';
+        filteredPlaces.push(layer.feature.properties);
+      } else {
+        layer.getElement().style.display = 'none';
+      }
+    });
+
+    this.setState({ filteredPlaces: filteredPlaces });
+  }
+
   filterPlaces(e) {
     const searchKey = e.target.value;
+    if (searchKey === '') {
+      this.setState({ filteredPlaces: false });
+      return;
+    }
+    let filteredPlaces = [];
 
     this.refs.places.leafletElement.eachLayer( (layer) => {
       let found = false;
@@ -70,13 +92,16 @@ export default class Atlas extends Component {
         if (value && value.toLowerCase().includes(searchKey.toLowerCase())){
           found = true;
         }
-        if (found || searchKey === ''){
-          layer.getElement().style.display = 'inline';
-        } else {
-          layer.getElement().style.display = 'none';
-        }
+      }
+      if (found || searchKey === ''){
+        layer.getElement().style.display = 'inline';
+        filteredPlaces.push(layer.feature.properties);
+      } else {
+        layer.getElement().style.display = 'none';
       }
     });
+    this.setState({ filteredPlaces: filteredPlaces });
+
   }
 
   render() {
@@ -95,6 +120,9 @@ export default class Atlas extends Component {
                 </InputGroupAddon>
                 <Input type="search" onChange = {this.filterPlaces.bind(this)} />
               </InputGroup>
+
+              <ListPlaces filteredPlaces={ this.state.filteredPlaces } />
+
             </Tab>
             <Tab id="settings" header="Settings" icon="fa fa-cog" anchor="bottom">
               <p>Settings dialogue.</p>
