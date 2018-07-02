@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 export default class ListPlaces extends Component {
@@ -27,7 +28,7 @@ export default class ListPlaces extends Component {
                     }
                   } )
                 }
-                <small><FontAwesomeIcon icon="id-badge" /> <code>paths.places.{e.id}</code></small>
+                <small><FontAwesomeIcon icon="id-badge" /> <Link to={ 'read/places/' + e.id }>paths.places.{e.id}</Link></small>
               </li>
             } )
           }

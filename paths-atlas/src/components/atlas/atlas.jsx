@@ -11,6 +11,8 @@ import ListPlaces from './ListPlaces';
 
 
 
+
+
 import './atlas.css';
 
 const { BaseLayer, Overlay } = LayersControl
@@ -59,7 +61,8 @@ export default class Atlas extends Component {
     layer.bindPopup(
       '<strong>' + feature.properties.name + '</strong>' +
        (feature.properties.copticname ? '<br><span class="coptic">' + feature.properties.copticname + '</span>': '') +
-       '<br><code>https://paths.uniroma.it/paths/places/' + feature.properties.id + '</code>'
+       '<br>' +
+       '<a href="../read/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
     );
   }
 
@@ -80,10 +83,7 @@ export default class Atlas extends Component {
 
   filterPlaces(e) {
     const searchKey = e.target.value;
-    if (searchKey === '') {
-      this.setState({ filteredPlaces: false });
-      return;
-    }
+
     let filteredPlaces = [];
 
     this.refs.places.leafletElement.eachLayer( (layer) => {
@@ -118,7 +118,7 @@ export default class Atlas extends Component {
                 <InputGroupAddon addonType="prepend">
                   Search:
                 </InputGroupAddon>
-                <Input type="search" onChange = {this.filterPlaces.bind(this)} />
+                <Input type="search" onChange = {this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
               </InputGroup>
 
               <ListPlaces filteredPlaces={ this.state.filteredPlaces } />
