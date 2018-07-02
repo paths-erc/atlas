@@ -10,6 +10,7 @@ import Atlas from './components/atlas/atlas'
 import SearchResults from './components/searchResults/searchResults'
 import AdvSearchForm from './components/advSearchForm/advSearchForm'
 
+import Places from './components/Places/Places'
 import Titles from './components/titles/titles'
 import Works from './components/works/works'
 import Manuscripts from './components/manuscripts/manuscripts'
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path='/atlas' component={Atlas}/>
           <MainTemplate>
             <Route exact path='/' component={Home} />
+            <Route path='/places' component={Places} />
             <Route path='/titles' component={Titles} />
             <Route path='/works' component={Works} />
             <Route path='/manuscripts' component={Manuscripts} />

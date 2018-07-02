@@ -32,6 +32,9 @@ render() {
                     <NavLink href="/atlas">Atlas</NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink href="/places">Places</NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink href="/manuscripts">Manuscripts</NavLink>
                   </NavItem>
                   <NavItem>
