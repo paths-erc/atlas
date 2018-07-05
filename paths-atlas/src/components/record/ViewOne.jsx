@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Database from '../services/database/database';
+import Database from '../Services/Database/Database';
 
 import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 

@@ -4,7 +4,7 @@ import { Alert } from 'reactstrap';
 
 import queryString from 'qs'
 
-import Database from '../services/database/database';
+import Database from '../Services/Database/Database';
 import SubHead from '../subHead/subHead';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
 

@@ -6,7 +6,7 @@ import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import L from 'leaflet';
 
 import Header from "../mainLayout/header/header"
-import Database from '../services/database/database';
+import Database from '../Services/Database/Database';
 import ListPlaces from './ListPlaces';
 
 
