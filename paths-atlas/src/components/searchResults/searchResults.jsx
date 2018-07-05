@@ -10,7 +10,7 @@ import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateR
 
 import { ItemPreview, ItemPreviewWrapper } from './itemPreview';
 
-import Cfg from '../services/Cfg/Cfg';
+import Cfg from '../Services/Cfg/Cfg';
 
 
 
