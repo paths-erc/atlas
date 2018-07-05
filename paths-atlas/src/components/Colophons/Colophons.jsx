@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SubHead from '../subHead/subHead';
+import SubHead from '../SubHead/SubHead';
 
 class ColophonPage extends Component {
 

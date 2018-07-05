@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-
 import Database from '../Services/Database/Database';
-
 import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
-
-import SubHead from '../subHead/subHead';
-
+import SubHead from '../SubHead/SubHead';
 import ViewOneTitle from '../titles/ViewOneTitle';
-
-
 import RecordCell from './RecordCell';
 import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';

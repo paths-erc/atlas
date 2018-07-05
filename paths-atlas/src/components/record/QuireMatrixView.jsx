@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import Matrix from 'quirematrix';
 
 const uid = Math.random().toString(36).substr(2, 5);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormGroup, Input, Button, Row, Col } from 'reactstrap';
 import Database from '../Services/Database/Database';
-import SubHead from '../subHead/subHead';
+import SubHead from '../SubHead/SubHead';
 import AdvSearchRow from './AdvSearchRow';
 
 
