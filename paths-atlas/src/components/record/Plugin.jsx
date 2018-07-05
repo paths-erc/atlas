@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-
 import { Card, CardHeader, CardBody } from 'reactstrap';
-
 import RecordCell from './recordCell';
-
-import Cfg from '../services/Cfg/Cfg';
-
 
 
 class Plugin extends Component {
 
   render() {
-    const name = this.props.name.replace('paths__', '');
-    const data = this.props.data;
+
+    if (this.props.data.data.length < 1) {
+      return null;
+    }
 
     return (
       <div className="plugins">
         <Card className="mt-2">
-          <CardHeader><h5>{ Cfg[name].label }</h5></CardHeader>
+          <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
           {
-            data.map( (d, di) =>{
+            this.props.data.data.map( (d, di) =>{
               return (<CardBody key={di} className="border border-info mb-2">{
                   Object.keys(d).map( (f, fi) => {
-                    if ( Cfg[name].fields[f] ) {
-                      return <RecordCell val={d[f]} label={ Cfg[name].fields[f].label } key={fi} />
+                    if (d[f].label){
+                      return <RecordCell val={ d[f].val_label ? d[f].val_label : d[f].val } label={ d[f].label } key={fi} />
                     } else {
                       return null;
                     }
@@ -31,7 +28,6 @@ class Plugin extends Component {
                 }<hr /></CardBody>)
             } )
           }
-
         </Card>
       </div>
     );

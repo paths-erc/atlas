@@ -70,7 +70,7 @@ class AdvSearchRow extends Component {
           <Col xs={4}>
             <FormGroup>
               <Input type="select" name={ 'adv[' + this.props.indexValue +'][fld]' }>
-                {fields.map( (f, i) => {
+                {Object.values(fields).map( (f, i) => {
                   return <option key={i} value={f.fullname}>{ f.label }</option>;
                 } ) }
               </Input>

@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-
 import { FormGroup, Input, Button, Row, Col } from 'reactstrap';
-
 import Database from '../services/database/database';
-
-import Cfg from '../services/Cfg/Cfg';
-
 import SubHead from '../subHead/subHead';
-
 import AdvSearchRow from './AdvSearchRow';
 
 
@@ -18,6 +12,8 @@ class AdvSearchForm extends Component {
     super(props);
     this.state = {
       tb: null,
+      tb_label: null,
+      tb_stripped: null,
       fields: null,
       rows: ['aa'],
       context: 'Simple search'
@@ -28,15 +24,11 @@ class AdvSearchForm extends Component {
     const tb = this.props.match.params.table;
 
     Database.inspect(tb, data => {
-      this.setState({ fields: data });
-      this.setState({ tb: tb });
+      this.setState({ fields: data.fields });
+      this.setState({ tb: data.name });
+      this.setState({ tb_label: data.label });
+      this.setState({ tb_stripped: data.stripped_name });
     });
-  }
-
-  getLabel(tb){
-    if (this.state.tb) {
-      return Cfg[this.state.tb].label;
-    }
   }
 
   onAdd(){
@@ -73,7 +65,7 @@ class AdvSearchForm extends Component {
   simpleSearch(){
     return (
       <div>
-        <form action={'/results/' + this.state.tb + '/simple'} method="get" id="searchTitles" className="form">
+        <form action={'/results/' + this.state.tb_stripped + '/simple'} method="get" id="searchTitles" className="form">
           <Row>
             <Col xs={8}>
               <FormGroup>
@@ -90,8 +82,8 @@ class AdvSearchForm extends Component {
   }
 
   advancedSearch(){
-    return (<form action={'/results/' + this.state.tb + '/adv'} method="get" id="searchTitles" className="form">
 
+    return (<form action={'/results/' + this.state.tb_stripped + '/adv'} method="get" id="searchTitles" className="form">
       {
         this.state.rows.map((e, i)=>{
           return <AdvSearchRow
@@ -112,13 +104,13 @@ class AdvSearchForm extends Component {
 
   render() {
     if (! this.state.fields) {
-      return <div>Loading... </div>;
+      return <div className="m-5 p-5">Loading... </div>;
     }
 
     return (
       <div>
         <SubHead tb={ this.state.tb }
-          tblabel={ this.getLabel() }
+          tblabel={ this.state.label }
           text={ this.state.context } />
 
 

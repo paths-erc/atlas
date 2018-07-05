@@ -57,14 +57,18 @@ export default class Database {
 
   static getOne(tb, id, cb)
   {
-    this.getData(tb, {
+    this.getData('../v2/paths/' + tb, {
+      tb: tb,
       verb : 'read',
       id : id
     }, d => { cb(d); });
   }
 
   static inspect(tb, cb) {
-    this.getData(tb, {'verb':'inspect'}, d => { cb(d); });
+    this.getData('../v2/paths/' + tb, {
+      tb: tb,
+      'verb':'inspect'
+    }, d => { cb(d); });
   }
 
   static getPlaces(cb) {

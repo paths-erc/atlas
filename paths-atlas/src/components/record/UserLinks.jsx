@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-
 import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
-
-import Cfg from '../services/Cfg/Cfg';
-
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 
@@ -25,7 +21,7 @@ class UserLinks extends Component {
 
   render() {
     const links = this.props.links || [];
-    
+
     if (typeof links === 'undefined' || links.length < 1) {
       return null;
     }
@@ -40,11 +36,8 @@ class UserLinks extends Component {
             {
               links.map(
                 (l, i) => {
-                  if (l.tb === 'paths__files') {
-                    return false;
-                  }
-                  return <ListGroupItem key={i} tag="a" href={ this.makeHref(l.tb, l.ref_id) }>
-                    <FontAwesomeIcon icon="external-link-square-alt" />  { Cfg[l.tb.replace('paths__', '')].label } #{ l.ref_id }
+                  return <ListGroupItem key={i} tag="a" href={ this.makeHref(l.tb_stripped, l.ref_id) }>
+                    <FontAwesomeIcon icon="external-link-square-alt" />  { l.tb_label } #{ l.ref_label ? l.ref_label : l.ref_id }
                   </ListGroupItem>
                 }
               )

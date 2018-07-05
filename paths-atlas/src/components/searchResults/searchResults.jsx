@@ -10,6 +10,10 @@ import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateR
 
 import { ItemPreview, ItemPreviewWrapper } from './itemPreview';
 
+import Cfg from '../services/Cfg/Cfg';
+
+
+
 class SearchResults extends Component {
 
   constructor(props) {
@@ -72,7 +76,7 @@ class SearchResults extends Component {
           <div className="container">
             <Alert color="danger" className="mt-5">
                 <h4 className="alert-heading">We are so sorry!</h4>
-                <p>Some thing went terribly wrong. Please report this error to <a href="https://github.com/paths-erc/atlas/issues">our public repository</a> in order to get it fixes as soon as possible.</p>
+                <p>Something went terribly wrong. Please report this error to <a href="https://github.com/paths-erc/atlas/issues">our public repository</a> in order to get it fixes as soon as possible.</p>
             </Alert>
             <div>
               <p>Please file the current URL:</p>
@@ -82,6 +86,12 @@ class SearchResults extends Component {
               <Alert color="info" className="border p-3 m-2 ml-4">
                 <pre>
                 {this.state.result.text}
+                </pre>
+              </Alert>
+              <p>Full error trace</p>
+              <Alert color="info" className="border p-3 m-2 ml-4">
+                <pre>
+                {this.state.result.trace}
                 </pre>
               </Alert>
             </div>
@@ -129,6 +139,8 @@ class SearchResults extends Component {
           <ItemPreviewWrapper>
           { this.state.result.records.map( (e, i) => {
             return <ItemPreview
+                idField = { Cfg[this.props.match.params.table].id_field }
+                previewFlds = { Cfg[this.props.match.params.table].preview }
                 tb={this.props.match.params.table}
                 record={e}
                 fields={this.state.result.head.fields}

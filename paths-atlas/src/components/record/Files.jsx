@@ -22,7 +22,7 @@ class Files extends Component {
         {
           files.map( (f, id) => {
             return <Card className="mt-1" key={id}>
-              <CardImg top width="100%" src={'http://db.localhost/projects/paths/files/' + f.id + '.' + f.ext} />
+              <CardImg top width="100%" src={this.props.baseUrl.replace('/api/', '/projects/') + 'files/' + f.id + '.' + f.ext} />
               { this.showDescription(f.description) }
             </Card>
           })

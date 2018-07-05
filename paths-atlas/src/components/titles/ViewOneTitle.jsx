@@ -17,7 +17,6 @@ class ReadTitle extends Component {
     const core = record.core;
 
     const coptic = ['text'];
-    const fields = ['workcc', 'msid', 'type', 'description', 'modulartypology', 'writingaxis', 'thickandthin', 'text', 'translation', 'taggedtext'];
 
     return (
       <div>
@@ -29,12 +28,12 @@ class ReadTitle extends Component {
             <Col sm="8">
               <Card>
                 <CardHeader>
-                  <h3>paths.{ record.metadata.stripped_table }.{ core.id }</h3>
+                  <h3>paths.{ record.metadata.tb_stripped }.{ core.id.val }</h3>
                 </CardHeader>
                 <CardBody>
                   {
-                    fields.map( (i, k) => {
-                      return <RecordCell label={ record.fields[i]} val={ core[i] } coptic={ coptic.indexOf(i) > -1 } key={k} />
+                    Object.values(record.core).map( (i, k) => {
+                      return <RecordCell label={ i.label } val={ i.val_label ? i.val_label : i.val} key={k} coptic={ coptic.indexOf(i.name) > -1 } />
                     })
                   }
                 </CardBody>

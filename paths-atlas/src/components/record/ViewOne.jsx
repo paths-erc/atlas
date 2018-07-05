@@ -33,37 +33,50 @@ class ReadTitle extends Component {
     });
   }
 
-  renderPlugins(all_plugins) {
-    if (typeof allPlugins !== 'undefined') {
-      Object.keys(all_plugins).map( (i, k) => {
-        return <Plugin name={i} key={k} data={this.state.rec.allPlugins[i]} />
-      } );
-    }
-  }
+  renderTemplate(rec) {
 
-  renderTemplate(tb, record) {
-    switch (tb) {
+    if (rec.type === 'error'){
+      return (<pre className="text-danger p-5">{ rec.text }</pre>)
+    }
+
+    switch (rec.metadata.tb_stripped) {
       case 'titles':
-        return (<ViewOneTitle record={ this.state.rec } />);
+        return (<ViewOneTitle record={ rec } />);
       default:
+        if (rec.core.length < 1){
+          return (
+            <div className="container">
+              <SubHead tb={ rec.metadata.tb_stripped } tblabel={rec.metadata.tb_label} text="View record" />
+                <Card className="mt-2">
+                  <CardHeader>
+                    <h3 className="text-danger">Record paths.{ rec.metadata.tb_stripped }.{ this.props.match.params.id }  not found!</h3>
+                  </CardHeader>
+                </Card>
+            </div>
+          )
+        }
         return(
           <div className="container">
 
-            <SubHead tb={ tb } tblabel={this.state.rec.metadata.table_label} text="View record" />
+            <SubHead tb={ rec.metadata.tb_stripped } tblabel={rec.metadata.tb_label} text="View record" />
 
             <Row className="mt-2">
               <Col sm="8">
                 <Card>
                   <CardHeader>
-                    <h3>paths.{ this.state.rec.metadata.stripped_table }.{ record.core.id }</h3>
+                    <h3>paths.{ rec.metadata.tb_stripped }.{ rec.core.id.val }</h3>
                   </CardHeader>
                   <CardBody>
                     {
-                      Object.keys(record.fields).map( (i, k) => {
-                        return <RecordCell label={record.fields[i]} val={ record.core[i] } key={k} />
+                      Object.values(rec.core).map( (i, k) => {
+                        return <RecordCell label={ i.label } val={ i.val_label ? i.val_label : i.val} key={k} />
                       })
                     }
-                    { this.renderPlugins(this.state.rec.allPlugins) }
+                    {
+                      Object.keys(rec.plugins).map( (t, k) => {
+                        return <Plugin key={k} data={rec.plugins[t]} />
+                      })
+                    }
                   </CardBody>
                 </Card>
               </Col>
@@ -81,12 +94,12 @@ class ReadTitle extends Component {
 
   render() {
     if (!this.state.rec) {
-      return (<div>Loading...</div>)
+      return <div className="m-5 p-5">Loading... </div>;
     }
 
     return (
       <div className="mb-5">
-        { this.renderTemplate(this.state.rec.metadata.stripped_table, this.state.rec) }
+        { this.renderTemplate(this.state.rec) }
       </div>
     );
   }

@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-
 import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
-
-import Cfg from '../services/Cfg/Cfg';
-
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 
@@ -26,54 +22,42 @@ class RecordLinks extends Component {
   }
 
   renderLinks(links){
-    if (typeof links === 'undefined' || links.length < 1){
-      return false;
-    }
+
      return Object.entries(links).map(
       ([tb, info], i) => {
-        return <ListGroupItem key={i} tag="a" href={ this.makeHref(tb, info.query) }>
+        if (info.tot < 1) {
+          return null;
+        }
+        return <ListGroupItem key={i} tag="a" href={ this.makeHref(tb, info.where) }>
           <FontAwesomeIcon icon="external-link-square-alt" /> {info.tot + ' referenced item' + (info.tot > 1 ? 's': '') + ' in ' + info.tb_label}
         </ListGroupItem>
       }
     )
   }
 
-  renderBackLinks(backLinks){
-    if (typeof backLinks === 'undefined' || backLinks.length < 1){
+  renderBackLinks(backlinks){
+    if (typeof backlinks === 'undefined' || backlinks.length < 1){
       return false;
     }
 
-    return Object.entries(backLinks).map(
+    return Object.entries(backlinks).map(
       ([tb, arr], i) => {
-        if (arr.length < 1){
+        console.log(arr);
+        if (arr.tot < 1){
           return false;
         }
 
-        let id_arr = [];
-        arr.forEach( e => {
-          id_arr.push(e.id);
-        });
-        let info = {
-          tot: arr.length,
-          tb_label: Cfg[tb.replace('paths__', '')].label,
-          query: '`id` IN (' + id_arr.join(', ') + ')'
-        };
-
-        return <ListGroupItem key={i} tag="a" href={ this.makeHref(tb, info.query) }>
-          <FontAwesomeIcon icon="external-link-square-alt" /> {info.tot + ' referenced item' + (info.tot > 1 ? 's': '') + ' in ' + info.tb_label}
+        return <ListGroupItem key={i} tag="a" href={ this.makeHref(tb, arr.where) }>
+          <FontAwesomeIcon icon="external-link-square-alt" /> {arr.tot + ' referenced item' + (arr.tot > 1 ? 's': '') + ' in ' + arr.tb_label}
         </ListGroupItem>
       }
     )
   }
 
   render() {
-    const links = this.props.links || [];
-    const backLinks = this.props.backLinks || [];
-
-    if ( links.length < 1 && backLinks.length < 1 ) {
+    if( (!this.props.links && !this.props.backlinks) || (this.props.links.length < 1 && this.props.backlinks.length < 1) ){
       return null;
     }
-
     return (
       <Card className="mt-2">
         <CardHeader>
@@ -81,8 +65,8 @@ class RecordLinks extends Component {
         </CardHeader>
         <CardBody>
           <ListGroup>
-            { this.renderLinks(links) }
-            { this.renderBackLinks(backLinks) }
+            { this.renderLinks(this.props.links) }
+            { this.renderBackLinks(this.props.backlinks) }
     	    </ListGroup>
         </CardBody>
       </Card>
