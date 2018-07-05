@@ -109,9 +109,7 @@ class SearchForm extends Component {
 
     return (
       <div>
-        <SubHead tb={ this.state.tb }
-          tblabel={ this.state.label }
-          text={ this.state.context } />
+        <SubHead tb={ this.state.tb_stripped } tblabel={ this.state.label } text={ this.state.context } />
 
 
       	<div className="mt-3 container">
