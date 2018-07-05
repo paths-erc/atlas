@@ -13,6 +13,10 @@ export default class Database {
     axios.get(url, { params: params }).then(res => { callback(res.data); });
   }
 
+  static getBaseUrl(){
+    return baseUrl;
+  }
+
   static getAdv(tb, data, page, cb)
   {
     data.verb = 'search';
