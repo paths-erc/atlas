@@ -8,8 +8,8 @@ import SubHead from '../subHead/subHead';
 
 import ViewOneTitle from '../titles/ViewOneTitle';
 
-import RecordCell from './recordCell';
-import RecordLinks from './recordLinks';
+import RecordCell from './RecordCell';
+import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';
 import Files from './Files';
 import Plugin from './Plugin';

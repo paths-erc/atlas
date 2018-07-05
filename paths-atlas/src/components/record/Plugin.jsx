@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
-import RecordCell from './recordCell';
+import RecordCell from './RecordCell';
 
 
 class Plugin extends Component {

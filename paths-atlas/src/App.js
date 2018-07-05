@@ -16,7 +16,7 @@ import Works from './components/works/works'
 import Manuscripts from './components/manuscripts/manuscripts'
 import Authors from './components/Authors/Authors'
 import Colophons from './components/Colophons/Colophons'
-import ViewOne from './components/record/ViewOne'
+import ViewOne from './components/Record/ViewOne'
 
 
 fontawesome.library.add(faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge);

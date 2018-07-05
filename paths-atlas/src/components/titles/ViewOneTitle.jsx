@@ -4,8 +4,8 @@ import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 
 import SubHead from '../subHead/subHead';
 
-import RecordCell from '../record/recordCell';
-import RecordLinks from '../record/recordLinks';
+import RecordCell from '../Record/RecordCell';
+import RecordLinks from '../Record/RecordLinks';
 
 
 
