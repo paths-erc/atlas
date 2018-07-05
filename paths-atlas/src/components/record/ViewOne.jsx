@@ -8,6 +8,7 @@ import SubHead from '../subHead/subHead';
 
 import ViewOneTitle from '../titles/ViewOneTitle';
 
+
 import RecordCell from './RecordCell';
 import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';

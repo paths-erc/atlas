@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import { Row, Col } from 'reactstrap';
+import QuireMatrixView from './QuireMatrixView';
 
 
 
@@ -18,7 +18,7 @@ class RecordCell extends Component {
         </Col>
         <Col>
           <div className={ coptic ? 'coptic': undefined }>
-            {val}
+            {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : val }
           </div>
         </Col>
 	    </Row>
