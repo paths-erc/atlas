@@ -8,7 +8,7 @@ import MainTemplate from './components/mainLayout/template/mainTemplate';
 import Home from './components/home/home'
 import Atlas from './components/atlas/atlas'
 import SearchResults from './components/searchResults/searchResults'
-import AdvSearchForm from './components/advSearchForm/advSearchForm'
+import SearchForm from './components/SearchForm/SearchForm'
 
 import Places from './components/Places/Places'
 import Titles from './components/titles/titles'
@@ -38,7 +38,7 @@ class App extends Component {
             <Route path='/colophons' component={Colophons} />
 
             <Route exact path='/results/:table/:type' component={SearchResults} />
-            <Route exact path='/search/:table/' component={AdvSearchForm} />
+            <Route exact path='/search/:table/' component={SearchForm} />
             <Route exact path='/read/:table/:id' component={ViewOne} />
 
           </MainTemplate>

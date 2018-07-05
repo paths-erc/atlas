@@ -6,7 +6,7 @@ import AdvSearchRow from './AdvSearchRow';
 
 
 
-class AdvSearchForm extends Component {
+class SearchForm extends Component {
 
   constructor(props) {
     super(props);
@@ -124,4 +124,4 @@ class AdvSearchForm extends Component {
   }
 }
 
-export default AdvSearchForm;
+export default SearchForm;
