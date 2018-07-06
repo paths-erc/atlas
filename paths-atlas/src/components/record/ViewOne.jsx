@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Database from '../Services/Database/Database';
+import Cfg from '../Services/Cfg/Cfg';
 import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 import SubHead from '../SubHead/SubHead';
 import ViewOneTitle from '../titles/ViewOneTitle';
@@ -64,7 +65,12 @@ class ReadTitle extends Component {
                   <CardBody>
                     {
                       Object.values(rec.core).map( (i, k) => {
-                        return <RecordCell label={ i.label } val={ i.val_label ? i.val_label : i.val} key={k} />
+                        return <RecordCell
+                            coptic= { Cfg.coptic.indexOf(rec.metadata.tb_id + '.' + i.name) > -1}
+                            greek= { Cfg.greek.indexOf(rec.metadata.tb_id + '.' + i.name) > -1}
+                            label={ i.label }
+                            val={ i.val_label ? i.val_label : i.val}
+                            key={k} />
                       })
                     }
                     {

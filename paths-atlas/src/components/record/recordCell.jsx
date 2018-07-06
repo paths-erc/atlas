@@ -9,7 +9,13 @@ class RecordCell extends Component {
   render() {
     const val = this.props.val;
     const label = this.props.label;
-    const coptic = this.props.coptic;
+    let className = [];
+    if(this.props.coptic){
+      className.push('coptic');
+    }
+    if(this.props.greek){
+      className.push('greek');
+    }
 
     return (
       <Row className="border-bottom mt-2 mb-2 pb-1">
@@ -17,7 +23,7 @@ class RecordCell extends Component {
           <label className="font-weight-bold">{label}</label>
         </Col>
         <Col>
-          <div className={ coptic ? 'coptic': undefined }>
+          <div className={ className.join(' ') }>
             {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : val }
           </div>
         </Col>

@@ -1,4 +1,15 @@
 export default {
+    "coptic": [
+      "paths__places.copticname",
+      "paths__authors.copticname",
+      "paths__titles.text",
+      "paths__colophons.text"
+    ],
+    "greek": [
+      "paths__authors.greekname",
+      "paths__places.greekname"
+    ],
+
     "manuscripts": {
         "name": "paths__manuscripts",
         "label": "Manuscripts",
