@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
-import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import L from 'leaflet';
@@ -11,12 +11,9 @@ import ListPlaces from './ListPlaces';
 
 
 
-
-
 import './atlas.css';
 
 const { BaseLayer, Overlay } = LayersControl
-
 
 
 export default class Atlas extends Component {
@@ -26,7 +23,8 @@ export default class Atlas extends Component {
       collapsed: false,
       selected: 'home',
       places: null,
-      filteredPlaces: false
+      filteredPlaces: false,
+      manualFilter: ''
     };
   }
 
@@ -81,8 +79,16 @@ export default class Atlas extends Component {
     this.setState({ filteredPlaces: filteredPlaces });
   }
 
+  filterPlacesByString() {
+
+  }
+
   filterPlaces(e) {
-    const searchKey = e.target.value;
+    const searchKey =  (typeof e === 'string') ? e : e.target.value;
+
+    this.setState({
+      manualFilter: searchKey
+    });
 
     let filteredPlaces = [];
 
@@ -104,6 +110,18 @@ export default class Atlas extends Component {
 
   }
 
+  clearFiltered(){
+    this.filterPlaces('');
+  }
+
+  ClearButton(){
+    if (this.state.manualFilter){
+      return <InputGroupAddon addonType="append">
+        <Button color="danger" onClick = { this.clearFiltered.bind(this) }>x</Button>
+      </InputGroupAddon>
+    }
+  }
+
   render() {
     return (
       <div className="maxHeight">
@@ -118,7 +136,9 @@ export default class Atlas extends Component {
                 <InputGroupAddon addonType="prepend">
                   Search:
                 </InputGroupAddon>
-                <Input type="search" onChange = {this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
+                <Input type="search" value={this.state.manualFilter} onChange={this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
+
+                { this.ClearButton() }
               </InputGroup>
 
               <ListPlaces filteredPlaces={ this.state.filteredPlaces } />
