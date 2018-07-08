@@ -49,13 +49,13 @@ class SearchResults extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps){
-    const qstring = queryString.parse(nextProps.location.search, {ignoreQueryPrefix: true});
-    const tb = nextProps.match.params.table;
-    const type = nextProps.match.params.type;
-
-    this.changeState(tb, type, qstring);
-  }
+  // componentWillReceiveProps(nextProps){
+  //   const qstring = queryString.parse(nextProps.location.search, {ignoreQueryPrefix: true});
+  //   const tb = nextProps.match.params.table;
+  //   const type = nextProps.match.params.type;
+  //
+  //   this.changeState(tb, type, qstring);
+  // }
 
   componentDidMount(prevProps, prevState){
     const qstring = queryString.parse(this.props.location.search, {ignoreQueryPrefix: true});

@@ -7,7 +7,7 @@ import {faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge} from '@fortawe
 import MainTemplate from './components/mainLayout/template/mainTemplate';
 import Home from './components/home/home'
 import Atlas from './components/atlas/atlas'
-import SearchResults from './components/searchResults/searchResults'
+import SearchResults from './components/SearchResults/SearchResults'
 import SearchForm from './components/SearchForm/SearchForm'
 
 import Places from './components/Places/Places'
