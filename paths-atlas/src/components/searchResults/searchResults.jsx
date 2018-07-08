@@ -8,7 +8,7 @@ import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
 
-import { ItemPreview, ItemPreviewWrapper } from './itemPreview';
+import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
 
 import Cfg from '../Services/Cfg/Cfg';
 
