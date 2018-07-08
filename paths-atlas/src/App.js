@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import fontawesome from '@fortawesome/fontawesome'
-import {faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge} from '@fortawesome/fontawesome-free-solid';
+import {faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
 
 import MainTemplate from './components/mainLayout/template/mainTemplate';
 import Home from './components/home/home'
@@ -19,7 +19,7 @@ import Colophons from './components/Colophons/Colophons'
 import ViewOne from './components/Record/ViewOne'
 
 
-fontawesome.library.add(faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge);
+fontawesome.library.add(faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge, faMapMarkerAlt);
 
 
 class App extends Component {

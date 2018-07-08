@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-
 import { Alert } from 'reactstrap';
-
-import queryString from 'qs'
+import qs from 'qs'
 
 import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
-
 import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
+import MsPlaces from '../manuscripts/MsPlaces';
 
 import Cfg from '../Services/Cfg/Cfg';
 
@@ -27,7 +25,7 @@ class SearchResults extends Component {
   changeState(tb, type, qstring){
 
     if (type === 'adv') {
-      qstring.adv = queryString.stringify(qstring.adv);
+      qstring.adv = qs.stringify(qstring.adv);
       Database.getAdv(tb, qstring, qstring.page, d => {
         this.setState({ result: d });
       });
@@ -50,7 +48,7 @@ class SearchResults extends Component {
   }
 
   // componentWillReceiveProps(nextProps){
-  //   const qstring = queryString.parse(nextProps.location.search, {ignoreQueryPrefix: true});
+  //   const qstring = qs.parse(nextProps.location.search, {ignoreQueryPrefix: true});
   //   const tb = nextProps.match.params.table;
   //   const type = nextProps.match.params.type;
   //
@@ -58,7 +56,7 @@ class SearchResults extends Component {
   // }
 
   componentDidMount(prevProps, prevState){
-    const qstring = queryString.parse(this.props.location.search, {ignoreQueryPrefix: true});
+    const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
     const tb = this.props.match.params.table;
     const type = this.props.match.params.type;
 
@@ -115,7 +113,6 @@ class SearchResults extends Component {
       )
     }
 
-
     return (
     	<div>
 
@@ -123,18 +120,29 @@ class SearchResults extends Component {
 
         <div className="container">
 
-          <PaginateResultSummary
-            totalRows={this.state.result.head.total_rows}
-            page={this.state.result.head.page}
-            query={this.state.result.head.query_arrived}
-          />
+          <div className="clearfix">
 
-        <PaginateResult
-            path={this.props.location.pathname}
-            search={ this.props.location.search }
-            totalRows={this.state.result.head.total_rows}
-            page={this.state.result.head.page}
-          />
+            <MsPlaces
+              tb={this.state.result.head.stripped_table}
+              type={this.props.match.params.type}
+              search={ qs.parse(this.props.location.search, {ignoreQueryPrefix: true}) }
+              />
+
+            <PaginateResultSummary
+              totalRows={this.state.result.head.total_rows}
+              page={this.state.result.head.page}
+              query={this.state.result.head.query_arrived}
+            />
+
+          <PaginateResult
+              path={this.props.location.pathname}
+              search={ this.props.location.search }
+              totalRows={this.state.result.head.total_rows}
+              page={this.state.result.head.page}
+            />
+        </div>
+
+
 
           <ItemPreviewWrapper>
           { this.state.result.records.map( (e, i) => {
