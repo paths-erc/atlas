@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
+import qs from 'qs';
 
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import L from 'leaflet';
@@ -39,9 +40,21 @@ export default class Atlas extends Component {
   }
 
   componentDidMount(){
-    Database.getPlaces(data => {
-      this.setState({ places: data });
-    });
+    if (this.props.location.search) {
+
+      let qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true})
+      if (qstring.tb !== 'manuscripts') {
+        return false;
+      }
+
+      Database.getMsPlaces(qstring.where, data => {
+        this.setState({ places: data });
+      });
+    } else {
+      Database.getPlaces(data => {
+        this.setState({ places: data });
+      });
+    }
   }
 
   pointToLayer(t, i) {

@@ -72,7 +72,52 @@ export default class Database {
   }
 
   static getPlaces(cb) {
-    this.getData( 'geodata?verb=search&geojson=true&type=encoded&join=JOIN%20paths__places%20ON%20paths__geodata.table_link%20=%20%27paths__places%27%20AND%20paths__geodata.id_link%20=%20paths__places.id&fields%5Bpaths__geodata.geometry%5D=Geometry&fields%5Bpaths__places.id%5D=Id&fields%5Bpaths__places.name%5D=Name&fields%5Bpaths__places.copticname%5D=Coptic%20name&fields%5Bpaths__places.greekname%5D=Greek%20name&fields%5Bpaths__places.egyptianname%5D=Egyptian%20name&fields%5Bpaths__places.pleiades%5D=Pleiades%20Id&fields%5Bpaths__places.typology%5D=Site%20typology&q_encoded=MSBMSU1JVCAwLCA1MDA=', false, d => { cb(d) });
+    let url_part = [
+      "verb=search",
+      "geojson=true",
+      "type=encoded",
+      "join=JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id",
+      "fields[paths__geodata.geometry]=Geometry",
+      "fields[paths__places.id]=Id",
+      "fields[paths__places.name]=Name",
+      "fields[paths__places.copticname]=Coptic name",
+      "fields[paths__places.greekname]=Greek name",
+      "fields[paths__places.egyptianname]=Egyptian name",
+      "fields[paths__places.pleiades]=Pleiades Id",
+      "fields[paths__places.typology]=Site typology",
+      "q_encoded=" + btoa(" 1 LIMIT 0, 500")
+    ];
+
+    this.getData(
+      'geodata?' + encodeURI(url_part.join('&')),
+      false,
+      d => { cb(d) }
+    );
+  }
+
+  static getMsPlaces(ms_where, cb) {
+    let url_part = [
+      "verb=search",
+      "geojson=true",
+      "type=encoded",
+      "join=JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id " +
+        " JOIN `paths__m_msplaces` ON `paths__m_msplaces`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `paths__m_msplaces`.`place` ",
+      "fields[paths__geodata.geometry]=Geometry",
+      "fields[paths__places.id]=Id",
+      "fields[paths__places.name]=Name",
+      "fields[paths__places.copticname]=Coptic name",
+      "fields[paths__places.greekname]=Greek name",
+      "fields[paths__places.egyptianname]=Egyptian name",
+      "fields[paths__places.pleiades]=Pleiades Id",
+      "fields[paths__places.typology]=Site typology",
+      "q_encoded=" + btoa(" `paths__m_msplaces`.`id_link` IN (SELECT `id` FROM `paths__manuscripts` WHERE " + ms_where + " ) LIMIT 0, 500")
+    ];
+
+    this.getData(
+      'geodata?' + encodeURI(url_part.join('&')),
+      false,
+      d => { cb(d) }
+    );
 
   }
 }
