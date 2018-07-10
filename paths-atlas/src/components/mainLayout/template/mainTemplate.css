@@ -1,6 +1,6 @@
 @font-face {
   font-family: Antinoou;
-  src: url('../fonts/Antinoou.ttf');
+  src: url('fonts/Antinoou.ttf');
 }
 .coptic{
   font-family: Antinoou !important;
