@@ -42,7 +42,6 @@ class RecordLinks extends Component {
 
     return Object.entries(backlinks).map(
       ([tb, arr], i) => {
-        console.log(arr);
         if (arr.tot < 1){
           return false;
         }

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import fontawesome from '@fortawesome/fontawesome'
-import {faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
+import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
 
 import MainTemplate from './components/mainLayout/template/mainTemplate';
 import Home from './components/home/home'
-import Atlas from './components/atlas/atlas'
+import Atlas from './components/Atlas/Atlas'
 import SearchResults from './components/SearchResults/SearchResults'
 import SearchForm from './components/SearchForm/SearchForm'
 
@@ -19,7 +19,7 @@ import Colophons from './components/Colophons/Colophons'
 import ViewOne from './components/Record/ViewOne'
 
 
-fontawesome.library.add(faEye, faBug, faLink, faExternalLinkSquareAlt, faIdBadge, faMapMarkerAlt);
+fontawesome.library.add(faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt);
 
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path='/atlas' component={Atlas}/>
+          <Route path='/atlas/:action?/:data?' component={Atlas}/>
           <MainTemplate>
             <Route exact path='/' component={Home} />
             <Route path='/places' component={Places} />

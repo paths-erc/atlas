@@ -1,16 +1,33 @@
 import axios from 'axios';
 
-const baseUrl = 'http://db.localhost/api/paths/';
-// const baseUrl = 'https://db.bradypus.net/api/paths/';
+// const baseUrl = 'http://db.localhost/api/paths/';
+const baseUrl = 'https://db-dev.bradypus.net/api/paths/';
 
 
 export default class Database {
 
-  static getData(tb, params, callback){
+  static getData(url, params, callback){
 
-    let url = baseUrl + tb;
+    url = baseUrl + url;
 
-    axios.get(url, { params: params }).then(res => { callback(res.data); });
+    axios({
+      method: 'post',
+      url: url,
+      params: params,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    })
+    .then(res => {
+      callback(res.data);
+    })
+    .catch( res => {
+      if(res instanceof Error) {
+        console.log(res.message);
+      } else {
+        console.log(res.data);
+      }
+    });
   }
 
   static getBaseUrl(){
@@ -72,52 +89,48 @@ export default class Database {
   }
 
   static getPlaces(cb) {
-    let url_part = [
-      "verb=search",
-      "geojson=true",
-      "type=encoded",
-      "join=JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id",
-      "fields[paths__geodata.geometry]=Geometry",
-      "fields[paths__places.id]=Id",
-      "fields[paths__places.name]=Name",
-      "fields[paths__places.copticname]=Coptic name",
-      "fields[paths__places.greekname]=Greek name",
-      "fields[paths__places.egyptianname]=Egyptian name",
-      "fields[paths__places.pleiades]=Pleiades Id",
-      "fields[paths__places.typology]=Site typology",
-      "q_encoded=" + btoa(" 1 LIMIT 0, 500")
-    ];
+    let data = {
+      "join": "JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id",
+      "fields[paths__geodata.geometry]": "Geometry",
+      "fields[paths__places.id]": "Id",
+      "fields[paths__places.name]": "Name",
+      "fields[paths__places.copticname]": "Coptic name",
+      "fields[paths__places.greekname]": "Greek name",
+      "fields[paths__places.egyptianname]": "Egyptian name",
+      "fields[paths__places.pleiades]": "Pleiades Id",
+      "fields[paths__places.typology]": "Site typology",
+      "q_encoded": btoa(" 1 LIMIT 0, 500")
+    };
 
     this.getData(
-      'geodata?' + encodeURI(url_part.join('&')),
-      false,
+      'geodata?verb=search&geojson=true&type=encoded',
+      data,
       d => { cb(d) }
     );
   }
 
   static getMsPlaces(ms_where, cb) {
-    let url_part = [
-      "verb=search",
-      "geojson=true",
-      "type=encoded",
-      "join=JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id " +
-        " JOIN `paths__m_msplaces` ON `paths__m_msplaces`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `paths__m_msplaces`.`place` ",
-      "fields[paths__geodata.geometry]=Geometry",
-      "fields[paths__places.id]=Id",
-      "fields[paths__places.name]=Name",
-      "fields[paths__places.copticname]=Coptic name",
-      "fields[paths__places.greekname]=Greek name",
-      "fields[paths__places.egyptianname]=Egyptian name",
-      "fields[paths__places.pleiades]=Pleiades Id",
-      "fields[paths__places.typology]=Site typology",
-      "q_encoded=" + btoa(" `paths__m_msplaces`.`id_link` IN (SELECT `id` FROM `paths__manuscripts` WHERE " + ms_where + " ) LIMIT 0, 500")
-    ];
-
+    const data = {
+      "join": " JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id" +
+              " JOIN `paths__m_msplaces` ON `paths__m_msplaces`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `paths__m_msplaces`.`place` ",
+      "fields[paths__geodata.geometry]": "Geometry",
+      "fields[paths__places.id]": "Id",
+      "fields[paths__places.name]": "Name",
+      "fields[paths__places.copticname]": "Coptic name",
+      "fields[paths__places.greekname]": "Greek name",
+      "fields[paths__places.egyptianname]": "Egyptian name",
+      "fields[paths__places.pleiades]": "Pleiades Id",
+      "fields[paths__places.typology]": "Site typology",
+      "fields[paths__m_msplaces.type]": "Place type",
+      "group": "paths__places.id",
+      "limit_start": "0",
+      "limit_end": "500",
+      "q_encoded": btoa(" `paths__m_msplaces`.`id_link` IN (SELECT `id` FROM `paths__manuscripts` WHERE " + ms_where + " )")
+    };
     this.getData(
-      'geodata?' + encodeURI(url_part.join('&')),
-      false,
+      'geodata?verb=search&geojson=true&type=encoded',
+      data,
       d => { cb(d) }
     );
-
   }
 }
