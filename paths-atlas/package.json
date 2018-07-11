@@ -2,7 +2,7 @@
   "name": "paths-atlas",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://paths-erc.github.io/atlas",
+  "homepage": "/atlas",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
