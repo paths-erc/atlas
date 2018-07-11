@@ -25,7 +25,7 @@ fontawesome.library.add(faArrowCircleRight, faBug, faEye, faExternalLinkSquareAl
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="atlas">
         <Switch>
           <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
