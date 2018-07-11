@@ -30,9 +30,19 @@ class SearchResults extends Component {
         this.setState({ result: d });
       });
     } else if (type === 'simple') {
-      Database.getStr(tb, qstring.string, qstring.page, d => {
-        this.setState({ result: d });
-      });
+
+      if(!qstring.string || qstring.string === ''){
+        this.setState({
+          result: {
+            type: 'error',
+            text: 'Please enter a string to serach'
+          }
+        });
+      } else{
+        Database.getStr(tb, qstring.string, qstring.page, d => {
+          this.setState({ result: d });
+        });
+      }
     } else if (type === 'encoded') {
       Database.getByEncodedSql(tb, qstring.q_encoded, qstring.page, d => {
         this.setState({ result: d });
@@ -47,13 +57,17 @@ class SearchResults extends Component {
     }
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   const qstring = qs.parse(nextProps.location.search, {ignoreQueryPrefix: true});
-  //   const tb = nextProps.match.params.table;
-  //   const type = nextProps.match.params.type;
-  //
-  //   this.changeState(tb, type, qstring);
-  // }
+  UNSAFE_componentWillReceiveProps(nextProps){
+    if(nextProps !== this.props ){
+      this.setState({
+        result: null
+      });
+      const qstring = qs.parse(nextProps.location.search, {ignoreQueryPrefix: true});
+      const tb = nextProps.match.params.table;
+      const type = nextProps.match.params.type;
+      this.changeState(tb, type, qstring);
+    }
+  }
 
   componentDidMount(prevProps, prevState){
     const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});

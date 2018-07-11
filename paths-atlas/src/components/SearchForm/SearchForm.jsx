@@ -21,9 +21,7 @@ class SearchForm extends Component {
   }
 
   componentDidMount(){
-    const tb = this.props.match.params.table;
-
-    Database.inspect(tb, data => {
+    Database.inspect(this.props.match.params.table, data => {
       this.setState({ fields: data.fields });
       this.setState({ tb: data.name });
       this.setState({ tb_label: data.label });
@@ -62,11 +60,12 @@ class SearchForm extends Component {
     }
   }
 
+
   simpleSearch(){
     const base = window.location.pathname.replace(/\/search(.+)/, '');
     return (
       <div>
-        <form action={`${base}/results/${this.state.tb_stripped}/simple`} method="get" id="searchTitles" className="form">
+        <form action={ `${base}/results/${this.state.tb_stripped}/simple` } method="get" id="searchTitles" className="form">
           <Row>
             <Col xs={8}>
               <FormGroup>
