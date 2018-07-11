@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import hash from 'object-hash';
 import bbox from 'geojson-bbox';
 
@@ -71,11 +70,12 @@ export default class PathsMapMain extends Component {
   }
 
   onEachFeature(feature, layer){
+    const base = window.location.pathname.replace('/map', '');
     layer.bindPopup(
       '<strong>' + feature.properties.name + '</strong>' +
        (feature.properties.copticname ? '<br><span class="coptic">' + feature.properties.copticname + '</span>': '') +
        '<br>' +
-       '<a href="/read/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
+       '<a href="' + base + '/read/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
 
     );
   }
