@@ -20,9 +20,22 @@ class ReadTitle extends Component {
     };
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps){
+    if(nextProps !== this.props ){
+      this.setState({
+        rec: null
+      });
+
+      Database.getOne(nextProps.match.params.table, nextProps.match.params.id, (d) =>{
+        this.setState({
+          rec: d
+        });
+      });
+    }
+  }
+
   componentDidMount(){
-    const tb = this.props.match.params.table;
-    Database.getOne(tb, this.props.match.params.id, (d) =>{
+    Database.getOne(this.props.match.params.table, this.props.match.params.id, (d) =>{
       this.setState({
         rec: d
       });
