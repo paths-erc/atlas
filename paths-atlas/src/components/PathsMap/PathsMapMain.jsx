@@ -70,7 +70,7 @@ export default class PathsMapMain extends Component {
   }
 
   onEachFeature(feature, layer){
-    const base = window.location.pathname.replace('/map', '');
+    const base = window.location.pathname.replace(/\/map(.+)/, '');
     layer.bindPopup(
       '<strong>' + feature.properties.name + '</strong>' +
        (feature.properties.copticname ? '<br><span class="coptic">' + feature.properties.copticname + '</span>': '') +
