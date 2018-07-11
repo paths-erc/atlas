@@ -63,9 +63,10 @@ class SearchForm extends Component {
   }
 
   simpleSearch(){
+    const base = window.location.pathname.replace(/\/search(.+)/, '');
     return (
       <div>
-        <form action={'/results/' + this.state.tb_stripped + '/simple'} method="get" id="searchTitles" className="form">
+        <form action={`${base}/results/${this.state.tb_stripped}/simple`} method="get" id="searchTitles" className="form">
           <Row>
             <Col xs={8}>
               <FormGroup>
@@ -82,8 +83,8 @@ class SearchForm extends Component {
   }
 
   advancedSearch(){
-
-    return (<form action={'/results/' + this.state.tb_stripped + '/adv'} method="get" id="searchTitles" className="form">
+    const base = window.location.pathname.replace(/\/search(.+)/, '');
+    return (<form action={`${base}/results/${this.state.tb_stripped}/adv`} method="get" id="searchTitles" className="form">
       {
         this.state.rows.map((e, i)=>{
           return <AdvSearchRow
