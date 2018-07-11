@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import fontawesome from '@fortawesome/fontawesome'
 import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
 
-import MainTemplate from './components/mainLayout/template/mainTemplate';
-import Home from './components/home/home'
+import MainTemplate from './components/mainLayout/MainTemplate';
+import Home from './components/Home/Home'
 import Atlas from './components/Atlas/Atlas'
 import SearchResults from './components/SearchResults/SearchResults'
 import SearchForm from './components/SearchForm/SearchForm'

@@ -20,6 +20,7 @@ export default class Atlas extends Component {
 
 
   UNSAFE_componentWillReceiveProps(nextProps){
+
     if(nextProps !== this.props){
       this.setState({
         places: null,

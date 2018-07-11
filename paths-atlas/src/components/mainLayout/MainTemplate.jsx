@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../header/header"
-import './mainTemplate.css';
+import Header from "./Header"
+import './MainTemplate.css';
 
 export default class MainTemplate extends React.Component{
 

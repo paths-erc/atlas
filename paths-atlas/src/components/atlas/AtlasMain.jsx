@@ -7,7 +7,7 @@ import bbox from 'geojson-bbox';
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import L from 'leaflet';
 
-import Header from "../mainLayout/header/header"
+import Header from "../mainLayout/Header"
 import ListPlaces from './ListPlaces';
 import UrlFilterButton from './UrlFilterButton';
 import TabLegend from './TabLegend';
@@ -32,7 +32,6 @@ export default class AtlasMain extends Component {
   }
 
   setFilteredPlaces(){
-
     this.refs.placesLayer.leafletElement.eachLayer( (layer) => {
       let found = false;
       for (const value of Object.values(layer.feature.properties)) {
@@ -76,6 +75,7 @@ export default class AtlasMain extends Component {
        (feature.properties.copticname ? '<br><span class="coptic">' + feature.properties.copticname + '</span>': '') +
        '<br>' +
        '<a href="/read/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
+
     );
   }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, DropdownMenu, DropdownToggle, DropdownItem, Collapse, UncontrolledDropdown } from 'reactstrap';
+import { Link, NavLink as RRNavLink } from 'react-router-dom';
 
-import { Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, DropdownMenu, DropdownToggle, DropdownItem, Collapse, NavLink, UncontrolledDropdown } from 'reactstrap';
+import Database from '../Services/Database/Database';
 
 class FixedNavbar extends Component {
   constructor(props) {
@@ -24,30 +26,31 @@ render() {
     return (
           <div>
             <Navbar color="dark" dark expand="md" className="fixed-top">
-              <NavbarBrand href="/">PAThs Atlas</NavbarBrand>
+              <NavbarBrand to="/" tag={Link}>PAThs Atlas</NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
-                    <NavLink href="/atlas">Atlas</NavLink>
+                    <NavLink to="/atlas" tag={RRNavLink}>Atlas</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/places">Places</NavLink>
+                    <NavLink to="/places" tag={RRNavLink}>Places</NavLink>
+                  </NavItem>
+
+                  <NavItem>
+                    <NavLink to="/manuscripts" tag={RRNavLink}>Manuscripts</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/manuscripts">Manuscripts</NavLink>
+                    <NavLink to="/works" tag={RRNavLink}>Works</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/works">Works</NavLink>
+                    <NavLink to="/authors" tag={RRNavLink}>Authors</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/authors">Authors</NavLink>
+                    <NavLink to="/titles" tag={RRNavLink}>Titles</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/titles">Titles</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="/colophons">Colophons</NavLink>
+                    <NavLink to="/colophons" tag={RRNavLink}>Colophons</NavLink>
                   </NavItem>
 
 
@@ -56,8 +59,8 @@ render() {
                       Pelagios LOD
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="/lod/void">VoiD</DropdownItem>
-                      <DropdownItem href="https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle">
+                      <DropdownItem to="/lod/void" tag={RRNavLink}>VoiD</DropdownItem>
+                      <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle"}>
                           Places
                       </DropdownItem>
                     </DropdownMenu>
