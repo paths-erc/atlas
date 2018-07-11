@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 
 class RecordLinks extends Component {
@@ -28,7 +29,7 @@ class RecordLinks extends Component {
         if (info.tot < 1) {
           return null;
         }
-        return <ListGroupItem key={i} tag="a" href={ this.makeHref(tb, info.where) }>
+        return <ListGroupItem key={i} tag={Link} to={ this.makeHref(tb, info.where) }>
           <FontAwesomeIcon icon="external-link-square-alt" /> {info.tot + ' referenced item' + (info.tot > 1 ? 's': '') + ' in ' + info.tb_label}
         </ListGroupItem>
       }
@@ -46,7 +47,7 @@ class RecordLinks extends Component {
           return false;
         }
 
-        return <ListGroupItem key={i} tag="a" href={ this.makeHref(tb, arr.where) }>
+        return <ListGroupItem key={i} tag={Link} to={ this.makeHref(tb, arr.where) }>
           <FontAwesomeIcon icon="external-link-square-alt" /> {arr.tot + ' referenced item' + (arr.tot > 1 ? 's': '') + ' in ' + arr.tb_label}
         </ListGroupItem>
       }

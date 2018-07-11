@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Table, Card, CardBody, CardHeader, ButtonGroup, Button } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
 
 class ItemPreviewWrapper extends Component {
 
@@ -44,7 +45,7 @@ class ItemPreview extends Component {
             <div className="clearfix">
               <div className="btn-group float-right" role="group">
                 <ButtonGroup>
-                  <Button size="sm" color="info" href={ '/' + ['read', tb, el.id].join('/') }>
+                  <Button size="sm" color="info" tag={Link} to={ '/' + ['read', tb, el.id].join('/') }>
                     <FontAwesomeIcon icon="eye" /> View
                   </Button>
                   <Button size="sm" color="danger">

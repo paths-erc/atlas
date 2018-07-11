@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 
 export default class UrlFilterButton extends Component {
@@ -10,9 +10,9 @@ render() {
     if (this.props.urlFilter) {
       return (
         <div>
-          <NavLink href="/atlas" className="btn btn-warning mt-3 mb-3">
+          <Link to="/atlas" className="btn btn-warning btn-block mt-1 mb-3">
             <FontAwesomeIcon icon="filter" /> Filter active. Click to disable
-          </NavLink>
+          </Link>
         </div>
 
       );

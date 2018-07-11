@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import qs from 'qs';
 import {Pagination, PaginationItem, PaginationLink} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import SqlModal from '../SqlModal/SqlModal';
 
@@ -20,14 +21,14 @@ function build_object(path, queryString, tot_rows, curr_page = 1)
   if (curr_page - 2 > 0 ) {
     qString.page = 1;
     result.push({
-      href :  path + '?' + qs.stringify(qString),
+      to :  path + '?' + qs.stringify(qString),
       text : 1
     });
   }
 
   if (curr_page - 3 > 0 ) {
     result.push({
-      href : '#',
+      to : '#',
       disabled : true,
       text : '...'
     });
@@ -38,7 +39,7 @@ function build_object(path, queryString, tot_rows, curr_page = 1)
   if (curr_page - 1 > 0 ) {
     qString.page = (curr_page - 1);
     result.push({
-      href : path + '?' + qs.stringify(qString),
+      to : path + '?' + qs.stringify(qString),
       text : qString.page
     });
   }
@@ -46,7 +47,7 @@ function build_object(path, queryString, tot_rows, curr_page = 1)
   // current page
   qString.page = curr_page;
   result.push({
-    href : path + '?' + qs.stringify(qString),
+    to : path + '?' + qs.stringify(qString),
     active : true,
     text : curr_page
   });
@@ -55,7 +56,7 @@ function build_object(path, queryString, tot_rows, curr_page = 1)
   if (curr_page + 1 < tot_pages ) {
     qString.page = (curr_page + 1);
     result.push({
-      href : path + '?' + qs.stringify(qString),
+      to : path + '?' + qs.stringify(qString),
       text : qString.page
     });
   }
@@ -63,7 +64,7 @@ function build_object(path, queryString, tot_rows, curr_page = 1)
     // +3 page
   if (curr_page + 2 < tot_pages ) {
     result.push({
-      href : '#',
+      to : '#',
       disabled : true,
       text : '...'
     });
@@ -72,7 +73,7 @@ function build_object(path, queryString, tot_rows, curr_page = 1)
   if (curr_page !== tot_pages ) {
     qString.page = (tot_pages);
     result.push({
-      href : path + '?' + qs.stringify(qString),
+      to : path + '?' + qs.stringify(qString),
       text : qString.page
     });
   }
@@ -102,7 +103,7 @@ class PaginateResult extends Component {
             active: r.active
           };
          return <PaginationItem {...props} key={i}>
-           <PaginationLink href= { r.href }>
+           <PaginationLink tag={Link} to= { r.to }>
               { r.text }
            </PaginationLink>
          </PaginationItem>

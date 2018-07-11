@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
 
 
 class UserLinks extends Component {
@@ -36,7 +37,7 @@ class UserLinks extends Component {
             {
               links.map(
                 (l, i) => {
-                  return <ListGroupItem key={i} tag="a" href={ this.makeHref(l.tb_stripped, l.ref_id) }>
+                  return <ListGroupItem key={i} tag={Link} to={ this.makeHref(l.tb_stripped, l.ref_id) }>
                     <FontAwesomeIcon icon="external-link-square-alt" />  { l.tb_label } #{ l.ref_label ? l.ref_label : l.ref_id }
                   </ListGroupItem>
                 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import hash from 'object-hash';
 import bbox from 'geojson-bbox';
 
