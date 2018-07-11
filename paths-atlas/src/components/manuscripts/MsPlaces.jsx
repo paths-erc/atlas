@@ -13,7 +13,7 @@ render() {
   }
   return (
     <div className="float-right mt-2">
-      <Link to={'/atlas?tb=' + tb + '&where=' + encodeURI(this.props.where) } className="btn btn-warning">
+      <Link to={'/map?tb=' + tb + '&where=' + encodeURI(this.props.where) } className="btn btn-warning">
         <FontAwesomeIcon icon="map-marker-alt" /> View on Map
       </Link>
     </div>

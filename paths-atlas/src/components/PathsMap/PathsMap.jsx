@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import qs from 'qs';
 
-import AtlasMain from './AtlasMain';
+import PathsMapMain from './PathsMapMain';
 
 import Database from '../Services/Database/Database';
 import SavedQueries from '../Services/SavedQueries';
 
-import './Atlas.css';
+import './PathsMap.css';
 
 
-export default class Atlas extends Component {
+export default class PathsMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -73,7 +73,7 @@ export default class Atlas extends Component {
 
   render() {
     if (this.state.places) {
-      return <AtlasMain places={ this.state.places } urlFilter={ this.state.urlFilter }/>
+      return <PathsMapMain places={ this.state.places } urlFilter={ this.state.urlFilter } />
     } else {
       return <div>Loading...</div>;
     }

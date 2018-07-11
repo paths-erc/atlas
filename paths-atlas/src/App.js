@@ -6,7 +6,7 @@ import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faI
 
 import MainTemplate from './components/mainLayout/MainTemplate';
 import Home from './components/Home/Home'
-import Atlas from './components/Atlas/Atlas'
+import PathsMap from './components/PathsMap/PathsMap'
 import SearchResults from './components/SearchResults/SearchResults'
 import SearchForm from './components/SearchForm/SearchForm'
 
@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path='/atlas/:action?/:data?' component={Atlas}/>
+          <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
             <Route exact path='/' component={Home} />
             <Route path='/places' component={Places} />

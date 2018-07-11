@@ -14,13 +14,13 @@ import UrlFilterButton from './UrlFilterButton';
 import TabLegend from './TabLegend';
 import TabSavedQueries from './TabSavedQueries';
 
-import './Atlas.css';
+import './PathsMap.css';
 
 const { BaseLayer, Overlay } = LayersControl
 
 
 
-export default class AtlasMain extends Component {
+export default class PathsMapMain extends Component {
   constructor(props) {
     super(props);
 

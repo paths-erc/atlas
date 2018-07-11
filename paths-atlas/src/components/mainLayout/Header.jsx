@@ -31,7 +31,7 @@ render() {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
-                    <NavLink to="/atlas" tag={RRNavLink}>Atlas</NavLink>
+                    <NavLink to="/map" tag={RRNavLink}>Map</NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink to="/places" tag={RRNavLink}>Places</NavLink>
