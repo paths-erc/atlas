@@ -18,40 +18,15 @@ export default class PathsMap extends Component {
     };
   }
 
-
-  UNSAFE_componentWillReceiveProps(nextProps){
-
-    if(nextProps !== this.props){
-      this.setState({
-        places: null,
-        urlFilter: null
-      });
-      Database.getData(SavedQueries[nextProps.match.params.data].url, SavedQueries[nextProps.match.params.data].data, data => {
+  fetchData(savedQ, locationSearch){
+    if (savedQ) {
+      Database.getData(SavedQueries[savedQ].url, SavedQueries[savedQ].data, data => {
         this.setState({
           places: data,
           urlFilter: true
         });
       });
-    }
-  }
-
-
-  componentDidMount(){
-    if (
-      typeof this.props.match.params !== 'undefined' &&
-      this.props.match.params.action === 'saved' &&
-      typeof SavedQueries[this.props.match.params.data] !== 'undefined'
-    ) {
-
-      Database.getData(SavedQueries[this.props.match.params.data].url, SavedQueries[this.props.match.params.data].data, data => {
-        this.setState({
-          places: data,
-          urlFilter: true
-        });
-      });
-
-    } else if (this.props.location.search) {
-
+    } else if (locationSearch) {
       let qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true})
       if (qstring.tb !== 'manuscripts') {
         return false;
@@ -64,9 +39,29 @@ export default class PathsMap extends Component {
       });
     } else {
       Database.getPlaces(data => {
-        this.setState({ places: data });
+        this.setState({
+          places: data
+        });
       });
     }
+  }
+
+
+  UNSAFE_componentWillReceiveProps(nextProps){
+
+    if(nextProps !== this.props ){
+      this.setState({
+        places: null,
+        urlFilter: null
+      });
+
+      this.fetchData(nextProps.match.params.data, null);
+    }
+  }
+
+
+  componentDidMount(){
+    this.fetchData(this.props.match.params.data, this.props.location.search);
   }
 
 
