@@ -94,7 +94,7 @@ class ReadTitle extends Component {
                   </CardBody>
                 </Card>
               </Col>
-              <Col xs="4">
+              <Col sm="4">
                 <MiniMap geom={ rec.geodata } />
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
