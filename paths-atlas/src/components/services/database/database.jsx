@@ -1,7 +1,9 @@
 import axios from 'axios';
+import SavedQueries from '../SavedQueries';
 
-// const baseUrl = 'http://db.localhost/api/paths/';
-const baseUrl = 'https://db-dev.bradypus.net/api/paths/';
+
+const baseUrl = 'http://db.localhost/api/paths/';
+// const baseUrl = 'https://db-dev.bradypus.net/api/paths/';
 
 
 export default class Database {
@@ -32,6 +34,20 @@ export default class Database {
 
   static getBaseUrl(){
     return baseUrl;
+  }
+
+  static getSaved(id, cb){
+    if (typeof SavedQueries[id] === 'undefined') {
+      cb({
+        status: 'error',
+        text: `No saved query found for id: ${id}`
+      });
+      return;
+    } else {
+      this.getData(SavedQueries[id].url, SavedQueries[id].data, d => {
+        cb(d);
+      });
+    }
   }
 
   static getAdv(tb, data, page, cb)

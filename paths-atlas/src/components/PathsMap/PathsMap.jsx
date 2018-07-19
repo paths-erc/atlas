@@ -4,7 +4,6 @@ import qs from 'qs';
 import PathsMapMain from './PathsMapMain';
 
 import Database from '../Services/Database/Database';
-import SavedQueries from '../Services/SavedQueries';
 
 import './PathsMap.css';
 
@@ -20,7 +19,7 @@ export default class PathsMap extends Component {
 
   fetchData(savedQ, locationSearch){
     if (savedQ) {
-      Database.getData(SavedQueries[savedQ].url, SavedQueries[savedQ].data, data => {
+      Database.getSaved(savedQ, data => {
         this.setState({
           places: data,
           urlFilter: true
@@ -48,13 +47,11 @@ export default class PathsMap extends Component {
 
 
   UNSAFE_componentWillReceiveProps(nextProps){
-
     if(nextProps !== this.props ){
       this.setState({
         places: null,
         urlFilter: null
       });
-
       this.fetchData(nextProps.match.params.data, null);
     }
   }
