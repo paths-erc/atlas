@@ -37,14 +37,16 @@ export default class Database {
   }
 
   static getSaved(id, cb){
-    if (typeof SavedQueries[id] === 'undefined') {
+
+    const [grp, q] = id.split('.');
+    if (typeof SavedQueries[grp][q] === 'undefined') {
       cb({
         status: 'error',
         text: `No saved query found for id: ${id}`
       });
       return;
     } else {
-      this.getData(SavedQueries[id].url, SavedQueries[id].data, d => {
+      this.getData(SavedQueries[grp][q].url, SavedQueries[grp][q].data, d => {
         cb(d);
       });
     }
