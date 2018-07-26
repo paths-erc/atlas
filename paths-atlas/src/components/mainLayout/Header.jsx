@@ -59,7 +59,9 @@ render() {
                       Pelagios LOD
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem to="/lod/void" tag={RRNavLink}>VoiD</DropdownItem>
+                      <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
+                          VoID
+                      </DropdownItem>
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle"}>
                           Places
                       </DropdownItem>
