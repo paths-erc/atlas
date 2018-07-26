@@ -12,7 +12,7 @@ export default class TabSavedQueries extends Component {
       <ul style={{ listStyle: 'none', margin: 0, padding: 0}}>
         { Object.values(SavedQueries.map).map( (e, i) => {
           return <li key={i}  className="mb-3">
-            <Link to={ '/map/saved/map.' + e.id }>
+            <Link to={ '/map/saved/' + e.id }>
               <FontAwesomeIcon icon="arrow-circle-right" /> { e.title }
             </Link>
           </li>

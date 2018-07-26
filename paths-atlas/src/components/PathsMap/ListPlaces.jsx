@@ -7,7 +7,7 @@ export default class ListPlaces extends Component {
 
   render() {
 
-    if (!this.props.places.features) {
+    if (!this.props.places || !this.props.places.features) {
       return null;
     }
 
