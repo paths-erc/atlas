@@ -31,6 +31,9 @@ class SearchForm extends Component {
       context: this.state.context === 'Simple search' ? 'Advanced search': 'Simple search'
     });
   }
+  reverseContext(){
+    return this.state.context === 'Simple search' ? 'Advanced search': 'Simple search';
+  }
 
   showSearch(){
     const base = window.location.pathname.replace(/\/search(.*)/, '');
@@ -54,7 +57,7 @@ class SearchForm extends Component {
       	<div className="mt-3 p-1 container">
           { this.showSearch() }
           <hr />
-          <Button type="button" color="warning" onClick={ this.toggleSearch.bind(this) }>{ this.state.context }</Button>
+          <Button type="button" color="warning" onClick={ this.toggleSearch.bind(this) }>{ this.reverseContext() }</Button>
   		  </div>
       </div>
     );
