@@ -8,7 +8,7 @@ const baseUrl = 'http://db.localhost/api/paths/';
 
 export default class Database {
 
-  static getData(url, params, callback){
+  static getData(url, params, callback) {
 
     url = baseUrl + url;
 
@@ -36,24 +36,23 @@ export default class Database {
     return baseUrl;
   }
 
-  static getSaved(id, cb){
+  static getSaved(grp, q, page, cb) {
 
-    const [grp, q] = id.split('.');
     if (typeof SavedQueries[grp][q] === 'undefined') {
       cb({
         status: 'error',
-        text: `No saved query found for id: ${id}`
+        text: `No saved query found for id: ${grp}.${q}`
       });
       return;
     } else {
+      SavedQueries[grp][q].data.page = page;
       this.getData(SavedQueries[grp][q].url, SavedQueries[grp][q].data, d => {
         cb(d);
       });
     }
   }
 
-  static getAdv(tb, data, page, cb)
-  {
+  static getAdv(tb, data, page, cb) {
     data.verb = 'search';
     data.type = 'advanced';
     data.page = page;
@@ -61,8 +60,7 @@ export default class Database {
     this.getData(tb, data, d => { cb(d); }, true);
   }
 
-  static getStr(tb, string, page, cb)
-  {
+  static getStr(tb, string, page, cb) {
     this.getData(tb, {
       verb: 'search',
       type: 'fast',
@@ -71,8 +69,7 @@ export default class Database {
     }, d => { cb(d); }, true);
   }
 
-  static getByEncodedSql(tb, sql, page, cb)
-  {
+  static getByEncodedSql(tb, sql, page, cb) {
       this.getData(tb, {
         verb: 'search',
         type: 'encoded',
@@ -81,8 +78,7 @@ export default class Database {
       }, d => { cb(d); }, true);
   }
 
-  static getAll(tb, page, cb)
-  {
+  static getAll(tb, page, cb) {
     this.getData(tb, {
       verb : 'search',
       type: 'all',
@@ -90,8 +86,7 @@ export default class Database {
     }, d => { cb(d); });
   }
 
-  static getOne(tb, id, cb)
-  {
+  static getOne(tb, id, cb) {
     this.getData('../v2/paths/' + tb, {
       tb: tb,
       verb : 'read',

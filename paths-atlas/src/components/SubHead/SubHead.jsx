@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { Jumbotron, Badge, Button } from 'reactstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
+import SavedQueriesList from './SavedQueriesList';
+import SavedQueries from '../Services/SavedQueries';
+
 
 class SubHead extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSaved: false
+    };
+  }
+
+  toggleSaved(){
+    this.setState({
+      showSaved: !this.state.showSaved
+    });
+  }
 
   render(){
     const tblabel = this.props.tblabel;
@@ -31,9 +47,13 @@ class SubHead extends Component {
                   <FontAwesomeIcon icon="search" /> Search
                 </Link>
 
-                <Button>ciao</Button>
+                { SavedQueries[tb] && (<Button color="success" onClick={this.toggleSaved.bind(this)}>
+                  <FontAwesomeIcon icon="save" /> Saved queries
+                </Button>)}
               </div>
           </div>
+
+          {this.state.showSaved && <SavedQueriesList  tb={tb} tblabel={tblabel} closeFn={this.toggleSaved.bind(this)}/>}
         </div>
       </div>
     );
