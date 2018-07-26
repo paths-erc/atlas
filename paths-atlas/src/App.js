@@ -7,7 +7,7 @@ import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faI
 import MainTemplate from './components/mainLayout/MainTemplate';
 import Home from './components/Home/Home'
 import PathsMap from './components/PathsMap/PathsMap'
-import SearchResults from './components/SearchResults/SearchResults'
+import Results from './components/Results/Results'
 import SearchForm from './components/SearchForm/SearchForm'
 
 import Places from './components/Places/Places'
@@ -37,7 +37,7 @@ class App extends Component {
             <Route path='/authors' component={Authors} />
             <Route path='/colophons' component={Colophons} />
 
-            <Route exact path='/results/:table/:type' component={SearchResults} />
+            <Route exact path='/results/:table/:type' component={Results} />
             <Route exact path='/search/:table/' component={SearchForm} />
             <Route exact path='/read/:table/:id' component={ViewOne} />
 

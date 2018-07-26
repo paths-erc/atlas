@@ -12,7 +12,7 @@ import Cfg from '../Services/Cfg/Cfg';
 
 
 
-class SearchResults extends Component {
+class Results extends Component {
 
   constructor(props) {
     super(props);
@@ -49,6 +49,10 @@ class SearchResults extends Component {
       });
     } else if (type === 'all') {
       Database.getAll(tb, qstring.page, d => {
+        this.setState({ result: d });
+      });
+    } else if (type === 'saved') {
+      Database.getSaved(tb, qstring.q, qstring.page, d => {
         this.setState({ result: d });
       });
     } else {
@@ -178,4 +182,4 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults;
+export default Results;
