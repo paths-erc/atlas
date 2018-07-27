@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import fontawesome from '@fortawesome/fontawesome'
-import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+
+// import fontawesome from '@fortawesome/fontawesome'
+// import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
 
 import MainTemplate from './components/mainLayout/MainTemplate';
 import Home from './components/Home/Home'
@@ -19,7 +23,7 @@ import Colophons from './components/Colophons/Colophons'
 import ViewOne from './components/Record/ViewOne'
 
 
-fontawesome.library.add(faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt);
+library.add(fas, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt);
 
 
 class App extends Component {

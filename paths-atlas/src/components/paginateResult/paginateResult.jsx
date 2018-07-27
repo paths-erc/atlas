@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import qs from 'qs';
-import {Pagination, PaginationItem, PaginationLink} from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import SqlModal from '../SqlModal/SqlModal';
