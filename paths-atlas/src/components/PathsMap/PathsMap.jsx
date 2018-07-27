@@ -3,7 +3,6 @@ import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 import qs from 'qs';
 import hash from 'object-hash';
-import bbox from 'geojson-bbox';
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import L from 'leaflet';
 
@@ -106,6 +105,7 @@ export default class PathsMap extends Component {
       manualFilter: str,
       shownPlaces: fgj
     });
+    this.fitMapToBounds();
   }
 
   clearFiltered(){
@@ -113,6 +113,7 @@ export default class PathsMap extends Component {
       manualFilter: '',
       shownPlaces: this.state.places
     });
+    this.fitMapToBounds();
   }
 
   clearButton(){
@@ -125,26 +126,13 @@ export default class PathsMap extends Component {
     }
   }
 
-  getBounds(){
+  fitMapToBounds(){
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
 
-    if (!this.state.shownPlace){
-      return bounds;
+    if (this.refs.placesLayer && this.refs.placesLayer.props.data.features.length > 1){
+      bounds = this.refs.placesLayer.leafletElement.getBounds();
     }
-    const bb = bbox(this.state.shownPlaces);
-    if (bb[0] === bb[2] && bb[1] === bb[3]) {
-      bb[0] = bb[0] + .1;
-      bb[1] = bb[1] + .1;
-      bb[2] = bb[2] - .1;
-      bb[3] = bb[3] - .1;
-    }
-    if( bb[0] !== Infinity ){
-      bounds = [
-        [ bb[1], bb[0] ],
-        [ bb[3], bb[2] ]
-      ];
-    }
-    return bounds;
+    this.refs.map.leafletElement.fitBounds(bounds);
   }
 
 
@@ -168,6 +156,7 @@ export default class PathsMap extends Component {
           shownPlaces: data,
           urlFilter: qstring.where
         });
+        this.fitMapToBounds()
       });
     } else {
       Database.getPlaces(data => {
@@ -176,6 +165,7 @@ export default class PathsMap extends Component {
           shownPlaces: data,
         });
       });
+      this.fitMapToBounds();
     }
   }
 
@@ -231,7 +221,7 @@ export default class PathsMap extends Component {
             </Tab>
           </Sidebar>
 
-          <Map className="sidebar-map maxHeight" bounds={ this.getBounds() } zoomControl={true} ref="map">
+          <Map className="sidebar-map maxHeight" zoomControl={true} ref="map">
             <LayersControl position="topright">
               <BaseLayer name="Imperium (Pelagios)">
                 <TileLayer url="http://pelagios.org/tilesets/imperium/{z}/{x}/{y}.png" />
