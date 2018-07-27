@@ -144,6 +144,7 @@ export default class PathsMap extends Component {
           shownPlaces: data,
           urlFilter: true
         });
+        this.fitMapToBounds()
       });
     } else if (locationSearch) {
       let qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true})
@@ -164,8 +165,8 @@ export default class PathsMap extends Component {
           places: data,
           shownPlaces: data,
         });
+        this.fitMapToBounds();
       });
-      this.fitMapToBounds();
     }
   }
 
