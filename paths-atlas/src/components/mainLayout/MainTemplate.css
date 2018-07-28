@@ -30,3 +30,16 @@ main{
 .sidebar-header{
   margin-bottom: 20px;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,.7);
+}
+
+nav.bg-dark,
+.sidebar-header,
+.sidebar-tabs>li.active,
+.sidebar-tabs>ul>li.active{
+  background: #273c75 !important;
+  background: #c23616 !important;
+  background: #b33939 !important;
+}
