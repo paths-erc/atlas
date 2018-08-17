@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import SubHead from '../SubHead/SubHead';
+import TextMd from './ColophonsText.md';
 
 class ColophonPage extends Component {
 
-render() {
-  return (
-    <div>
-      <SubHead tblabel="Colophons" tb="colophons" text="Introduction" />
+  constructor(props) {
+    super(props)
+    this.state = { text: null }
+  }
+  componentWillMount() {
+    fetch(TextMd).then((response) => response.text()).then((text) => {
+      this.setState({ text: text })
+    })
+  }
 
-      <div className="container">
-          Here you will soon find some more information about coptic Colophons!
+  showContent(){
+    if (!this.state.text){
+      return (<div>Loading...</div>);
+    } else {
+      return (<ReactMarkdown source={this.state.text} escapeHtml={false} />);
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <SubHead tblabel="Colophons" tb="colophons" text="Introduction" />
+
+        <div className="container">
+          <div className="my-3 px-5" style={{ columnCount: 2, columnGap: '5rem' }}>
+            { this.showContent() }
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
   }
 }
 

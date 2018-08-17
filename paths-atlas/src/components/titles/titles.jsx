@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown  from 'react-markdown';
-import TitlesMdPath  from './TitlesText.md';
+import TextMd from './TitlesText.md';
 
 import SubHead from '../SubHead/SubHead';
 
@@ -11,7 +11,7 @@ class TitlePage extends Component {
     this.state = { text: null }
   }
   componentWillMount() {
-    fetch(TitlesMdPath).then((response) => response.text()).then((text) => {
+    fetch(TextMd).then((response) => response.text()).then((text) => {
       this.setState({ text: text })
     })
   }
@@ -28,8 +28,10 @@ class TitlePage extends Component {
     return (
       <div>
         <SubHead tblabel="Titles" tb="titles" text="Introduction on Titles of Coptic Manuscripts" />
-        <div className="container mt-5 px-5">
-          { this.showContent() }
+        <div className="container">
+          <div className="my-3 px-5" style={{ columnCount: 2, columnGap: '5rem' }}>
+            { this.showContent() }
+          </div>
         </div>
   		</div>
     );
