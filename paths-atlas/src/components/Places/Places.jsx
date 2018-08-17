@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import SubHead from '../SubHead/SubHead';
-import PlacesTextMd from './PlacesText.md';
+import TextMd from './PlacesText.md';
 
 class PlacePage extends Component {
 
@@ -11,7 +11,7 @@ class PlacePage extends Component {
     this.state = { text: null }
   }
   componentWillMount() {
-    fetch(PlacesTextMd).then((response) => response.text()).then((text) => {
+    fetch(TextMd).then((response) => response.text()).then((text) => {
       this.setState({ text: text })
     })
   }
