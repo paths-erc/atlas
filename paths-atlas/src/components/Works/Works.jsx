@@ -24,18 +24,18 @@ class WorkPage extends Component {
     }
   }
 
-render() {
-  return (
-    <div>
-      <SubHead tblabel="Works" tb="works" text="Introduction" />
+  render() {
+    return (
+      <div>
+        <SubHead tblabel="Works" tb="works" text="Introduction" />
 
-        <div className="container">
-          <div className="my-3 px-5" style={{ columnCount: 2, columnGap: '5rem' }}>
-            { this.showContent() }
+          <div className="container">
+            <div className="my-3 px-5" style={{ columnCount: 2, columnGap: '5rem' }}>
+              { this.showContent() }
+            </div>
           </div>
-        </div>
-    </div>
-  );
+      </div>
+    );
   }
 }
 
