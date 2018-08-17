@@ -21,6 +21,7 @@ body {
 main{
   overflow: hidden;
   padding-top: 56px;
+  min-height: 600px;
 }
 
 #sidebar{
@@ -42,4 +43,13 @@ nav.bg-dark,
   background: #273c75 !important;
   background: #c23616 !important;
   background: #b33939 !important;
+}
+footer a{
+  color: #ffab00;
+}
+footer a:hover{
+  color: #fff;
+}
+footer .text-secondary a{
+  color: #fff;
 }

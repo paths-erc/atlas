@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header"
+import Footer from "./Footer"
 import './MainTemplate.css';
 
 export default class MainTemplate extends React.Component{
@@ -11,6 +12,8 @@ export default class MainTemplate extends React.Component{
           <main role="main" className="maxHeight">
             { this.props.children }
           </main>
+
+        <Footer />
       </div>
     );
   }
