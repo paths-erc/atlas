@@ -6,7 +6,7 @@ import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
 import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
-import MsPlaces from '../manuscripts/MsPlaces';
+import MsPlaces from '../Manuscripts/MsPlaces';
 
 import Cfg from '../Services/Cfg/Cfg';
 

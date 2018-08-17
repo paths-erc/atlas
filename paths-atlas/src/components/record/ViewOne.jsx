@@ -3,7 +3,7 @@ import Database from '../Services/Database/Database';
 import Cfg from '../Services/Cfg/Cfg';
 import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 import SubHead from '../SubHead/SubHead';
-import ViewOneTitle from '../titles/ViewOneTitle';
+import ViewOneTitle from '../Titles/ViewOneTitle';
 import RecordCell from './RecordCell';
 import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';

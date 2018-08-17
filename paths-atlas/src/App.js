@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-
-// import fontawesome from '@fortawesome/fontawesome'
-// import {faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import MainTemplate from './components/mainLayout/MainTemplate';
-import Home from './components/Home/Home'
-import PathsMap from './components/PathsMap/PathsMap'
-import Results from './components/Results/Results'
-import SearchForm from './components/SearchForm/SearchForm'
+import Home from './components/Home/Home';
+import PathsMap from './components/PathsMap/PathsMap';
+import Results from './components/Results/Results';
+import SearchForm from './components/SearchForm/SearchForm';
 
-import Places from './components/Places/Places'
-import Titles from './components/Titles/Titles'
-import Works from './components/Works/Works'
-import Manuscripts from './components/Manuscripts/Manuscripts'
-import Authors from './components/Authors/Authors'
-import Colophons from './components/Colophons/Colophons'
-import ViewOne from './components/Record/ViewOne'
+import Places from './components/Places/Places';
+import Titles from './components/Titles/Titles';
+import Works from './components/Works/Works';
+import Manuscripts from './components/Manuscripts/Manuscripts';
+import Authors from './components/Authors/Authors';
+import Colophons from './components/Colophons/Colophons';
+import ViewOne from './components/Record/ViewOne';
 
 
-library.add(fas, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt);
+library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
 
 
 class App extends Component {
