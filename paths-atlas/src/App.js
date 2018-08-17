@@ -15,7 +15,7 @@ import Results from './components/Results/Results'
 import SearchForm from './components/SearchForm/SearchForm'
 
 import Places from './components/Places/Places'
-import Titles from './components/titles/titles'
+import Titles from './components/Titles/Titles'
 import Works from './components/works/works'
 import Manuscripts from './components/manuscripts/manuscripts'
 import Authors from './components/Authors/Authors'

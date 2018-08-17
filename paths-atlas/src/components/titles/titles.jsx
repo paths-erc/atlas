@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown  from 'react-markdown';
-import TitlesMdPath  from './titles.md';
+import TitlesMdPath  from './TitlesText.md';
 
 import SubHead from '../SubHead/SubHead';
 
@@ -28,7 +28,7 @@ class TitlePage extends Component {
     return (
       <div>
         <SubHead tblabel="Titles" tb="titles" text="Introduction on Titles of Coptic Manuscripts" />
-        <div className="container mt-5">
+        <div className="container mt-5 px-5">
           { this.showContent() }
         </div>
   		</div>
