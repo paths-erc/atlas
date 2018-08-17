@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.68d88dad.css",
   "main.css.map": "static/css/main.68d88dad.css.map",
-  "main.js": "static/js/main.15dfa10b.js",
-  "main.js.map": "static/js/main.15dfa10b.js.map",
+  "main.js": "static/js/main.ce954889.js",
+  "main.js.map": "static/js/main.ce954889.js.map",
   "static/media/Antinoou.ttf": "static/media/Antinoou.65b2feb2.ttf",
   "static/media/AuthorsText.md": "static/media/AuthorsText.0dda6039.md",
   "static/media/ColophonsText.md": "static/media/ColophonsText.03f87058.md",
@@ -10,5 +10,7 @@
   "static/media/ManuscriptsText.md": "static/media/ManuscriptsText.e4f9bd51.md",
   "static/media/PlacesText.md": "static/media/PlacesText.ae39eadf.md",
   "static/media/TitlesText.md": "static/media/TitlesText.df7e59d6.md",
-  "static/media/WorksText.md": "static/media/WorksText.c46da2c2.md"
+  "static/media/WorksText.md": "static/media/WorksText.c46da2c2.md",
+  "static/media/marea.jpg": "static/media/marea.825a825e.jpg",
+  "static/media/paths-logo.png": "static/media/paths-logo.d0a2b412.png"
 }
