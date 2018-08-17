@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import SubHead from '../SubHead/SubHead';
 import TextMd from './PlacesText.md';
+import imgMarea from './marea.jpg';
 
 class PlacePage extends Component {
 
@@ -29,7 +30,7 @@ render() {
   return (
     <div>
       <div>
-        <img className="img-fluid" src={ window.location.origin + '/img/marea.jpg' } alt="Marea" />
+        <img className="img-fluid" src={imgMarea} alt="Marea" />
       </div>
 
       <SubHead tblabel="Places" tb="places" text="Introduction" />

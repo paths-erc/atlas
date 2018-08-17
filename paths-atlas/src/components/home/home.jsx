@@ -2,6 +2,7 @@ import React from "react";
 import ReactMarkdown from 'react-markdown';
 
 import TextMd from './HomeText.md';
+import imgPathsLogo from './paths-logo.png';
 
 export default class Home extends React.Component{
 
@@ -28,7 +29,7 @@ export default class Home extends React.Component{
       <div>
         <div className="jumbotron">
           <div className="container">
-            <img className="img-fluid" src={ window.location.origin + '/img/paths-logo.png' } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
+            <img className="img-fluid" src={ imgPathsLogo } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
           </div>
         </div>
         <div className="container">
