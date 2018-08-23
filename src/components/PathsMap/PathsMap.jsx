@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
-import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import qs from 'qs';
 import hash from 'object-hash';
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
@@ -12,6 +12,7 @@ import ListPlaces from './ListPlaces';
 import UrlFilterButton from './UrlFilterButton';
 import TabLegend from './TabLegend';
 import TabSavedQueries from './TabSavedQueries';
+import ClearButton from './ClearButton';
 
 import Database from '../Services/Database/Database';
 
@@ -117,16 +118,6 @@ export default class PathsMap extends Component {
     this.fitMapToBounds();
   }
 
-  clearButton(){
-    if (this.state.manualFilter){
-      return <InputGroupAddon addonType="append">
-        <Button color="danger" onClick = { this.clearFiltered.bind(this) }>
-          <span aria-hidden="true">&times;</span>
-        </Button>
-      </InputGroupAddon>
-    }
-  }
-
   fitMapToBounds(){
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
 
@@ -188,7 +179,6 @@ export default class PathsMap extends Component {
   }
 
 
-
   render() {
     return (
       <div className="maxHeight">
@@ -199,33 +189,35 @@ export default class PathsMap extends Component {
                    onOpen={this.onSidebarOpen.bind(this)} onClose={this.onSidebarClose.bind(this)}
                    closeIcon={<FontAwesomeIcon icon="caret-left" />}>
             <Tab id="home" header="Home" icon={<FontAwesomeIcon icon="home" />}>
-              <div className="mt-5">
-                <UrlFilterButton urlFilter={ this.state.urlFilter } filter={ this.state.filter }/>
-                <InputGroup style={{ position: 'fixed', width: '380px'}}>
+
+              <div style={{ position: 'fixed', width: '380px', background: '#fff', marginTop: '2rem'}}>
+                <InputGroup className="my-2">
                   <InputGroupAddon addonType="prepend">
                     Search:
                   </InputGroupAddon>
                   <Input type="search" value={this.state.manualFilter} onChange={this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
-                  { this.clearButton() }
+                    <ClearButton show={this.state.manualFilter} onClick={ this.clearFiltered.bind(this) } />
                 </InputGroup>
-                <div className="pt-5">
-                  <ListPlaces places={ this.state.shownPlaces } />
-                </div>
+              </div>
+
+              <div style={{ marginTop: '6rem'}}>
+                <UrlFilterButton urlFilter={ this.state.urlFilter } filter={ this.state.filter }/>
+                <ListPlaces places={ this.state.shownPlaces } />
               </div>
             </Tab>
-            <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />}>
-              <div className="mt-5">
-                <TabLegend />
-              </div>
-            </Tab>
+
             <Tab id="savedQueries" header="Legend" icon={<FontAwesomeIcon icon="save" />}>
               <div className="mt-5">
                 <TabSavedQueries />
               </div>
             </Tab>
-            <Tab id="settings" header="Settings" icon={<FontAwesomeIcon icon="cog" />} anchor="bottom">
-              <p className="mt-5">Settings dialogue.</p>
+
+            <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />} anchor="bottom">
+              <div className="mt-5">
+                <TabLegend />
+              </div>
             </Tab>
+
           </Sidebar>
 
           <Map className="sidebar-map maxHeight" zoomControl={true} ref="map">
