@@ -47,7 +47,7 @@ export default class Database {
     } else {
       SavedQueries[grp][q].data.page = page;
       this.getData(SavedQueries[grp][q].url, SavedQueries[grp][q].data, d => {
-        cb(d);
+        cb(d, SavedQueries[grp][q].title);
       });
     }
   }
@@ -66,7 +66,7 @@ export default class Database {
       type: 'fast',
       string: string,
       page: page
-    }, d => { cb(d); }, true);
+    }, d => { cb(d, 'Search [' + string + '] in ' + d.head.table_label); }, true);
   }
 
   static getByEncodedSql(tb, sql, page, cb) {
