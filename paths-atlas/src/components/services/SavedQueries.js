@@ -90,6 +90,14 @@ export default {
       data: {
         "q_encoded": btoa("`chronofrom` > 999 AND `chronoto` < 1100")
       }
+    },
+    ms_gt_1000: {
+      id: "ms_gt_1000",
+      title: "Manuscripts after the 11th Century",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`chronofrom` > 1099")
+      }
     }
   },
   map: {
