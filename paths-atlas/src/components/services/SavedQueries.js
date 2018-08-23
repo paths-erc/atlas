@@ -24,7 +24,7 @@ export default {
       title: "Manuscripts of the 3th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 199 AND `chronoto` < 400")
+        "q_encoded": btoa("`chronofrom` > 199 AND `chronoto` < 300")
       }
     },
     ms_ae_300: {
@@ -32,7 +32,7 @@ export default {
       title: "Manuscripts of the 4th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 299 AND `chronoto` < 500")
+        "q_encoded": btoa("`chronofrom` > 299 AND `chronoto` < 400")
       }
     },
     ms_ae_400: {
@@ -40,7 +40,7 @@ export default {
       title: "Manuscripts of the 5th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 399 AND `chronoto` < 600")
+        "q_encoded": btoa("`chronofrom` > 399 AND `chronoto` < 500")
       }
     },
     ms_ae_500: {
@@ -48,7 +48,7 @@ export default {
       title: "Manuscripts of the 6th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 499 AND `chronoto` < 700")
+        "q_encoded": btoa("`chronofrom` > 499 AND `chronoto` < 600")
       }
     },
     ms_ae_600: {
@@ -56,7 +56,7 @@ export default {
       title: "Manuscripts of the 7th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 599 AND `chronoto` < 800")
+        "q_encoded": btoa("`chronofrom` > 599 AND `chronoto` < 700")
       }
     },
     ms_ae_700: {
@@ -64,7 +64,7 @@ export default {
       title: "Manuscripts of the 8th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 699  AND `chronoto` < 900")
+        "q_encoded": btoa("`chronofrom` > 699  AND `chronoto` < 800")
       }
     },
     ms_ae_800: {
@@ -72,7 +72,7 @@ export default {
       title: "Manuscripts of the 9th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 799 AND `chronoto` < 1000")
+        "q_encoded": btoa("`chronofrom` > 799 AND `chronoto` < 900")
       }
     },
     ms_ae_900: {
@@ -80,7 +80,7 @@ export default {
       title: "Manuscripts of the 10th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 899 AND `chronoto` < 1100")
+        "q_encoded": btoa("`chronofrom` > 899 AND `chronoto` < 1000")
       }
     },
     ms_ae_1000: {
@@ -88,7 +88,7 @@ export default {
       title: "Manuscripts of the 11th Century",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`chronofrom` > 999 AND `chronoto` < 1200")
+        "q_encoded": btoa("`chronofrom` > 999 AND `chronoto` < 1100")
       }
     }
   },
