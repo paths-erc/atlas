@@ -48,9 +48,6 @@ class ItemPreview extends Component {
                   <Button size="sm" color="info" tag={Link} to={ '/' + ['read', tb, el.id].join('/') }>
                     <FontAwesomeIcon icon="eye" /> View
                   </Button>
-                  <Button size="sm" color="danger">
-                    <FontAwesomeIcon icon="code" /> JSON
-                  </Button>
                 </ButtonGroup>
               </div>
             </div>
