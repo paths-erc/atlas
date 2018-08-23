@@ -40,7 +40,7 @@ class SubHead extends Component {
 
         <div className="container">
           <div className="clearfix">
-              <div className="btn-group pull-right" role="group">
+              <div className="btn-group float-right" role="group">
                 <Link to={'/results/' + tb + '/all'} className="btn btn-info">
                   <FontAwesomeIcon icon="list-ul" /> Show all
                 </Link>
