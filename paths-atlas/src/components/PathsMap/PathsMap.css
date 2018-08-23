@@ -1,3 +1,9 @@
+h1.sidebar-header{
+	position: fixed;
+  width: 416px;
+	z-index: 999;
+}
+
 span.legend-item{
 	width: 25px;
 	height: 25px;

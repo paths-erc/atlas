@@ -5,6 +5,7 @@ import qs from 'qs';
 import hash from 'object-hash';
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import L from 'leaflet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Header from "../mainLayout/Header"
 import ListPlaces from './ListPlaces';
@@ -196,29 +197,34 @@ export default class PathsMap extends Component {
 
           <Sidebar id="sidebar" collapsed={this.state.sidebarCollapsed} selected={this.state.selected}
                    onOpen={this.onSidebarOpen.bind(this)} onClose={this.onSidebarClose.bind(this)}
-                   closeIcon="fa fa-caret-left">
-            <Tab id="home" header="Home" icon="fa fa-home">
-
-              <UrlFilterButton urlFilter={ this.state.urlFilter } filter={ this.state.filter }/>
-              <InputGroup>
-                <InputGroupAddon addonType="prepend">
-                  Search:
-                </InputGroupAddon>
-                <Input type="search" value={this.state.manualFilter} onChange={this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
-                { this.clearButton() }
-              </InputGroup>
-
-              <ListPlaces places={ this.state.shownPlaces } />
-
+                   closeIcon={<FontAwesomeIcon icon="caret-left" />}>
+            <Tab id="home" header="Home" icon={<FontAwesomeIcon icon="home" />}>
+              <div className="mt-5">
+                <UrlFilterButton urlFilter={ this.state.urlFilter } filter={ this.state.filter }/>
+                <InputGroup style={{ position: 'fixed', width: '380px'}}>
+                  <InputGroupAddon addonType="prepend">
+                    Search:
+                  </InputGroupAddon>
+                  <Input type="search" value={this.state.manualFilter} onChange={this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
+                  { this.clearButton() }
+                </InputGroup>
+                <div className="pt-5">
+                  <ListPlaces places={ this.state.shownPlaces } />
+                </div>
+              </div>
             </Tab>
-            <Tab id="legend" header="Legend" icon="fa fa-info">
-              <TabLegend />
+            <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />}>
+              <div className="mt-5">
+                <TabLegend />
+              </div>
             </Tab>
-            <Tab id="savedQueries" header="Legend" icon="fa fa-save">
-              <TabSavedQueries />
+            <Tab id="savedQueries" header="Legend" icon={<FontAwesomeIcon icon="save" />}>
+              <div className="mt-5">
+                <TabSavedQueries />
+              </div>
             </Tab>
-            <Tab id="settings" header="Settings" icon="fa fa-cog" anchor="bottom">
-              <p>Settings dialogue.</p>
+            <Tab id="settings" header="Settings" icon={<FontAwesomeIcon icon="cog" />} anchor="bottom">
+              <p className="mt-5">Settings dialogue.</p>
             </Tab>
           </Sidebar>
 
