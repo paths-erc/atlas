@@ -95,7 +95,7 @@ class PaginateResult extends Component {
     return (
       <Pagination>
         <PaginationItem>
-          <PaginationLink previous href="#">Pages: </PaginationLink>
+          <PaginationLink>Pages: </PaginationLink>
         </PaginationItem>
         { result.map( (r, i) => {
           const props = {

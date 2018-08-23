@@ -29,7 +29,7 @@ class TitlePage extends Component {
       <div>
         <SubHead tblabel="Titles" tb="titles" text="Introduction on Titles of Coptic Manuscripts" />
         <div className="container">
-          <div className="my-3 px-5" style={{ columnCount: 2, columnGap: '5rem' }}>
+          <div className="my-3 px-md-5 double-column">
             { this.showContent() }
           </div>
         </div>

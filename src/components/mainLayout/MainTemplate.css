@@ -53,3 +53,10 @@ footer a:hover{
 footer .text-secondary a{
   color: #fff;
 }
+
+@media only screen and (min-width: 768px){
+  .double-column{
+    column-count: 2;
+    column-gap: '5rem'
+  }
+}
