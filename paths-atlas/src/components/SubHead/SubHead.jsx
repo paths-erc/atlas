@@ -25,14 +25,16 @@ class SubHead extends Component {
   render(){
     const tblabel = this.props.tblabel;
     const tb = this.props.tb;
-    const text = this.props.text;
+    const text = this.props.text ? <span className="subText">{this.props.text}</span> : false;
 
     return (
       <div>
         <Jumbotron className="p-4">
           <div className="container">
-            <h1><Badge color="dark" className="float-right">{ tblabel }</Badge> { text ? <span className="subText"> {text}</span> : false}
-            </h1>
+            <h2>
+              <Badge color="dark" className="float-right">{ tblabel }</Badge>
+              {text}
+            </h2>
           </div>
         </Jumbotron>
 

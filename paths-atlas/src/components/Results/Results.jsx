@@ -17,7 +17,8 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: false
+      result: false,
+      title: false
     };
     this.changeState = this.changeState.bind(this);
   }
@@ -28,6 +29,7 @@ class Results extends Component {
       qstring.adv = qs.stringify(qstring.adv);
       Database.getAdv(tb, qstring, qstring.page, d => {
         this.setState({ result: d });
+        this.setState({ title: "Advanced search in " + d.head.table_label });
       });
     } else if (type === 'simple') {
 
@@ -39,8 +41,9 @@ class Results extends Component {
           }
         });
       } else{
-        Database.getStr(tb, qstring.string, qstring.page, d => {
+        Database.getStr(tb, qstring.string, qstring.page, (d, t) => {
           this.setState({ result: d });
+          this.setState({ title: t });
         });
       }
     } else if (type === 'encoded') {
@@ -49,11 +52,13 @@ class Results extends Component {
       });
     } else if (type === 'all') {
       Database.getAll(tb, qstring.page, d => {
-        this.setState({ result: d });
+        this.setState({ result: d});
+        this.setState({ title: "Show all " + d.head.table_label });
       });
     } else if (type === 'saved') {
-      Database.getSaved(tb, qstring.q, qstring.page, d => {
+      Database.getSaved(tb, qstring.q, qstring.page, (d, t) => {
         this.setState({ result: d });
+        this.setState({ title: t });
       });
     } else {
       this.setState({ result: false });
@@ -119,7 +124,9 @@ class Results extends Component {
     if(this.state.result.head.total_rows === 0) {
       return (
         <div>
-          <SubHead tb={ this.state.result.head.stripped_table } tblabel={this.state.result.head.table_label } text="Search results" />
+          <SubHead  tb={ this.state.result.head.stripped_table }
+                    tblabel={this.state.result.head.table_label }
+                    text={ this.state.title ? this.state.title : "Query results"} />
             <div className="container">
 
               <Alert color="warning" className="mt-5">
@@ -134,7 +141,9 @@ class Results extends Component {
     return (
     	<div>
 
-        <SubHead tb={ this.state.result.head.stripped_table } tblabel={this.state.result.head.table_label } text="Search results" />
+        <SubHead  tb={ this.state.result.head.stripped_table }
+                  tblabel={this.state.result.head.table_label }
+                  text={ this.state.title ? this.state.title : "Query results"} />
 
         <div className="container">
 
