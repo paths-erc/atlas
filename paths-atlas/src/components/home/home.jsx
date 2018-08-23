@@ -1,26 +1,79 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown';
 
-import TextMd from './HomeText.md';
 import imgPathsLogo from './paths-logo.png';
+
+import intro from './IntroMd.md';
+import missionstatement from './MissionStatementMd.md';
+import lod from './lod.md';
+
 
 export default class Home extends React.Component{
 
   constructor(props) {
     super(props)
-    this.state = { text: null }
+    this.state = {
+      text: {},
+      titles: [
+        {
+          id    : 'intro',
+          title : "Introduction",
+          path  : intro
+        },
+        {
+          id    : 'missionstatement',
+          title : "Mission Statement",
+          path  : missionstatement
+        },
+        {
+          id    : 'lod',
+          title : "Linked Open Data",
+          path  : lod
+        }
+      ]
+    }
   }
   componentWillMount() {
-    fetch(TextMd).then((response) => response.text()).then((text) => {
-      this.setState({ text: text })
-    })
+    this.state.titles.map( e => {
+      fetch(e.path).then((response) => response.text()).then((text) => {
+        const o = this.state.text;
+        o[e.id] = text;
+        this.setState({ text: o });
+      });
+      return true;
+    });
+
   }
 
-  showContent(){
-    if (!this.state.text){
+  showContentAndToc(){
+    if (this.state.text === {} ){
       return (<div>Loading...</div>);
     } else {
-      return (<ReactMarkdown source={this.state.text} escapeHtml={false} />);
+      return (
+        <div>
+          <div className="border p-3 d-inline-block bg-light float-right ml-5 mb-5">
+            <h4>Table of contents</h4>
+            <ul className="p-0 m-0">
+              {this.state.titles.map( (k, i) =>{
+                return (
+                  <li key={i} style={{ listStyle: 'none' }}>
+                    <a href={ '#' + k.id }>{ k.title }</a>
+                  </li>
+                );
+
+              })}
+            </ul>
+          </div>
+          { this.state.titles.map( (k, i) =>{
+            return (
+              <div key={i} className="text-justify">
+                <h1 id={ k.id } className="mt-5">{ k.title }</h1>
+                <ReactMarkdown source={this.state.text[k.id]} escapeHtml={false} />
+              </div>
+            );
+          })}
+        </div>
+      );
     }
   }
 
@@ -33,8 +86,8 @@ export default class Home extends React.Component{
           </div>
         </div>
         <div className="container">
-          <div className="my-3 px-5" style={{ columnCount: 2, columnGap: '5rem' }}>
-            { this.showContent() }
+          <div className="my-3 px-5">
+            { this.showContentAndToc() }
           </div>
         </div>
       </div>

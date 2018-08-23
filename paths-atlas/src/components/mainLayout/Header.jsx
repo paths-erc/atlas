@@ -56,17 +56,18 @@ render() {
 
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                      Pelagios LOD
+                      LOD
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
-                          VoID
+                          Pelagios VoID
                       </DropdownItem>
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle"}>
                           Places
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
+
                 </Nav>
               </Collapse>
             </Navbar>
