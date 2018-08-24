@@ -2,9 +2,11 @@ import axios from 'axios';
 import SavedQueries from '../SavedQueries';
 
 
-const baseUrl = 'http://db.localhost/api/paths/';
-// const baseUrl = 'https://db-dev.bradypus.net/api/paths/';
+let baseUrl = 'https://db-dev.bradypus.net/api/paths/';
 
+if (window.location.hostname === 'localhost'){
+  baseUrl = 'http://db.localhost/api/paths/';
+}
 
 export default class Database {
 
