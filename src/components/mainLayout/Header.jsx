@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, DropdownMenu, DropdownToggle, DropdownItem, Collapse, UncontrolledDropdown } from 'reactstrap';
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Database from '../Services/Database/Database';
 
@@ -30,8 +31,10 @@ render() {
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
-                  <NavItem>
-                    <NavLink to="/map" tag={RRNavLink}>Map</NavLink>
+                  <NavItem style={{ backgroundColor: '#cc545a'}}>
+                    <NavLink style={{ color: '#fff', borderBottom: '1px solid #f4dcde'}} to="/map" tag={RRNavLink}>
+                      <FontAwesomeIcon icon="map-marker-alt" /> The Atlas
+                    </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink to="/places" tag={RRNavLink}>Places</NavLink>
@@ -52,11 +55,12 @@ render() {
                   <NavItem>
                     <NavLink to="/colophons" tag={RRNavLink}>Colophons</NavLink>
                   </NavItem>
+                </Nav>
 
-
+                <Nav className="ml-auto" navbar>
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                      LOD
+                      <FontAwesomeIcon icon="share-alt" /> LOD
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
@@ -67,7 +71,6 @@ render() {
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-
                 </Nav>
               </Collapse>
             </Navbar>
