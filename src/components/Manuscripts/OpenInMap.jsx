@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class MsPlaces extends Component {
+class OpenInMap extends Component {
 
 render() {
 
   const tb = this.props.tb;
 
-  if (tb !== 'manuscripts'){
+  if (['manuscripts', 'places'].indexOf(tb) < 0){
     return null;
   }
   return (
@@ -21,4 +21,4 @@ render() {
   }
 }
 
-export default MsPlaces;
+export default OpenInMap;

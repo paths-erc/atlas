@@ -6,7 +6,7 @@ import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
 import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
-import MsPlaces from '../Manuscripts/MsPlaces';
+import OpenInMap from '../Manuscripts/OpenInMap';
 
 import Cfg from '../Services/Cfg/Cfg';
 
@@ -149,7 +149,7 @@ class Results extends Component {
 
           <div className="clearfix">
 
-            <MsPlaces
+            <OpenInMap
               tb={this.state.result.head.stripped_table}
               where={this.state.result.head.query_where}
               type={this.props.match.params.type}
