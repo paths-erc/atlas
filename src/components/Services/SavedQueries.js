@@ -193,6 +193,23 @@ export default {
         "limit_end": "500",
         "q_encoded": btoa(" 1 ")
       }
+    },
+    bishoprics: {
+      id: 'bishoprics',
+      title: 'Bishoprics',
+      url: 'geodata?verb=search&geojson=true&type=encoded',
+      data: {
+        "join": "JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id",
+        "fields[paths__geodata.geometry]": "Geometry",
+        "fields[paths__places.id]": "Id",
+        "fields[paths__places.name]": "Name",
+        "fields[paths__places.copticname]": "Coptic name",
+        "fields[paths__places.greekname]": "Greek name",
+        "fields[paths__places.egyptianname]": "Egyptian name",
+        "fields[paths__places.pleiades]": "Pleiades Id",
+        "fields[paths__places.typology]": "Site typology",
+        "q_encoded": btoa( '`paths__places`.`episcopalsee`=1 LIMIT 0, 100')
+      }
     }
   }
 };
