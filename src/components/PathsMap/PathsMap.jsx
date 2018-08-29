@@ -140,19 +140,30 @@ export default class PathsMap extends Component {
       });
     } else if (locationSearch) {
       let qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true})
-      if (qstring.tb !== 'manuscripts') {
+      if (qstring.tb === 'manuscripts') {
+        Database.getMsPlaces(qstring.where, data => {
+          this.setState({
+            places: data,
+            shownPlaces: data,
+            urlFilter: qstring.where
+          });
+          this.fitMapToBounds()
+        });
+      } else if (qstring.tb === 'places') {
+        Database.getPlaces(qstring.where, data => {
+          this.setState({
+            places: data,
+            shownPlaces: data,
+            urlFilter: qstring.where
+          });
+          this.fitMapToBounds()
+        });
+      } else {
         return false;
       }
-      Database.getMsPlaces(qstring.where, data => {
-        this.setState({
-          places: data,
-          shownPlaces: data,
-          urlFilter: qstring.where
-        });
-        this.fitMapToBounds()
-      });
+
     } else {
-      Database.getPlaces(data => {
+      Database.getPlaces(null, data => {
         this.setState({
           places: data,
           shownPlaces: data,

@@ -103,7 +103,7 @@ export default class Database {
     }, d => { cb(d); });
   }
 
-  static getPlaces(cb) {
+  static getPlaces(where, cb) {
     let data = {
       "join": "JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id",
       "fields[paths__geodata.geometry]": "Geometry",
@@ -114,7 +114,7 @@ export default class Database {
       "fields[paths__places.egyptianname]": "Egyptian name",
       "fields[paths__places.pleiades]": "Pleiades Id",
       "fields[paths__places.typology]": "Site typology",
-      "q_encoded": btoa(" 1 LIMIT 0, 500")
+      "q_encoded": btoa( ( where ? where.replace(/`(.*)`/gi, '`paths__places`.`$1`') : " 1 LIMIT 0, 500" ))
     };
 
     this.getData(
@@ -148,4 +148,5 @@ export default class Database {
       d => { cb(d) }
     );
   }
+
 }
