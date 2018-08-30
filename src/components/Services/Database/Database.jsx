@@ -89,7 +89,7 @@ export default class Database {
   }
 
   static getOne(tb, id, cb) {
-    this.getData('../v2/paths/' + tb, {
+    this.getData('../v2/paths', {
       tb: tb,
       verb : 'read',
       id : id
@@ -97,9 +97,16 @@ export default class Database {
   }
 
   static inspect(tb, cb) {
-    this.getData('../v2/paths/' + tb, {
+    this.getData('../v2/paths' , {
       tb: tb,
       'verb':'inspect'
+    }, d => { cb(d); });
+  }
+
+  static getChart(id, cb) {
+    this.getData('../v2/paths/' + id, {
+      id: id,
+      'verb':'getChart'
     }, d => { cb(d); });
   }
 

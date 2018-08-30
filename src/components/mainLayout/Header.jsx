@@ -58,6 +58,9 @@ render() {
                 </Nav>
 
                 <Nav className="ml-auto" navbar>
+                  <NavItem>
+                    <NavLink to="/charts" tag={RRNavLink}><FontAwesomeIcon icon="chart-bar" /> Charts</NavLink>
+                  </NavItem>
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
                       <FontAwesomeIcon icon="share-alt" /> LOD

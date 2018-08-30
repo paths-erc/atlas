@@ -20,6 +20,7 @@ import Manuscripts from './components/Manuscripts/Manuscripts';
 import Authors from './components/Authors/Authors';
 import Colophons from './components/Colophons/Colophons';
 import ViewOne from './components/Record/ViewOne';
+import Charts from './components/Charts/Charts';
 
 
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
@@ -43,6 +44,8 @@ class App extends Component {
             <Route exact path='/results/:table/:type' component={Results} />
             <Route exact path='/search/:table/' component={SearchForm} />
             <Route exact path='/read/:table/:id' component={ViewOne} />
+
+            <Route exact path='/charts/:id?' component={Charts} />
 
           </MainTemplate>
         </Switch>
