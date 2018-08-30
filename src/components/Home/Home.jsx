@@ -81,12 +81,12 @@ export default class Home extends React.Component{
     return (
       <div>
         <div className="jumbotron">
-          <div className="container">
+          <div className="container text-center">
             <img className="img-fluid" src={ imgPathsLogo } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
           </div>
         </div>
         <div className="container">
-          <div className="my-3 px-5">
+          <div className="my-5 px-5">
             { this.showContentAndToc() }
           </div>
         </div>
