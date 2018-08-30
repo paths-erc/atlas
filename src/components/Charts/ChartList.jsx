@@ -28,9 +28,7 @@ export default class ChartList extends Component {
 
   render(){
     if (!this.props.charts){
-      return (
-        <div>Loading...</div>
-      );
+      return <p className="lead my-5 text-secondary">Loading chart list...</p>;
     }
     if (this.props.charts.type === 'error'){
       return (
@@ -49,7 +47,7 @@ export default class ChartList extends Component {
                     key={i}
                     tag={Button}
                     onClick={ () => this.loadChart(c.id) } className="mb-3"
-                    
+
                     color="secondary">
                     { c.name }
                   </ListGroupItem>

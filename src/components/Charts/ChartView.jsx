@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {Bar, Line} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 
 export default class ChartView extends Component {
@@ -34,7 +33,7 @@ export default class ChartView extends Component {
 
   render(){
     if (this.props.loading){
-      return 'Loading...';
+      return <p className="lead my-5 text-secondary">Loading chart...</p>;
     }
     if (!this.props.data){
       return null;
