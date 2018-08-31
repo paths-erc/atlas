@@ -177,7 +177,7 @@ export default {
       url: 'geodata?verb=search&geojson=true&type=encoded',
       data: {
         "join": " JOIN paths__places as p ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = p.id" +
-                " JOIN `paths__m_msplaces` as mp ON `mp`.`table_link`= 'paths__manuscripts' AND `p`.`id` = `mp`.`place` ",
+                " JOIN  (SELECT * FROM `paths__m_msplaces` GROUP BY `id_link`, `place`) as mp ON `mp`.`table_link`= 'paths__manuscripts' AND `p`.`id` = `mp`.`place` ",
         "fields[paths__geodata.geometry]": "Geometry",
         "fields[p.id]": "Id",
         "fields[p.name]": "Name",
