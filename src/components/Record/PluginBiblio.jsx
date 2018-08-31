@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 
-
 export default class PluginBiblio extends Component {
 
   render() {
@@ -17,8 +16,8 @@ export default class PluginBiblio extends Component {
               return (
                 <span key={di} className="mr-2">
                   <a href={'https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/' + d.zotero.val} target="_blank">
-                    {d.short.val} { d.details.val ? ', ' + d.details.val : ''};
-                  </a>
+                    {d.short.val} { d.details.val ? ', ' + d.details.val : ''}
+                  </a>;
                 </span>
               )
             })

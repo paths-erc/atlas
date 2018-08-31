@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import QuireMatrixView from './QuireMatrixView';
+import PreviewText from './PreviewText';
 
 
 
@@ -24,7 +25,7 @@ class RecordCell extends Component {
         </Col>
         <Col>
           <div className={ className.join(' ') }>
-            {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : val }
+            {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : <PreviewText text={val} /> }
           </div>
         </Col>
 	    </Row>
