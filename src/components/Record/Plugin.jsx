@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import RecordCell from './RecordCell';
+import PluginBiblio from './PluginBiblio';
 
 
 class Plugin extends Component {
@@ -9,6 +10,10 @@ class Plugin extends Component {
 
     if (this.props.data.data.length < 1) {
       return null;
+    }
+
+    if(this.props.data.metadata.tb_id === 'paths__m_biblio'){
+      return <PluginBiblio data={ this.props.data } />
     }
 
     return (
