@@ -33,6 +33,8 @@ export default class PathsMap extends Component {
       selected: 'home',
       manualFilter: ''
     };
+    this.placesLayerRef = React.createRef();
+    this.mapRef = React.createRef();
   }
 
   onSidebarClose() {
@@ -46,22 +48,6 @@ export default class PathsMap extends Component {
       sidebarCollapsed: false,
       selected: id,
     })
-  }
-
-  setFilteredPlaces(){
-    this.refs.placesLayer.leafletElement.eachLayer( (layer) => {
-      let found = false;
-      for (const value of Object.values(layer.feature.properties)) {
-        if (value && value.toLowerCase().includes(this.state.manualFilter.toLowerCase())){
-          found = true;
-        }
-      }
-      if (found || this.state.manualFilter === ''){
-        layer.getElement().style.display = 'inline';
-      } else {
-        layer.getElement().style.display = 'none';
-      }
-    });
   }
 
 
@@ -103,6 +89,8 @@ export default class PathsMap extends Component {
       }
     }
 
+    // this.placesLayerRef.current.leafletElement.clearLayers();
+    // this.placesLayerRef.current.leafletElement.addData(fgj);
     this.setState({
       manualFilter: str,
       shownPlaces: fgj
@@ -120,11 +108,10 @@ export default class PathsMap extends Component {
 
   fitMapToBounds(){
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
-
-    if (this.refs.placesLayer && this.refs.placesLayer.props.data.features.length > 1){
-      bounds = this.refs.placesLayer.leafletElement.getBounds();
+    if (this.placesLayerRef && this.placesLayerRef.current.props.data.features.length > 1){
+      bounds = this.placesLayerRef.current.leafletElement.getBounds();
     }
-    this.refs.map.leafletElement.fitBounds(bounds);
+    this.mapRef.current.leafletElement.fitBounds(bounds);
   }
 
 
@@ -231,7 +218,7 @@ export default class PathsMap extends Component {
 
           </Sidebar>
 
-          <Map className="sidebar-map maxHeight" zoomControl={true} ref="map">
+          <Map className="sidebar-map maxHeight" zoomControl={true} ref={this.mapRef}>
             <LayersControl position="topright">
               <BaseLayer name="Imperium (Pelagios)">
                 <TileLayer url="http://pelagios.org/tilesets/imperium/{z}/{x}/{y}.png" />
@@ -246,11 +233,18 @@ export default class PathsMap extends Component {
                 <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
               </BaseLayer>
 
-              { this.state.places &&
               <Overlay name="Places" checked={true}>
-                <GeoJSON ref="placesLayer" key={ hash(this.state.shownPlaces) } data={this.state.shownPlaces} pointToLayer={this.pointToLayer.bind(this)} onEachFeature={this.onEachFeature.bind(this) } />
+
               </Overlay>
-            }
+
+                { this.state.places &&
+                    <GeoJSON
+                      ref={this.placesLayerRef}
+                      key={ hash(this.state.shownPlaces) }
+                      data={this.state.shownPlaces}
+                      pointToLayer={this.pointToLayer.bind(this)}
+                      onEachFeature={this.onEachFeature.bind(this) } />
+                }
             </LayersControl>
 
           </Map>
