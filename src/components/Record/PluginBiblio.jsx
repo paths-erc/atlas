@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 
-
 export default class PluginBiblio extends Component {
 
   render() {
