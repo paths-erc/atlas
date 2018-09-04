@@ -18,7 +18,7 @@ import Database from '../Services/Database/Database';
 
 import './PathsMap.css';
 
-const { BaseLayer, Overlay } = LayersControl
+const { BaseLayer } = LayersControl
 
 export default class PathsMap extends Component {
 
@@ -232,10 +232,6 @@ export default class PathsMap extends Component {
               <BaseLayer name="OpenStreetMap">
                 <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
               </BaseLayer>
-
-              <Overlay name="Places" checked={true}>
-
-              </Overlay>
 
                 { this.state.places &&
                     <GeoJSON

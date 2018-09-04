@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Row, Col } from 'reactstrap';
 
+import Erc from './img/erc.jpg';
+import Sapienza from './img/sapienza.jpg';
 
 export default class Footer extends Component {
 
@@ -27,6 +30,11 @@ render() {
             </div>
           </div>
 
+          <Row className="my-3">
+            <Col xs={{ size: 6 }} md={{size: 3, offset: 3}}><img src={Sapienza} alt="Sapienza Università di Roma" className="img-fluid" /></Col>
+            <Col xs={{ size: 6 }} md={{size: 3}}><img src={Erc} alt="European Research Council" className="img-fluid" /></Col>
+          </Row>
+
           <div className="text-center">
             <p className="text-secondary"><small>
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
@@ -36,8 +44,9 @@ render() {
             This work is licensed under a Creative Commons Attribution 4.0 International License</a>.
             </small></p>
 
-          <a href="https://github.com/paths-erc/atlas" title="Fork PAThs’ Atlas on Github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'github']} size="2x" /> Fork on Github</a>
+            <a href="https://github.com/paths-erc/atlas" title="Fork PAThs’ Atlas on Github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'github']} size="2x" /> Fork on Github</a>
           </div>
+
         </div>
       </footer>
     );
