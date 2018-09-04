@@ -3,6 +3,7 @@ import { Card, CardHeader, CardBody } from 'reactstrap';
 
 import RecordCell from './RecordCell';
 import PluginBiblio from './PluginBiblio';
+import PluginShelfmarks from './PluginShelfmarks';
 import Timeline from './Timeline';
 
 
@@ -17,6 +18,9 @@ class Plugin extends Component {
 
     if(this.props.data.metadata.tb_id === 'paths__m_biblio'){
       return <PluginBiblio data={ this.props.data } />
+    }
+    if(this.props.data.metadata.tb_id === 'paths__m_shelfmarks'){
+      return <PluginShelfmarks data={ this.props.data } />
     }
 
     return (
