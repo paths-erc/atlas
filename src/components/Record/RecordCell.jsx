@@ -17,9 +17,8 @@ class RecordCell extends Component {
     if(this.props.greek){
       className.push('greek');
     }
-
     return (
-      <Row className="border-bottom mt-2 mb-2 pb-1">
+      <Row className={"border-bottom mt-2 mb-2 pb-1" + (val !== null ? '' : ' d-none') }>
         <Col sm="4" md="3">
           <label className="font-weight-bold">{label}</label>
         </Col>
