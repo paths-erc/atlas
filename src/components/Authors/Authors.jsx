@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import SubHead from '../SubHead/SubHead';
 import TextMd from './AuthorsText.md';
+import Loading from '../Loading/Loading';
 
 class AuthorPage extends Component {
 
@@ -18,7 +19,7 @@ class AuthorPage extends Component {
 
   showContent(){
     if (!this.state.text){
-      return (<div>Loading...</div>);
+      return (<Loading />);
     } else {
       return (<ReactMarkdown source={this.state.text} escapeHtml={false} />);
     }

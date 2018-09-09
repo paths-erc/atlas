@@ -3,6 +3,7 @@ import ReactMarkdown  from 'react-markdown';
 import TextMd from './TitlesText.md';
 
 import SubHead from '../SubHead/SubHead';
+import Loading from '../Loading/Loading';
 
 class TitlePage extends Component {
 
@@ -18,7 +19,7 @@ class TitlePage extends Component {
 
   showContent(){
     if (!this.state.text){
-      return (<div>Loading...</div>);
+      return (<Loading />);
     } else {
       return (<ReactMarkdown source={this.state.text} />);
     }
