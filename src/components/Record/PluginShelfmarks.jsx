@@ -16,11 +16,12 @@ export default class PluginBiblio extends Component {
   getHtmlModalBody(d){
     return (
       <dl>
-        <dt>Country:        </dt><dd>{d.country.val} </dd>
-        <dt>Town:           </dt><dd>{d.town.val} </dd>
-        <dt>Institution:    </dt><dd>{d.institution.val} </dd>
-        <dt>Collection name:</dt><dd>{d.name.val} </dd>
-        <dt>CMCL full name: </dt><dd>{d.fullsegnat.val} </dd>
+        <dt>Country:        </dt><dd>{d.country.val}</dd>
+        <dt>Town:           </dt><dd>{d.town.val}</dd>
+        <dt>Institution:    </dt><dd>{d.institution.val}</dd>
+        <dt>Collection name:</dt><dd>{d.name.val}</dd>
+        <dt>CMCL full name: </dt><dd>{d.fullsegnat.val}</dd>
+        <dt>URN:            </dt><dd><code>paths.shelfmarks.{d.id.val}</code></dd>
       </dl>
     );
   }
@@ -52,7 +53,7 @@ export default class PluginBiblio extends Component {
             this.props.data.data.map( (d, di) =>{
               return (
                 <span key={di} className="mr-2">
-                  <Button style={{marginRight: 0, paddingRight: 0}} color="link" onClick={ () => this.toggle(d) }>
+                  <Button style={{margin: '0 0 4px 0', padding: 0}} color="link" onClick={ () => this.toggle(d) }>
                     {d.fullname.val}
                   </Button>
                   { d.shelfmark.val ? ', ' + d.shelfmark.val : ''}
