@@ -6,6 +6,7 @@ import imgPathsLogo from './paths-logo.png';
 import intro from './IntroMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
+import Loading from '../Loading/Loading';
 
 
 export default class Home extends React.Component{
@@ -47,7 +48,7 @@ export default class Home extends React.Component{
 
   showContentAndToc(){
     if (this.state.text === {} ){
-      return (<div>Loading...</div>);
+      return (<Loading />);
     } else {
       return (
         <div>

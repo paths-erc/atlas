@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import SubHead from '../SubHead/SubHead';
 import TextMd from './PlacesText.md';
 import imgMarea from './marea.jpg';
+import Loading from '../Loading/Loading';
 
 class PlacePage extends Component {
 
@@ -19,7 +20,7 @@ class PlacePage extends Component {
 
   showContent(){
     if (!this.state.text){
-      return (<div>Loading...</div>);
+      return (<Loading />);
     } else {
       return (<ReactMarkdown source={this.state.text} escapeHtml={false} />);
     }

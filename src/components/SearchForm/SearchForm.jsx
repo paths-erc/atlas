@@ -4,6 +4,7 @@ import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import SimpleSearchForm from './SimpleSearchForm';
 import AdvSearchForm from './AdvSearchForm';
+import Loading from '../Loading/Loading';
 
 
 class SearchForm extends Component {
@@ -47,7 +48,7 @@ class SearchForm extends Component {
 
   render() {
     if (!this.state.fields) {
-      return <div className="m-5 p-5">Loading... </div>;
+      return <div className="m-5 p-5"><Loading /></div>;
     }
 
     return (

@@ -7,6 +7,7 @@ import SubHead from '../SubHead/SubHead';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
 import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
 import OpenInMap from '../Manuscripts/OpenInMap';
+import Loading from '../Loading/Loading';
 
 import Cfg from '../Services/Cfg/Cfg';
 
@@ -88,7 +89,7 @@ class Results extends Component {
 
   render() {
     if (!this.state.result) {
-      return <div className="container">Loading... </div>;
+      return <div className="container"><Loading /></div>;
     }
 
     if(this.state.result.type === 'error') {

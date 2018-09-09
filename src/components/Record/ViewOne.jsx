@@ -10,6 +10,7 @@ import UserLinks from './UserLinks';
 import Files from './Files';
 import Plugin from './Plugin';
 import MiniMap from './MiniMap';
+import Loading from '../Loading/Loading';
 
 class ReadTitle extends Component {
 
@@ -108,7 +109,7 @@ class ReadTitle extends Component {
 
   render() {
     if (!this.state.rec) {
-      return <div className="m-5 p-5">Loading... </div>;
+      return <div className="m-5 p-5"><Loading /></div>;
     }
 
     return (
