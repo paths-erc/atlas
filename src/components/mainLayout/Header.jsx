@@ -21,19 +21,19 @@ class FixedNavbar extends Component {
     });
   }
 
-
 render() {
+  // borderBottom: '1px solid #f4dcde'
 
     return (
           <div>
             <Navbar color="dark" dark expand="md" className="fixed-top">
-              <NavbarBrand to="/" tag={Link}>PAThs Atlas</NavbarBrand>
+              <NavbarBrand to="/" tag={Link}>PAThs</NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
-                  <NavItem style={{ backgroundColor: '#cc545a'}}>
-                    <NavLink style={{ color: '#fff', borderBottom: '1px solid #f4dcde'}} to="/map" tag={RRNavLink}>
-                      <FontAwesomeIcon icon="map-marker-alt" /> The Atlas
+                  <NavItem>
+                    <NavLink style={{ backgroundColor: '#cc545a', color: '#fff'}} to="/map" tag={RRNavLink}>
+                      <FontAwesomeIcon icon="map" /> Atlas
                     </NavLink>
                   </NavItem>
                   <NavItem>
