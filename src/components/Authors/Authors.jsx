@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import SubHead from '../SubHead/SubHead';
 import TextMd from './AuthorsText.md';
 import Loading from '../Loading/Loading';
+import AuthorsImg from './authors.jpg';
 
 class AuthorPage extends Component {
 
@@ -29,6 +30,10 @@ class AuthorPage extends Component {
   render() {
     return (
       <div>
+        <div>
+          <img className="img-fluid" src={AuthorsImg} alt="Marea" />
+        </div>
+
         <SubHead tblabel="Authors" tb="authors" text="Introduction" />
 
           <div className="container">

@@ -204,7 +204,7 @@ export default class PathsMap extends Component {
               </div>
             </Tab>
 
-            <Tab id="savedQueries" header="Legend" icon={<FontAwesomeIcon icon="save" />}>
+            <Tab id="savedQueries" header="Saved queries" icon={<FontAwesomeIcon icon="save" />}>
               <div className="mt-5">
                 <TabSavedQueries />
               </div>

@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import SubHead from '../SubHead/SubHead';
 import TextMd from './ManuscriptsText.md';
 import Loading from '../Loading/Loading';
+import MsImg from './9272-9275.jpg';
 
 
 class ManuscriptPage extends Component {
@@ -29,6 +30,9 @@ class ManuscriptPage extends Component {
   render() {
     return (
       <div>
+        <div>
+          <img className="img-fluid" src={MsImg} alt="Marea" />
+        </div>
         <SubHead tblabel="Manuscripts" tb="manuscripts" text="Introduction" />
 
         <div className="container">
