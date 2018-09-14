@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 
+function showLink(zotero, short){
+  if (zotero){
+    return (<a href={'https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/' + zotero} target="_blank">{short}</a>)
+  } else {
+    return short;
+  }
+}
+
 export default class PluginBiblio extends Component {
 
   render() {
@@ -15,9 +23,8 @@ export default class PluginBiblio extends Component {
             this.props.data.data.map( (d, di) =>{
               return (
                 <span key={di} className="mr-2">
-                  <a href={'https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/' + d.zotero.val} target="_blank">
-                    {d.short.val}
-                  </a>{ d.details.val ? ', ' + d.details.val : ''};
+                  { showLink(d.zotero.val,d.short.val) }
+                  { d.details.val ? ', ' + d.details.val : ''};
                 </span>
               )
             })
