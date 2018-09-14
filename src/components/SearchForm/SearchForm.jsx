@@ -3,6 +3,7 @@ import { Button } from 'reactstrap';
 import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import SimpleSearchForm from './SimpleSearchForm';
+import CustomSearchForm from './CustomSearchForm';
 import AdvSearchForm from './AdvSearchForm';
 import Loading from '../Loading/Loading';
 
@@ -39,7 +40,7 @@ class SearchForm extends Component {
   showSearch(){
     const base = window.location.pathname.replace(/\/search(.*)/, '');
     if(this.state.context === 'Simple search') {
-      return <SimpleSearchForm tb={this.props.match.params.table} base={base} />
+      return <CustomSearchForm tb={this.props.match.params.table} base={base} />
     } else {
       return <AdvSearchForm tb={this.props.match.params.table} base={base} fields={this.state.fields} />
     }

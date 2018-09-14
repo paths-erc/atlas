@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FormGroup, Input, Button, Row, Col } from 'reactstrap';
 
-
 class SimpleSearchForm extends Component {
 
   render() {
