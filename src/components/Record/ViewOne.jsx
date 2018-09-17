@@ -7,7 +7,7 @@ import ViewOneTitle from '../Titles/ViewOneTitle';
 import RecordCell from './RecordCell';
 import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';
-import Files from './Files';
+import Files from '../ViewFiles/Files';
 import Plugin from './Plugin';
 import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
