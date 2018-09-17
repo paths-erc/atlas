@@ -7,12 +7,25 @@ import PreviewModal from './PreviewModal';
 export default class Files extends Component {
 
   render() {
-    const files = this.props.files || [];
+    let files = this.props.files || [];
+    files = files.map( f => {
+      if (['jpg', 'png', 'gif', 'tif', 'tiff'].includes(f.ext)){
+        return f;
+      } else {
+        return false;
+      }
+    });
     const firstFiles = files.slice(0,3);
     const otherFiles = files.slice(3);
 
+    if(firstFiles.length < 1){
+      return null;
+    }
+
     return (
-      <div>
+
+      <div className="mt-3">
+        <h5>Attached images</h5>
         {
           firstFiles.map( (f, id) => {
             return <PreviewModal key={id}
