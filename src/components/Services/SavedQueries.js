@@ -210,6 +210,24 @@ export default {
         "fields[paths__places.typology]": "Site typology",
         "q_encoded": btoa( '`paths__places`.`episcopalsee`=1 LIMIT 0, 100')
       }
+    },
+    multi_stratified: {
+      id: 'multi_stratified',
+      title: 'Multi stratified sites',
+      url: 'geodata?verb=search&geojson=true&type=encoded',
+      data: {
+        "join": "JOIN `paths__places` ON `paths__geodata`.`table_link` = 'paths__places' AND `paths__geodata`.`id_link` = `paths__places`.`id` " +
+        "JOIN (SELECT `id_link`, count(id) as tot from `paths__m_placefase` GROUP BY `id_link` ORDER BY `tot` DESC LIMIT 0,10) as t ON `t`.`id_link` = `paths__geodata`.`id_link` ",
+        "fields[paths__geodata.geometry]": "Geometry",
+        "fields[paths__places.id]": "Id",
+        "fields[paths__places.name]": "Name",
+        "fields[paths__places.copticname]": "Coptic name",
+        "fields[paths__places.greekname]": "Greek name",
+        "fields[paths__places.egyptianname]": "Egyptian name",
+        "fields[paths__places.pleiades]": "Pleiades Id",
+        "fields[paths__places.typology]": "Site typology",
+        "q_encoded": btoa( '1 ORDER BY `t`.`tot` DESC')
+      }
     }
   }
 };
