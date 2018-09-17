@@ -1,50 +1,65 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { FormGroup, Input, Button, Col, Label } from 'reactstrap';
-
-import SimpleSearchForm from './SimpleSearchForm';
-
-const searcheable = {
-  'manuscripts': [
-    { 'id': 'paths__manuscripts:id',      'label': 'CLM' },
-    { 'id': 'paths__manuscripts:cmclid',  'label': 'CMCL' },
-    { 'id': 'paths__manuscripts:tm',      'label': 'TM' },
-    { 'id': 'paths__manuscripts:ldab',    'label': 'LDAB' },
-    { 'id': 'paths__m_shelfmarks:collection',    'label': 'Collection' },
-    { 'id': 'paths__m_shelfmarks:shelfmark',    'label': 'Shelfmark' }
-  ]
-};
-
+import Select from 'react-select';
 
 export default class CustomSearchForm extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      search: false,
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const fld = data.get('fld');
+    const value = data.get('value');
+    const strict = data.get('strict');
+
+    let search = encodeURIComponent('adv[aa][fld]')             + "=" + encodeURIComponent(fld) +
+                  "&" + encodeURIComponent('adv[aa][operator]') + "=" + encodeURIComponent( strict === null ? "LIKE" : "=") +
+                  "&" + encodeURIComponent('adv[aa][value]')    + "=" + encodeURIComponent(value);
+
+    this.setState({ search: search });
+  }
+
   render() {
 
-    if (typeof searcheable[this.props.tb] === 'undefined'){
-      return <SimpleSearchForm base={this.props.base} tb={this.props.tb} />;
+    let fields = Object.keys(this.props.fields).map(key => {
+      return { value: this.props.fields[key].fullname, label: this.props.fields[key].label };
+    });
+
+    if (this.state.search){
+      return <Redirect to={{
+            pathname: "/results/" + this.props.tb + "/adv",
+            search: this.state.search
+          }} />
     }
 
     return (
-      <div>
-        <form action={`${this.props.base}/results/${this.props.tb}/adv`} method="get" id="searchTitles" className="form">
+      <div className="my-5">
+        <form onSubmit={this.handleSubmit} className="form">
 
-          { searcheable[this.props.tb].map((fld, i) => {
-            return (
-              <FormGroup row key={i}>
-                <Label sm={4} className="text-right">{ fld.label }</Label>
-                <Col sm={6}>
-                  <Input type="hidden" name={ 'adv[aa' + i + '][fld]' } value={ fld.id } />
-                  <Input type="hidden" name={ 'adv[aa' + i + '][operator]' } value="LIKE" />
-                  <Input type="input" name={ 'adv[aa' + i + '][value]' } autoComplete="off" />
-                  { i > 0  && <Input type="hidden" name={ 'adv[aa' + i + '][connector]' } value="AND" /> }
-                </Col>
-                <Col sm={2}>
-                  <Input type="checkbox" name="loose" /> Strict
-                </Col>
-              </FormGroup>
-            );
-          }) }
+          <FormGroup row>
 
-          <Button type="submit" color="success" block>Search!</Button>
+            <Col sm={4}>
+              <Select
+                  name="fld"
+                  defaultValue={ fields[0] }
+                  options={ fields }
+                  />
+            </Col>
+
+            <Col sm={5}> <Input name="value" type="input" required  autoComplete="off" /> </Col>
+
+            <Col sm={1}> <Label><Input name="strict" type="checkbox"/> Strict</Label> </Col>
+
+            <Col sm={2}> <Button type="submit" color="success" block>Search!</Button> </Col>
+          </FormGroup>
 
         </form>
       </div>
