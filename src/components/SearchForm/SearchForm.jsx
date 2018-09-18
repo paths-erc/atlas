@@ -39,7 +39,7 @@ class SearchForm extends Component {
   showSearch(){
     const base = window.location.pathname.replace(/\/search(.*)/, '');
     if(this.state.context === 'Simple search') {
-      return <CustomSearchForm tb={this.props.match.params.table} base={base} />
+      return <CustomSearchForm tb={this.props.match.params.table} base={base} fields={this.state.fields} />
     } else {
       return <AdvSearchForm tb={this.props.match.params.table} base={base} fields={this.state.fields} />
     }

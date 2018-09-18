@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Select from 'react-select';
 import { FormGroup, Input, Row, Col, Button } from 'reactstrap';
 
 
@@ -27,7 +27,9 @@ class AdvSearchRow extends Component {
   }
 
   render() {
-    const fields = this.props.fields;
+    let fields = Object.keys(this.props.fields).map(key => {
+      return { value: this.props.fields[key].fullname, label: this.props.fields[key].label };
+    });
 
     const operators = [
       {
@@ -69,16 +71,17 @@ class AdvSearchRow extends Component {
 
           <Col xs={4}>
             <FormGroup>
-              <Input type="select" name={ 'adv[' + this.props.indexValue +'][fld]' }>
-                {Object.values(fields).map( (f, i) => {
-                  return <option key={i} value={f.fullname}>{ f.label }</option>;
-                } ) }
-              </Input>
+              <Select
+                  name={ 'adv[' + this.props.indexValue +'][fld]' }
+                  defaultValue={ fields[0] }
+                  options={ fields }
+                  />
             </FormGroup>
           </Col>
 
           <Col xs={2}>
             <FormGroup>
+
               <Input type="select" placeholder="select" name={ 'adv[' + this.props.indexValue + '][operator]' }>
                 {operators.map( (f, i) => {
                   return <option key={i} value={f.k}>{ f.v }</option>;
