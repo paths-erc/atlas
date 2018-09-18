@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
-import SimpleSearchForm from './SimpleSearchForm';
 import CustomSearchForm from './CustomSearchForm';
 import AdvSearchForm from './AdvSearchForm';
 import Loading from '../Loading/Loading';

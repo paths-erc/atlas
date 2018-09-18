@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Badge, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Jumbotron, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
