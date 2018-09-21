@@ -17,7 +17,8 @@ class SubHead extends Component {
     };
   }
 
-  toggleSaved(){
+  toggleSaved(e){
+    e.preventDefault();
     this.setState({
       showSaved: !this.state.showSaved
     });

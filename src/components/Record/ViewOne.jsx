@@ -11,6 +11,7 @@ import Files from '../ViewFiles/Files';
 import Plugin from './Plugin';
 import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
+import ExternalLinks from './ExternalLinks';
 import Timeline from './Timeline';
 
 class ReadTitle extends Component {
@@ -102,6 +103,7 @@ class ReadTitle extends Component {
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
                 <UserLinks links={ rec.manualLinks } />
+                <ExternalLinks rec={ rec.core } tb={ rec.metadata.tb_stripped } />
               </Col>
             </Row>
           </div>
