@@ -22,6 +22,7 @@ import './PathsMap.css';
 
 const { BaseLayer } = LayersControl
 
+const googleKey = "AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o";
 export default class PathsMap extends Component {
 
   constructor(props) {
@@ -232,10 +233,11 @@ export default class PathsMap extends Component {
                 <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
               </BaseLayer>
               <BaseLayer name='Google Maps Roads'>
-               <GoogleLayer googlekey="AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o"  maptype='ROADMAP'/>
+                 <GoogleLayer googlekey={googleKey}  maptype='ROADMAP'/>
               </BaseLayer>
+              
               <BaseLayer name='Google Satellite'>
-               <GoogleLayer googlekey="AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o"  maptype='SATELLITE'/>
+               <GoogleLayer googlekey={googleKey}  maptype='SATELLITE'/>
               </BaseLayer>
               <BaseLayer name="OpenStreetMap">
                 <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
