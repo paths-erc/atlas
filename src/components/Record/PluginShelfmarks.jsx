@@ -49,19 +49,21 @@ export default class PluginBiblio extends Component {
         <Card className="mt-2">
           <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
           <CardBody>
-          {
-            this.props.data.data.map( (d, di) =>{
-              return (
-                <span key={di} className="mr-2">
-                  <Button style={{margin: '0 0 4px 0', padding: 0}} color="link" onClick={ () => this.toggle(d) }>
-                    {d.fullname.val}
-                  </Button>
-                  { d.shelfmark.val ? ', ' + d.shelfmark.val : ''}
-                  { d.pp.val ? ', ' + d.pp.val : ''}
-                </span>
-              )
-            })
-          }
+            <ul>
+            {
+              this.props.data.data.map( (d, di) =>{
+                return (
+                  <li key={di}>
+                    <Button style={{margin: '0 0 4px 0', padding: 0}} color="link" onClick={ () => this.toggle(d) }>
+                      {d.fullname.val}
+                    </Button>
+                    { d.shelfmark.val ? ', ' + d.shelfmark.val : ''}
+                    { d.pp.val ? ', ' + d.pp.val : ''}
+                  </li>
+                )
+              })
+            }
+          </ul>
           </CardBody>
         </Card>
 
