@@ -3206,6 +3206,10 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+google-maps@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/google-maps/-/google-maps-3.3.0.tgz#4432b4715406bc15268ad35b1dd1b04d974956a6"
+
 got@^6.7.1:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-6.7.1.tgz#240cd05785a9a18e561dc1b44b41c763ef1e8db0"
@@ -5961,6 +5965,10 @@ react-input-autosize@^2.2.1:
 react-is@^16.3.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
+
+react-leaflet-google@danieldunderfelt/react-leaflet-google:
+  version "3.3.1"
+  resolved "https://codeload.github.com/danieldunderfelt/react-leaflet-google/tar.gz/7c7590470ba4b2214be243cc313e6d58bd649a64"
 
 react-leaflet-sidebarv2@^0.6.0:
   version "0.6.0"

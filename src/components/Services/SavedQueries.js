@@ -11,94 +11,94 @@ export default {
       }
 
     },
-    ms_with_date: {
-      id: "ms_with_date",
-      title: "Dated manuscripts",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("(`chronofrom`!='' AND `chronofrom` IS NOT NULL) OR (`chronoto`!='' AND `chronoto` IS NOT NULL)")
-      }
-    },
-    ms_ae_200: {
-      id: "ms_ae_200",
-      title: "Manuscripts of the 3th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 199 AND `chronoto` < 300")
-      }
-    },
-    ms_ae_300: {
-      id: "ms_ae_300",
-      title: "Manuscripts of the 4th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 299 AND `chronoto` < 400")
-      }
-    },
-    ms_ae_400: {
-      id: "ms_ae_400",
-      title: "Manuscripts of the 5th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 399 AND `chronoto` < 500")
-      }
-    },
-    ms_ae_500: {
-      id: "ms_ae_500",
-      title: "Manuscripts of the 6th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 499 AND `chronoto` < 600")
-      }
-    },
-    ms_ae_600: {
-      id: "ms_ae_600",
-      title: "Manuscripts of the 7th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 599 AND `chronoto` < 700")
-      }
-    },
-    ms_ae_700: {
-      id: "ms_ae_700",
-      title: "Manuscripts of the 8th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 699  AND `chronoto` < 800")
-      }
-    },
-    ms_ae_800: {
-      id: "ms_ae_800",
-      title: "Manuscripts of the 9th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 799 AND `chronoto` < 900")
-      }
-    },
-    ms_ae_900: {
-      id: "ms_ae_900",
-      title: "Manuscripts of the 10th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 899 AND `chronoto` < 1000")
-      }
-    },
-    ms_ae_1000: {
-      id: "ms_ae_1000",
-      title: "Manuscripts of the 11th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 999 AND `chronoto` < 1100")
-      }
-    },
-    ms_gt_1000: {
-      id: "ms_gt_1000",
-      title: "Manuscripts after the 11th Century",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`chronofrom` > 1099")
-      }
-    }
+  //   ms_with_date: {
+  //     id: "ms_with_date",
+  //     title: "Dated manuscripts",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("(`chronofrom`!='' AND `chronofrom` IS NOT NULL) OR (`chronoto`!='' AND `chronoto` IS NOT NULL)")
+  //     }
+  //   },
+  //   ms_ae_200: {
+  //     id: "ms_ae_200",
+  //     title: "Manuscripts of the 3th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 199 AND `chronoto` < 300")
+  //     }
+  //   },
+  //   ms_ae_300: {
+  //     id: "ms_ae_300",
+  //     title: "Manuscripts of the 4th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 299 AND `chronoto` < 400")
+  //     }
+  //   },
+  //   ms_ae_400: {
+  //     id: "ms_ae_400",
+  //     title: "Manuscripts of the 5th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 399 AND `chronoto` < 500")
+  //     }
+  //   },
+  //   ms_ae_500: {
+  //     id: "ms_ae_500",
+  //     title: "Manuscripts of the 6th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 499 AND `chronoto` < 600")
+  //     }
+  //   },
+  //   ms_ae_600: {
+  //     id: "ms_ae_600",
+  //     title: "Manuscripts of the 7th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 599 AND `chronoto` < 700")
+  //     }
+  //   },
+  //   ms_ae_700: {
+  //     id: "ms_ae_700",
+  //     title: "Manuscripts of the 8th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 699  AND `chronoto` < 800")
+  //     }
+  //   },
+  //   ms_ae_800: {
+  //     id: "ms_ae_800",
+  //     title: "Manuscripts of the 9th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 799 AND `chronoto` < 900")
+  //     }
+  //   },
+  //   ms_ae_900: {
+  //     id: "ms_ae_900",
+  //     title: "Manuscripts of the 10th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 899 AND `chronoto` < 1000")
+  //     }
+  //   },
+  //   ms_ae_1000: {
+  //     id: "ms_ae_1000",
+  //     title: "Manuscripts of the 11th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 999 AND `chronoto` < 1100")
+  //     }
+  //   },
+  //   ms_gt_1000: {
+  //     id: "ms_gt_1000",
+  //     title: "Manuscripts after the 11th Century",
+  //     url: 'manuscripts?verb=search&type=encoded',
+  //     data: {
+  //       "q_encoded": btoa("`chronofrom` > 1099")
+  //     }
+  //   }
   },
   map: {
     discovery_places: {
