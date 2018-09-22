@@ -31,7 +31,7 @@ class SubHead extends Component {
 
     let menuItems = [
       {
-        to: '/results/' + tb + '/all',
+        to: '/search/' + tb + '/all',
         icon: 'list-ul',
         text: 'Show all'
       },
@@ -39,6 +39,11 @@ class SubHead extends Component {
         to: '/search/' + tb ,
         icon: 'search',
         text: 'Search'
+      },
+      {
+        to: '/search/' + tb + '/adv',
+        icon: 'search-plus',
+        text: 'Advanced search'
       }
     ];
 

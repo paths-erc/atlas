@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+
 import { FormGroup, Input, Button, Col, Label } from 'reactstrap';
 import Select from 'react-select';
 
@@ -15,12 +15,18 @@ export default class CustomSearchForm extends Component {
       return { value: props.fields[key].fullname, label: props.fields[key].label };
     });
 
+    let selectedFld = false;
+    if (props.selectedFld && props.fields[props.selectedFld]){
+      selectedFld = {
+        value: props.fields[props.selectedFld].fullname,
+        label: props.fields[props.selectedFld].label
+      }
+    }
     this.state = {
-      search: false,
       fields: flds,
-      selectedFld: flds[0],
-      selectedVal: false,
-      selectedOp: false
+      selectedFld: selectedFld ? selectedFld : flds[0],
+      selectedVal: props.selectedVal,
+      selectedOp: props.selectedStrict
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this._changeField = this._changeField.bind(this);
@@ -46,22 +52,11 @@ export default class CustomSearchForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    let search = encodeURIComponent('adv[aa][fld]')             + "=" + encodeURIComponent(this.state.selectedFld.value) +
-                  "&" + encodeURIComponent('adv[aa][operator]') + "=" + encodeURIComponent(this.state.selectedOp ? "=" : "LIKE") +
-                  "&" + encodeURIComponent('adv[aa][value]')    + "=" + encodeURIComponent(this.state.selectedVal);
-
-    this.setState({ search: search });
+    this.props.onSubmit(this.state.selectedFld.value, this.state.selectedVal, this.state.selectedOp);
   }
 
   render() {
 
-    if (this.state.search){
-      return <Redirect to={{
-            pathname: "/results/" + this.props.tb + "/adv",
-            search: this.state.search
-          }} />
-    }
     if (!this.state.fields){
       return null;
     }
@@ -82,10 +77,10 @@ export default class CustomSearchForm extends Component {
             </Col>
 
             <Col sm={5}>
-              <ValueInput fld={ this.state.selectedFld } onChange={this._changeVal} />
+              <ValueInput fld={ this.state.selectedFld } selectedVal={this.state.selectedVal} onChange={this._changeVal} />
             </Col>
 
-            <Col sm={1}> <Label><Input name="strict" type="checkbox" onChange={this._changeOp} /> Strict</Label> </Col>
+            <Col sm={1}> <Label><Input name="strict" type="checkbox" checked={this.state.selectedOp} onChange={this._changeOp} /> Strict</Label> </Col>
 
             <Col sm={2}> <Button type="submit" color="success" block>Search!</Button> </Col>
           </FormGroup>

@@ -42,7 +42,9 @@ export default class ValueInput extends Component {
           name="value"
           onSearch={this._handleSearch}
           onInputChange={this.props.onChange}
-          onChange={this.props.onChange} />
+          onChange={this.props.onChange}
+          defaultInputValue={this.props.selectedVal}
+          />
       </div>
     );
   }

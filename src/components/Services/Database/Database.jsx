@@ -63,6 +63,18 @@ export default class Database {
     }
   }
 
+  static getSimple(tb, fld, val, strict, page, cb){
+    const data = {
+      verb: 'search',
+      type: 'advanced',
+      page: page,
+      'adv[a0][fld]': fld,
+      'adv[a0][operator]': strict ? '=' : 'LIKE',
+      'adv[a0][value]': val
+    };
+    this.getData(tb, data, d => { cb(d); }, true);
+  }
+
   static getAdv(tb, data, page, cb) {
     data.verb = 'search';
     data.type = 'advanced';

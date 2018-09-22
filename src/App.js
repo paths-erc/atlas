@@ -11,7 +11,7 @@ import MainTemplate from './components/mainLayout/MainTemplate';
 import Home from './components/Home/Home';
 import PathsMap from './components/PathsMap/PathsMap';
 import Results from './components/Results/Results';
-import SearchForm from './components/SearchForm/SearchForm';
+import SearchSimple from './components/Search/SearchSimple';
 
 import Intro from './components/Intro/Intro';
 
@@ -32,7 +32,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
 
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/:type?' component={SearchForm} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)' component={SearchSimple} />
 
             <Route exact path='/results/:table(places|titles|works|manuscripts|authors|colophons)/:type' component={Results} />
             <Route exact path='/read/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
