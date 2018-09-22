@@ -16,6 +16,7 @@ import SearchForm from './components/SearchForm/SearchForm';
 import Intro from './components/Intro/Intro';
 
 import ViewOne from './components/Record/ViewOne';
+import Charts from './components/Charts/Charts';
 
 
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
@@ -35,6 +36,8 @@ class App extends Component {
 
             <Route exact path='/results/:table(places|titles|works|manuscripts|authors|colophons)/:type' component={Results} />
             <Route exact path='/read/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
+
+            <Route exact path='/charts/:id?' component={Charts} />
 
           </MainTemplate>
         </Switch>

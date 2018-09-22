@@ -12,6 +12,7 @@ import Plugin from './Plugin';
 import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
+import Timeline from './Timeline';
 
 class ReadTitle extends Component {
 
@@ -90,7 +91,7 @@ class ReadTitle extends Component {
                     }
                     {
                       Object.keys(rec.plugins).map( (t, k) => {
-                        return <Plugin key={k} data={rec.plugins[t]} />
+                        return  <Plugin key={k} data={rec.plugins[t]} />
                       })
                     }
                   </CardBody>
@@ -98,6 +99,7 @@ class ReadTitle extends Component {
               </Col>
               <Col sm="4">
                 <MiniMap geom={ rec.geodata } />
+                <Timeline placefase={ rec.plugins.paths__m_placefase } />
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
                 <UserLinks links={ rec.manualLinks } />
