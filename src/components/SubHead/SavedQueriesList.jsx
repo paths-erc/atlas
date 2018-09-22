@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 import SavedQueries from '../Services/SavedQueries';
 
-class SavedQueriesList extends Component {
-
+export default class SavedQueriesList extends Component {
 
   render(){
     const tblabel = this.props.tblabel;
@@ -35,5 +34,3 @@ class SavedQueriesList extends Component {
     );
   }
 }
-
-export default SavedQueriesList;

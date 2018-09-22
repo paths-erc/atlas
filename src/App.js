@@ -13,12 +13,8 @@ import PathsMap from './components/PathsMap/PathsMap';
 import Results from './components/Results/Results';
 import SearchForm from './components/SearchForm/SearchForm';
 
-import Places from './components/Places/Places';
-import Titles from './components/Titles/Titles';
-import Works from './components/Works/Works';
-import Manuscripts from './components/Manuscripts/Manuscripts';
-import Authors from './components/Authors/Authors';
-import Colophons from './components/Colophons/Colophons';
+import Intro from './components/Intro/Intro';
+
 import ViewOne from './components/Record/ViewOne';
 
 
@@ -33,16 +29,12 @@ class App extends Component {
           <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
             <Route exact path='/' component={Home} />
-            <Route path='/places' component={Places} />
-            <Route path='/titles' component={Titles} />
-            <Route path='/works' component={Works} />
-            <Route path='/manuscripts' component={Manuscripts} />
-            <Route path='/authors' component={Authors} />
-            <Route path='/colophons' component={Colophons} />
+            <Route path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
 
-            <Route exact path='/results/:table/:type' component={Results} />
-            <Route exact path='/search/:table/' component={SearchForm} />
-            <Route exact path='/read/:table/:id' component={ViewOne} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/:type?' component={SearchForm} />
+
+            <Route exact path='/results/:table(places|titles|works|manuscripts|authors|colophons)/:type' component={Results} />
+            <Route exact path='/read/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
 
           </MainTemplate>
         </Switch>

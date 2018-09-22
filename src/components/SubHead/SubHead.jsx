@@ -6,7 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SavedQueriesList from './SavedQueriesList';
 import SavedQueries from '../Services/SavedQueries';
 
-
+/**
+ * Shows main context navgation:
+ * hero + text + contextual menu + saved queries
+ * @extends Component
+ * @param tblabel string, required
+ * @param tb string, required
+ * @param text string, optinal
+ */
 class SubHead extends Component {
 
   constructor(props) {
@@ -46,7 +53,7 @@ class SubHead extends Component {
                   <FontAwesomeIcon icon="list-ul" /> Show all
                 </Link>
 
-                <Link to={'/search/' + tb } className="btn btn-primary">
+                <Link to={'/search/' + tb} className="btn btn-primary">
                   <FontAwesomeIcon icon="search" /> Search
                 </Link>
 
