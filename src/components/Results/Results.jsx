@@ -104,6 +104,7 @@ class Results extends Component {
               <p>Please file the current URL:</p>
 
               <Alert color="info" className="border p-3 m-2 ml-4">{ window.location.href }</Alert>
+              <Alert color="info" className="border p-3 m-2 ml-4">{ decodeURIComponent(window.location.href) }</Alert>
               <p>and the following error message</p>
               <Alert color="info" className="border p-3 m-2 ml-4">
                 <pre>
@@ -133,6 +134,8 @@ class Results extends Component {
               <Alert color="warning" className="mt-5">
                   <h4 className="alert-heading">Ooops!</h4>
                   No result found. Please reformulate the query.
+                  <Alert color="info" className="border p-3 m-2 ml-4">{ this.state.result.head.query_arrived }</Alert>
+
               </Alert>
             </div>
         </div>
