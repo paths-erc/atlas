@@ -38,8 +38,17 @@ export default class Database {
     return baseUrl;
   }
 
-  static getSaved(grp, q, page, cb) {
+  static getUniqueVal(tb, fld, string, cb) {
+    this.getData('../v2/paths/' + tb, {
+      verb: 'getUniqueVal',
+      tb: tb.replace('paths__', ''),
+      fld: fld,
+      s: string
+    }, d => { cb(d); }, true);
 
+  }
+
+  static getSaved(grp, q, page, cb) {
     if (typeof SavedQueries[grp][q] === 'undefined') {
       cb({
         status: 'error',
