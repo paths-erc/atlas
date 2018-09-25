@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import qs from 'qs';
 
-import Database from '../Services/Database/Database';
 import SubHead from '../SubHead/SubHead';
 import CustomSearchForm from './CustomSearchForm';
-import Loading from '../Loading/Loading';
 import Results from './Results';
 
 
@@ -14,15 +12,12 @@ export default class SearchSimple extends Component {
   constructor(props) {
     super(props);
 
+    const qstring = qs.parse(props.location.search, {ignoreQueryPrefix: true});
     this.state = {
-      orm: true,
-      fld: false,
-      val: false,
-      strict: false,
-      page: false,
-      tb_label: null,
-      fields: null,
-      selectedFld: null
+      fld: qstring.f,
+      val: qstring.v,
+      strict: (qstring.s && qstring.s !== 'false' && qstring.s !== 'undefined'),
+      page: qstring.page
     };
 
     this._onFormSubmit = this._onFormSubmit.bind(this);
@@ -30,75 +25,45 @@ export default class SearchSimple extends Component {
 
   _onFormSubmit(fld, val, strict){
     const s = "f=" + encodeURIComponent(fld) +
-                  "&s=" + encodeURIComponent(strict) +
-                  "&v=" + encodeURIComponent(val)
-    this.props.history.push(`/search/${this.props.match.params.table}?${s}`);
+                  (strict ? "&s=1" : '')+
+                  "&v=" + encodeURIComponent(val);
+
     this.setState({
       fld: fld,
       val: val,
       strict: strict
     });
+
+    this.props.history.push(`/search/${this.props.match.params.table}?${s}`);
   }
 
-  _setFromQs(){
-    const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
-
-    if (qstring.f && qstring.v){
-      this.setState({
-        fld: qstring.f,
-        val: qstring.v,
-        strict: (qstring.s && qstring.s !== 'false'),
-        page: qstring.page
-      });
-    } else {
-      this.setState({
-        fld: false,
-        val: false,
-        strict: false,
-      });
-    }
-  }
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
+    console.log('SearchSimple did update');
     const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
     if(this.state.page !== qstring.page){
       this.setState({
         page: qstring.page
       });
     }
-
-  }
-
-  componentDidMount(){
-    this._setFromQs();
-    Database.inspect(this.props.match.params.table, data => {
-      this.setState({
-        fields: data.fields,
-        tb_label: data.label
-      });
-    });
   }
 
   render() {
-    if (!this.state.fields) {
-      return <div className="m-5 p-5"><Loading /></div>;
-    }
-
     return (
       <div>
-        <SubHead tb={ this.props.match.params.table } tblabel={ this.state.tb_label } text='Simple search' />
+        <SubHead tb={ this.props.match.params.table } text='Simple search' />
 
       	<div className="mt-3 p-1 container">
           <CustomSearchForm
-              fields={this.state.fields}
+              tb={ this.props.match.params.table }
               onSubmit={this._onFormSubmit}
-              selectedFld={this.state.fld}
-              selectedVal={this.state.val}
-              selectedStrict={this.state.strict}
+              fld={this.state.fld}
+              val={this.state.val}
+              strict={this.state.strict}
              />
           <hr />
   		  </div>
 
-        { this.state.fld && <Results
+        { this.state.fld && this.state.val && <Results
             tb={this.props.match.params.table}
             type="simple"
             fld={this.state.fld}

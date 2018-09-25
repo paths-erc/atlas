@@ -19,7 +19,7 @@ export default class ValueInput extends Component {
 
   _handleSearch = (string) => {
     this.setState({isLoading: true});
-    const [tb, fld] = this.props.fld.value.split(':');
+    const [tb, fld] = this.props.fld.split(':');
     Database.getUniqueVal(tb, fld, string, d => {
       this.setState({
         options : d,
@@ -43,7 +43,7 @@ export default class ValueInput extends Component {
           onSearch={this._handleSearch}
           onInputChange={this.props.onChange}
           onChange={this.props.onChange}
-          defaultInputValue={this.props.selectedVal}
+          defaultInputValue={this.props.val ? this.props.val : ''}
           />
       </div>
     );
