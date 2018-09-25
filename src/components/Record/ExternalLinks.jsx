@@ -14,13 +14,14 @@ export default class ExternalLinks extends Component {
 
       <Card className="mt-2">
         <CardHeader>
-          <FontAwesomeIcon icon="link" /> External links
+          <FontAwesomeIcon icon={['fab', 'hubspot']} /> External links
         </CardHeader>
         <CardBody>
           <ListGroup>
             { this.props.rec.lcbm && this.props.rec.lcbm.val &&
               <ListGroupItem>
                 <a href={"http://coptot.manuscriptroom.com/manuscript-catalog/?gaNum=" + encodeURIComponent(this.props.rec.lcbm.val)} target="_blank">
+                  <FontAwesomeIcon icon="external-link-alt" />
                   The Digital Edition of the Coptic Old Testament
                 </a>
               </ListGroupItem>
@@ -29,7 +30,7 @@ export default class ExternalLinks extends Component {
             { this.props.rec.tm && this.props.rec.tm.val  && this.props.tb === 'manuscripts' &&
               <ListGroupItem>
                 <a href={"https://www.trismegistos.org/text/" + this.props.rec.tm.val } target="_blank">
-                  Trismegistos texts
+                  <FontAwesomeIcon icon="external-link-alt" /> Trismegistos texts
                 </a>
               </ListGroupItem>
             }
@@ -37,7 +38,7 @@ export default class ExternalLinks extends Component {
             { this.props.rec.tm && this.props.rec.tm.val  && this.props.tb === 'places' &&
               <ListGroupItem>
                 <a href={"https://www.trismegistos.org/place/" + this.props.rec.tm.val } target="_blank">
-                  Trismegistos places
+                  <FontAwesomeIcon icon="external-link-alt" /> Trismegistos places
                 </a>
               </ListGroupItem>
             }
@@ -45,7 +46,7 @@ export default class ExternalLinks extends Component {
             { this.props.rec.ldab && this.props.rec.ldab.val  && this.props.tb === 'manuscripts' &&
               <ListGroupItem>
                 <a href={"https://www.trismegistos.org/ldab/text.php?quick=" + this.props.rec.ldab.val } target="_blank">
-                  Leuven Database of Ancient books
+                  <FontAwesomeIcon icon="external-link-alt" /> Leuven Database of Ancient books
                 </a>
               </ListGroupItem>
             }
@@ -53,7 +54,7 @@ export default class ExternalLinks extends Component {
             { this.props.rec.pleiades && this.props.rec.pleiades.val  && this.props.tb === 'places' &&
               <ListGroupItem>
                 <a href={"https://pleiades.stoa.org/places/" + this.props.rec.pleiades.val } target="_blank">
-                  Pleiades
+                  <FontAwesomeIcon icon="external-link-alt" /> Pleiades
                 </a>
               </ListGroupItem>
             }
