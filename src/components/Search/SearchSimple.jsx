@@ -37,8 +37,7 @@ export default class SearchSimple extends Component {
     this.props.history.push(`/search/${this.props.match.params.table}?${s}`);
   }
 
-  componentDidUpdate() {
-    console.log('SearchSimple did update');
+  componentDidUpdate(prevProps, prevState) {
     const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
     if(this.state.page !== qstring.page){
       this.setState({

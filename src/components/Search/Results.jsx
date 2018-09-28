@@ -33,7 +33,18 @@ class Results extends Component {
           });
         });
         break;
-      default:
+
+        case 'adv':
+          Database.getAdv(this.props.tb, this.props.data, this.props.page, d => {
+            this.setState({
+              result: d,
+              title: 'Advanced search'
+            });
+          });
+          break;
+
+        default:
+          return null;
 
     }
   }

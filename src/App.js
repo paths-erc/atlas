@@ -12,6 +12,7 @@ import Home from './components/Home/Home';
 import PathsMap from './components/PathsMap/PathsMap';
 import Results from './components/Results/Results';
 import SearchSimple from './components/Search/SearchSimple';
+import SearchAdv from './components/Search/SearchAdv';
 
 import Intro from './components/Intro/Intro';
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
 
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/adv' component={SearchAdv} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)' component={SearchSimple} />
 
             <Route exact path='/results/:table(places|titles|works|manuscripts|authors|colophons)/:type' component={Results} />

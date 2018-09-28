@@ -39,7 +39,6 @@ export default class ValueInput extends Component {
           {...this.state}
           minLength={1}
           placeholder="Add a value"
-          name="value"
           onSearch={this._handleSearch}
           onInputChange={this.props.onChange}
           onChange={this.props.onChange}

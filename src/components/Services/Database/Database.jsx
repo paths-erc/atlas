@@ -75,12 +75,27 @@ export default class Database {
     this.getData(tb, data, d => { cb(d); }, true);
   }
 
+  /**
+   * Executes an advanced query on the database
+   * @param  {String}   tb   Table to be queried, no prefix
+   * @param  {Object}   data Object of query data: {a:{f:'fieldname', v:'value', o: 'operator'}, a2:{f:'fieldname', v:'value', o: 'operator', c: 'connector'}}
+   * @param  {Integer}   page Page number
+   * @param  {Function} cb   Callback function
+   */
   static getAdv(tb, data, page, cb) {
-    data.verb = 'search';
-    data.type = 'advanced';
-    data.page = page;
+    let d = {
+      verb: 'search',
+      type: 'advanced',
+      page: page
+    };
+    Object.entries(data).forEach(([k, v]) => {
+      d[`adv[${k}][fld]`] = v.f;
+      d[`adv[${k}][value]`] = v.v;
+      d[`adv[${k}][operator]`] = v.o;
+      d[`adv[${k}][connector]`] = v.c;
+    });
 
-    this.getData(tb, data, d => { cb(d); }, true);
+    this.getData(tb, d, d => { cb(d); }, true);
   }
 
   static getStr(tb, string, page, cb) {

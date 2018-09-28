@@ -55,7 +55,6 @@ export default class FldSelect extends Component {
 
     return (
         <Select
-          name="fld"
           defaultValue={ this.state.fld }
           options={ this.state.fields }
           onChange={ this.props.onChange }
