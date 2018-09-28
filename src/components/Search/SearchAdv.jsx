@@ -8,6 +8,8 @@ import FldSelect from './FldSelect';
 import ValueInput from './ValueInput';
 import OperatorSelect from './OperatorSelect';
 import ConnectorSelect from './ConnectorSelect';
+import Database from '../Services/Database/Database';
+import Loading from '../Loading/Loading';
 
 
 
@@ -37,7 +39,8 @@ export default class AdvSearchForm extends Component {
     this.state = {
       rows: rows,
       showResults: show,
-      page: false
+      page: false,
+      fields: false
     };
 
     this._changeOperator = this._changeOperator.bind(this);
@@ -122,9 +125,24 @@ export default class AdvSearchForm extends Component {
     }
   }
 
-// TODO: fields should be loaded only once, at first time and then passed to FldSelect
+  componentDidMount(){
+    // TODO: fields should be loaded only once, at first time and then passed to FldSelect
+    Database.inspect(this.props.match.params.table, data => {
+      let fldList = data.fields;
+      fldList = Object.keys(data.fields).map(key => {
+        return { value: fldList[key].fullname, label: fldList[key].label };
+      });
+      this.setState({
+        fields: fldList
+      });
+    });
+  }
+
 
   render() {
+    if (!this.state.fields){
+      return <Loading />;
+    }
     return (
       <div>
         <SubHead tb={ this.props.match.params.table } text='Advanced search' />
@@ -147,6 +165,7 @@ export default class AdvSearchForm extends Component {
                     </Col>
                     <Col xs={4}>
                       <FldSelect
+                        fields={this.state.fields}
                         tb={ this.props.match.params.table }
                         fld={v.f}
                         onChange={ this._changeField.bind(this, k) }
