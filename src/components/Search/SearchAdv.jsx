@@ -126,7 +126,6 @@ export default class AdvSearchForm extends Component {
   }
 
   componentDidMount(){
-    // TODO: fields should be loaded only once, at first time and then passed to FldSelect
     Database.inspect(this.props.match.params.table, data => {
       let fldList = data.fields;
       fldList = Object.keys(data.fields).map(key => {

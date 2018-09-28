@@ -10,9 +10,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import MainTemplate from './components/mainLayout/MainTemplate';
 import Home from './components/Home/Home';
 import PathsMap from './components/PathsMap/PathsMap';
-import Results from './components/Results/Results';
+
+import SearchSaved from './components/Search/SearchSaved';
 import SearchSimple from './components/Search/SearchSimple';
 import SearchAdv from './components/Search/SearchAdv';
+import SearchAll from './components/Search/SearchAll';
 
 import Intro from './components/Intro/Intro';
 
@@ -33,10 +35,11 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
 
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/saved' component={SearchSaved} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/all' component={SearchAll} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/adv' component={SearchAdv} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)' component={SearchSimple} />
 
-            <Route exact path='/results/:table(places|titles|works|manuscripts|authors|colophons)/:type' component={Results} />
             <Route exact path='/read/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
 
             <Route exact path='/charts/:id?' component={Charts} />

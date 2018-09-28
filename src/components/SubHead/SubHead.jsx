@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SavedQueriesList from './SavedQueriesList';
 import SavedQueries from '../Services/SavedQueries';
+import Cfg from '../Services/Cfg/Cfg';
 
 
 class SubHead extends Component {
@@ -25,7 +26,7 @@ class SubHead extends Component {
   }
 
   render(){
-    const tblabel = this.props.tblabel;
+    const tblabel = this.props.tblabel ? this.props.tblabel : Cfg[this.props.tb].label;
     const tb = this.props.tb;
     const text = this.props.text ? <span className="subText">{this.props.text}</span> : false;
 

@@ -5,10 +5,9 @@ import {withRouter} from 'react-router';
 
 import Database from '../Services/Database/Database';
 import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
-import { ItemPreview, ItemPreviewWrapper } from '../Results/ItemPreview';
+import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
 import OpenInMap from '../Manuscripts/OpenInMap';
 import Loading from '../Loading/Loading';
-
 import Cfg from '../Services/Cfg/Cfg';
 
 
@@ -18,8 +17,7 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: false,
-      title: false
+      result: false
     };
   }
 
@@ -28,8 +26,7 @@ class Results extends Component {
       case 'simple':
         Database.getSimple(this.props.tb, this.props.fld, this.props.val, this.props.strict, this.props.page, d => {
           this.setState({
-            result: d,
-            title: 'Simple search'
+            result: d
           });
         });
         break;
@@ -37,16 +34,31 @@ class Results extends Component {
         case 'adv':
           Database.getAdv(this.props.tb, this.props.data, this.props.page, d => {
             this.setState({
-              result: d,
-              title: 'Advanced search'
+              result: d
+            });
+          });
+          break;
+
+        case 'all':
+          Database.getAll(this.props.tb, this.props.page, d => {
+            this.setState({
+              result: d
+            });
+          });
+          break;
+
+        case 'saved':
+          Database.getSaved(this.props.tb, this.props.query, this.props.page, d => {
+            this.setState({
+              result: d
             });
           });
           break;
 
         default:
           return null;
-
     }
+
   }
 
 
