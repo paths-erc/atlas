@@ -14,6 +14,7 @@ import PathsMap from './components/PathsMap/PathsMap';
 import SearchSaved from './components/Search/SearchSaved';
 import SearchSimple from './components/Search/SearchSimple';
 import SearchAdv from './components/Search/SearchAdv';
+import SearchEncoded from './components/Search/SearchEncoded';
 import SearchAll from './components/Search/SearchAll';
 
 import Intro from './components/Intro/Intro';
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/saved' component={SearchSaved} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/all' component={SearchAll} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/adv' component={SearchAdv} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/encoded' component={SearchEncoded} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)' component={SearchSimple} />
 
             <Route exact path='/read/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />

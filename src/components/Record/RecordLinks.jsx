@@ -10,13 +10,12 @@ class RecordLinks extends Component {
     const strippedTb = table.replace('paths__', '');
     let url = [
       '/',
-      'results',
+      'search',
       '/',
       strippedTb,
       '/',
       'encoded',
-      '?q_encoded=' + window.btoa('SELECT * FROM ' + table + ' WHERE ' + query),
-      '&tb=' + strippedTb
+      '?q=' + window.btoa('SELECT * FROM ' + table + ' WHERE ' + query)
     ];
 
     return url.join('');

@@ -55,7 +55,16 @@ class Results extends Component {
           });
           break;
 
+        case 'encoded':
+          Database.getByEncodedSql(this.props.tb, this.props.q, this.props.page, d => {
+            this.setState({
+              result: d
+            });
+          });
+          break;
+
         default:
+          console.log(`Unknown verb ${this.props.type}`);
           return null;
     }
 
