@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, CardHeader, CardBody, ListGroup } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import CoptOT from './ExternalLinks/CoptOT';
+import TM from './ExternalLinks/TM';
+import TmPlaces from './ExternalLinks/TmPlaces';
+import Ldab from './ExternalLinks/Ldab';
+import Pleiades from './ExternalLinks/Pleiades';
 
 
 export default class ExternalLinks extends Component {
 
   render() {
-
     if ( !this.props.rec || this.props.rec.length < 1 ) {
       return null;
     }
@@ -18,53 +23,16 @@ export default class ExternalLinks extends Component {
         </CardHeader>
         <CardBody>
           <ListGroup>
-            { this.props.rec.lcbm && this.props.rec.lcbm.val &&
-              <ListGroupItem>
-                <a href={"http://coptot.manuscriptroom.com/manuscript-catalog/?gaNum=" + encodeURIComponent(this.props.rec.lcbm.val)} target="_blank">
-                  <FontAwesomeIcon icon="external-link-alt" />
-                  The Digital Edition of the Coptic Old Testament
-                </a>
-              </ListGroupItem>
-            }
+            <CoptOT   data={this.props.rec.lcbm}  tb={this.props.tb}/>
+            <TM       data={this.props.rec.tm}    tb={this.props.tb} />
+            <Ldab     data={this.props.rec.ldab}  tb={this.props.tb} />
 
-            { this.props.rec.tm && this.props.rec.tm.val  && this.props.tb === 'manuscripts' &&
-              <ListGroupItem>
-                <a href={"https://www.trismegistos.org/text/" + this.props.rec.tm.val } target="_blank">
-                  <FontAwesomeIcon icon="external-link-alt" /> Trismegistos texts
-                </a>
-              </ListGroupItem>
-            }
-
-            { this.props.rec.tm && this.props.rec.tm.val  && this.props.tb === 'places' &&
-              <ListGroupItem>
-                <a href={"https://www.trismegistos.org/place/" + this.props.rec.tm.val } target="_blank">
-                  <FontAwesomeIcon icon="external-link-alt" /> Trismegistos places
-                </a>
-              </ListGroupItem>
-            }
-
-            { this.props.rec.ldab && this.props.rec.ldab.val  && this.props.tb === 'manuscripts' &&
-              <ListGroupItem>
-                <a href={"https://www.trismegistos.org/ldab/text.php?quick=" + this.props.rec.ldab.val } target="_blank">
-                  <FontAwesomeIcon icon="external-link-alt" /> Leuven Database of Ancient books
-                </a>
-              </ListGroupItem>
-            }
-
-            { this.props.rec.pleiades && this.props.rec.pleiades.val  && this.props.tb === 'places' &&
-              <ListGroupItem>
-                <a href={"https://pleiades.stoa.org/places/" + this.props.rec.pleiades.val } target="_blank">
-                  <FontAwesomeIcon icon="external-link-alt" /> Pleiades
-                </a>
-              </ListGroupItem>
-            }
+            <TmPlaces data={this.props.rec.tm}    tb={this.props.tb} />
+            <Pleiades data={this.props.rec.pleiades} tb={this.props.tb} />
 
     	    </ListGroup>
         </CardBody>
       </Card>
-
-
-
 
     </div>
   }

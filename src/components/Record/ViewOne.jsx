@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
+
 import Database from '../Services/Database/Database';
 import Cfg from '../Services/Cfg/Cfg';
-import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 import SubHead from '../SubHead/SubHead';
-import ViewOneTitle from '../Titles/ViewOneTitle';
 import RecordCell from './RecordCell';
 import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';
@@ -52,8 +52,8 @@ class ReadTitle extends Component {
     }
 
     switch (rec.metadata.tb_stripped) {
-      case 'titles':
-        return (<ViewOneTitle record={ rec } />);
+      // case 'titles':
+      //   return (<ViewOneTitle record={ rec } />);
       default:
         if (rec.core.length < 1){
           return (

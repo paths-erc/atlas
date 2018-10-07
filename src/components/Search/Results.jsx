@@ -132,18 +132,18 @@ class Results extends Component {
 
           <div className="clearfix">
 
-          <OpenInMap
-              tb={this.state.result.head.stripped_table}
-              where={this.state.result.head.query_where}
-              type={this.props.match.params.type}
-              search={ qs.parse(this.props.location.search, {ignoreQueryPrefix: true}) }
-              />
+            <OpenInMap
+                tb={this.state.result.head.stripped_table}
+                where={this.state.result.head.query_where}
+                type={this.props.match.params.type}
+                search={ qs.parse(this.props.location.search, {ignoreQueryPrefix: true}) }
+                />
 
             <PaginateResultSummary
               totalRows={this.state.result.head.total_rows}
               page={this.state.result.head.page}
               query={this.state.result.head.query_arrived}
-            />
+              />
 
             <PaginateResult
                 path={this.props.location.pathname}
@@ -151,7 +151,7 @@ class Results extends Component {
                 totalRows={this.state.result.head.total_rows}
                 page={this.state.result.head.page}
               />
-        </div>
+          </div>
 
 
 
@@ -168,6 +168,15 @@ class Results extends Component {
             })
           }
           </ItemPreviewWrapper>
+
+          <div className="pt-3">
+            <PaginateResult
+                path={this.props.location.pathname}
+                search={ this.props.location.search }
+                totalRows={this.state.result.head.total_rows}
+                page={this.state.result.head.page}
+              />
+          </div>
 
         </div>
 
