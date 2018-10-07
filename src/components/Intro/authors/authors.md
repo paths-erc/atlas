@@ -1,13 +1,19 @@
-This section of the “PAThs” database contains the records of all the authors – currently, one hundred and fourteen – to which the Coptic manuscript tradition ascribes one or more literary works.
-Each entry is marked by an internal numerical identifier (ID), and includes the Virtual International Authority File (VIAF) identifier, as well as different forms of the Coptic name, as they actually appear in the ancient titles. Along with these data, the Greek name, its English translation, any eventual religious or ecclesiastical title, and (when available) some chronological references regarding the author’s dates of birth and death are also provided.
+This section of the PAThs database contains the authors attested in the Coptic manuscript tradition. Currently, there are 114 authors to whom one or more works are attributed.
 
-This first section is followed by a short biography of the author composed with a special interest in the role he and his production have played in the development of Coptic literature and, in most cases, with a discussion of his more relevant extant works. A thorough regesta of his extant literary production, that is, a list of all the literary works that are attributed to the author, both in Coptic and in near linguistic environments completes the section.
-As for the Greek authors, we exclusively record the works that were actually transmitted in Coptic, and this last section is customarily organised in two parts, the first covering the authentic works, the second the pseudoepigraphical ones.
-As for the Coptic authors – namely, authors whose works were likely composed originally in Coptic – we record instead both the works preserved in Coptic (*genuina* and *dubia*/*spuria*) and their translations in other languages. Thus, in this case, the repertory is threefold, since for obvious reasons the authenticity is indicated solely for the Coptic production.
-A selected bibliography supplements each record.
+Each Author entry is identified by a unique internal number (ID) and provides:
+- The Virtual International Authority File ([VIAF](http://viaf.org/)) identifier
+- The different forms of the Coptic name of the author, as they actually appear in the Coptic titles
+- The Greek name, when available
+- The English version of the name
+- Any religious or ecclesiastical title, when available
+- Chronological references, when available
+- A short biography of the author, focused on his impact on the development of Coptic literature, with a discussion of his more relevant extant works
+- A thorough *regestum* of the extant literary works attributed to the author, both in Coptic and in other oriental Christian languages
+- A selected bibliography
 
-In the section Authors, the user can find both figures about which a great number of reliable historical and biographical pieces of information are available to us, and names known exclusively from hagiographical compositions or, more frequently, from the *inscriptiones*/*subscriptions* (initial titles/final titles) that reliably or fictitiously put a literary composition or a literary corpus under their names.
+As for the Greek authors, only the works actually written in Coptic are recorded, distinguishing the authentic works from the pseudo-epigraphical ones.
 
-In other words, this category includes fictitious and semi-fictitious authors, too. By the latter, we indicate a quite peculiar Coptic phenomenon, namely the literary construction of semi-historical figures made up by a mixture of reliable pieces of biographical information on ecclesiastical and religious leading figures and later additions, often with evident apologetic or defamatory purposes. This led, *inter alia*, to the formation of the so-called “cycles”, that is, groups of works composed in relatively late stages of the development of Coptic literature and devoted to the lives of 4th and 5th century Fathers (and, in most cases, pseudoepigraphically attributed to their names).
+As for the Coptic authors—namely, authors whose works were probably composed originally in Coptic—both the works preserved in Coptic (*genuina* and *dubia*/*spuria*) and their translations in other languages are recorded.
 
-All the records are linked with the *clavis* entries of the works connected to the author, which, in their turn, are directly linked to the manuscript(s) which preserve(s) them. Consequently, Coptic authors can be browsed moving from virtually any section of “PAThs” database.
+**Authors** includes real, fictitious and semi-fictitious personalities. The last category refers to a rather unusual Coptic phenomenon, i.e. the literary construction of semi-historical characters made up of a mixture of reliable biographical information and fabricated additions, often for evident apologetic or defamatory purposes. This phenomenon led, *inter alia*, to the formation of the so-called “cycles”—groups of works composed at relatively late stages of Coptic literature and devoted to the lives of 4th and 5th century fathers.
+Authors are linked to Works, which are linked to Manuscripts preserving them.

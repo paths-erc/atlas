@@ -1,36 +1,34 @@
-Books, which in ancient times means manuscript books, are the privileged vehicle of diffusion and knowledge of a literature, that is of a culture. But, as it has been observed, every book has its destiny, and the destiny of Coptic manuscripts has been a very capricious one. At first, after many centuries of flourishing production, the neglect: when Coptic became definitely a dead language, superseded by the Arabic, ancient Coptic manuscripts were not more consulted and in some cases were even relegated in remote storerooms of the monasteries. Then, when the monks realized that those (in their opinion) unuseful relics raised the interest of many Western collectors, they felt no scruple to dismember them and sell to different persons quires, leaves and even fragments, in order to increase the incomes. So it happens that manuscripts from the same ancient library (e.g. the library of the White Monastery, or of the Monastery of Saint Macarius), and even portions of a single manuscript, are scattered in a lot of manuscript collections all over the world. In earlier decades, many efforts have been made to reconstruct the composition of the dispersed Coptic libraries and of their often dismembered manuscripts, which are better called ‘codicological units’. Moreover, archaeological explorations and more or less fortuitous finds made by the natives, have greatly enriched our knowledge of the Coptic book production, especially of its earlier phases (e.g. the Nag Hammadi Codices, the Bodmer Papyri, but also the manuscripts from the Monastery of the Archangel Michael near Phantoou).
+This section of the PAThs database contains the Coptic and bilingual Greco-Coptic *codicological units* dated to or datable from the 3<sup>rd</sup> to the 11<sup>th</sup> century.
 
-This section of the PAThs database lists all the Coptic and bilingual Greco-Coptic ‘codicological units’, dated or datable from the 3<sup>rd</sup> to the 11<sup>th</sup> century.
+Each codicological unit is identified by a new, stable and unique identifier, called `Coptic Literary Manuscript` (`CLM`). When the codicological units have already been already classified and/or described by other projects ([Corpus dei Manoscritti Copti Letterari](http://www.cmcl.it/) mainly, but also [Trismegistos](https://www.trismegistos.org/tm/index.php), [Leuven Database of Ancient Book](https://www.trismegistos.org/ldab/), [Digital Edition of Coptic Old Testament](https://www.uni-goettingen.de/en/digital+edition+of+the+coptic+%28sahidic%29+old+testament/475974.html)) a reference to the respective identifiers is always provided.
 
-Each codicological unit is identified by a new, stable and unique ID, called ‘Coptic Literary Manuscript’ (CLM). When the codicological units have been already classified and/or described by other projects (CMCL mainly, but also Trismegistos, LDAB, Digital Edition of Coptic Old Testament) a reference to the respective ID is always provided.
+**Manuscripts** are linked to **Works**, **Titles**, **Colophons**, **Places**, distinguishing between production, storage and discovery places.
 
-Each CLM is linked to the related
+**Manuscripts** contains all the codicological units repertoried in the [CMCL](http://www.cmcl.it/) but updates and broadens it with additions, for instance:
+- The manuscripts discovered in the most recent archaeological campaigns (e.g. the hermitage of Sheikh el-Gurna, or MMA 1152, in Western Thebes; Antinoopolis)
+- The ostraca from the Theban region (for which we have a well-documented archaeological context)
+- Detached bindings (that is bindings without a related text block)
 
-- Works
-- Titles
-- Colophons
-- Places of production and/or storage and/or discovery.
+Single fragments are considered as `codicological units` in their own right. If they are recognized as part of a sole `codicological unit`, the identifiers may be merged.
 
-The cornerstone on which the PAThs manuscript database has been built is the CMCL, which preserves an enormous and valuable amount of data. PAThs catalogue contains all the codicological units repertoried in the CMCL, but updates and enriches it with significant additions, such as:
-- the manuscripts discovered in the most recent archaeological campaigns (e.g. the hermitage of Sheikh el-Gurna, or MMA 1152, in Western Thebes; Antinoopolis),
-- the ostraca from the Theban region (for which we have a well documented archaeological context),
-- detached bindings (that is bindings without a related text block).
+The PAThs database does not include:
+- Copto-Arabic manuscripts
+- Liturgical manuscripts (except for those already included in the CMCL, mainly from the White Monastery)
+-	Non-literary manuscripts of magical and astrological content
 
-On the contrary, PAThs database does not include:
-- Copto-Arabic manuscripts,
-- liturgical manuscripts (except those already included in the CMCL, mainly from the White Monastery),
-- non-literary manuscripts of magical and astrological content.
+The database also provides a new detailed protocol of codicological description. It takes into account the most recent theoretical and terminological achievements of Greek and Latin codicology but is of course targeted at the specific features of Coptic manuscripts. An analytical description of the codicological protocol is provided in the *Manual of use*.
 
-When only one or a few fragments of an original ‘codicological unit’ survive, these are classified per se, being temporary considered as ‘codicological units’, until other complementary fragments have been identified and a CLM ID has been assigned to the virtually reconstructed codex.
+This model of description is easily expandable in case of a need to describe new features and can be easily queried (manually or programmatically), in order to provide scholars with an easy-to-use tool for their research.
 
-The database provides also a new detailed protocol of codicological description, elaborated by the PAThs team: it takes into account the most recent theoretical and terminological achievements of Greek and Latin codicology, but is of course commensurate to the specific features of Coptic manuscripts. An analytical description of the codicological protocol is provided in the “Manual of use”.
-This model of description is easily expandable in case of need to describe new features and can be easily queried (manually or programmatically), in order to provide scholars with an easy-to-use tool for their research.
+Currently, more than 6,100 `codicological units` have been filed. Within this corpus, a complete codicological description, also including a selected bibliography, is provided for Coptic papyrus and parchment rolls and codices belonging to some of the most important ancient libraries of Christian Egypt, that is:
+-	Nag Hammadi Codices
+-	Bodmer Papyri (otherwise called Dishna Papers)
+-	Papyrus codices from the Monastery of Saint John the Baptist of Thin
+-	Codices from the hermitage of Sheikh el-Gurna
+-	Codices from Antinoopolis
+-	Parchment codices from the Monastery of the Archangel Michael near Phantoou
+-	Parchment codices from the Monastery of Saint Macarius in the Wādī al-Naṭrūn
 
-So far (February 2019), the user can find a complete codicological description, which also includes the bibliography, of the few Coptic papyrus and parchment rolls, and of the codicological units belonging to some of the most important ancient libraries of Chrstian Egypt, that is:
-- Nag Hammadi Codices,
-- Bodmer Papyri (otherwise called Dishna Papers),
-- papyrus codices from the Monastery of Saint John the Baptist of Tin,
-- codices from the hermitage of Sheikh el-Gurna,
-- codices from Antinoopolis,
-- parchment codices from the Monastery of the Archangel Michael near Phantoou,
-- parchment codices from the Monastery of Saint Macarius in the Wadi al-Natrun.
+PAThs takes advantage of the invaluable data contained in the Corpus dei [Manoscritti Copti Letterari](http://www.cmcl.it/), used as a solid foundation to build a new database, that will represent a change of perspective in the study of Coptic literature. In the immediate future PAThs and CMCL will be kept synchronised, while in the longer term PAThs is meant to inherit fully the mission of the CMCL.
+
+Manuscripts are an important means of disseminating knowledge about an ancient literature. Yet, every book has its destiny, and the destiny of Coptic manuscripts has been a very capricious one. First of all, after many centuries of flourishing production, there was neglect: when Coptic was superseded by Arabic and became a dead language, ancient Coptic manuscripts were no longer consulted and in some cases were even relegated to remote storerooms of the monasteries. Then, when the monks realised that those relics which were, in their opinion, no longer useful could raise the interest of many Western collectors, they had no scruples in taking them apart and selling them off separately in order to increase income. The result is that manuscripts from the same ancient library (e.g. the library of the White Monastery, or of the Monastery of Saint Macarius), and even portions of a single manuscript, are now scattered throughout the world in a number of different collections. In the last decades, many efforts have been made to reconstruct the dispersed Coptic libraries and their often dismembered manuscripts, or better `codicological units`. Moreover, archaeological explorations and more or less fortuitous finds have greatly enriched our knowledge of the Coptic book production, especially of its earlier phases (e.g. the Nag Hammadi Codices, the Bodmer Papyri as well as the manuscripts from the Monastery of the Archangel Michael near Phantoou).
