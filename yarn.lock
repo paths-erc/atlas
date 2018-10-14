@@ -8311,9 +8311,10 @@ react-is@^16.3.2:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.2.tgz#e2a7b7c3f5d48062eb769fcb123505eb928722e3"
   integrity sha512-hSl7E6l25GTjNEZATqZIuWOgSnpXb3kD0DVCujmg46K5zLxsbiKaaT6VO9slkSBDPZfYs30lwfJwbOFOnoEnKQ==
 
-react-leaflet-google@danieldunderfelt/react-leaflet-google:
-  version "3.3.1"
-  resolved "https://codeload.github.com/danieldunderfelt/react-leaflet-google/tar.gz/7c7590470ba4b2214be243cc313e6d58bd649a64"
+react-leaflet-google@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-leaflet-google/-/react-leaflet-google-4.0.0.tgz#5e502f65b0ef0d40fbd09c0de00a2ac1b75f65cb"
+  integrity sha512-V4W6iwUuZj6i2FhYWrP3TzgjELj8mA+8Ua2VCHousz/rV6oo4i8l7WPBDZdgY3hUbBCYoKzs3ZRou7Z5rvUuPA==
 
 react-leaflet-sidebarv2@^0.6.0:
   version "0.6.0"
