@@ -1,1 +1,34 @@
-"use strict";var precacheConfig=[["/atlas/index.html","f58cf5f5d177b79a47907c77f395058a"],["/atlas/static/css/main.0d893c81.css","566d850946a2ebe3fa9c7daa6a7073ed"],["/atlas/static/media/Antinoou.65b2feb2.ttf","65b2feb297cccfeb17edfedd338c3ebf"],["/atlas/static/media/IntroMd.c2b421ab.md","c2b421ab6f96849dece18ec9833772ec"],["/atlas/static/media/MissionStatementMd.6b5abc54.md","6b5abc5472f76d07fe7ab3fa66fbbf5b"],["/atlas/static/media/Ripple-1.7s-200px.7466db60.svg","7466db60fec8135aa348f46e1c2f6148"],["/atlas/static/media/authors.6529badf.md","6529badf1e220cbd8f0f70f0914eddb8"],["/atlas/static/media/authors.c5d4185c.jpg","c5d4185c42f716d9a584159924577278"],["/atlas/static/media/colophons.670754fc.md","670754fc1177fbc5239e70bec43af965"],["/atlas/static/media/erc.9fb24811.jpg","9fb248113a1f698d6d0ca08546f9d544"],["/atlas/static/media/lod.80612625.md","806126252ae653253511df5f8e102a31"],["/atlas/static/media/manuscripts.caf4fa66.md","caf4fa662c17eda4b9dc7d891ac485d2"],["/atlas/static/media/manuscripts.ef53f386.jpg","ef53f386d2df750b8f2d98a375b4e773"],["/atlas/static/media/paths-logo.d0a2b412.png","d0a2b4128b0208eb7b7d453525eb30e5"],["/atlas/static/media/places.09975378.md","09975378c2324a53febc10ac7660accc"],["/atlas/static/media/places.1485b780.jpg","1485b7805f95f812901178afd680740b"],["/atlas/static/media/sapienza.b75f3d2c.jpg","b75f3d2cb77aa0551c4726aa0b5f34a1"],["/atlas/static/media/titles.9fdb8c8e.md","9fdb8c8e2c17d19f4af9f86244d51da7"],["/atlas/static/media/works.57b31e77.md","57b31e77270a563b44e3fd49619aed87"]],cacheName="sw-precache-v3-sw-precache-webpack-plugin-"+(self.registration?self.registration.scope:""),ignoreUrlParametersMatching=[/^utm_/],addDirectoryIndex=function(e,a){var t=new URL(e);return"/"===t.pathname.slice(-1)&&(t.pathname+=a),t.toString()},cleanResponse=function(a){return a.redirected?("body"in a?Promise.resolve(a.body):a.blob()).then(function(e){return new Response(e,{headers:a.headers,status:a.status,statusText:a.statusText})}):Promise.resolve(a)},createCacheKey=function(e,a,t,n){var s=new URL(e);return n&&s.pathname.match(n)||(s.search+=(s.search?"&":"")+encodeURIComponent(a)+"="+encodeURIComponent(t)),s.toString()},isPathWhitelisted=function(e,a){if(0===e.length)return!0;var t=new URL(a).pathname;return e.some(function(e){return t.match(e)})},stripIgnoredUrlParameters=function(e,t){var a=new URL(e);return a.hash="",a.search=a.search.slice(1).split("&").map(function(e){return e.split("=")}).filter(function(a){return t.every(function(e){return!e.test(a[0])})}).map(function(e){return e.join("=")}).join("&"),a.toString()},hashParamName="_sw-precache",urlsToCacheKeys=new Map(precacheConfig.map(function(e){var a=e[0],t=e[1],n=new URL(a,self.location),s=createCacheKey(n,hashParamName,t,/\.\w{8}\./);return[n.toString(),s]}));function setOfCachedUrls(e){return e.keys().then(function(e){return e.map(function(e){return e.url})}).then(function(e){return new Set(e)})}self.addEventListener("install",function(e){e.waitUntil(caches.open(cacheName).then(function(n){return setOfCachedUrls(n).then(function(t){return Promise.all(Array.from(urlsToCacheKeys.values()).map(function(a){if(!t.has(a)){var e=new Request(a,{credentials:"same-origin"});return fetch(e).then(function(e){if(!e.ok)throw new Error("Request for "+a+" returned a response with status "+e.status);return cleanResponse(e).then(function(e){return n.put(a,e)})})}}))})}).then(function(){return self.skipWaiting()}))}),self.addEventListener("activate",function(e){var t=new Set(urlsToCacheKeys.values());e.waitUntil(caches.open(cacheName).then(function(a){return a.keys().then(function(e){return Promise.all(e.map(function(e){if(!t.has(e.url))return a.delete(e)}))})}).then(function(){return self.clients.claim()}))}),self.addEventListener("fetch",function(a){if("GET"===a.request.method){var e,t=stripIgnoredUrlParameters(a.request.url,ignoreUrlParametersMatching),n="index.html";(e=urlsToCacheKeys.has(t))||(t=addDirectoryIndex(t,n),e=urlsToCacheKeys.has(t));var s="/atlas/index.html";!e&&"navigate"===a.request.mode&&isPathWhitelisted(["^(?!\\/__).*"],a.request.url)&&(t=new URL(s,self.location).toString(),e=urlsToCacheKeys.has(t)),e&&a.respondWith(caches.open(cacheName).then(function(e){return e.match(urlsToCacheKeys.get(t)).then(function(e){if(e)return e;throw Error("The cached response that was expected is missing.")})}).catch(function(e){return console.warn('Couldn\'t serve response for "%s" from cache: %O',a.request.url,e),fetch(a.request)}))}});
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
+
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
+
+importScripts(
+  "/atlas/precache-manifest.b0c61a2663c3989b8dbfd255b1fa9328.js"
+);
+
+workbox.clientsClaim();
+
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerNavigationRoute("/atlas/index.html", {
+  
+  blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+});
