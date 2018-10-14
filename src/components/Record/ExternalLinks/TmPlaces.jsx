@@ -10,7 +10,7 @@ export default class TmPlaces extends Component {
       return null;
     }
     return <ListGroupItem>
-      <a href={"https://www.trismegistos.org/place/" + this.props.data.val } target="_blank">
+      <a href={"https://www.trismegistos.org/place/" + this.props.data.val } target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon="external-link-alt" /> Trismegistos places
       </a>
     </ListGroupItem>

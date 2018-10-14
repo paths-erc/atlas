@@ -10,7 +10,7 @@ export default class Pleiades extends Component {
       return null;
     }
     return <ListGroupItem>
-      <a href={"https://pleiades.stoa.org/places/" + this.props.data.val } target="_blank">
+      <a href={"https://pleiades.stoa.org/places/" + this.props.data.val } target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon="external-link-alt" /> Pleiades
       </a>
     </ListGroupItem>

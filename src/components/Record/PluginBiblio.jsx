@@ -3,7 +3,7 @@ import { Card, CardHeader, CardBody } from 'reactstrap';
 
 function showLink(zotero, short){
   if (zotero){
-    return (<a href={'https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/' + zotero} target="_blank">{short}</a>)
+    return (<a href={'https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/' + zotero} target="_blank" rel="noopener noreferrer">{short}</a>)
   } else {
     return short;
   }

@@ -10,7 +10,7 @@ export default class Ldab extends Component {
       return null;
     }
     return <ListGroupItem>
-      <a href={"https://www.trismegistos.org/ldab/text.php?quick=" + this.props.data.val } target="_blank">
+      <a href={"https://www.trismegistos.org/ldab/text.php?quick=" + this.props.data.val } target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon="external-link-alt" /> Leuven Database of Ancient books
       </a>
     </ListGroupItem>

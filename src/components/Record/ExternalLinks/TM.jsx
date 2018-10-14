@@ -10,7 +10,7 @@ export default class TM extends Component {
       return null;
     }
     return <ListGroupItem>
-      <a href={"https://www.trismegistos.org/text/" + this.props.data.val } target="_blank">
+      <a href={"https://www.trismegistos.org/text/" + this.props.data.val } target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon="external-link-alt" /> Trismegistos texts
       </a>
     </ListGroupItem>

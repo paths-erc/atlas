@@ -10,7 +10,7 @@ export default class CoptOT extends Component {
       return null;
     }
     return <ListGroupItem>
-      <a href={"http://coptot.manuscriptroom.com/manuscript-catalog/?gaNum=" + encodeURIComponent(this.props.data.val)} target="_blank">
+      <a href={"http://coptot.manuscriptroom.com/manuscript-catalog/?gaNum=" + encodeURIComponent(this.props.data.val)} target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon="external-link-alt" /> The Digital Edition of the Coptic Old Testament
       </a>
     </ListGroupItem>
