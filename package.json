@@ -11,7 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.1.0-11",
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^2.0.1",
     "google-maps": "^3.3.0",
     "leaflet": "^1.3.1",
     "object-hash": "^1.3.0",
@@ -26,9 +26,9 @@
     "react-leaflet": "^2.0.1",
     "react-leaflet-google": "danieldunderfelt/react-leaflet-google",
     "react-leaflet-sidebarv2": "^0.6.0",
-    "react-markdown": "^3.3.4",
+    "react-markdown": "^4.0.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.0.5",
     "react-select": "^2.0.0",
     "reactstrap": "^6.0.1"
   },
@@ -39,5 +39,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
