@@ -81,9 +81,12 @@ class ReadTitle extends Component {
                   <CardBody>
                     {
                       Object.values(rec.core).map( (i, k) => {
+                        if (Cfg.hidden.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1){
+                          return null;
+                        }
                         return <RecordCell
-                            coptic= { Cfg.coptic.indexOf(rec.metadata.tb_id + '.' + i.name) > -1}
-                            greek= { Cfg.greek.indexOf(rec.metadata.tb_id + '.' + i.name) > -1}
+                            coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
+                            greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                             label={ i.label }
                             val={ i.val_label ? i.val_label : i.val}
                             key={k} />

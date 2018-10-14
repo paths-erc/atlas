@@ -19,3 +19,36 @@ Works are linked to the Manuscripts, where they are preserved, and are closely r
 - Author of the Master Work: author of a work in the Coptic literary tradition that has been redrafted to such an extent that it is considered as an independent work  (eg. the excerpt from the *Republic* of Plato preserved in the Nag Hammadi Codex VI = CC 0689)
 
 These identifications draw on textual (the content itself), paratextual (titles, colophons, other scribal subscriptions) and/or external evidence (other works, historiographical traditions, etc.) that is always clearly recorded.
+
+A provisional periodisation system, object of further amendments and changes, is here proposed for the primary purpose of guiding the user within the complex Coptic literary manuscript tradition. This work is based on a fresh assessment of the classification of Coptic literature elaborated by Tito Orlandi (T. Orlandi, *Letteratura copta e Cristianesimo nazionale egiziano*, in A. Camplani (ed.), *Egitto cristiano. Aspetti e problemi in età tardo-antica*, Roma 1997, 39-120; http://www.cmcl.it/), enriched with new interpretations by Anne Boud’hors (A. Boud’hors, *The Coptic Tradition*, in S.F. Johnson (ed.), *The Oxford Handbook of Late Antiquity*, Oxford 2012, 224-246).
+The periods presently considered are the following:
+
+
+1.	Early translations of biblical works into Sahidic (3<sup>rd</sup>-4<sup>th</sup> cent.)
+1.	Early translations of biblical works into Bohairic (4<sup>th</sup> cent.)
+1.	Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4<sup>th</sup> cent.)
+1.	Early translations of apocryphal works – first phase (4<sup>th</sup> cent.)
+1.	Translation and (eventual) re-elaboration of a “Gnostic” corpus (3<sup>rd</sup>-4<sup>th</sup> cent.)
+1.	Translation and (eventual) re-elaboration of a Manichaean corpus (3<sup>th</sup>-5<sup>th</sup> cent.)
+1.	Early translation of patristic works – first phase (3<sup>th</sup>-5<sup>th</sup> cent.)
+1.	Pachomius and the early Pachomian milieu (4<sup>th</sup>-5<sup>th</sup>  cent.)
+1.	Early original literary production: Shenoute and the Shenoutean milieu (4<sup>th</sup>-5<sup>th</sup> cent.)
+1.	 “Standard” translations of biblical works into Sahidic (5<sup>th</sup> cent.)
+1.	Translations of apocryphal texts – second phase (4<sup>th</sup>-5<sup>th</sup> cent.)
+1.	Early translations of hagiographical works (4<sup>th</sup>-6<sup>th</sup> cent.)
+1.	“Classical” translations - homilies (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
+1.	“Classical” translations – historiae monachorum (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
+1.	“Classical” translations – acts of councils (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
+1.	“Classical” translations – monastic works (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
+1.	Post-Chalcedonian opposition literature: the “plerophories” and other works (5<sup>th</sup>-6<sup>th</sup> cent.)
+1.	Historiographic Production (6<sup>th</sup> cent.)
+1.	Original Literature: Formation of the earlier hagiographic cycles (6 cent.)
+1.	Original Literature: The period of Damian and his cultural circle (6<sup>th</sup>-7<sup>th</sup> cent.): Hagiographies
+1.	Original Literature: The period of Damian and his cultural circle (6<sup>th</sup>-7<sup>th</sup> cent.): Homilies
+1.	Poetic production (7<sup>th</sup>-8<sup>th</sup> cent.)
+1.	Original Literature: Homilies with apocryphal insertions (6<sup>th</sup> -8<sup>th</sup> cent.)
+1.	Original Literature: Literary production of the early Islamic period (7<sup>th</sup> cent.)
+1.	“Standard” translations of biblical works into Bohairic (7<sup>th</sup>-8<sup>th</sup> cent.)
+1.	Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (17<sup>th</sup>-8<sup>th</sup> cent.)
+1.	Synaxarial arrangement (9<sup>th</sup>-10<sup>th</sup> cent.)
+1.	Late liturgical production (10<sup>th</sup>-14<sup>th</sup> cent.)

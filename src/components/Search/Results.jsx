@@ -168,8 +168,8 @@ class Results extends Component {
           {
              this.state.result.records.map( (e, i) => {
               return <ItemPreview
-                  idField = { Cfg[this.props.match.params.table].id_field }
-                  previewFlds = { Cfg[this.props.match.params.table].preview }
+                  idField = { Cfg.id_fld[this.props.match.params.table] }
+                  previewFlds = { Cfg.preview[this.props.match.params.table] }
                   tb={this.props.match.params.table}
                   record={e}
                   fields={this.state.result.head.fields}

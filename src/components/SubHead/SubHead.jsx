@@ -26,7 +26,7 @@ class SubHead extends Component {
   }
 
   render(){
-    const tblabel = this.props.tblabel ? this.props.tblabel : Cfg[this.props.tb].label;
+    const tblabel = this.props.tblabel ? this.props.tblabel : Cfg.label[this.props.tb];
     const tb = this.props.tb;
     const text = this.props.text ? <span className="subText">{this.props.text}</span> : false;
 

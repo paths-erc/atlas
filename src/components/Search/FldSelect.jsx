@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 
 import Database from '../Services/Database/Database';
+import Cfg from '../Services/Cfg/Cfg';
 
 
 export default class FldSelect extends Component {
@@ -17,7 +18,13 @@ export default class FldSelect extends Component {
   _setState(fldList, selected, parse){
     if (parse){
       fldList = Object.keys(fldList).map(key => {
-        return { value: fldList[key].fullname, label: fldList[key].label };
+        if (Cfg.hidden.indexOf(key.replace(':', '.').replace('paths__', '')) < 0){
+          return { value: fldList[key].fullname, label: fldList[key].label };
+        } else {
+          return false;
+        }
+      }).filter(e => {
+        return e;
       });
     }
     let selObj;
@@ -26,7 +33,15 @@ export default class FldSelect extends Component {
         return e.value === selected;
       })[0];
     } else {
-      selObj = fldList[0];
+      if (Cfg.searchDefault[this.props.tb]){
+        const v = Cfg.searchDefault[this.props.tb].includes('paths') ? Cfg.searchDefault[this.props.tb] : `paths__${this.props.tb}:${Cfg.searchDefault[this.props.tb]}`;
+
+        selObj = fldList.filter( e => {
+          return e.value === v;
+        })[0];
+      } else {
+        selObj = fldList[0];
+      }
       this.props.onChange(selObj);
     }
 
