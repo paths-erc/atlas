@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/atlas/static/media/places.09975378.md"
   },
   {
-    "revision": "70281120e0d4722eee82",
+    "revision": "4f6b20510bc9522d4ae8",
     "url": "/atlas/static/css/main.aba34e2d.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/atlas/static/media/Ripple-1.7s-200px.7466db60.svg"
   },
   {
-    "revision": "70281120e0d4722eee82",
-    "url": "/atlas/static/js/main.70281120.chunk.js"
+    "revision": "4f6b20510bc9522d4ae8",
+    "url": "/atlas/static/js/main.4f6b2051.chunk.js"
   },
   {
     "revision": "1485b7805f95f812901178afd680740b",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/atlas/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "3dc13abf89220c13195cf3683e35bd87",
+    "revision": "f5b956915d664803163042df2bfacd28",
     "url": "/atlas/index.html"
   }
 ];
