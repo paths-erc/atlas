@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 
+import Cfg from '../Services/Cfg/Cfg';
 import RecordCell from './RecordCell';
 import PluginBiblio from './PluginBiblio';
 import PluginShelfmarks from './PluginShelfmarks';
@@ -35,6 +36,9 @@ class Plugin extends Component {
             this.props.data.data.map( (d, di) =>{
               return (<CardBody key={di} className="border border-info mb-2">{
                   Object.keys(d).map( (f, fi) => {
+                    if (Cfg.hidden.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1){
+                      return null;
+                    }
                     if (d[f].label){
                       return <RecordCell val={ d[f].val_label ? d[f].val_label : d[f].val } label={ d[f].label } key={fi} />
                     } else {
