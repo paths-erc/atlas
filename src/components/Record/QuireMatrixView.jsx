@@ -12,19 +12,24 @@ class QuireMatrixView extends Component {
   }
 
   componentDidMount(){
-    const m = new Matrix('canvas'  + this.state.uid);
-    m.parseString(this.props.string, 'secondHalf' + this.state.uid);
+    if(this.props.string !== null){
+      const m = new Matrix('canvas'  + this.state.uid);
+      m.parseString(this.props.string, 'secondHalf' + this.state.uid);
+    }
   }
 
   render() {
-    const height = 100 + this.props.string.length / 3 * 20;
+    let height = false;
+    if(this.props.string !== null){
+      height = 100 + this.props.string.length / 3 * 20;
+    }
     return (
       <div className="mt-2 mb-4">
         <Row>
           <Col id="firstHalf">{ this.props.string }</Col>
           <Col id={ 'secondHalf' + this.state.uid }></Col>
         </Row>
-        <canvas width="400" height={ height } id={ 'canvas'+ this.state.uid }></canvas>
+        { height && <canvas width="400" height={ height } id={ 'canvas'+ this.state.uid }></canvas> }
       </div>
     );
   }
