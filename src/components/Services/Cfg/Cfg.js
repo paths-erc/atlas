@@ -31,7 +31,8 @@ export default {
       "places.hasphotos",
       "persons.id",
       "persons.creator",
-      "biblio.creator"
+      "biblio.creator",
+      "m_quires.id"
     ],
     "id_fld": {
       "manuscripts": "id",
