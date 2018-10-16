@@ -14,7 +14,7 @@ import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
 import Timeline from './Timeline';
 
-class ReadTitle extends Component {
+export default class ViewOne extends Component {
 
   constructor(props) {
     super(props);
@@ -88,7 +88,7 @@ class ReadTitle extends Component {
                             coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                             greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                             label={ i.label }
-                            val={ i.val_label ? i.val_label : i.val}
+                            val={ i.val_label ? i.val_label : i.val }
                             key={k} />
                       })
                     }
@@ -126,5 +126,3 @@ class ReadTitle extends Component {
     );
   }
 }
-
-export default ReadTitle;
