@@ -5,6 +5,7 @@ import Cfg from '../Services/Cfg/Cfg';
 import RecordCell from './RecordCell';
 import PluginBiblio from './PluginBiblio';
 import PluginShelfmarks from './PluginShelfmarks';
+import PluginToponyms from './PluginToponyms';
 import Timeline from './Timeline';
 
 
@@ -22,6 +23,9 @@ class Plugin extends Component {
     }
     if(this.props.data.metadata.tb_id === 'paths__m_shelfmarks'){
       return <PluginShelfmarks data={ this.props.data } />
+    }
+    if(this.props.data.metadata.tb_id === 'paths__m_toponyms'){
+      return <PluginToponyms data={ this.props.data } />
     }
 
     return (
