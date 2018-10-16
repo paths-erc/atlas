@@ -40,8 +40,7 @@ export default class PreviewText extends Component {
   }
 
   render() {
-
-    const textParts = relaxedSplit(this.props.text, 200, '.');
+    const textParts = relaxedSplit(this.props.text, 200, this.props.separator);
     if (!textParts[1]){
       return textParts[0];
     }
