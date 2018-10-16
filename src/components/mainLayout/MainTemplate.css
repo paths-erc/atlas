@@ -6,6 +6,9 @@
   font-family: Antinoou !important;
   font-size: 1.1rem;
 }
+.arabic{
+  direction: rtl;
+}
 html {
   position: relative;
   min-height: 100%;
