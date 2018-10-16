@@ -24,7 +24,7 @@ class RecordCell extends Component {
         </Col>
         <Col>
           <div className={ className.join(' ') }>
-            {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : <PreviewText text={val} /> }
+            {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : <PreviewText text={val} separator={this.props.coptic ? '\u2027' : '.'} /> }
           </div>
         </Col>
 	    </Row>
