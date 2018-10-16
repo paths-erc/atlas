@@ -3,7 +3,7 @@ import { Card, CardHeader, CardBody, Button, Modal, ModalHeader, ModalBody } fro
 
 
 
-export default class PluginBiblio extends Component {
+export default class PluginShelfmarks extends Component {
 
   constructor(props) {
     super(props);
