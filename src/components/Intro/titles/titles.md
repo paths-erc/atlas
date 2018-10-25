@@ -1,4 +1,4 @@
-This section of the PAThs database contains the edition, with English translation, of the entire corpus of the extant Coptic titles (currently about 630)—initial titles, final titles, section headings, general titles etc.—produced between the 3<sup>rd</sup> and the 11<sup>th</sup> centuries.  It updates and integrates P. Buzi, *Titoli e autori nella tradizione copta. Studio storico e tipologico*, Pisa 2005.
+This section of the **PAThs** database contains the edition, with English translation, of the entire corpus of the extant Coptic titles (currently about 670)—initial titles, final titles, section headings, general titles etc.—produced between the 3<sup>rd</sup> and the 13<sup>th</sup> centuries.  It updates and integrates P. Buzi, *Titoli e autori nella tradizione copta. Studio storico e tipologico*, Pisa 2005.
 
 Each title is identified by a specific *Clavis Coptica*, composed of a 4-digit number preceded by a `T` (to distinguish it from a *Clavis Coptica* attributed to **Works**) and followed by a suffix, clearly marking it as a final title or *subscriptio* (-S), an initial title or *inscriptio* (-I), a section heading (-SH), a running title (-R), a general title (-G), a general final title (-GS) or a general initial title (-GI).
 
@@ -12,8 +12,8 @@ E.g.:
 A brief description of decorations and of the script (modular typology, axis, possible presence of thick-and-thin style) is also provided, when possible.
 
 Coptic titles can be browsed and searched in a range of ways, amongst which the easiest and most intuitive ones are by:
-- Clavis Coptica attributed to the work
-- Clavis Coptica attributed to the title
+- *Clavis Coptica* attributed to the work
+- *Clavis Coptica* attributed to the title
 - Type (initial title, final title, etc.)
 - Modular typology
 

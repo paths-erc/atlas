@@ -1,4 +1,4 @@
-PAThs has developed a dedicated output channel to export and make available
+**PAThs** has developed a dedicated output channel to export and make available
 its data using Linked Open Data technologies.
 
 A collaboration has been developed with the [Pelagios Commons](http://commons.pelagios.org/)
@@ -16,7 +16,7 @@ among with the main real-time export file of Places in the following formats:
 - [dot](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=dot)
 - [n3](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=n3)
 
-PAThs data are made available under the Open Data Commons Attribution License: http://opendatacommons.org/licenses/by/1.0.
+**PAThs** data are made available under the Open Data Commons Attribution License: http://opendatacommons.org/licenses/by/1.0.
 
 Feel **free to use, share, adapt and create** our date as long as you **attribute** any
 public use of the database, or works produced from the database, to the **PAThs project**.
