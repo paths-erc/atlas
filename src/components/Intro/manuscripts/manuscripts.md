@@ -1,5 +1,11 @@
 This section of the **PAThs** database contains the Coptic and bilingual Graeco-Coptic `codicological units` dated to or datable from the 3<sup>rd</sup> to the 13<sup>th</sup> century.
 
+---
+
+> A full description of the **Manuscripts** section is available at the [PAThs official documentation repository on GitHub](https://github.com/paths-erc/paths-docs/blob/master/db-handbook/manuscripts.md). A [PDF version](https://github.com/paths-erc/paths-docs/raw/master/Pdf/paths-docs-v-0.8.pdf) is also available for offline access.
+
+---
+
 Each `codicological unit` is identified by a new, stable and unique identifier, called **Coptic Literary Manuscript** (`CLM`). When the `codicological units` have already been already classified and/or described by other projects ([Corpus dei Manoscritti Copti Letterari](http://www.cmcl.it/) mainly, but also [Trismegistos](https://www.trismegistos.org/tm/index.php), [Leuven Database of Ancient Book](https://www.trismegistos.org/ldab/), [Digital Edition of Coptic Old Testament](https://www.uni-goettingen.de/en/digital+edition+of+the+coptic+%28sahidic%29+old+testament/475974.html)) a reference to the respective identifiers is always provided.
 
 **Manuscripts** are linked to **Works**, **Titles**, **Colophons**, **Places** (distinguishing between production, storage and discovery places).

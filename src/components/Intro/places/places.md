@@ -1,5 +1,11 @@
 This section of the **PAThs** database contains a catalogue of Late Antique Egyptian sites active between the 3<sup>rd</sup> and 11<sup>th</sup> centuries.
 
+---
+
+> A full description of the **Places** section is available at the [PAThs official documentation repository on GitHub](https://github.com/paths-erc/paths-docs/blob/master/db-handbook/places.md). A [PDF version](https://github.com/paths-erc/paths-docs/raw/master/Pdf/paths-docs-v-0.8.pdf) is also available for offline access.
+
+---
+
 Places are firstly intended as physical spatial units that can be archaeologically observed and documented, i.e., they can be referred to a tangible area, with a specific topographical location and a distinctive configuration of material remains. Special attention is accorded to sites connected to the production, circulation, storage, preservation and discovery of manuscripts. Finally, major political, religious and cultural centres (for instance the episcopal sees), which are relevant for the reconstruction of the landscape of Byzantine Egypt, are also recorded, even though they no longer preserve archaeological traces. Likewise, toponyms attested in **Colophons** but lacking a certain localisation are included as a valuable outcome of the edition of that corpus, which provides, among the others, significant information on the geographical circulation of manuscripts.
 
 Each Place is assigned a unique identifying number and a standard site name, which corresponds to the most common designation used in scholarly literature. The following fields are designed to provide as detailed and complete information as possible about its historical development, geo-topographical localisation, urban setting and monumental features. The main data recorded are:

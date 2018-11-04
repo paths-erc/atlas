@@ -62,4 +62,10 @@ footer .text-secondary a{
     column-count: 2;
     column-gap: '5rem'
   }
+  .double-column blockquote{
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-right: 3rem;
+    border-left: 2px solid #ebebeb;
+  }
 }
