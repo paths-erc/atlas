@@ -3,14 +3,12 @@
 
 export default {
     "coptic": [
-      "places.copticname",
       "authors.copticname",
       "titles.text",
       "colophons.text"
     ],
     "greek": [
-      "authors.greekname",
-      "places.greekname"
+      "authors.greekname"
     ],
     "hidden": [
       "manuscripts.creator",
@@ -61,7 +59,7 @@ export default {
       "titles":       [ "cc", "type", "workcc", "msid" ],
       "colophons":    [ "id", "dialect", "chronofrom", "chronoto", "datingcriteria" ],
       "authors":      [ "name", "title", "copticname", "greekname", "cmclname" ],
-      "places":       [ "id", "name", "copticname", "greekname", "arabictranslname", "egyptianname", "tm", "pleiades" ],
+      "places":       [ "id", "name", "tm", "pleiades", "region", "area", "episcopalsee" ],
       "persons":      [ "id", "name", "type", "profession", "patronymic" ]
     },
     "label": {
