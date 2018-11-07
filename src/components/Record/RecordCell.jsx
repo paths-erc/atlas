@@ -10,6 +10,9 @@ class RecordCell extends Component {
   render() {
     const val = this.props.val;
     const label = this.props.label;
+    if (!val || val === '') {
+      return null;
+    }
     let className = [];
     if(this.props.coptic){
       className.push('coptic');
