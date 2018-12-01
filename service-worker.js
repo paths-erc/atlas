@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/atlas/precache-manifest.a94334bc603a9281ebe9119fc509630a.js"
+  "/atlas/precache-manifest.078be153df7dfc06672919884d64574f.js"
 );
 
 workbox.clientsClaim();
