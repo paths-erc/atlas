@@ -64,13 +64,13 @@ class SubHead extends Component {
                   return (
                     <NavItem key={k}>
                       <NavLink to={e.to} tag={Link}>
-                        <FontAwesomeIcon icon={e.icon} /> {e.text}
+                        <FontAwesomeIcon icon={e.icon} /> <span className="d-none d-md-inline">{e.text}</span>
                       </NavLink>
                     </NavItem>
                   );
                 })
               }
-              { SavedQueries[tb] && (<NavItem><NavLink onClick={this.toggleSaved.bind(this)} to="#" tag={Link}><FontAwesomeIcon icon="save" /> Saved queries</NavLink></NavItem>)}
+              { SavedQueries[tb] && (<NavItem><NavLink onClick={this.toggleSaved.bind(this)} to="#" tag={Link}><FontAwesomeIcon icon="save" /><span className="d-none d-md-inline"> Saved queries</span></NavLink></NavItem>)}
             </Nav>
           </Navbar>
 
