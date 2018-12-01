@@ -71,7 +71,7 @@ export default class PathsMap extends Component {
       '<strong>' + feature.properties.name + '</strong>' +
        (feature.properties.copticname ? '<br><span class="coptic">' + feature.properties.copticname + '</span>': '') +
        '<br>' +
-       '<a href="' + base + '/read/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
+       '<a href="' + base + '/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
     );
   }
 
@@ -235,7 +235,7 @@ export default class PathsMap extends Component {
               <BaseLayer name='Google Maps Roads'>
                  <GoogleLayer googlekey={googleKey}  maptype='ROADMAP'/>
               </BaseLayer>
-              
+
               <BaseLayer name='Google Satellite'>
                <GoogleLayer googlekey={googleKey}  maptype='SATELLITE'/>
               </BaseLayer>

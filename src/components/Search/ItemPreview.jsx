@@ -45,7 +45,7 @@ class ItemPreview extends Component {
             <div className="clearfix">
               <div className="btn-group float-right" role="group">
                 <ButtonGroup>
-                  <Button size="sm" color="info" tag={Link} to={ '/' + ['read', tb, el.id].join('/') }>
+                  <Button size="sm" color="info" tag={Link} to={ '/' + [tb, el.id].join('/') }>
                     <FontAwesomeIcon icon="eye" /> View
                   </Button>
                 </ButtonGroup>

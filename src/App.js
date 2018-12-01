@@ -34,7 +34,8 @@ class App extends Component {
           <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
             <Route exact path='/' component={Home} />
-            <Route path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
+            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
+            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
 
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/saved' component={SearchSaved} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/all' component={SearchAll} />
