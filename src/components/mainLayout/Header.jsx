@@ -58,19 +58,24 @@ render() {
                 </Nav>
 
                 <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <NavLink to="/charts" tag={RRNavLink}><FontAwesomeIcon icon="chart-bar" /> Charts</NavLink>
-                  </NavItem>
+
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                      <FontAwesomeIcon icon="share-alt" /> LOD
+                      <FontAwesomeIcon icon="toolbox" /> Tools
                     </DropdownToggle>
                     <DropdownMenu right>
+                      <DropdownItem to="/charts" tag={RRNavLink}>
+                          <FontAwesomeIcon icon="chart-bar" /> Charts
+                      </DropdownItem>
+                      <DropdownItem to="/cite" tag={RRNavLink}>
+                          <FontAwesomeIcon icon="quote-left" /> How to cite
+                      </DropdownItem>
+                      <DropdownItem divider />
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
-                          Pelagios VoID
+                          <FontAwesomeIcon icon="share-alt" /> LOD: Pelagios VoID
                       </DropdownItem>
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle"}>
-                          Places
+                          <FontAwesomeIcon icon="share-alt" /> LOD: Places
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
