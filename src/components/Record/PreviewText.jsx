@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 
 
 function relaxedSplit(str, offset, until = '.'){
+
   if (!str || str.length <= offset){
     return [str, false];
   }
@@ -14,10 +15,11 @@ function relaxedSplit(str, offset, until = '.'){
     return [str1, false];
   }
 
-  var start = str1 + '' + str.replace(str1, '').split(until)[0];
+  const start = str1 + '' + str.replace(str1, '').split(until)[0];
+  const cont = str.replace(start + '' + until, '');
   return [
     start + until,
-    str.replace(start + until, '')
+    cont === start ? false : cont
   ];
 }
 
