@@ -21,6 +21,7 @@ import Intro from './components/Intro/Intro';
 
 import ViewOne from './components/Record/ViewOne';
 import Charts from './components/Charts/Charts';
+import Cite from './components/Cite/Cite';
 
 
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
@@ -43,9 +44,8 @@ class App extends Component {
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/encoded' component={SearchEncoded} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)' component={SearchSimple} />
 
-            <Route exact path='/read/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
-
             <Route exact path='/charts/:id?' component={Charts} />
+            <Route exact path='/cite' component={Cite} />
 
           </MainTemplate>
         </Switch>
