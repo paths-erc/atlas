@@ -164,7 +164,7 @@ export default {
     },
     all_ms_places: {
       id: 'all_ms_places',
-      title: 'All manuscript related places',
+      title: 'All places connected to manuscripts',
       url: 'geodata?verb=search&geojson=true&type=encoded',
       data: {
         "join": " JOIN paths__places as p ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = p.id" +
