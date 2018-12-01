@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
+import { Card, CardHeader, CardBody, Row, Col, Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Database from '../Services/Database/Database';
 import Cfg from '../Services/Cfg/Cfg';
@@ -76,7 +78,17 @@ export default class ViewOne extends Component {
               <Col sm="8">
                 <Card>
                   <CardHeader>
-                    <h3>paths.{ rec.metadata.tb_stripped }.{ rec.core.id.val }</h3>
+                    <h3>
+                      paths.{ rec.metadata.tb_stripped }.{ rec.core.id.val }
+                    </h3>
+                      <p className="text-secondary">
+                        <FontAwesomeIcon icon="link" /> http://paths.uniroma1.it/atlas/{ rec.metadata.tb_stripped }/{ rec.core.id.val }
+                          <CopyToClipboard text={ 'http://paths.uniroma1.it/atlas/' + rec.metadata.tb_stripped + '/' + rec.core.id.val } >
+                            <Button size="sm" color="secondary" className="ml-5">
+                              <FontAwesomeIcon icon="clone" /> <span className="d-none d-sm-inline">Copy to clipboard</span>
+                            </Button>
+                          </CopyToClipboard>
+                      </p>
                   </CardHeader>
                   <CardBody>
                     {
