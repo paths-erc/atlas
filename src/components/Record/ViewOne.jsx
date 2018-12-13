@@ -21,7 +21,8 @@ export default class ViewOne extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rec: false
+      rec: false,
+      copied: false
     };
   }
 
@@ -81,14 +82,23 @@ export default class ViewOne extends Component {
                     <h3>
                       paths.{ rec.metadata.tb_stripped }.{ rec.core.id.val }
                     </h3>
-                      <p className="text-secondary">
-                        <FontAwesomeIcon icon="link" /> http://paths.uniroma1.it/atlas/{ rec.metadata.tb_stripped }/{ rec.core.id.val }
-                          <CopyToClipboard text={ 'http://paths.uniroma1.it/atlas/' + rec.metadata.tb_stripped + '/' + rec.core.id.val } >
-                            <Button size="sm" color="secondary" className="ml-5">
-                              <FontAwesomeIcon icon="clone" /> <span className="d-none d-sm-inline">Copy to clipboard</span>
+                      <div className="text-secondary d-flex justify-content-between">
+                        <div>
+                          <FontAwesomeIcon icon="link" /> http://paths.uniroma1.it/atlas/{ rec.metadata.tb_stripped }/{ rec.core.id.val }
+                        </div>
+                        <div>
+                          <CopyToClipboard
+                            text={ 'http://paths.uniroma1.it/atlas/' + rec.metadata.tb_stripped + '/' + rec.core.id.val }
+                            onCopy={() => { this.setState({copied: true}); window.setTimeout(()=>{ this.setState({copied: false}); }, 2000); } }
+                            >
+                            <Button size="sm" color={ this.state.copied ? 'primary': 'secondary'}>
+                              <FontAwesomeIcon icon="clone" /> <span className="d-none d-sm-inline">
+                                {this.state.copied ? 'Copied!' : 'Copy to clipboard'}
+                              </span>
                             </Button>
                           </CopyToClipboard>
-                      </p>
+                        </div>
+                      </div>
                   </CardHeader>
                   <CardBody>
                     {
