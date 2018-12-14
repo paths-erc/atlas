@@ -1,7 +1,7 @@
 {
-  "main.css": "/atlas/static/css/main.5dc34aa9.chunk.css",
-  "main.js": "/atlas/static/js/main.2e857142.chunk.js",
-  "main.js.map": "/atlas/static/js/main.2e857142.chunk.js.map",
+  "main.css": "/atlas/static/css/main.dbbff54c.chunk.css",
+  "main.js": "/atlas/static/js/main.3bc14648.chunk.js",
+  "main.js.map": "/atlas/static/js/main.3bc14648.chunk.js.map",
   "static/js/1.0f7a6cf0.chunk.js": "/atlas/static/js/1.0f7a6cf0.chunk.js",
   "static/js/1.0f7a6cf0.chunk.js.map": "/atlas/static/js/1.0f7a6cf0.chunk.js.map",
   "runtime~main.js": "/atlas/static/js/runtime~main.d184be91.js",
@@ -13,9 +13,9 @@
   "static/media/MissionStatementMd.md": "/atlas/static/media/MissionStatementMd.f0422a50.md",
   "static/media/lod.md": "/atlas/static/media/lod.d9b96c9b.md",
   "static/media/Ripple-1.7s-200px.svg": "/atlas/static/media/Ripple-1.7s-200px.7466db60.svg",
-  "static/media/places.md": "/atlas/static/media/places.fc3e98f6.md",
+  "static/media/places.md": "/atlas/static/media/places.5d84ca70.md",
   "static/media/places.jpg": "/atlas/static/media/places.1485b780.jpg",
-  "static/media/manuscripts.md": "/atlas/static/media/manuscripts.61e517b3.md",
+  "static/media/manuscripts.md": "/atlas/static/media/manuscripts.4b875aa0.md",
   "static/media/manuscripts.jpg": "/atlas/static/media/manuscripts.ef53f386.jpg",
   "static/media/works.md": "/atlas/static/media/works.b0b306c7.md",
   "static/media/titles.md": "/atlas/static/media/titles.24cbbfac.md",
@@ -24,8 +24,8 @@
   "static/media/colophons.md": "/atlas/static/media/colophons.96843ce5.md",
   "static/media/Cite.md": "/atlas/static/media/Cite.a5c18181.md",
   "static/media/MainTemplate.css": "/atlas/static/media/Antinoou.65b2feb2.ttf",
-  "static/css/main.5dc34aa9.chunk.css.map": "/atlas/static/css/main.5dc34aa9.chunk.css.map",
+  "static/css/main.dbbff54c.chunk.css.map": "/atlas/static/css/main.dbbff54c.chunk.css.map",
   "index.html": "/atlas/index.html",
-  "precache-manifest.4b8af5af05c5da916c6c01bdccdb352e.js": "/atlas/precache-manifest.4b8af5af05c5da916c6c01bdccdb352e.js",
+  "precache-manifest.bf5237e2ce8e7c58f398416eb11876cb.js": "/atlas/precache-manifest.bf5237e2ce8e7c58f398416eb11876cb.js",
   "service-worker.js": "/atlas/service-worker.js"
 }
