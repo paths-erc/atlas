@@ -1,6 +1,4 @@
 h1.sidebar-header{
-	position: fixed;
-  width: 416px;
 	z-index: 999;
 }
 
@@ -11,4 +9,11 @@ span.legend-item{
 	margin-right: 10px;
 	top: 6px;
 	position: relative;
+}
+
+.sidebarSearch{
+	position: 'fixed';
+	width: '380px';
+	background: '#fff';
+	margin-top: '2rem';
 }

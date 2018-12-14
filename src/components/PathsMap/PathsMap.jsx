@@ -191,7 +191,7 @@ export default class PathsMap extends Component {
                    closeIcon={<FontAwesomeIcon icon="caret-left" />}>
             <Tab id="home" header="Home" icon={<FontAwesomeIcon icon="home" />}>
 
-              <div style={{ position: 'fixed', width: '380px', background: '#fff', marginTop: '2rem'}}>
+              <div className="sidebarSearch">
                 <InputGroup className="my-2">
                   <InputGroupAddon addonType="prepend">
                     Search:
@@ -201,7 +201,7 @@ export default class PathsMap extends Component {
                 </InputGroup>
               </div>
 
-              <div style={{ marginTop: '6rem'}}>
+              <div className="mt-2">
                 <UrlFilterButton urlFilter={ this.state.urlFilter } filter={ this.state.filter }/>
                 <ListPlaces places={ this.state.shownPlaces } />
               </div>
