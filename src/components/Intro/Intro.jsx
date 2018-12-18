@@ -109,7 +109,7 @@ export default class PlacePage extends Component {
         <SubHead tblabel={this.state.label} tb={this.state.tb} text="Introduction" />
 
         <div className="container">
-          <div className="my-3 px-md-5 double-column">
+          <div className="my-3 px-md-5 double-column text-justify">
             <ReactMarkdown source={this.state.text} escapeHtml={false} />
           </div>
         </div>
