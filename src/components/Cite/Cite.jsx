@@ -38,7 +38,7 @@ export default class Cite extends React.Component{
       <div>
         <div className="jumbotron">
           <div className="container text-center">
-            <h1>How to cite PAThs project and single database records</h1>
+            <h1>How to cite the “PAThs” project as a whole and single database records</h1>
           </div>
         </div>
         <div className="container">
