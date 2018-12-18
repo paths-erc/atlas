@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3bc14648cf7eb4c13309",
+    "revision": "956b5daa8bc92c638350",
     "url": "/atlas/static/css/main.dbbff54c.chunk.css"
   },
   {
-    "revision": "3bc14648cf7eb4c13309",
-    "url": "/atlas/static/js/main.3bc14648.chunk.js"
+    "revision": "956b5daa8bc92c638350",
+    "url": "/atlas/static/js/main.956b5daa.chunk.js"
   },
   {
     "revision": "0f7a6cf0c9002363823f",
@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/atlas/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "de901b6dc53d18bb4a613eb1298986b6",
+    "revision": "e5f25cbb3aabbe497617fa4c02ff261f",
     "url": "/atlas/index.html"
   }
 ];
