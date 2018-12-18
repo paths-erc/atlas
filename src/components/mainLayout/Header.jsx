@@ -55,6 +55,9 @@ render() {
                   <NavItem>
                     <NavLink to="/colophons" tag={RRNavLink}>Colophons</NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink to="/cite" tag={RRNavLink}>How to cite “PAThs”</NavLink>
+                  </NavItem>
                 </Nav>
 
                 <Nav className="ml-auto" navbar>
@@ -67,10 +70,6 @@ render() {
                       <DropdownItem to="/charts" tag={RRNavLink}>
                           <FontAwesomeIcon icon="chart-bar" /> Charts
                       </DropdownItem>
-                      <DropdownItem to="/cite" tag={RRNavLink}>
-                          <FontAwesomeIcon icon="quote-left" /> How to cite
-                      </DropdownItem>
-                      <DropdownItem divider />
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
                           <FontAwesomeIcon icon="share-alt" /> LOD: Pelagios VoID
                       </DropdownItem>
