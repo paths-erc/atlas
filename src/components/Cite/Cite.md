@@ -19,7 +19,6 @@ Single database records must be cited by using the full URI and the relative URL
 
 - **Bogdani**, Julian. 2017. “The archaeological Atlas of Coptic Literature. A question of method” in *Vicino Oriente* XXI (2017): 59-69. http://hdl.handle.net/11573/1009551
 - **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. “The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
-altro?
 
 #### Places
 - <mark>TODO: Articolo Archaeology in Africa</mark>

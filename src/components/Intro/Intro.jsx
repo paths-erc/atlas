@@ -11,7 +11,7 @@ import ManuscriptsMd from './manuscripts/manuscripts.md';
 import ManuscriptsImg from './manuscripts/manuscripts.jpg';
 
 import WorksMd from './works/works.md';
-// import WorksImg from './works/works.jpg';
+import WorksImg from './works/works.jpg';
 
 import TitlesMd from './titles/titles.md';
 import TitlesImg from './titles/titles.jpg';
@@ -52,7 +52,7 @@ export default class PlacePage extends Component {
         break;
       case 'works':
         md = WorksMd;
-        // img = WorksImg;
+        img = WorksImg;
         label = 'Works';
         break;
       case 'titles':
