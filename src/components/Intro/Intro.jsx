@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -25,13 +26,13 @@ import ColophonsMd from './colophons/colophons.md';
 export default class PlacePage extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       tb: props.match.params.table,
       label: false,
       text: false,
       img: false
-    }
+    };
   }
 
   _updateData(tb){
@@ -80,7 +81,7 @@ export default class PlacePage extends Component {
         text: text,
         img: img,
         label: label
-      })
+      });
     });
   }
 
@@ -91,7 +92,7 @@ export default class PlacePage extends Component {
   }
 
   componentDidMount() {
-    this._updateData(this.state.tb)
+    this._updateData(this.state.tb);
   }
 
 
@@ -99,11 +100,23 @@ export default class PlacePage extends Component {
     if(!this.state.text){
       return <Loading />
     }
+    let styles;
+
+    if(this.state.img){
+      styles = {
+        width: '100%',
+        height: '300px',
+        backgroundImage: 'url(' + this.state.img +')',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%'
+      };
+    }
 
     return (
       <div>
-        <div>
-          { this.state.img && <img className="img-fluid" src={this.state.img} alt={this.state.label} /> }
+        <div style={ styles }>
+
         </div>
 
         <SubHead tblabel={this.state.label} tb={this.state.tb} text="Introduction" />

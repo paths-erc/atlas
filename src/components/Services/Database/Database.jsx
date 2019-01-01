@@ -146,21 +146,42 @@ export default class Database {
     }, d => { cb(d); });
   }
 
+  static simplifyGeojson(gj) {
+    let newgj = {
+      type: "FeatureCollection",
+      features: [ ]
+    };
+    let currentId = false;
+
+    Object.entries(gj.features).forEach( ([key, value]) => {
+      if (!currentId || currentId !== value.properties.id){
+        newgj.features.push(value);
+        currentId = value.properties.id;
+      }
+      if (currentId === value.properties.id){
+        newgj.features[newgj.features.length-1].properties.toponym += '|'+value.properties.toponym;
+      }
+    });
+    return newgj;
+  }
+
   static getPlaces(where, cb) {
     let data = {
-      "join": "JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id",
+      "join": "JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id"
+      + " JOIN paths__m_toponyms ON paths__m_toponyms.table_link = 'paths__places' AND paths__m_toponyms.id_link = paths__places.id",
       "fields[paths__geodata.geometry]": "Geometry",
       "fields[paths__places.id]": "Id",
       "fields[paths__places.name]": "Name",
       "fields[paths__places.pleiades]": "Pleiades Id",
       "fields[paths__places.typology]": "Site typology",
-      "q_encoded": btoa( ( where ? where.replace(/`(.*)`/gi, '`paths__places`.`$1`') : " 1 LIMIT 0, 500" ))
+      "fields[paths__m_toponyms.toponym]": "Toponyms",
+      "q_encoded": btoa( ( where ? where.replace(/`(.*)`/gi, '`paths__places`.`$1`') : " 1 LIMIT 0, 5000" ))
     };
 
     this.getData(
       'geodata?verb=search&geojson=true&type=encoded',
       data,
-      d => { cb(d) }
+      d => { cb( this.simplifyGeojson(d) ) }
     );
   }
 
