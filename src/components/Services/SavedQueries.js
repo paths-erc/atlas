@@ -1,6 +1,88 @@
 /*jshint esversion: 6 */
 
 export default {
+  places: {
+    episcopal_sees: {
+      id: "episcopal_sees",
+      title: "Episcopal sees",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`episcopalsee`=1")
+      }
+    },
+    has_monasteries: {
+      id: "has_monasteries",
+      title: "Site has one or more monasteries",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`ismonastery` = 1")
+      }
+    },
+    churches: {
+      id: "churches",
+      title: "Churches",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'church'")
+      }
+    },
+    cemeteries: {
+      id: "cemeteries",
+      title: "Catacombs, cemeteries tombs or necropoleis",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'catacomb, cemetery, necropolis' OR `typology` = 'tomb'")
+      }
+    },
+    forts: {
+      id: "forts",
+      title: "Forts or towers",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'fort, tower'")
+      }
+    },
+    hermitages: {
+      id: "hermitages",
+      title: "Hermitage units",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'hermitage unit(s)'")
+      }
+    },
+    mines: {
+      id: "mines",
+      title: "Mines or quarries",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'mine, quarry'")
+      }
+    },
+    monasteries: {
+      id: "monasteries",
+      title: "Monasteries",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'monastery'")
+      }
+    },
+    settlements: {
+      id: "settlements",
+      title: "Settlement",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'settlement'")
+      }
+    },
+    shrines: {
+      id: "shrines",
+      title: "Shrines",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`typology` = 'shrine'")
+      }
+    },
+  },
   manuscripts: {
     ms_has_bindings: {
       id: "ms_has_bindings",
