@@ -4,13 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Database from '../Services/Database/Database';
-import Cfg from '../Services/Cfg/Cfg';
 import SubHead from '../SubHead/SubHead';
-import RecordCell from './RecordCell';
+import Body from './Bodies/Body';
 import RecordLinks from './RecordLinks';
 import UserLinks from './UserLinks';
 import Files from '../ViewFiles/Files';
-import Plugin from './Plugin';
 import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
@@ -58,6 +56,7 @@ export default class ViewOne extends Component {
       // case 'titles':
       //   return (<ViewOneTitle record={ rec } />);
       default:
+        // No record found!
         if (rec.core.length < 1){
           return (
             <div className="container">
@@ -101,24 +100,7 @@ export default class ViewOne extends Component {
                       </div>
                   </CardHeader>
                   <CardBody>
-                    {
-                      Object.values(rec.core).map( (i, k) => {
-                        if (Cfg.hidden.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1){
-                          return null;
-                        }
-                        return <RecordCell
-                            coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
-                            greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
-                            label={ i.label }
-                            val={ i.val_label ? i.val_label : i.val }
-                            key={k} />
-                      })
-                    }
-                    {
-                      Object.keys(rec.plugins).map( (t, k) => {
-                        return  <Plugin key={k} data={rec.plugins[t]} />
-                      })
-                    }
+                    <Body rec={ rec } />
                   </CardBody>
                 </Card>
               </Col>
