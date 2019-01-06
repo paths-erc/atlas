@@ -29,7 +29,7 @@ class SqlModal extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Executed SQL</ModalHeader>
           <ModalBody>
-            <code>{this.props.sql}</code>
+            <pre style={{ height: '200px', whiteSpace: 'pre-wrap' }}>{this.props.sql}</pre>  
           </ModalBody>
         </Modal>
       </span>
