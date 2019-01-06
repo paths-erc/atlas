@@ -72,7 +72,13 @@ class Results extends Component {
 
 
   componentDidUpdate(prevProps) {
-    if (this.props.page !== prevProps.page || this.props.fld !== prevProps.fld  || this.props.val !== prevProps.val || this.props.strict !== prevProps.strict) {
+    if (
+      this.props.page !== prevProps.page
+      || this.props.fld !== prevProps.fld
+      || this.props.val !== prevProps.val
+      || this.props.strict !== prevProps.strict
+      || this.props.query !== prevProps.query
+    ) {
       this._fetchData();
     }
   }

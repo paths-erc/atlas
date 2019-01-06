@@ -21,10 +21,17 @@ export default class SearchSaved extends Component {
   }
 
   componentDidUpdate(prevProps, prevState){
-    const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
-    if(this.state.page !== qstring.page){
+    const old_qstring = qs.parse(prevProps.location.search, {ignoreQueryPrefix: true});
+    const new_qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
+
+    if(old_qstring.page !== new_qstring.page){
       this.setState({
-        page: qstring.page
+        page: new_qstring.page
+      });
+    }
+    if(old_qstring.q !== new_qstring.q){
+      this.setState({
+        saved: new_qstring.q
       });
     }
   }
@@ -33,7 +40,6 @@ export default class SearchSaved extends Component {
     return (
       <div>
         <SubHead tb={ this.props.match.params.table } text={SavedQueries[this.props.match.params.table][this.state.saved].title} />
-
       	<Results
             tb={this.props.match.params.table}
             query={this.state.saved}
