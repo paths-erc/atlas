@@ -7,6 +7,7 @@ import TM from './ExternalLinks/TM';
 import TmPlaces from './ExternalLinks/TmPlaces';
 import Ldab from './ExternalLinks/Ldab';
 import Pleiades from './ExternalLinks/Pleiades';
+import CopticColophons from './ExternalLinks/CopticColophons';
 
 
 export default class ExternalLinks extends Component {
@@ -29,6 +30,7 @@ export default class ExternalLinks extends Component {
 
             <TmPlaces data={this.props.rec.tm}    tb={this.props.tb} />
             <Pleiades data={this.props.rec.pleiades} tb={this.props.tb} />
+            <CopticColophons data={this.props.rec.id} tb={this.props.tb} />
 
     	    </ListGroup>
         </CardBody>
