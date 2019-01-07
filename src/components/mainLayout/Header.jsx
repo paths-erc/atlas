@@ -64,7 +64,7 @@ render() {
 
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                      <FontAwesomeIcon icon="toolbox" /> Tools
+                      <FontAwesomeIcon icon="plus-circle" /> Get more
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem to="/charts" tag={RRNavLink}>
