@@ -1,7 +1,7 @@
 {
   "main.css": "/atlas/static/css/main.973f8d7d.chunk.css",
-  "main.js": "/atlas/static/js/main.4164eb94.chunk.js",
-  "main.js.map": "/atlas/static/js/main.4164eb94.chunk.js.map",
+  "main.js": "/atlas/static/js/main.275c8f80.chunk.js",
+  "main.js.map": "/atlas/static/js/main.275c8f80.chunk.js.map",
   "static/js/1.fdbf8d5f.chunk.js": "/atlas/static/js/1.fdbf8d5f.chunk.js",
   "static/js/1.fdbf8d5f.chunk.js.map": "/atlas/static/js/1.fdbf8d5f.chunk.js.map",
   "runtime~main.js": "/atlas/static/js/runtime~main.d184be91.js",
@@ -28,6 +28,6 @@
   "static/media/MainTemplate.css": "/atlas/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.973f8d7d.chunk.css.map": "/atlas/static/css/main.973f8d7d.chunk.css.map",
   "index.html": "/atlas/index.html",
-  "precache-manifest.d24913120e21696a609c20470aab6f00.js": "/atlas/precache-manifest.d24913120e21696a609c20470aab6f00.js",
+  "precache-manifest.84a6dd10b8a983ad7d76b3ac8045340d.js": "/atlas/precache-manifest.84a6dd10b8a983ad7d76b3ac8045340d.js",
   "service-worker.js": "/atlas/service-worker.js"
 }
