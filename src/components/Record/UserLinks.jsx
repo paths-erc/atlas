@@ -10,8 +10,6 @@ class UserLinks extends Component {
     const strippedTb = table.replace('paths__', '');
     let url = [
       '/',
-      'read',
-      '/',
       strippedTb,
       '/',
       id
