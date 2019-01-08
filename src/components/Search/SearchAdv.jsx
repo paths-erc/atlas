@@ -9,6 +9,7 @@ import ValueInput from './ValueInput';
 import OperatorSelect from './OperatorSelect';
 import ConnectorSelect from './ConnectorSelect';
 import Database from '../Services/Database/Database';
+import Cfg from '../Services/Cfg/Cfg';
 import Loading from '../Loading/Loading';
 
 
@@ -129,8 +130,12 @@ export default class AdvSearchForm extends Component {
     Database.inspect(this.props.match.params.table, data => {
       let fldList = data.fields;
       fldList = Object.keys(data.fields).map(key => {
-        return { value: fldList[key].fullname, label: fldList[key].label };
-      });
+        if (Cfg.fld_whitelist.includes(key)){
+          return { value: fldList[key].fullname, label: fldList[key].label };
+        } else {
+          return false;
+        }
+      }).filter(e => { return e; });
       this.setState({
         fields: fldList
       });

@@ -18,14 +18,12 @@ export default class FldSelect extends Component {
   _setState(fldList, selected, parse){
     if (parse){
       fldList = Object.keys(fldList).map(key => {
-        if (Cfg.hidden.indexOf(key.replace(':', '.').replace('paths__', '')) < 0){
+        if (Cfg.fld_whitelist.contains(key)) {
           return { value: fldList[key].fullname, label: fldList[key].label };
         } else {
           return false;
         }
-      }).filter(e => {
-        return e;
-      });
+      }).filter(e => { return e; });
     }
     let selObj;
     if (selected){
