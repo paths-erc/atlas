@@ -57,7 +57,7 @@ export default {
       "collections":  [ "id", "fullname", "cmclname", "country", "town", "institution", "name", "notes" ],
       "works":        [ "id", "cmcl", "title", "cpg" ],
       "titles":       [ "cc", "type", "workcc", "msid" ],
-      "colophons":    [ "id", "dialect", "chronofrom", "chronoto", "datingcriteria" ],
+      "colophons":    [ "id", "msid", "dialect", "chronofrom", "chronoto", "datingcriteria" ],
       "authors":      [ "name", "title", "copticname", "greekname", "cmclname" ],
       "places":       [ "id", "name", "tm", "pleiades", "region", "area", "episcopalsee" ],
       "persons":      [ "id", "name", "type", "profession", "patronymic" ]
