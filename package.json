@@ -2,7 +2,7 @@
   "name": "paths-atlas",
   "version": "1.0.0",
   "private": true,
-  "homepage": "/atlas",
+  "homepage": "/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",

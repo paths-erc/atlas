@@ -30,7 +30,7 @@ library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt,
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename="atlas">
+      <BrowserRouter basename="/">
         <Switch>
           <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
