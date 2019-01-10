@@ -100,7 +100,7 @@ self.__precacheManifest = [
     "url": "/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "4dbd3bc1556c6180908c824ad2c71344",
+    "revision": "9c3fc217f2867e665f215cc284e5e125",
     "url": "/index.html"
   }
 ];
