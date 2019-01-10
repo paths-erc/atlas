@@ -215,6 +215,152 @@ export default {
     //   }
     // }
   },
+  works: {
+    early_translations_sahidic: {
+      id: "early_translations_sahidic",
+      title: "Early translations of biblical works into Sahidic (3rd-4th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(" `litperiod` = 'Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)'")
+      }
+    },
+    early_translations_bohairic: {
+      id: "early_translations_bohairic",
+      title: "Early translations of biblical works into Bohairic (4th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(" `litperiod` = 'Early translations of biblical works into Bohairic (4th cent.)'")
+      }
+    },
+    early_translations_other: {
+      id: "early_translations_other",
+      title: "Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)'")
+      }
+    },
+    early_translations_apocryphal: {
+      id: "early_translations_apocryphal",
+      title: "Early translations of apocryphal works – first phase (4th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent(" `litperiod` = 'Early translations of apocryphal works – first phase (4th cent.)'")))
+      }
+    },
+    translations_gnostic: {
+      id: "translations_gnostic",
+      title: "Translation and (eventual) re-elaboration of a “Gnostic” corpus (3rd-4th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translation and (eventual) re-elaboration of a “Gnostic” corpus (3rd-4th cent.)' ")))
+      }
+    },
+    translations_manichaean: {
+      id: "translations_manichaean",
+      title: "Translation and (eventual) re-elaboration of a Manichaean corpus (3th-5th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translation and (eventual) re-elaboration of a Manichaean corpus (3th-5th cent.)' ")))
+      }
+    },
+    translations_patristic: {
+      id: "translations_patristic",
+      title: "Early translation of patristic works – first phase (3th-5th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Early translation of patristic works – first phase (3th-5th cent.)' ")))
+      }
+    },
+    pachomius: {
+      id: "pachomius",
+      title: "Pachomius and the early Pachomian milieu (4th-5th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Pachomius and the early Pachomian milieu (4th-5th cent.)' ")))
+      }
+    },
+    shenoute: {
+      id: "shenoute",
+      title: "Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)' ")))
+      }
+    },
+    standard_translations: {
+      id: "standard_translations",
+      title: "“Standard” translations of biblical works into Sahidic (5th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = '“Standard” translations of biblical works into Sahidic (5th cent.)' ")))
+      }
+    },
+    translations_apocryphal_second: {
+      id: "translations_apocryphal_second",
+      title: "Translations of apocryphal texts – second phase (4th-5th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translations of apocryphal texts – second phase (4th-5th cent.)' ")))
+      }
+    },
+    translations_hagiographical: {
+      id: "translations_hagiographical",
+      title: "Early translations of hagiographical works (4th-6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Early translations of hagiographical works (4th-6th cent.)' ")))
+      }
+    },
+    classsical_translations_homilies: {
+      id: "classsical_translations_homilies",
+      title: "“Classical” translations - homilies (end of 4th-6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = '“Classical” translations - homilies (end of 4th-6th cent.)' ")))
+      }
+    },
+    classsical_translations_historiae: {
+      id: "classsical_translations_historiae",
+      title: "“Classical” translations – historiae monachorum (end of 4th-6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = '“Classical” translations – historiae monachorum (end of 4th-6th cent.)' ")))
+      }
+    },
+    classsical_translations_acts: {
+      id: "classsical_translations_acts",
+      title: "“Classical” translations – acts of councils and Canones (end of 4th-6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = '“Classical” translations – acts of councils and Canones (end of 4th-6th cent.)' ")))
+      }
+    },
+    classsical_translations_monastic: {
+      id: "classsical_translations_monastic",
+      title: "“Classical” translations – monastic works (end of 4th-6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = '“Classical” translations – monastic works (end of 4th-6th cent.)' ")))
+      }
+    },
+    post_chalcedonian: {
+      id: "post_chalcedonian",
+      title: "Post-Chalcedonian opposition literature: the “plerophories” and other works (5th-6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Post-Chalcedonian opposition literature: the “plerophories” and other works (5th-6th cent.)' ")))
+      }
+    },
+    historiographic: {
+      id: "historiographic",
+      title: "Historiographic Production (6th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Historiographic Production (6th cent.)' ")))
+      }
+    },
+  },
   map: {
     discovery_places: {
       id: 'discovery_places',
