@@ -21,7 +21,7 @@ import AuthorsMd from './authors/authors.md';
 import AuthorsImg from './authors/authors.jpg';
 
 import ColophonsMd from './colophons/colophons.md';
-// import ColophonsImg from './colophons/colophons.jpg';
+import ColophonsImg from './colophons/colophons.jpg';
 
 export default class PlacePage extends Component {
 
@@ -68,7 +68,7 @@ export default class PlacePage extends Component {
         break;
       case 'colophons':
         md = ColophonsMd;
-        // img = ColophonsImg;
+        img = ColophonsImg;
         label = 'Colophons';
         break;
       default:
