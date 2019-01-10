@@ -18,7 +18,7 @@ export default class FldSelect extends Component {
   _setState(fldList, selected, parse){
     if (parse){
       fldList = Object.keys(fldList).map(key => {
-        if (Cfg.fld_whitelist.contains(key)) {
+        if (Cfg.fld_whitelist.indexOf(key) > -1) {
           return { value: fldList[key].fullname, label: fldList[key].label };
         } else {
           return false;
