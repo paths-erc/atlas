@@ -24,8 +24,8 @@ Single database records must be cited by using the full URI and the relative URL
 - <mark>TODO: Articolo Archaeology in Africa</mark>
 
 #### Manuscripts
+- **Buzi**, Paola, Francesco **Berno**, Agostino **Soldati**, and Francesco **Valerio**. 2018. “Vat. copt. 57: A Codicological, Literary, and Paratextual Analysis” in *Comparative Oriental Manuscripts Studies Bulletin* 4.2, 161-93 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-2/161-194.pdf]
 - **Carlig**, Nathan. 2018. “Dealing with the Stratigraphy of Coptic Codices: the Cases of MSS Pierpont Morgan Library M578 and Coptic Museum, inv. 13446”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 69-78 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/69-78.pdf]
-- <mark>TODO: Articolo su Vat. Copto 57</mark>
 
 #### Works
 - **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. "The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)", in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
@@ -44,4 +44,3 @@ Single database records must be cited by using the full URI and the relative URL
 #### Other
 - **Buzi**, Paola, Julian **Bogdani**, Nathan **Carlig**, Maria Chiara **Giorda**, and Agostino **Soldati**. 2017. “‘Tracking Papyrus and Parchment Paths: An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context. Production, Copying, Usage, Dissemination and Storage’: A New International Project on Coptic Literature and the Role of the Coptic Papyrus Codices of the Museo Egizio for Its Development”, in *Rivista del Museo Egizio* 1 (2017) [http://rivista.museoegizio.it/article/tracking-papyrus-and-parchment-paths-an-archaeological-atlas-of-coptic-literature-literary-texts-in-their-geographical-context-production-copying-usage-dissemination-and-storage].
 - **Ghigo**, Tea, Olivier **Bonnerot** , Paola **Buzi**, Myriam **Krutzsch**, Oliver **Hahn**, and Ira **Rabin**. 2018. “An Attempt at a Systematic Study of Inks from Coptic Manuscripts”, in *Manuscript cultures* 11 (2018): 157-164 [https://www.manuscript-cultures.uni-hamburg.de/MC/articles/mc11_ghigo_et_al.pdf].
-- <mark>TODO: Articoli  I convegno PAThs</mark>
