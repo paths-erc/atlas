@@ -18,27 +18,27 @@ Single database records must be cited by using the full URI and the relative URL
 #### Atlas
 
 - **Bogdani**, Julian. 2017. “The archaeological Atlas of Coptic Literature. A question of method” in *Vicino Oriente* XXI (2017): 59-69. http://hdl.handle.net/11573/1009551
-- **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. “The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
+- **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. “The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
 
 #### Places
 - <mark>TODO: Articolo Archaeology in Africa</mark>
 
 #### Manuscripts
-- **Buzi**, Paola, Francesco **Berno**, Agostino **Soldati**, and Francesco **Valerio**. 2018. “Vat. copt. 57: A Codicological, Literary, and Paratextual Analysis” in *Comparative Oriental Manuscripts Studies Bulletin* 4.2, 161-93 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-2/161-194.pdf]
-- **Carlig**, Nathan. 2018. “Dealing with the Stratigraphy of Coptic Codices: the Cases of MSS Pierpont Morgan Library M578 and Coptic Museum, inv. 13446”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 69-78 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/69-78.pdf]
+- **Buzi**, Paola, Francesco **Berno**, Agostino **Soldati**, and Francesco **Valerio**. 2018. “Vat. copt. 57: A Codicological, Literary, and Paratextual Analysis” in *Comparative Oriental Manuscripts Studies Bulletin* 4.2, 161-93 (ISSN: 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-2/161-194.pdf]
+- **Carlig**, Nathan. 2018. “Dealing with the Stratigraphy of Coptic Codices: the Cases of MSS Pierpont Morgan Library M578 and Coptic Museum, inv. 13446”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 69-78 (ISSN: 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/69-78.pdf]
 
 #### Works
-- **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. "The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)", in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
+- **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. "The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)", in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
 - **Buzi**, Paola. 2018. “Egypt, crossroad of translations and literary interweavings (3rd-6th centuries). A reconsideration of earlier Coptic literature”, in F. Crevatin (ed.), *Egitto, crocevia di traduzioni*, Trieste 2018, 15-67 [https://www.openstarts.units.it/handle/10077/21838].
 
 #### Authors
-- **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. "The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)", in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
+- **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. "The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)", in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf]
 
 #### Titles
 - **Buzi**, Paola. 2017. “Preliminary Remarks on Coptic Biblical Titles (from the Third to the Eleventh Century)”, in *Comparative Oriental Manuscripts Studies Bulletin* 3.1, 5-22 (ISSN:2410-0951) [http://hdl.handle.net/11573/980916]
 
 #### Colophons
-- **Soldati**, Agostino. 2018. “Some Remarks about Coptic Colophons and Their Relationship with Manuscripts: Typology, Function, and Structure”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 115-120 (ISSN: ISSN 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/115-120.pdf].
+- **Soldati**, Agostino. 2018. “Some Remarks about Coptic Colophons and Their Relationship with Manuscripts: Typology, Function, and Structure”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 115-120 (ISSN: 2410-0951) [https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/115-120.pdf].
 - **Soldati**, Agostino. 2017. “A New Piece in the Prosopography Mosaic of the Coptic Scriptorium of Toutōn: Pantouleos, Son of Houmise”, in *Comparative Oriental Manuscripts Studies Bulletin* 3.1, pp. 23-32 (ISSN:2410-0951) [http://hdl.handle.net/11573/981652]
 
 #### Other

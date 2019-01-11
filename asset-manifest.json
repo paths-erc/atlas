@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.8ee10d06.chunk.css",
-  "main.js": "/static/js/main.40762bb2.chunk.js",
-  "main.js.map": "/static/js/main.40762bb2.chunk.js.map",
+  "main.js": "/static/js/main.7dab5bb2.chunk.js",
+  "main.js.map": "/static/js/main.7dab5bb2.chunk.js.map",
   "static/js/1.cba17139.chunk.js": "/static/js/1.cba17139.chunk.js",
   "static/js/1.cba17139.chunk.js.map": "/static/js/1.cba17139.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -25,10 +25,10 @@
   "static/media/authors.jpg": "/static/media/authors.d6df50d7.jpg",
   "static/media/colophons.md": "/static/media/colophons.96843ce5.md",
   "static/media/colophons.jpg": "/static/media/colophons.1df56f78.jpg",
-  "static/media/Cite.md": "/static/media/Cite.b1e3fcba.md",
+  "static/media/Cite.md": "/static/media/Cite.fcc0bbf6.md",
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.8ee10d06.chunk.css.map": "/static/css/main.8ee10d06.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.90effe9ac2214785d00b0619fcc0dce7.js": "/precache-manifest.90effe9ac2214785d00b0619fcc0dce7.js",
+  "precache-manifest.fd0e38624a643e81cbb70aa0b379de58.js": "/precache-manifest.fd0e38624a643e81cbb70aa0b379de58.js",
   "service-worker.js": "/service-worker.js"
 }

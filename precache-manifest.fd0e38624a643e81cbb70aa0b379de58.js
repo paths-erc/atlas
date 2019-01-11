@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "40762bb24487785ea38f",
+    "revision": "7dab5bb2bd332037a892",
     "url": "/static/css/main.8ee10d06.chunk.css"
   },
   {
-    "revision": "40762bb24487785ea38f",
-    "url": "/static/js/main.40762bb2.chunk.js"
+    "revision": "7dab5bb2bd332037a892",
+    "url": "/static/js/main.7dab5bb2.chunk.js"
   },
   {
     "revision": "cba17139837b82f6c6cc",
@@ -92,15 +92,15 @@ self.__precacheManifest = [
     "url": "/static/media/colophons.1df56f78.jpg"
   },
   {
-    "revision": "b1e3fcbad998e051dcab4d57d6c95180",
-    "url": "/static/media/Cite.b1e3fcba.md"
+    "revision": "fcc0bbf68c8470e5cda69f0eb99f4e26",
+    "url": "/static/media/Cite.fcc0bbf6.md"
   },
   {
     "revision": "65b2feb297cccfeb17edfedd338c3ebf",
     "url": "/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "769a288e13b75a2a52d6b2844a8da875",
+    "revision": "211eda6383f83d201d578595e6224992",
     "url": "/index.html"
   }
 ];
