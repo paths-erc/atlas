@@ -1,6 +1,11 @@
 {
   "name": "paths-atlas",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
+  "description": "The Archaeological Atlas of Coptic Literature by PAThs, an ERC Advanced funded project",
+  "bugs" : "https://github.com/paths-erc/atlas/issues",
+  "email" : "julian.bogdani@uniroma1.it",
+  "license" : "Creative Commons Attribution 4.0 International License.",
+  "author": "Julian Bogdani <julian.bogdani@uniroma1.it> (http://www.lettere.uniroma1.it/users/julian-bogdani)",
   "private": true,
   "homepage": "/",
   "dependencies": {
