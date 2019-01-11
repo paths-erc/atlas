@@ -123,11 +123,10 @@ export default {
         "paths__authors:title",
 
         "paths__titles:id",
-        "paths__titles:name",
-        "paths__titles:copticname",
-        "paths__titles:greekname",
-        "paths__titles:viaf",
-        "paths__titles:title",
+        "paths__titles:cc",
+        "paths__titles:workcc",
+        "paths__titles:msid",
+        "paths__titles:type",
 
         "paths__colophons:id",
         "paths__colophons:msid",
