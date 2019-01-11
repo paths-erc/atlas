@@ -28,7 +28,7 @@ class UserLinks extends Component {
     return (
       <Card className="mt-2">
         <CardHeader>
-          <FontAwesomeIcon icon="link" /> Manualy entered links
+          <FontAwesomeIcon icon="link" /> Manually entered links
         </CardHeader>
         <CardBody>
           <ListGroup>
