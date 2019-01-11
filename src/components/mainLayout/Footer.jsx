@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row, Col } from 'reactstrap';
 
+import packageJson from '../../../package.json';
+
 import Erc from './img/erc.jpg';
 import Sapienza from './img/sapienza.jpg';
 
@@ -42,7 +44,13 @@ render() {
                     src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
             <br />
             This work is licensed under a Creative Commons Attribution 4.0 International License</a>.
-            </small></p>
+            </small>
+            <br />
+            Copyright: PAThs team.
+          </p>
+
+
+          <p>Version { packageJson.version }</p>
 
             <a href="https://github.com/paths-erc/atlas" title="Fork PAThs’ Atlas on Github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'github']} size="2x" /> Fork on Github</a>
           </div>
