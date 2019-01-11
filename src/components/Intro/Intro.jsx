@@ -23,6 +23,9 @@ import AuthorsImg from './authors/authors.jpg';
 import ColophonsMd from './colophons/colophons.md';
 import ColophonsImg from './colophons/colophons.jpg';
 
+import CollectionsMd from './collections/collections.md';
+// import CollectionsImg from './colophons/colophons.jpg';
+
 export default class PlacePage extends Component {
 
   constructor(props) {
@@ -70,6 +73,11 @@ export default class PlacePage extends Component {
         md = ColophonsMd;
         img = ColophonsImg;
         label = 'Colophons';
+        break;
+      case 'collections':
+        md = CollectionsMd;
+        // img = CollectionsImg;
+        label = 'Collections';
         break;
       default:
         return false;

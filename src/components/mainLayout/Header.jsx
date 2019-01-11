@@ -56,6 +56,9 @@ render() {
                     <NavLink to="/colophons" tag={RRNavLink}>Colophons</NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink to="/collections" tag={RRNavLink}>Collections</NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink to="/cite" tag={RRNavLink}>How to cite “PAThs”</NavLink>
                   </NavItem>
                 </Nav>

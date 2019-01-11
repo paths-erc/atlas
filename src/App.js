@@ -35,14 +35,14 @@ class App extends Component {
           <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
             <Route exact path='/' component={Home} />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons)' component={Intro} />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons)/:id' component={ViewOne} />
+            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|collections)' component={Intro} />
+            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|collections)/:id' component={ViewOne} />
 
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/saved' component={SearchSaved} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/all' component={SearchAll} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/adv' component={SearchAdv} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)/encoded' component={SearchEncoded} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons)' component={SearchSimple} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/saved' component={SearchSaved} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/all' component={SearchAll} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/adv' component={SearchAdv} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/encoded' component={SearchEncoded} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)' component={SearchSimple} />
 
             <Route exact path='/charts/:id?' component={Charts} />
             <Route exact path='/cite' component={Cite} />

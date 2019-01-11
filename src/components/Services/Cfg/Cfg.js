@@ -141,6 +141,13 @@ export default {
         "paths__colophons:text",
         "paths__colophons:translation",
 
+        "paths__collections:id",
+        "paths__collections:fullname",
+        "paths__collections:country",
+        "paths__collections:town",
+        "paths__collections:institution",
+        "paths__collections:name",
+
         "paths__manuscripts:id",
         "paths__manuscripts:cmclid",
         "paths__manuscripts:tm",
