@@ -52,7 +52,7 @@ export default class Home extends React.Component{
     } else {
       return (
         <div>
-          <div className="border p-3 d-inline-block bg-light float-right ml-5 mb-5">
+          <div className="border p-3 d-inline-block bg-light float-right ml-5 mb-5 shadow">
             <h4>Table of contents</h4>
             <ul className="p-0 m-0">
               {this.state.titles.map( (k, i) =>{
@@ -83,7 +83,7 @@ export default class Home extends React.Component{
       <div>
         <div className="jumbotron">
           <div className="container text-center">
-            <img className="img-fluid" src={ imgPathsLogo } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
+            <img className="img-fluid shadow-lg" src={ imgPathsLogo } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
           </div>
         </div>
         <div className="container">
