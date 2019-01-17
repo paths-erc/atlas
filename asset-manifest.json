@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.eda05292.chunk.css",
-  "main.js": "/static/js/main.4ba6f243.chunk.js",
-  "main.js.map": "/static/js/main.4ba6f243.chunk.js.map",
-  "static/js/1.690afc4e.chunk.js": "/static/js/1.690afc4e.chunk.js",
-  "static/js/1.690afc4e.chunk.js.map": "/static/js/1.690afc4e.chunk.js.map",
+  "main.css": "/static/css/main.980a3121.chunk.css",
+  "main.js": "/static/js/main.58f103d1.chunk.js",
+  "main.js.map": "/static/js/main.58f103d1.chunk.js.map",
+  "static/js/1.44a6baef.chunk.js": "/static/js/1.44a6baef.chunk.js",
+  "static/js/1.44a6baef.chunk.js.map": "/static/js/1.44a6baef.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/erc.jpg": "/static/media/erc.9fb24811.jpg",
@@ -26,10 +26,11 @@
   "static/media/colophons.md": "/static/media/colophons.96843ce5.md",
   "static/media/colophons.jpg": "/static/media/colophons.1df56f78.jpg",
   "static/media/collections.md": "/static/media/collections.63bdac97.md",
+  "static/media/collections.jpg": "/static/media/collections.7a50aeed.jpg",
   "static/media/Cite.md": "/static/media/Cite.fcc0bbf6.md",
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
-  "static/css/main.eda05292.chunk.css.map": "/static/css/main.eda05292.chunk.css.map",
+  "static/css/main.980a3121.chunk.css.map": "/static/css/main.980a3121.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.0505bfab5212f0ce03e2be95c0879c92.js": "/precache-manifest.0505bfab5212f0ce03e2be95c0879c92.js",
+  "precache-manifest.a9b35e36f669be96b699b1112e7b18ce.js": "/precache-manifest.a9b35e36f669be96b699b1112e7b18ce.js",
   "service-worker.js": "/service-worker.js"
 }
