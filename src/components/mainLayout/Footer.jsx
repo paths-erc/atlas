@@ -38,21 +38,20 @@ render() {
           </Row>
 
           <div className="text-center">
-            <p className="text-secondary"><small>
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-              <img alt="Creative Commons License" style={{borderWidth:0}}
-                    src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-            <br />
-            This work is licensed under a Creative Commons Attribution 4.0 International License</a>.
-            </small>
-            <br />
-            Copyright: PAThs team.
-          </p>
+            <p className="">
+              Copyright © PAThs team, Sapienza Università di Roma.<br />
+              <small>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  Use, sharing and remixing permitted under terms of the<br />
+                  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License<br />
+                  <img alt="Creative Commons License" style={{borderWidth:0}}
+                        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+                </a>
+              </small>
+            </p>
 
+            <p>Version { packageJson.version }</p>
 
-          <p>Version { packageJson.version }</p>
-
-            <a href="https://github.com/paths-erc/atlas" title="Fork PAThs’ Atlas on Github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'github']} size="2x" /> Fork on Github</a>
           </div>
 
         </div>
