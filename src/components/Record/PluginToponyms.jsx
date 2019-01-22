@@ -38,7 +38,7 @@ class TopoCell extends Component{
     return (<div>
       {this.props.data.map( (d, di) =>{
         return <span className={'mr-2 pr-2' + (tot === di+1 ? '' : ' border-right border-warning')} key={di}>
-          <span className={d.language.val.toLowerCase() } title={d.notes.val}>
+          <span className={ d.language.val ? d.language.val.toLowerCase() : '' } title={d.notes.val}>
             { d.toponym.val }{'\u0020'}
           </span>
           { d.transcription.val ? <span className="text-muted ml-2">[{d.transcription.val}]</span> : ''}
