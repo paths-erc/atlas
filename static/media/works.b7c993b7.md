@@ -50,6 +50,6 @@ The literary periods presently considered are the following:
 1.	Original Literature: Homilies with apocryphal insertions (6<sup>th</sup> -8<sup>th</sup> cent.)
 1.	Original Literature: Literary production of the early Islamic period (7<sup>th</sup> cent.)
 1.	“Standard” translations of biblical works into Bohairic (7<sup>th</sup>-8<sup>th</sup> cent.)
-1.	Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (17<sup>th</sup>-8<sup>th</sup> cent.)
+1.	Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7<sup>th</sup>-8<sup>th</sup> cent.)
 1.	Synaxarial arrangement (9<sup>th</sup>-10<sup>th</sup> cent.)
 1.	Late liturgical production (10<sup>th</sup>-14<sup>th</sup> cent.)
