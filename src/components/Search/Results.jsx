@@ -128,12 +128,9 @@ class Results extends Component {
         <div>
 
             <div className="container">
-
               <Alert color="warning" className="mt-5">
                   <h4 className="alert-heading">Ooops!</h4>
                   No result found. Please reformulate the query.
-                  <Alert color="info" className="border p-3 m-2 ml-4">{ this.state.result.head.query_arrived }</Alert>
-
               </Alert>
             </div>
         </div>
