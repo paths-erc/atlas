@@ -360,6 +360,86 @@ export default {
         "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Historiographic Production (6th cent.)' ")))
       }
     },
+    orig_lit_formation: {
+      id: "orig_lit_formation",
+      title: "Original Literature: Formation of the earlier hagiographic cycles (6 cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Original Literature: Formation of the earlier hagiographic cycles (6 cent.)' ")))
+      }
+    },
+    orig_lit_damian_hag: {
+      id: "orig_lit_damian_hag",
+      title: "Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Hagiographies",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Hagiographies' ")))
+      }
+    },
+    orig_lit_damian_hom: {
+      id: "orig_lit_damian_hom",
+      title: "Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Homilies",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Homilies' ")))
+      }
+    },
+    poetry: {
+      id: "poetry",
+      title: "Poetic production (7th-8th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Poetic production (7th-8th cent.)' ")))
+      }
+    },
+    orig_lit_hom: {
+      id: "orig_lit_hom",
+      title: "Original Literature: Homilies with apocryphal insertions (6th -8th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Original Literature: Homilies with apocryphal insertions (6th -8th cent.)' ")))
+      }
+    },
+    original_lit_early_islamic: {
+      id: "original_lit_early_islamic",
+      title: "Original Literature: Literary production of the early Islamic period (7th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Original Literature: Literary production of the early Islamic period (7th cent.)' ")))
+      }
+    },
+    standard_translations_in_bohairic: {
+      id: "standard_translations_in_bohairic",
+      title: "“Standard” translations of biblical works into Bohairic (7th-8th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = '“Standard” translations of biblical works into Bohairic (7th-8th cent.)' ")))
+      }
+    },
+    original_lit_later_hag: {
+      id: "original_lit_early_islamic",
+      title: "Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)' ")))
+      }
+    },
+    synaxarial: {
+      id: "synaxarial",
+      title: "Synaxarial arrangement (9th-10th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Synaxarial arrangement (9th-10th cent.)' ")))
+      }
+    },
+    late_liturgical: {
+      id: "late_liturgical",
+      title: "Late liturgical production (10th-14th cent.)",
+      url: 'works?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Late liturgical production (10th-14th cent.)' ")))
+      }
+    },
   },
   map: {
     discovery_places: {
