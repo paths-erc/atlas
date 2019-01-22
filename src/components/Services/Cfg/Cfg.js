@@ -88,7 +88,7 @@ export default {
         "paths__places:episcopalsee",
         "paths__places:typology",
         "paths__places:description",
-        "paths__places:ismonastery",
+        "paths__places:hasmonastery",
         "paths__places:isnomoscapital",
         "paths__m_toponyms:toponym",
         "paths__m_placephase:fperiod",

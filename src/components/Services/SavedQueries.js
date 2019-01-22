@@ -15,7 +15,7 @@ export default {
       title: "Site has one or more monasteries",
       url: 'places?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`ismonastery` = 1")
+        "q_encoded": btoa("`hasmonastery` = 1")
       }
     },
     churches: {
