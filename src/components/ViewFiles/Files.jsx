@@ -9,12 +9,12 @@ export default class Files extends Component {
   render() {
     let files = this.props.files || [];
     files = files.map( f => {
-      if (['jpg', 'png', 'gif', 'tif', 'tiff'].includes(f.ext)){
+      if (['jpg', 'png', 'gif', 'tif', 'tiff'].includes(f.ext.toLowerCase())){
         return f;
       } else {
         return false;
       }
-    });
+    }).filter(e => { return e; });
     const firstFiles = files.slice(0,3);
     const otherFiles = files.slice(3);
 
