@@ -104,8 +104,8 @@ The selection has been made considering the geographical proximity of their crea
 -  CC 0248: Paul of Tamma, Epistula
 - CC 0251: Paul of Tamma, De cella
 - CC 0256: Vita Phif, Vita Apollinis
-- CC 0376: Stephan of Hnes, In Apollinem archimandritam
-- CC 0418: Vita Longinis
+- CC 0376: Stephen of Hnes, In Apollinem archimandritam
+- CC 0418: Vita Longini
 - CC 0407: Vita Aphou
 
 The electronic edition of texts uses Unicode encoding standard and Antinoou font and does not represent the punctuation and the enlarged initials. A specific text encoding converter is being used for this purpose (see section 10. Text encoding converter).
