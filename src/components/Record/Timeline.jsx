@@ -62,7 +62,7 @@ export default class Timeline extends Component {
 
 
   render() {
-    if (!this.props.placefase || this.props.placefase.length < 1) {
+    if (!this.props.placephase || this.props.placephase.length < 1) {
       return null;
     }
 
@@ -85,7 +85,7 @@ export default class Timeline extends Component {
       ]
     };
 
-    this.props.placefase.data.forEach(e => {
+    this.props.placephase.data.forEach(e => {
       data.labels.push(e.fperiod.val.replace(/\s*\([^)]+\)/gi, ''));
       if (m[e.fperiod.val]){
         // end BCE => white: e; red: s

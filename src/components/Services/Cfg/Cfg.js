@@ -91,8 +91,8 @@ export default {
         "paths__places:ismonastery",
         "paths__places:isnomoscapital",
         "paths__m_toponyms:toponym",
-        "paths__m_placefase:fperiod",
-        "paths__m_placefase:ftypology",
+        "paths__m_placephase:fperiod",
+        "paths__m_placephase:ftypology",
 
         "paths__works:id",
         "paths__works:cmcl",

@@ -543,7 +543,7 @@ export default {
       url: 'geodata?verb=search&geojson=true&type=encoded',
       data: {
         "join": "JOIN `paths__places` ON `paths__geodata`.`table_link` = 'paths__places' AND `paths__geodata`.`id_link` = `paths__places`.`id` " +
-        "JOIN (SELECT `id_link`, count(id) as tot from `paths__m_placefase` GROUP BY `id_link` ORDER BY `tot` DESC LIMIT 0,10) as t ON `t`.`id_link` = `paths__geodata`.`id_link` ",
+        "JOIN (SELECT `id_link`, count(id) as tot from `paths__m_placephase` GROUP BY `id_link` ORDER BY `tot` DESC LIMIT 0,10) as t ON `t`.`id_link` = `paths__geodata`.`id_link` ",
         "fields[paths__geodata.geometry]": "Geometry",
         "fields[paths__places.id]": "Id",
         "fields[paths__places.name]": "Name",

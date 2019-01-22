@@ -106,7 +106,7 @@ export default class ViewOne extends Component {
               </Col>
               <Col sm="4">
                 <MiniMap geom={ rec.geodata } />
-                <Timeline placefase={ rec.plugins.paths__m_placefase } />
+                <Timeline placephase={ rec.plugins.paths__m_placephase } />
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
                 <UserLinks links={ rec.manualLinks } />

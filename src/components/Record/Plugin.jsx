@@ -34,7 +34,7 @@ class Plugin extends Component {
         <Card className="mt-2">
           <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
 
-          {this.props.data.metadata.tb_id === 'paths__m_placefase' && <div className="p-1"><Timeline placefase={ this.props.data } /></div>}
+          {this.props.data.metadata.tb_id === 'paths__m_placephase' && <div className="p-1"><Timeline placephase={ this.props.data } /></div>}
 
           {
             this.props.data.data.map( (d, di) =>{
