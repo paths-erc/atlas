@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown/with-html';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import imgPathsLogo from './paths-logo.png';
 
@@ -7,6 +8,7 @@ import intro from './IntroMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
 import Loading from '../Loading/Loading';
+import Disclaimer from './Disclaimer';
 
 
 export default class Home extends React.Component{
@@ -81,6 +83,7 @@ export default class Home extends React.Component{
   render(){
     return (
       <div>
+        <Disclaimer />
         <div className="jumbotron">
           <div className="container text-center">
             <img className="img-fluid shadow-lg" src={ imgPathsLogo } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
