@@ -15,16 +15,15 @@ export default class FldSelect extends Component {
     };
   }
 
-  _setState(fldList, selected, parse){
-    if (parse){
-      fldList = Object.keys(fldList).map(key => {
-        if (Cfg.fld_whitelist.indexOf(key) > -1) {
-          return { value: fldList[key].fullname, label: fldList[key].label };
-        } else {
-          return false;
-        }
-      }).filter(e => { return e; });
-    }
+  _setState(fldList, selected){
+    fldList = Cfg.fld_whitelist.map(id => {
+      if(fldList[id]){
+        return { value: id, label: fldList[id].label };
+      } else {
+        return false;
+      }
+    }).filter( i => { return i; } );
+
     let selObj;
     if (selected){
       selObj= fldList.filter( e => {
@@ -51,14 +50,9 @@ export default class FldSelect extends Component {
 
 
   componentDidMount(){
-    if (!this.props.fields){
-      Database.inspect(this.props.tb, data => {
-        this._setState(data.fields, this.props.fld, true);
-      });
-    } else {
-      this._setState(this.props.fields, this.props.fld);
-    }
-
+    Database.inspect(this.props.tb, data => {
+      this._setState(data.fields, this.props.fld);
+    });
   }
 
   render() {
