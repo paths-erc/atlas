@@ -1,6 +1,5 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown/with-html';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import imgPathsLogo from './paths-logo.png';
 
