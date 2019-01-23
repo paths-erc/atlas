@@ -24,7 +24,7 @@ import ColophonsMd from './colophons/colophons.md';
 import ColophonsImg from './colophons/colophons.jpg';
 
 import CollectionsMd from './collections/collections.md';
-// import CollectionsImg from './colophons/colophons.jpg';
+import CollectionsImg from './collections/collections.jpg';
 
 export default class PlacePage extends Component {
 
@@ -76,7 +76,7 @@ export default class PlacePage extends Component {
         break;
       case 'collections':
         md = CollectionsMd;
-        // img = CollectionsImg;
+        img = CollectionsImg;
         label = 'Collections';
         break;
       default:
