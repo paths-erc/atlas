@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Bar} from 'react-chartjs-2';
 
+import Loading from '../Loading/Loading';
+
 
 export default class ChartView extends Component {
 
@@ -33,7 +35,7 @@ export default class ChartView extends Component {
 
   render(){
     if (this.props.loading){
-      return <p className="lead my-5 text-secondary">Loading chart...</p>;
+      return <Loading text="Loading chart..." />;
     }
     if (!this.props.data){
       return null;

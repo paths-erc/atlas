@@ -3,7 +3,7 @@ import { Button, Card, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
 
 import Database from '../Services/Database/Database';
 import ChartView from './ChartView';
-
+import Loading from '../Loading/Loading';
 
 export default class ChartList extends Component {
 
@@ -28,7 +28,7 @@ export default class ChartList extends Component {
 
   render(){
     if (!this.props.charts){
-      return <p className="lead my-5 text-secondary">Loading chart list...</p>;
+      return <Loading text="Loading chart list..." />;
     }
     if (this.props.charts.type === 'error'){
       return (
