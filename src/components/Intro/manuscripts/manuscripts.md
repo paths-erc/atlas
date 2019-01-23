@@ -8,6 +8,8 @@ This section of the **PAThs** database contains the Coptic and bilingual Graeco-
 
 Each `codicological unit` is identified by a new, stable and unique identifier, called **Coptic Literary Manuscript** (`CLM`). When the `codicological units` have already been already classified and/or described by other projects ([Corpus dei Manoscritti Copti Letterari](http://www.cmcl.it/) mainly, but also [Trismegistos](https://www.trismegistos.org/tm/index.php), [Leuven Database of Ancient Book](https://www.trismegistos.org/ldab/), [Digital Edition of Coptic Old Testament](https://www.uni-goettingen.de/en/digital+edition+of+the+coptic+%28sahidic%29+old+testament/475974.html)) a reference to the respective identifiers is always provided.
 
+To find a manuscript by its current shelfmark number, you should compose an advanced query and use both `Shelfmark: Collection` and `Shelfmark: Shelfmark` keys.
+
 **Manuscripts** are linked to **Works**, **Titles**, **Colophons**, **Places** (distinguishing between production, storage and discovery places).
 
 **Manuscripts** section contains all the codicological units repertoried in the [CMCL](http://www.cmcl.it/) but updates and broadens it with additions, for instance:
