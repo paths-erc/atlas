@@ -8,8 +8,10 @@ export default class Files extends Component {
 
   render() {
     let files = this.props.files || [];
+    console.log(files);
+
     files = files.map( f => {
-      if (['jpg', 'png', 'gif', 'tif', 'tiff'].includes(f.ext.toLowerCase())){
+      if (['jpg', 'png', 'gif', 'tif', 'tiff', 'jpeg'].includes(f.ext.toLowerCase())){
         return f;
       } else {
         return false;
