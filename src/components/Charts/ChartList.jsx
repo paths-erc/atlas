@@ -28,7 +28,7 @@ export default class ChartList extends Component {
 
   render(){
     if (!this.props.charts){
-      return <Loading text="Loading chart list..." />;
+      return <Loading>Loading chart list...</Loading>;
     }
     if (this.props.charts.type === 'error'){
       return (

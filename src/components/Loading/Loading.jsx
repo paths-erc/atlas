@@ -12,7 +12,9 @@ export default class Loading extends Component {
     return (
       <span>
         <img src={Ripple} style={style} alt="Loading..."/>
-        { this.props.text ? this.props.text : 'Loading...'}
+        {
+          this.props.children !== '' ? this.props.children : <span>Loading...</span>
+        }
       </span>
     );
   }

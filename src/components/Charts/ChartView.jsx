@@ -35,7 +35,7 @@ export default class ChartView extends Component {
 
   render(){
     if (this.props.loading){
-      return <Loading text="Loading chart..." />;
+      return <Loading>Loading chart...</Loading>;
     }
     if (!this.props.data){
       return null;
