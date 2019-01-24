@@ -73,6 +73,8 @@ export default class PathsMap extends Component {
        '<br>' +
        '<a href="' + base + '/places/' + feature.properties.id + '">paths/places/' + feature.properties.id +'</a>'
     );
+    layer.on('mouseover', function() { layer.openPopup(); });
+    layer.on('mouseout', function() { layer.closePopup(); });
   }
 
   filterPlaces(e) {
