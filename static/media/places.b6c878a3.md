@@ -2,7 +2,7 @@ This section of the **PAThs** database contains a catalogue of Late Antique Egyp
 
 ---
 
-> A full description of the **Places** section is available at the [PAThs official documentation repository on GitHub](https://paths-erc.github.io/paths-docs/db-handbook/places.html). A [PDF version](https://github.com/paths-erc/paths-docs/raw/master/Pdf/paths-docs-v-0.9.pdf) is also available for offline access.
+> A full description of the **Places** section is available at the [PAThs official documentation repository on GitHub](https://docs.paths-erc.eu/db-handbook/places.html). A [PDF version](https://github.com/paths-erc/raw/master/Pdf/paths-docs-v-0.9.pdf) is also available for offline access.
 
 ---
 
