@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.980a3121.chunk.css",
-  "main.js": "/static/js/main.1ce7c391.chunk.js",
-  "main.js.map": "/static/js/main.1ce7c391.chunk.js.map",
+  "main.js": "/static/js/main.daf427ab.chunk.js",
+  "main.js.map": "/static/js/main.daf427ab.chunk.js.map",
   "static/js/1.44a6baef.chunk.js": "/static/js/1.44a6baef.chunk.js",
   "static/js/1.44a6baef.chunk.js.map": "/static/js/1.44a6baef.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -9,13 +9,13 @@
   "static/media/erc.jpg": "/static/media/erc.9fb24811.jpg",
   "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
   "static/media/paths-logo.png": "/static/media/paths-logo.d0a2b412.png",
-  "static/media/IntroMd.md": "/static/media/IntroMd.92d4b11a.md",
+  "static/media/IntroMd.md": "/static/media/IntroMd.2d9c9024.md",
   "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.853ccd40.md",
   "static/media/lod.md": "/static/media/lod.d9b96c9b.md",
   "static/media/Ripple-1.7s-200px.svg": "/static/media/Ripple-1.7s-200px.7466db60.svg",
   "static/media/places.md": "/static/media/places.b6c878a3.md",
   "static/media/places.jpg": "/static/media/places.1485b780.jpg",
-  "static/media/manuscripts.md": "/static/media/manuscripts.01a55a73.md",
+  "static/media/manuscripts.md": "/static/media/manuscripts.d4095a4f.md",
   "static/media/manuscripts.jpg": "/static/media/manuscripts.ef53f386.jpg",
   "static/media/works.md": "/static/media/works.b7c993b7.md",
   "static/media/works.jpg": "/static/media/works.7aa6593a.jpg",
@@ -31,6 +31,6 @@
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.980a3121.chunk.css.map": "/static/css/main.980a3121.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.a086f4a1063047fd1195c4f4474e3e44.js": "/precache-manifest.a086f4a1063047fd1195c4f4474e3e44.js",
+  "precache-manifest.c3eae407a8e731312935508387996a45.js": "/precache-manifest.c3eae407a8e731312935508387996a45.js",
   "service-worker.js": "/service-worker.js"
 }
