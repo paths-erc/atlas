@@ -13,7 +13,7 @@ To find a manuscript by its current shelfmark number, you should compose an adva
 **Manuscripts** are linked to **Works**, **Titles**, **Colophons**, **Places** (distinguishing between production, storage and discovery places).
 
 **Manuscripts** section contains all the codicological units repertoried in the [CMCL](http://www.cmcl.it/) but updates and broadens it with additions, for instance:
-- The manuscripts discovered in the most recent archaeological campaigns (e.g. the hermitage of Sheikh el-Gurna, or MMA 1152, in Western Thebes; Antinoopolis)
+- The manuscripts discovered in the most recent archaeological campaigns (e.g. the hermitage of Sheikh abd el-Gurna, or MMA 1152, in Western Thebes; Antinoopolis)
 - The ostraca from the Theban region (for which we have a well-documented archaeological context)
 - Detached bindings (that is bindings without a related text block)
 
@@ -32,7 +32,7 @@ Currently, more than 6,100 `codicological units` have been filed. Within this co
 -	Nag Hammadi Codices
 -	Bodmer Papyri (otherwise called Dishna Papers)
 -	Papyrus codices from the Monastery of Saint John the Baptist of Thin
--	Codices from the hermitage of Sheikh el-Gurna
+-	Codices from the hermitage of Sheikh abd el-Gurna
 -	Codices from Antinoopolis
 -	Parchment codices from the Monastery of the Archangel Michael near Phantoou
 -	Parchment codices from the Monastery of Saint Macarius in the Wādī al-Naṭrūn
