@@ -167,21 +167,24 @@ export default class Database {
 
   static getPlaces(where, cb) {
     let data = {
-      "join": "JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id"
-      + " JOIN paths__m_toponyms ON paths__m_toponyms.table_link = 'paths__places' AND paths__m_toponyms.id_link = paths__places.id",
-      "fields[paths__geodata.geometry]": "Geometry",
+      "join": "JOIN paths__geodata as g ON g.table_link = 'paths__places' AND g.id_link = paths__places.id "
+      + " JOIN paths__m_toponyms as t ON t.table_link = 'paths__places' AND t.id_link = paths__places.id",
+      "fields[g.geometry]": "Geometry",
       "fields[paths__places.id]": "Id",
       "fields[paths__places.name]": "Name",
       "fields[paths__places.pleiades]": "Pleiades Id",
       "fields[paths__places.typology]": "Site typology",
-      "fields[paths__m_toponyms.toponym]": "Toponyms",
-      "q_encoded": btoa( ( where ? where.replace(/`(.*)`/gi, '`paths__places`.`$1`') : " 1 LIMIT 0, 5000" ))
+      "fields[GROUP_CONCAT(t.toponym)]": "Toponyms",
+      "group": "paths__places.id",
+      "limit_start": "0",
+      "limit_end": "500",
+      "q_encoded": btoa( ( where ? where.replace(/`(.*)`/gi, '`paths__places`.`$1`') : " 1" ))
     };
 
     this.getData(
-      'geodata?verb=search&geojson=true&type=encoded',
+      'places?verb=search&geojson=true&type=encoded',
       data,
-      d => { cb( this.simplifyGeojson(d) ) }
+      d => { cb( d ) }
     );
   }
 
