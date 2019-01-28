@@ -114,8 +114,14 @@ export default class PathsMap extends Component {
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
     if (this.placesLayerRef && this.placesLayerRef.current.props.data.features.length > 1){
       bounds = this.placesLayerRef.current.leafletElement.getBounds();
+
+      if(bounds._northEast.lat === bounds._southWest.lat && bounds._northEast.lng === bounds._southWest.lng){
+        bounds.pad();
+      }
     }
+
     this.mapRef.current.leafletElement.fitBounds(bounds);
+
   }
 
 
