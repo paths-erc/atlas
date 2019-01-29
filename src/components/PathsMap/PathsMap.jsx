@@ -190,11 +190,15 @@ export default class PathsMap extends Component {
     this.fetchData(this.props.match.params.data, this.props.location.search);
   }
 
+  showGeoJson(){
+    if (!this.state.shownPlaces){
+      return <div style={{ textAlign: 'center', zIndex: 999, marginTop: '5rem'}}>
+          <Loading>Loading map data...</Loading>
+        </div>
+    }
+  }
 
   render() {
-    if (!this.state.shownPlaces){
-      return (<Loading>Loading map from server...</Loading>);
-    }
     return (
       <div className="maxHeight">
         <Header location={this.props.location} />
@@ -232,8 +236,11 @@ export default class PathsMap extends Component {
                 <TabLegend />
               </div>
             </Tab>
-
           </Sidebar>
+
+          { !this.state.shownPlaces && <div style={{ position: 'absolute', top: '5rem', textAlign: 'center', zIndex: 999, width: '100%'}}>
+                <Loading>Loading map data...</Loading>
+              </div> }
 
           <Map className="sidebar-map maxHeight" zoomControl={true} ref={this.mapRef}>
             <LayersControl position="topright">
@@ -256,14 +263,12 @@ export default class PathsMap extends Component {
               <BaseLayer name="OpenStreetMap">
                 <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
               </BaseLayer>
-              { this.state.places &&
-                  <GeoJSON
-                    ref={this.placesLayerRef}
-                    key={ hash(this.state.shownPlaces) }
-                    data={this.state.shownPlaces}
-                    pointToLayer={this.pointToLayer.bind(this)}
-                    onEachFeature={this.onEachFeature.bind(this) } />
-              }
+              { this.state.shownPlaces && <GeoJSON
+                ref={this.placesLayerRef}
+                key={ hash(this.state.shownPlaces) }
+                data={this.state.shownPlaces}
+                pointToLayer={this.pointToLayer.bind(this)}
+                onEachFeature={this.onEachFeature.bind(this) } /> }
             </LayersControl>
 
           </Map>
