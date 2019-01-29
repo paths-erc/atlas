@@ -15,6 +15,7 @@ import UrlFilterButton from './UrlFilterButton';
 import TabLegend from './TabLegend';
 import TabSavedQueries from './TabSavedQueries';
 import ClearButton from './ClearButton';
+import Loading from '../Loading/Loading';
 
 import Database from '../Services/Database/Database';
 
@@ -191,6 +192,9 @@ export default class PathsMap extends Component {
 
 
   render() {
+    if (!this.state.shownPlaces){
+      return (<Loading>Loading map from server...</Loading>);
+    }
     return (
       <div className="maxHeight">
         <Header location={this.props.location} />
