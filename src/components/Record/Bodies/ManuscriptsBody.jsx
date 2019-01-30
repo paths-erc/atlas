@@ -31,7 +31,7 @@ export default class ViewOne extends Component {
                       />
                     <Row key={k} className="border-bottom mb-2 pb-2">
                       <Col>
-                        <Plugin data={rec.plugins['paths__m_shelfmarks']} />
+                        { rec.plugins['paths__m_shelfmarks'] && <Plugin data={rec.plugins['paths__m_shelfmarks']} />}
                       </Col>
                     </Row>
                   </div>
