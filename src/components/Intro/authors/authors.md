@@ -15,6 +15,8 @@ As for the Greek authors, only the works actually written in Coptic are recorded
 
 As for the Coptic authors—namely, authors whose works were probably composed originally in Coptic—both the works preserved in Coptic (*genuina* and *dubia*/*spuria*) and their translations in other languages are recorded.
 
+The biographical accounts, the lists of the literary works attributed to the author, as well as the related *Clavis Coptica* entries, are subject to ongoing and regular updates and should be not considered definitive.
+
 **Authors** includes real, fictitious and semi-fictitious personalities. The last category refers to a rather unusual Coptic phenomenon, i.e. the literary construction of semi-historical characters made up of a mixture of reliable biographical information and fabricated additions, often for evident apologetic or defamatory purposes. This phenomenon led, *inter alia*, to the formation of the so-called “cycles”—groups of works composed at relatively late stages of Coptic literature and devoted to the lives of 4th and 5th century fathers.
 
 **Authors** are linked to **Works**, which are linked to **Manuscripts** preserving them.
