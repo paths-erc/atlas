@@ -126,6 +126,30 @@ export default {
         "q_encoded": btoa("`dialect` NOT LIKE '%F;%' AND `dialect` NOT LIKE '%S;%' AND `dialect` NOT LIKE '%B;%' AND `dialect` NOT LIKE '%F' AND `dialect` NOT LIKE '%S' AND `dialect` NOT LIKE '%B'")
       }
     },
+    miniature_codices : {
+      id: "miniature_codices",
+      title: "Miniature codices",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`leafw`<101 AND `leafw`>0 AND `bookform` = 'codex'")
+      }
+    },
+    square_codices : {
+      id: "square_codices",
+      title: "Square format codices",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`bookform`='codex' AND `prophw`>.84 AND `prophw`<1.16")
+      }
+    },
+    oblong_codices : {
+      id: "oblong_codices",
+      title: "Oblong format codices",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`bookform`='codex' AND `prophw`>1.84")
+      }
+    },
     // ms_with_date: {
     //   id: "ms_with_date",
     //   title: "Dated manuscripts",
