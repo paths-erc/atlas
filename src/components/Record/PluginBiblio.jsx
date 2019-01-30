@@ -24,8 +24,8 @@ export default class PluginBiblio extends Component {
               return (
                 <span key={di} className="mr-3">
                   { showLink(d.zotero.val, d.short.val) }
-                  { d.details.val ? (', ' + d.details.val + ';') : ''}
-                  { d.images.val ? (' ' + d.images.val + ';') : ''}
+                  { d.details.val ? (', ' + d.details.val) : ''}
+                  { d.images.val ? (` [${d.images.val}];`) : ';'}
                 </span>
               )
             })
