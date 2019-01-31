@@ -2,7 +2,7 @@ This section of the **PAThs** database contains the Coptic and bilingual Graeco-
 
 ---
 
-> A full description of the **Manuscripts** section is available at the [PAThs official documentation repository on GitHub](https://docs.paths-erc.eu/db-handbook/manuscripts.html). A [PDF version](https://github.com/paths-erc/raw/master/Pdf/paths-docs-v-0.9.pdf) is also available for offline access.
+> A full description of the **Manuscripts** section is available at the [PAThs official documentation repository on GitHub](http://docs.paths-erc.eu). A [PDF version](https://github.com/paths-erc/docs/raw/master/Pdf/paths-docs-v-0.9.pdf) is also available for offline access.
 
 ---
 
