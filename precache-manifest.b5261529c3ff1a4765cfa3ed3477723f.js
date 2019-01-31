@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "05785bb7738a1da95950",
+    "revision": "f825e6ffd0f3b0a73660",
     "url": "/static/css/main.980a3121.chunk.css"
   },
   {
-    "revision": "05785bb7738a1da95950",
-    "url": "/static/js/main.05785bb7.chunk.js"
+    "revision": "f825e6ffd0f3b0a73660",
+    "url": "/static/js/main.f825e6ff.chunk.js"
   },
   {
     "revision": "44a6baefe499233f6300",
@@ -44,16 +44,16 @@ self.__precacheManifest = [
     "url": "/static/media/Ripple-1.7s-200px.7466db60.svg"
   },
   {
-    "revision": "b6c878a3c9ba6596081e7c1063bdd10e",
-    "url": "/static/media/places.b6c878a3.md"
+    "revision": "bd43ff144bb2198536efea95acbd024b",
+    "url": "/static/media/places.bd43ff14.md"
   },
   {
     "revision": "1485b7805f95f812901178afd680740b",
     "url": "/static/media/places.1485b780.jpg"
   },
   {
-    "revision": "d4095a4f4da68da350b3cf6e51ab9aec",
-    "url": "/static/media/manuscripts.d4095a4f.md"
+    "revision": "6be40095e1f9b079300b02bc41c70d51",
+    "url": "/static/media/manuscripts.6be40095.md"
   },
   {
     "revision": "ef53f386d2df750b8f2d98a375b4e773",
@@ -76,8 +76,8 @@ self.__precacheManifest = [
     "url": "/static/media/titles.2b8757e2.jpg"
   },
   {
-    "revision": "9b8c6b7bad0328c6df1ae41f98006f47",
-    "url": "/static/media/authors.9b8c6b7b.md"
+    "revision": "98ad468206e68748f740c3e06e7f07ff",
+    "url": "/static/media/authors.98ad4682.md"
   },
   {
     "revision": "d6df50d78502d68d8ec7d2865ec07201",
@@ -108,7 +108,7 @@ self.__precacheManifest = [
     "url": "/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "d40f6dc1720d3607b8e56d61734aca57",
+    "revision": "92460bf4a6c9ead24394dae602c65504",
     "url": "/index.html"
   }
 ];
