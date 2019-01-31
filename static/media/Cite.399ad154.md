@@ -21,7 +21,7 @@ Single database records must be cited by using the full URI and the relative URL
 - **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. “The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: 2410-0951) https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf
 
 #### Places
-- <mark>TODO: Articolo Archaeology in Africa</mark>
+- **Buzi**, Paola, Julian **Bogdani** and Angelo **Colonna**, “The Egyptological research activities of Sapienza University of Rome”, forthcoming
 
 #### Manuscripts
 - **Buzi**, Paola, Francesco **Berno**, Agostino **Soldati**, and Francesco **Valerio**. 2018. “Vat. copt. 57: A Codicological, Literary, and Paratextual Analysis” in *Comparative Oriental Manuscripts Studies Bulletin* 4.2, 161-93 (ISSN: 2410-0951) https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-2/161-194.pdf
