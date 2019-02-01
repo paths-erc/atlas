@@ -16,8 +16,8 @@ Amongst other products, **PAThs** presently includes:
 -	A detailed codicological description of part of the codicological units (to be expanded progressively).
 -	A complete classification of Coptic literature, by means of the attribution of a Clavis Coptica (CC) entry for each work and each title, and of a stable identifier for each colophon.
 -	A complete census of the relevant sites which are known as places where individual manuscripts (for instance codices buried with a body, as a funerary kit) or entire ‘collections’ (for example a monastery library) have been found.
--	A complete census, edition, and translation of all extant Coptic titles.
--	A complete census, edition, and translation of all extant Coptic colophons.
+-	A census, edition, and translation of all extant Coptic titles.
+-	A census, edition, and translation of all extant Coptic colophons.
 -	A classification of book formats, writing supports and other relevant codicological features of the manuscripts, in relation to the texts that they transmit.
 
 In the near feature a complete archive of names of copyists, commissioners, donors, institutions and places involved in the production of manuscripts will be also provided.
