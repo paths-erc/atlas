@@ -34,14 +34,14 @@ export default {
         "q_encoded": btoa("`typology` = 'catacomb, cemetery, necropolis' OR `typology` = 'tomb'")
       }
     },
-    forts: {
-      id: "forts",
-      title: "Forts or towers",
-      url: 'places?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`typology` = 'fort, tower'")
-      }
-    },
+    // forts: {
+    //   id: "forts",
+    //   title: "Forts or towers",
+    //   url: 'places?verb=search&type=encoded',
+    //   data: {
+    //     "q_encoded": btoa("`typology` = 'fort, tower'")
+    //   }
+    // },
     hermitages: {
       id: "hermitages",
       title: "Hermitage units",
