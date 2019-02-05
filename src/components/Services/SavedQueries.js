@@ -44,7 +44,7 @@ export default {
     // },
     hermitages: {
       id: "hermitages",
-      title: "Hermitage units",
+      title: "Hermitage units (mainly referred to the area of Western Thebes)",
       url: 'places?verb=search&type=encoded',
       data: {
         "q_encoded": btoa("`typology` = 'hermitage unit(s)'")
