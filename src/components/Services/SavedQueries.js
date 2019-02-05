@@ -12,7 +12,7 @@ export default {
     },
     has_monasteries: {
       id: "has_monasteries",
-      title: "Site has one or more monasteries",
+      title: "Sites with one or many monasteries",
       url: 'places?verb=search&type=encoded',
       data: {
         "q_encoded": btoa("`hasmonastery` = 1")
@@ -472,7 +472,7 @@ export default {
   map: {
     discovery_places: {
       id: 'discovery_places',
-      title: 'Manuscript discovery places',
+      title: 'Discovery places of Coptic literary manuscripts',
       url: 'geodata?verb=search&geojson=true&type=encoded',
       data: {
         "join": " JOIN paths__places as p ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = p.id" +
@@ -492,7 +492,7 @@ export default {
     },
     storage_places: {
       id: 'storage_places',
-      title: 'Manuscript storage places',
+      title: 'Storage places of Coptic literary manuscripts',
       url: 'geodata?verb=search&geojson=true&type=encoded',
       data: {
         "join": " JOIN paths__places as p ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = p.id" +
@@ -513,7 +513,7 @@ export default {
     },
     production_places: {
       id: 'production_places',
-      title: 'Manuscript production places',
+      title: 'Production places of Coptic literary manuscripts',
       url: 'geodata?verb=search&geojson=true&type=encoded',
       data: {
         "join": " JOIN paths__places as p ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = p.id" +
