@@ -74,10 +74,14 @@ export default {
         "q_encoded": btoa("`typology` = 'settlement'")
       }
     },
-    shrines: {
-      id: "shrines",
-      title: "Shrines",
-      url: 'places?verb=search&type=encoded',
+    // shrines: {
+    //   id: "shrines",
+    //   title: "Shrines",
+    //   url: 'places?verb=search&type=encoded',
+    //   data: {
+    //     "q_encoded": btoa("`typology` = 'shrine'")
+    //   }
+    // },
       data: {
         "q_encoded": btoa("`typology` = 'shrine'")
       }
