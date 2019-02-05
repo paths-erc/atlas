@@ -82,10 +82,24 @@ export default {
     //     "q_encoded": btoa("`typology` = 'shrine'")
     //   }
     // },
+  },
+  titles: {
+    final: {
+      id: "final",
+      title: "Final titles",
+      url: "titles?verb=search&type=encoded",
       data: {
-        "q_encoded": btoa("`typology` = 'shrine'")
+        q_encoded: btoa(" `type` = 'final'")
       }
     },
+    section_headings: {
+      id: "section_headings",
+      title: "Section headings",
+      url: "titles?verb=search&type=encoded",
+      data: {
+        q_encoded: btoa(" `type` = 'section heading'")
+      }
+    }
   },
   authors: {
     bishops: {
