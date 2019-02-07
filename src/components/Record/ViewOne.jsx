@@ -12,7 +12,6 @@ import Files from '../ViewFiles/Files';
 import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
-import Timeline from './Timeline';
 
 export default class ViewOne extends Component {
 
@@ -106,7 +105,6 @@ export default class ViewOne extends Component {
               </Col>
               <Col sm="4">
                 <MiniMap geom={ rec.geodata } />
-                <Timeline placephase={ rec.plugins.paths__m_placephase } />
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
                 <UserLinks links={ rec.manualLinks } />

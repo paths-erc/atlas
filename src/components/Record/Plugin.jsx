@@ -6,7 +6,6 @@ import RecordCell from './RecordCell';
 import PluginBiblio from './PluginBiblio';
 import PluginShelfmarks from './PluginShelfmarks';
 import PluginToponyms from './PluginToponyms';
-import Timeline from './Timeline';
 
 
 
@@ -33,9 +32,6 @@ class Plugin extends Component {
 
         <Card className="mt-2">
           <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
-
-          {this.props.data.metadata.tb_id === 'paths__m_placephase' && <div className="p-1"><Timeline placephase={ this.props.data } /></div>}
-
           {
             this.props.data.data.map( (d, di) =>{
               return (<CardBody key={di} className="border border-info mb-2">{
