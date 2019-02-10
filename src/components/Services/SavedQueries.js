@@ -258,20 +258,20 @@ export default {
     // }
   },
   works: {
-    early_translations_sahidic: {
-      id: "early_translations_sahidic",
-      title: "Early translations of biblical works into Sahidic (3rd-4th cent.)",
+    translations_biblical_sahidic: {
+      id: "translations_biblical_sahidic",
+      title: "Translations of biblical works into Sahidic (3rd-4th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(" `litperiod` = 'Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)'")
+        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into Sahidic (3rd-4th cent.)'")
       }
     },
-    early_translations_bohairic: {
-      id: "early_translations_bohairic",
-      title: "Early translations of biblical works into Bohairic (4th cent.)",
+    translations_biblical_bohairic: {
+      id: "translations_biblical_bohairic",
+      title: "Translations of biblical works into Bohairic (4th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(" `litperiod` = 'Early translations of biblical works into Bohairic (4th cent.)'")
+        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into Bohairic (4th cent.)'")
       }
     },
     early_translations_other: {
@@ -282,12 +282,12 @@ export default {
         "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)'")
       }
     },
-    early_translations_apocryphal: {
-      id: "early_translations_apocryphal",
-      title: "Early translations of apocryphal works – first phase (4th cent.)",
+    translations_apocryphal: {
+      id: "translations_apocryphal",
+      title: "Translations of apocryphal works – first phase (4th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(unescape(encodeURIComponent(" `litperiod` = 'Early translations of apocryphal works – first phase (4th cent.)'")))
+        "q_encoded": btoa(unescape(encodeURIComponent(" `litperiod` = 'Translations of apocryphal works – first phase (4th cent.)'")))
       }
     },
     translations_gnostic: {
@@ -308,10 +308,10 @@ export default {
     },
     translations_patristic: {
       id: "translations_patristic",
-      title: "Early translation of patristic works – first phase (3th-5th cent.)",
+      title: "Translation of patristic works – first phase (3th-5th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Early translation of patristic works – first phase (3th-5th cent.)' ")))
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translation of patristic works – first phase (3th-5th cent.)' ")))
       }
     },
     pachomius: {
@@ -348,10 +348,10 @@ export default {
     },
     translations_hagiographical: {
       id: "translations_hagiographical",
-      title: "Early translations of hagiographical works (4th-6th cent.)",
+      title: "Translations of hagiographical works (4th-6th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Early translations of hagiographical works (4th-6th cent.)' ")))
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translations of hagiographical works (4th-6th cent.)' ")))
       }
     },
     classsical_translations_homilies: {
