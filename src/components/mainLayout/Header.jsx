@@ -70,9 +70,6 @@ render() {
                       <FontAwesomeIcon icon="plus-circle" /> Get more
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem to="/charts" tag={RRNavLink}>
-                          <FontAwesomeIcon icon="chart-bar" /> Charts
-                      </DropdownItem>
                       <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
                           <FontAwesomeIcon icon="share-alt" /> LOD: Pelagios VoID
                       </DropdownItem>
