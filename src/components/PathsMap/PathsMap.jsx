@@ -148,9 +148,7 @@ export default class PathsMap extends Component {
           this.fitMapToBounds()
         });
       } else if (qstring.tb === 'places') {
-        if (!qstring.where.includes('LIMIT')){
-          qstring.where += ' LIMIT 0, 2000';
-        }
+        
         Database.getPlaces(qstring.where, data => {
           this.setState({
             places: data,
