@@ -39,6 +39,9 @@ class Plugin extends Component {
                     if (Cfg.hidden.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1){
                       return null;
                     }
+                    if (f === 'sort'){
+                      return null;
+                    }
                     if (d[f].label){
                       return <RecordCell val={ d[f].val_label ? d[f].val_label : d[f].val } label={ d[f].label } key={fi} />
                     } else {
