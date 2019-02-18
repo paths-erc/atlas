@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.980a3121.chunk.css",
-  "main.js": "/static/js/main.8ff1d917.chunk.js",
-  "main.js.map": "/static/js/main.8ff1d917.chunk.js.map",
+  "main.js": "/static/js/main.97ca5ee5.chunk.js",
+  "main.js.map": "/static/js/main.97ca5ee5.chunk.js.map",
   "static/js/1.b2746e72.chunk.js": "/static/js/1.b2746e72.chunk.js",
   "static/js/1.b2746e72.chunk.js.map": "/static/js/1.b2746e72.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -17,7 +17,7 @@
   "static/media/places.jpg": "/static/media/places.1485b780.jpg",
   "static/media/manuscripts.md": "/static/media/manuscripts.6be40095.md",
   "static/media/manuscripts.jpg": "/static/media/manuscripts.ef53f386.jpg",
-  "static/media/works.md": "/static/media/works.539d48e2.md",
+  "static/media/works.md": "/static/media/works.a14c270e.md",
   "static/media/works.jpg": "/static/media/works.7aa6593a.jpg",
   "static/media/titles.md": "/static/media/titles.24cbbfac.md",
   "static/media/titles.jpg": "/static/media/titles.2b8757e2.jpg",
@@ -31,6 +31,6 @@
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.980a3121.chunk.css.map": "/static/css/main.980a3121.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.8e042b247769e60a65a297af985e994c.js": "/precache-manifest.8e042b247769e60a65a297af985e994c.js",
+  "precache-manifest.157ec0da984abe2ed467474d149f2918.js": "/precache-manifest.157ec0da984abe2ed467474d149f2918.js",
   "service-worker.js": "/service-worker.js"
 }
