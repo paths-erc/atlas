@@ -483,6 +483,16 @@ export default {
       }
     },
   },
+  colophons: {
+    cryptography: {
+      id: 'cryptography',
+      title: "Colophons with cryptography",
+      url: 'colophons?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`cryptography`=1 ")))
+      }
+    }
+  },
   map: {
     discovery_places: {
       id: 'discovery_places',
