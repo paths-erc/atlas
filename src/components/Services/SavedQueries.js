@@ -12,7 +12,7 @@ export default {
     },
     has_monasteries: {
       id: "has_monasteries",
-      title: "Sites with one or many monasteries",
+      title: "Sites with one or more monasteries",
       url: 'places?verb=search&type=encoded',
       data: {
         "q_encoded": btoa("`hasmonastery` = 1")
