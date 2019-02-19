@@ -114,10 +114,10 @@ export default {
   manuscripts: {
     ms_has_bindings: {
       id: "ms_has_bindings",
-      title: "Manuscripts with bookbindings",
+      title: "Manuscripts with ancient bookbindings",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`bindings`='1'")
+        "q_encoded": btoa("`bindings`=1")
       }
     },
     horizontal_rolls : {
