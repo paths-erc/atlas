@@ -22,7 +22,12 @@ import Intro from './components/Intro/Intro';
 import ViewOne from './components/Record/ViewOne';
 import Charts from './components/Charts/Charts';
 import Cite from './components/Cite/Cite';
+import ReactGA from 'react-ga';
 
+if(window.location.href.match(/atlas\.paths-erc\.eu/g)){
+  ReactGA.initialize('UA-10461068-45');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
 
