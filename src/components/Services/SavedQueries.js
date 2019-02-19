@@ -114,10 +114,10 @@ export default {
   manuscripts: {
     ms_has_bindings: {
       id: "ms_has_bindings",
-      title: "Manuscripts with bookbindings",
+      title: "Manuscripts with ancient bookbindings",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`bindings`='1'")
+        "q_encoded": btoa("`bindings`=1")
       }
     },
     horizontal_rolls : {
@@ -260,18 +260,18 @@ export default {
   works: {
     translations_biblical_sahidic: {
       id: "translations_biblical_sahidic",
-      title: "Translations of biblical works into Sahidic (3rd-4th cent.)",
+      title: "Translations of biblical works into Sahidic - first phase (3rd-4th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into Sahidic (3rd-4th cent.)'")
+        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into Sahidic - first phase (3rd-4th cent.)'")
       }
     },
     translations_biblical_bohairic: {
       id: "translations_biblical_bohairic",
-      title: "Translations of biblical works into Bohairic (4th cent.)",
+      title: "Translations of biblical works into Bohairic - first phase (4th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into Bohairic (4th cent.)'")
+        "q_encoded": btoa(" `litperiod` = 'Translations of biblical works into Bohairic - first phase (4th cent.)")
       }
     },
     early_translations_other: {
@@ -348,10 +348,10 @@ export default {
     },
     translations_hagiographical: {
       id: "translations_hagiographical",
-      title: "Translations of hagiographical works (4th-6th cent.)",
+      title: "Translations of hagiographical works – first phase (4th-6th cent.)",
       url: 'works?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translations of hagiographical works (4th-6th cent.)' ")))
+        "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Translations of hagiographical works – first phase (4th-6th cent.)' ")))
       }
     },
     classsical_translations_homilies: {
@@ -482,6 +482,16 @@ export default {
         "q_encoded": btoa(unescape(encodeURIComponent("`litperiod` = 'Late liturgical production (10th-14th cent.)' ")))
       }
     },
+  },
+  colophons: {
+    cryptography: {
+      id: 'cryptography',
+      title: "Colophons with cryptography",
+      url: 'colophons?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`cryptography`=1 ")))
+      }
+    }
   },
   map: {
     discovery_places: {

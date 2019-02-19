@@ -25,8 +25,8 @@ A provisional periodisation system, object of further amendments and changes, is
 The literary periods presently considered are the following:
 
 
-1.	Translations of biblical works into Sahidic (3<sup>rd</sup>-4<sup>th</sup> cent.)
-1.	Translations of biblical works into Bohairic (4<sup>th</sup> cent.)
+1.	Translations of biblical works into Sahidic - first phase (3<sup>rd</sup>-4<sup>th</sup> cent.)
+1.	Translations of biblical works into Bohairic - first phase (4<sup>th</sup> cent.)
 1.	Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4<sup>th</sup> cent.)
 1.	Translations of apocryphal works – first phase (4<sup>th</sup> cent.)
 1.	Translation and (eventual) re-elaboration of a “Gnostic” corpus (3<sup>rd</sup>-4<sup>th</sup> cent.)
@@ -36,7 +36,7 @@ The literary periods presently considered are the following:
 1.	Early original literary production: Shenoute and the Shenoutean milieu (4<sup>th</sup>-5<sup>th</sup> cent.)
 1.	“Standard” translations of biblical works into Sahidic (5<sup>th</sup> cent.)
 1.	Translations of apocryphal texts – second phase (4<sup>th</sup>-5<sup>th</sup> cent.)
-1.	Translations of hagiographical works (4<sup>th</sup>-6<sup>th</sup> cent.)
+1.	Translations of hagiographical works – first phase (4<sup>th</sup>-6<sup>th</sup> cent.)
 1.	“Classical” translations - homilies (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
 1.	“Classical” translations – historiae monachorum (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
 1.	“Classical” translations – acts of councils (end of 4<sup>th</sup>-6<sup>th</sup> cent.)
