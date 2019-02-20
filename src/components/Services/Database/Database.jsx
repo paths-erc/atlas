@@ -178,7 +178,7 @@ export default class Database {
       "group": "paths__places.id",
       "limit_start": "0",
       "limit_end": "500",
-      "q_encoded": btoa( ( where ? where.replace(/`(.*)`/gi, '`paths__places`.`$1`') : " 1" ))
+      "q_encoded": btoa( ( where ? where.replace(/`id`/gi, '`paths__places`.`id`') : " 1" ))
     };
 
     this.getData(
