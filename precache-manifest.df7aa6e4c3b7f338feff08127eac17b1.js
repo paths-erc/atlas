@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "7379769060d6bf5b7858",
+    "revision": "750f47e2f1c95767c5be",
     "url": "/static/css/main.2f4e9e5f.chunk.css"
   },
   {
-    "revision": "7379769060d6bf5b7858",
-    "url": "/static/js/main.73797690.chunk.js"
+    "revision": "750f47e2f1c95767c5be",
+    "url": "/static/js/main.750f47e2.chunk.js"
   },
   {
     "revision": "5eda1e13f3d0031f29f9",
@@ -108,7 +108,7 @@ self.__precacheManifest = [
     "url": "/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "7c1d132629e2d4302266e5146f38a7bf",
+    "revision": "32c5bfbcd917970f8d7038f90a6777ae",
     "url": "/index.html"
   }
 ];
