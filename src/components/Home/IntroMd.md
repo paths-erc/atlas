@@ -15,7 +15,7 @@ Amongst other products, **PAThs** presently includes:
 -	A complete classification of the Coptic manuscript tradition, by means of the attribution of `stable identifiers` for each manuscript (`codicological unit`), in order to have univocal coordinates of reference for the entirety of Coptic literary production. Such a classification can be progressively expanded as new manuscripts are discovered.
 -	A detailed codicological description of part of the codicological units (to be expanded progressively).
 -	A complete classification of Coptic literature, by means of the attribution of a Clavis Coptica (CC) entry for each work and each title, and of a stable identifier for each colophon.
--	A complete census of the relevant sites which are known as places where individual manuscripts (for instance codices buried with a body, as a funerary kit) or entire ‘collections’ (for example a monastery library) have been found.
+-	A complete census of the relevant places, including sites where individual manuscripts (for instance codices buried with a body, as a funerary kit) or entire ‘collections’ (for example a monastery library) have been found; major Late Antique and Medieval archaeological sites, as known from published reports; other places of political, religious, and cultural significance (like episcopal sees), even when they have left no specific physical trace or evidence.
 -	A census, edition, and translation of Coptic titles.
 -	A census, edition, and translation of Coptic colophons.
 -	A classification of book formats, writing supports and other relevant codicological features of the manuscripts, in relation to the texts that they transmit.
