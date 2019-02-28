@@ -193,5 +193,9 @@ export default {
         "paths__m_hands:modulartypology",
         "paths__m_hands:writingaxis",
         "paths__m_hands:thickandthin",
+
+        "paths__m_biblio:short",
+        "paths__m_biblio:details",
+
       ]
 };
