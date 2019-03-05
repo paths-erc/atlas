@@ -170,6 +170,8 @@ export default class ManuscriptBody extends Component {
           rec.core.restmodern
         ]} />
 
+      { rec.plugins['paths__m_biblio'] && <Plugin data={rec.plugins['paths__m_biblio']} /> }
+
 
         <FieldSet legend="Metadata" fields={[
           rec.core.sourceinfo,
