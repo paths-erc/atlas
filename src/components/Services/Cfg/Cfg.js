@@ -120,6 +120,8 @@ export default {
         "paths__titles:workcc",
         "paths__titles:msid",
         "paths__titles:type",
+        "paths__titles:text",
+        "paths__titles:translation",
 
         "paths__colophons:id",
         "paths__colophons:msid",
