@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.2f4e9e5f.chunk.css",
-  "main.js": "/static/js/main.0613ee64.chunk.js",
-  "main.js.map": "/static/js/main.0613ee64.chunk.js.map",
+  "main.js": "/static/js/main.c81d108f.chunk.js",
+  "main.js.map": "/static/js/main.c81d108f.chunk.js.map",
   "static/js/1.5eda1e13.chunk.js": "/static/js/1.5eda1e13.chunk.js",
   "static/js/1.5eda1e13.chunk.js.map": "/static/js/1.5eda1e13.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -13,9 +13,9 @@
   "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.853ccd40.md",
   "static/media/lod.md": "/static/media/lod.d9b96c9b.md",
   "static/media/Ripple-1.7s-200px.svg": "/static/media/Ripple-1.7s-200px.7466db60.svg",
-  "static/media/places.md": "/static/media/places.bd43ff14.md",
+  "static/media/places.md": "/static/media/places.6f83fd7a.md",
   "static/media/places.jpg": "/static/media/places.1485b780.jpg",
-  "static/media/manuscripts.md": "/static/media/manuscripts.6be40095.md",
+  "static/media/manuscripts.md": "/static/media/manuscripts.38f60b21.md",
   "static/media/manuscripts.jpg": "/static/media/manuscripts.ef53f386.jpg",
   "static/media/works.md": "/static/media/works.a14c270e.md",
   "static/media/works.jpg": "/static/media/works.7aa6593a.jpg",
@@ -31,6 +31,6 @@
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.2f4e9e5f.chunk.css.map": "/static/css/main.2f4e9e5f.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.b2f03a8793b22a70784fbbf491b54088.js": "/precache-manifest.b2f03a8793b22a70784fbbf491b54088.js",
+  "precache-manifest.c77b0eed002bb34cff3d1e2be647c2bb.js": "/precache-manifest.c77b0eed002bb34cff3d1e2be647c2bb.js",
   "service-worker.js": "/service-worker.js"
 }
