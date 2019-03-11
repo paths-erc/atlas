@@ -1,9 +1,9 @@
 
 PAThs resource | URI | URL | Responsible Persons(s)
 --- |:---:| :---: | ---:
-**Atlas** | `paths.atlas` | http://paths.uniroma1.it/atlas/map | [Julian **Bogdani**](mailto:julian.bogdani@uniroma1.it)
+**Atlas** | `paths.atlas` | http://paths.uniroma1.it/atlas/map | [Julian **Bogdani**](mailto:julian.bogdani@uniroma1.it)<br />[Paolo **Rosati**](mailto:paolo.rosati@uniroma1.it) (digital cartography)
 **Places** | `paths.places` | http://paths.uniroma1.it/atlas/places | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Angelo **Colonna**](mailto:angelo.colonna@uniroma1.it), [Ilaria **Rossetti**](mailto:ilaria.rossetti@uniroma1.it)
-**Manuscripts** | `paths.manuscripts`	| http://paths.uniroma1.it/atlas/manuscripts | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Nathan **Carlig**](mailto:nathan.carlig@uniroma1.it), [Francesco **Valerio**](mailto:francesco.valerio@uniroma1.it), [Tea **Ghigo**](mailto:tea.ghigo@uniroma1.it) (inks)
+**Manuscripts** | `paths.manuscripts`	| http://paths.uniroma1.it/atlas/manuscripts | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Nathan **Carlig**](mailto:nathan.carlig@uniroma1.it), [Francesco **Valerio**](mailto:francesco.valerio@uniroma1.it), [Tea **Ghigo**](mailto:tea.ghigo@uniroma1.it) (inks), [Eliana **Dal Sasso**](mailto:eliana.dalsasso@uniroma1.it) (bookbindings)
 **Works** | `paths.works` | http://paths.uniroma1.it/atlas/works | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
 **Authors** | `paths.authors` | http://paths.uniroma1.it/atlas/authors | [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
 **Titles** | `paths.titles` | http://paths.uniroma1.it/atlas/titles | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it)
