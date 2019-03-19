@@ -176,6 +176,22 @@ export default {
     //     "q_encoded": btoa("(`chronofrom`!='' AND `chronofrom` IS NOT NULL) OR (`chronoto`!='' AND `chronoto` IS NOT NULL)")
     //   }
     // },
+    early_bohairic: {
+      id: "early_bohairic",
+      title: "Early Bohairic manuscripts (up to 7th cent.)",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`dialect` LIKE '%B%' AND `chronoto`<'701'")
+      }
+    },
+    fayyumic: {
+      id: "fayyumic",
+      title: "Fayyumic dialect manuscripts",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`dialect` LIKE '%F%' ")
+      }
+    },
     ms_third_c: {
       id: "ms_third_c",
       title: "Manuscripts up to the 3rd Century",
