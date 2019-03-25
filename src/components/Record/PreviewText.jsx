@@ -42,14 +42,14 @@ export default class PreviewText extends Component {
   }
 
   render() {
-    const textParts = relaxedSplit(nl2br(this.props.text), 200, this.props.separator);
+    const textParts = relaxedSplit(this.props.text, 200, this.props.separator);
     if (!textParts[1]){
       return textParts[0];
     }
 
     return (
-      <span>{ textParts[0] }
-        <span style={{ display: this.state.display }}>{ textParts[1] }</span>
+      <span>{ nl2br(textParts[0]) }
+        <span style={{ display: this.state.display }}>{ nl2br(textParts[1]) }</span>
         {this.state.display === 'none' ? '\u2026' : ''}
         <Button color="info" size="sm" className="ml-3" onClick={ this.toggleDisplay }>
           {this.state.display === 'none' ? '+' : '-'}
