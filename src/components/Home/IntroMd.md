@@ -23,3 +23,18 @@ Amongst other products, **PAThs** presently includes:
 In the near feature a complete archive of names of copyists, commissioners, donors, institutions and places involved in the production of manuscripts will be also provided.
 
 For more information, see the Introduction to the individual sections of the Atlas and the Mission Statement.
+
+### *Caveat lector*
+In order to fully benefit from the information collected in our database you should have Coptic fonts installed. We strongly encourage you to utilize Antinoou Coptic freely available at [https://www.evertype.com/fonts/coptic/](https://www.evertype.com/fonts/coptic/).
+
+PAThs Atlas does not support older browsers. Please check below the compatible browser versions:
+- Android Browser >= 67
+- Blackberry: no support
+- Google Chrome >= 42
+- Microsoft Edge >= 14
+- Microsoft Internet Explores: no support
+- Mozilla Firefox >= 39
+- Opera >= 29
+- Opera Mini: no support
+- Opera Mobile >= 45
+- Safari >= 11
