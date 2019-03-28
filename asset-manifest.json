@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.2f4e9e5f.chunk.css",
-  "main.js": "/static/js/main.ee9cb5ad.chunk.js",
-  "main.js.map": "/static/js/main.ee9cb5ad.chunk.js.map",
+  "main.js": "/static/js/main.3002d23b.chunk.js",
+  "main.js.map": "/static/js/main.3002d23b.chunk.js.map",
   "static/js/1.e6a361d8.chunk.js": "/static/js/1.e6a361d8.chunk.js",
   "static/js/1.e6a361d8.chunk.js.map": "/static/js/1.e6a361d8.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -9,7 +9,7 @@
   "static/media/paths-logo.png": "/static/media/paths-logo.d0a2b412.png",
   "static/media/erc.jpg": "/static/media/erc.9fb24811.jpg",
   "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
-  "static/media/IntroMd.md": "/static/media/IntroMd.0c60e12b.md",
+  "static/media/IntroMd.md": "/static/media/IntroMd.0a6c2bfc.md",
   "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.853ccd40.md",
   "static/media/lod.md": "/static/media/lod.d9b96c9b.md",
   "static/media/Ripple-1.7s-200px.svg": "/static/media/Ripple-1.7s-200px.7466db60.svg",
@@ -31,6 +31,6 @@
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.2f4e9e5f.chunk.css.map": "/static/css/main.2f4e9e5f.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.156b522869dc1e70b10a795ac4d96eac.js": "/precache-manifest.156b522869dc1e70b10a795ac4d96eac.js",
+  "precache-manifest.9ae9578f71c9f86b2cf1ed532147f35e.js": "/precache-manifest.9ae9578f71c9f86b2cf1ed532147f35e.js",
   "service-worker.js": "/service-worker.js"
 }

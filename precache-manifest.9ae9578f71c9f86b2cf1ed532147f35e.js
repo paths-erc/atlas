@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ee9cb5adb74a396391a9",
+    "revision": "3002d23bff3241104435",
     "url": "/static/css/main.2f4e9e5f.chunk.css"
   },
   {
-    "revision": "ee9cb5adb74a396391a9",
-    "url": "/static/js/main.ee9cb5ad.chunk.js"
+    "revision": "3002d23bff3241104435",
+    "url": "/static/js/main.3002d23b.chunk.js"
   },
   {
     "revision": "e6a361d8bed1a862eb44",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/sapienza.8672e003.jpg"
   },
   {
-    "revision": "0c60e12b016f2db45f4d2382af3afdf4",
-    "url": "/static/media/IntroMd.0c60e12b.md"
+    "revision": "0a6c2bfc67600f4704152718e679edca",
+    "url": "/static/media/IntroMd.0a6c2bfc.md"
   },
   {
     "revision": "853ccd409337a001a628707efc771994",
@@ -108,7 +108,7 @@ self.__precacheManifest = [
     "url": "/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "32429d84a375422203b51797efd902cf",
+    "revision": "87e6d82d3e72a8edc60c8ba4d9bcf958",
     "url": "/index.html"
   }
 ];
