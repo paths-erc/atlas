@@ -155,6 +155,7 @@ export default {
         "paths__manuscripts:bookform",
         "paths__manuscripts:writingsupport",
         "paths__manuscripts:issinglefrag",
+        "paths__manuscripts:isbookbinding",
         "paths__manuscripts:dialect",
         "paths__manuscripts:chronofrom",
         "paths__manuscripts:chronoto",
