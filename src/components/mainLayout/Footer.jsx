@@ -49,7 +49,10 @@ render() {
               </small>
             </p>
 
-            <p>Version { packageJson.version }</p>
+            <p>
+              Version { packageJson.version }<br />
+              <a href="https://github.com/paths-erc/atlas/commits/master" target="_blank" rel="noopener noreferrer">Changelog</a>
+            </p>
 
           </div>
 
