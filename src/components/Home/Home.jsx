@@ -6,6 +6,7 @@ import imgPathsLogo from './paths-logo.png';
 import intro from './IntroMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
+import license from './license.md';
 import Loading from '../Loading/Loading';
 import Disclaimer from './Disclaimer';
 
@@ -31,6 +32,11 @@ export default class Home extends React.Component{
           id    : 'lod',
           title : "Linked Open Data",
           path  : lod
+        },
+        {
+          id    : 'license',
+          title : "Copyright and license",
+          path  : license
         }
       ]
     }
