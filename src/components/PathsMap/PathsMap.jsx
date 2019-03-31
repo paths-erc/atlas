@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
+import { Map, TileLayer, LayersControl, GeoJSON, WMSTileLayer } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import qs from 'qs';
 import hash from 'object-hash';
@@ -148,7 +148,7 @@ export default class PathsMap extends Component {
           this.fitMapToBounds()
         });
       } else if (qstring.tb === 'places') {
-        
+
         Database.getPlaces(qstring.where, data => {
           this.setState({
             places: data,
@@ -261,6 +261,19 @@ export default class PathsMap extends Component {
               <BaseLayer name="OpenStreetMap">
                 <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
               </BaseLayer>
+              <BaseLayer name="Series 4085 - GB &amp; USA">
+                <WMSTileLayer
+                  layers='Series 4085-Great Britain War Office-U.S. Army Map Service-1941-'
+                  url="http://wms.paths-erc.eu/"
+                />
+              </BaseLayer>
+              <BaseLayer name="Arrowsmith 1807">
+                <WMSTileLayer
+                  layers='Arrowsmith 1807'
+                  url="http://wms.paths-erc.eu/"
+                />
+              </BaseLayer>
+
               { this.state.shownPlaces && <GeoJSON
                 ref={this.placesLayerRef}
                 key={ hash(this.state.shownPlaces) }
