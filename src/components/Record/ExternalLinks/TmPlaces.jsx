@@ -9,10 +9,16 @@ export default class TmPlaces extends Component {
     if ( this.props.tb !== 'places' || !this.props.data.val || this.props.data.val.length < 1 ) {
       return null;
     }
-    return <ListGroupItem>
-      <a href={"https://www.trismegistos.org/place/" + this.props.data.val } target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon="external-link-alt" /> Trismegistos places
-      </a>
-    </ListGroupItem>
+    return (
+      <div>
+        { this.props.data.val.split(',').map( (v, k) => {
+          return <ListGroupItem key={ k }>
+            <a href={"https://www.trismegistos.org/place/" + v.trim() } target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon="external-link-alt" /> TM Geo {v}
+            </a>
+          </ListGroupItem>
+        }) }
+      </div>
+    )
   }
 }

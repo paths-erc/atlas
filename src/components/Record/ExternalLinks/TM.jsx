@@ -9,10 +9,17 @@ export default class TM extends Component {
     if ( this.props.tb !== 'manuscripts' || !this.props.data.val || this.props.data.val.length < 1 ) {
       return null;
     }
-    return <ListGroupItem>
-      <a href={"https://www.trismegistos.org/text/" + this.props.data.val } target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon="external-link-alt" /> Trismegistos texts
-      </a>
-    </ListGroupItem>
+
+    return (
+      <div>
+        { this.props.data.val.split(',').map( (v, k) => {
+          return <ListGroupItem key={k}>
+            <a href={"https://www.trismegistos.org/text/" + v.trim() } target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon="external-link-alt" /> TM {v}
+            </a>
+          </ListGroupItem>
+        }) }
+      </div>
+    );
   }
 }
