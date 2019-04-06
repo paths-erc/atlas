@@ -6,12 +6,6 @@ initiative to publish structured data in the [Peripleo](http://peripleo.pelagios
 platform, «a community network that facilitates linking of online resources that
 document the past, based on the places they refer to».
 
-At present a [VoID file](https://github.com/pelagios/pelagios-cookbook/wiki/Joining-Pelagios#the-void-file)
-is being maintained on our [web database](https://db-dev.bradypus.net/api/paths/places?verb=pelagios-void)
-among with the main real-time export file of Places in the following formats:
-- [turtle](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle)
-- [json](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=json)
-- [ntriples](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=ntriples)
-- [rdfxml](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=rdfxml)
-- [dot](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=dot)
-- [n3](https://db-dev.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=n3)
+At present a [VoID file](https://github.com/pelagios/pelagios-cookbook/wiki/Joining-Pelagios#the-void-file),
+and the dump of Places in turtle formats
+is being maintained on our [web GitHub repository](https://github.com/paths-erc/docs/tree/master/data).

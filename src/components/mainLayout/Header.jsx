@@ -3,8 +3,6 @@ import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, DropdownMenu
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Database from '../Services/Database/Database';
-
 class FixedNavbar extends Component {
   constructor(props) {
     super(props);
@@ -70,10 +68,10 @@ render() {
                       <FontAwesomeIcon icon="plus-circle" /> Get more
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=pelagios-void"}>
+                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths-pelagios-void.rdf">
                           <FontAwesomeIcon icon="share-alt" /> LOD: Pelagios VoID
                       </DropdownItem>
-                      <DropdownItem target="_blank" href={ Database.getBaseUrl() + "places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle"}>
+                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths.places.ttl">
                           <FontAwesomeIcon icon="share-alt" /> LOD: Places
                       </DropdownItem>
                     </DropdownMenu>
