@@ -120,6 +120,14 @@ export default {
         "q_encoded": btoa("`bindings`=1")
       }
     },
+    detached_bindings: {
+      id: "detached_bindings",
+      title: "Bookbindings detached from original manuscripts",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`isbookbinding`=1")
+      }
+    },
     horizontal_rolls : {
       id: "horizontal_rolls",
       title: "Horizontal rolls",
