@@ -7,24 +7,40 @@ export default class TabLegend extends Component {
     return (
       <div>
 
-        <h5>Marker symbols</h5>
+        <h5>Map legend</h5>
         <ul style={{ listStyle: 'none', margin: 0, padding: 0}}>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(255, 0, 0, .9)'}}></span>
-            Discovery
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(170, 143, 0, 1)'}}></span>
+            Discovery places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(0, 0, 255, .9)'}}></span>
-            Production
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(246, 71, 71, 1)'}}></span>
+            Production places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(0, 255, 0, .9)'}}></span>
-            Storage
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(212, 117, 0, 1)'}}></span>
+            Storage places of manuscripts
+          </li>
+          <li className="p-1 m-1">
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(0, 170, 85, 1)'}}></span>
+            Discovery and storage places of manuscripts
+          </li>
+          <li className="p-1 m-1">
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(179, 129, 179, 1)'}}></span>
+            Discovery and production places of manuscripts
+          </li>
+          <li className="p-1 m-1">
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(0, 159, 212, 1)'}}></span>
+            Storage and production places of manuscripts
+          </li>
+          <li className="p-1 m-1">
+            <span className="legend-item rounded-circle" style={{ background: 'rgba(147, 147, 147, 1)'}}></span>
+            Discovery, storage and production places of manuscripts
           </li>
         </ul>
 
         <hr />
-        <h5>Basemaps</h5>
+        <h5>Available basemaps</h5>
         <ul style={{ listStyle: 'none', margin: 0, padding: 0}}>
           <li className="p-1 m-1">
             <a href="http://pelagios.org/maps/greco-roman/" target="_blank" rel="noopener noreferrer">Imperium, Pelagios</a>

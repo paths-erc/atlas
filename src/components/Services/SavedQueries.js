@@ -591,7 +591,7 @@ export default {
         "fields[p.name]": "Name",
         "fields[p.pleiades]": "Pleiades Id",
         "fields[p.typology]": "Site typology",
-        "fields[mp.type]": "Place type",
+        "fields[GROUP_CONCAT(DISTINCT mp.type) as type]": "Place type",
         "fields[count(mp.id_link)]": "Tot ms",
         "group": "p.id",
         "limit_start": "0",
