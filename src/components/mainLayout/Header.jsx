@@ -56,16 +56,21 @@ render() {
                   <NavItem>
                     <NavLink to="/collections" tag={RRNavLink}>Collections</NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink to="/cite" tag={RRNavLink}>How to cite “PAThs”</NavLink>
-                  </NavItem>
                 </Nav>
 
                 <Nav className="ml-auto" navbar>
-
+                  <NavItem>
+                    <NavLink href="http://paths.uniroma1.it">
+                      Website
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink to="/cite" tag={RRNavLink}>
+                      How to cite PAThs</NavLink>
+                  </NavItem>
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                      <FontAwesomeIcon icon="plus-circle" /> Get more
+                      API
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths-pelagios-void.rdf">
@@ -73,6 +78,9 @@ render() {
                       </DropdownItem>
                       <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths.places.ttl">
                           <FontAwesomeIcon icon="share-alt" /> LOD: Places
+                      </DropdownItem>
+                      <DropdownItem target="_blank" href="https://www.zotero.org/groups/2189557/erc-paths/">
+                          Zotero repository
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
