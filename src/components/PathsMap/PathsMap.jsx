@@ -59,8 +59,13 @@ export default class PathsMap extends Component {
     let col = '#0f4880'; // 15, 72, 128
 
     if (t.properties.type){
+
+      // discovery && storage && production
+      if (t.properties.type.includes('discovery') && t.properties.type.includes('storage') && t.properties.type.includes('production')) {
+        col = '#939393'; //147, 147, 147
+
       // dicovery && storage
-      if (t.properties.type.includes('discovery') && t.properties.type.includes('storage')) {
+      } else if (t.properties.type.includes('discovery') && t.properties.type.includes('storage')) {
         col = '#00aa55'; // rgb 0,170,85
 
       // storage && production
@@ -71,16 +76,15 @@ export default class PathsMap extends Component {
       } else if (t.properties.type.includes('discovery') && t.properties.type.includes('production')) {
         col = '#b381b3'; // 179, 129, 179
 
-      // discovery && storage && production
-      } else if (t.properties.type.includes('discovery') && t.properties.type.includes('storage') && t.properties.type.includes('production')) {
-        col = '#939393'; //147, 147, 147
-
+      // discovery
       } else if (t.properties.type.includes('discovery')){
         col = '#aa8f00'; // 170, 143, 0
 
+      // storage
       } else if (t.properties.type.includes('storage')) {
         col = '#d47500'; // 212, 117, 0
 
+      // production
       } else if (t.properties.type.includes('production')) {
         col = '#f64747'; // 246, 71, 71
       }
@@ -258,7 +262,7 @@ export default class PathsMap extends Component {
               </div>
             </Tab>
 
-            <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />} anchor="bottom">
+            <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />}>
               <div className="mt-5">
                 <TabLegend />
               </div>

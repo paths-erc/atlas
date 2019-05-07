@@ -10,31 +10,31 @@ export default class TabLegend extends Component {
         <h5>Map legend</h5>
         <ul style={{ listStyle: 'none', margin: 0, padding: 0}}>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(170, 143, 0, 1)'}}></span>
-            Discovery places of manuscripts
-          </li>
-          <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(246, 71, 71, 1)'}}></span>
+            <span className="legend-item rounded-circle" style={{ background: '#f64747'}}></span>
             Production places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(212, 117, 0, 1)'}}></span>
+            <span className="legend-item rounded-circle" style={{ background: '#d47500'}}></span>
             Storage places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(0, 170, 85, 1)'}}></span>
-            Discovery and storage places of manuscripts
+            <span className="legend-item rounded-circle" style={{ background: '#aa8f00'}}></span>
+            Discovery places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(179, 129, 179, 1)'}}></span>
+            <span className="legend-item rounded-circle" style={{ background: '#b381b3'}}></span>
             Discovery and production places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(0, 159, 212, 1)'}}></span>
+            <span className="legend-item rounded-circle" style={{ background: '#009fd4'}}></span>
             Storage and production places of manuscripts
           </li>
           <li className="p-1 m-1">
-            <span className="legend-item rounded-circle" style={{ background: 'rgba(147, 147, 147, 1)'}}></span>
+            <span className="legend-item rounded-circle" style={{ background: '#00aa55'}}></span>
+            Discovery and storage places of manuscripts
+          </li>
+          <li className="p-1 m-1">
+            <span className="legend-item rounded-circle" style={{ background: '#939393'}}></span>
             Discovery, storage and production places of manuscripts
           </li>
         </ul>
