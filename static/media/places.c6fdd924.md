@@ -10,7 +10,7 @@ Places are firstly intended as physical spatial units that can be archaeological
 
 Each Place is assigned a unique identifying number and a standard site name, which corresponds to the most common designation used in scholarly literature. The following fields are designed to provide as detailed and complete information as possible about its historical development, geo-topographical localisation, urban setting and monumental features. The main data recorded are:
 
--	Toponyms, both ancient and modern, by which the place is known in the different linguistic contexts of reference (Coptic, Greek, modern Arabic and ancient Egyptian)
+-	Toponyms, both ancient and modern, by which the place is known in the different linguistic contexts of reference (Coptic, Greek, modern Arabic and ancient Egyptian). As for the site name, the romanised spelling of Arabic toponyms of monastic sites follow the oral pronunciation (Deir), which appears more commonly used in literature, and not the script of the original language (Dayr). The latter form, however, is always recorded in the list of other place names
 -	Link to online parallel projects ([Trismegistos GeoID](https://www.trismegistos.org/geo/index.php) and [Pleiades ID](https://pleiades.stoa.org/)) as well as cross-reference to Timm’s inventory (*Das christlich-koptische Ägypten in arabischer Zeit*, Wiesbaden 1984-1992)
 -	Modern geographical location according to different scale degree (Region, Area)
 -	Ancient administrative affiliations (nomòs; province, according to the Diocletianic division of the country; episcopal see). For the Fayyum area, a specific reference to the *merides*-system is also recorded

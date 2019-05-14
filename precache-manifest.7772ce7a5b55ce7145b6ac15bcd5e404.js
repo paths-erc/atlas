@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1076de3e97a04f6c48e9",
+    "revision": "7735c3696d3e9d0463e7",
     "url": "/static/css/main.132f2be2.chunk.css"
   },
   {
-    "revision": "1076de3e97a04f6c48e9",
-    "url": "/static/js/main.1076de3e.chunk.js"
+    "revision": "7735c3696d3e9d0463e7",
+    "url": "/static/js/main.7735c369.chunk.js"
   },
   {
     "revision": "c432ed9692cca8309045",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/sapienza.8672e003.jpg"
   },
   {
-    "revision": "0a6c2bfc67600f4704152718e679edca",
-    "url": "/static/media/IntroMd.0a6c2bfc.md"
+    "revision": "a1ede9f81ef9ef0ed2338861a6216353",
+    "url": "/static/media/IntroMd.a1ede9f8.md"
   },
   {
     "revision": "853ccd409337a001a628707efc771994",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/static/media/Ripple-1.7s-200px.7466db60.svg"
   },
   {
-    "revision": "6f83fd7a035dd58a572756d1cc5d419f",
-    "url": "/static/media/places.6f83fd7a.md"
+    "revision": "c6fdd92434e5efafa9b4152b4a37cf06",
+    "url": "/static/media/places.c6fdd924.md"
   },
   {
     "revision": "1485b7805f95f812901178afd680740b",
@@ -72,16 +72,16 @@ self.__precacheManifest = [
     "url": "/static/media/works.7aa6593a.jpg"
   },
   {
-    "revision": "24cbbfacbcf06fa956da74f89a470096",
-    "url": "/static/media/titles.24cbbfac.md"
+    "revision": "018dac5d1b50ad350ad99f47a6004e91",
+    "url": "/static/media/titles.018dac5d.md"
   },
   {
     "revision": "2b8757e29a943b323c65d3433617eab6",
     "url": "/static/media/titles.2b8757e2.jpg"
   },
   {
-    "revision": "98ad468206e68748f740c3e06e7f07ff",
-    "url": "/static/media/authors.98ad4682.md"
+    "revision": "1055b2abb4b93370d6e8c6e401102939",
+    "url": "/static/media/authors.1055b2ab.md"
   },
   {
     "revision": "d6df50d78502d68d8ec7d2865ec07201",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/static/media/Antinoou.65b2feb2.ttf"
   },
   {
-    "revision": "f95fbf35a29533dbc60f0a4b9b35b31b",
+    "revision": "3578bebb0bf91ce7adbd51ae7684b04f",
     "url": "/index.html"
   }
 ];
