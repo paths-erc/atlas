@@ -42,7 +42,7 @@ export default class Cite extends React.Component{
           </div>
         </div>
         <div className="container">
-          <div className="my-5 px-5">
+          <div className="my-5 px-5 cite">
             { this.showContent() }
           </div>
         </div>
