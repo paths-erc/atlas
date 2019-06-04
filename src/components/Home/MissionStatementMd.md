@@ -74,7 +74,7 @@ The principal sources of external identifiers are:
 - BHL Bibliotheca Hagiographica Latina
 - CAe Clavis Aethiopica
 
-The definition of “Coptic literary works” also includes texts of the Bible, Gnostica, Manichaica and Apochrypha. However, biblical manuscripts never described from a codicological point of view in order not to overlap other ongoing partner projects. Ostraca of biblical content are always excluded.
+The definition of “Coptic literary works” also includes texts of the Bible, Gnostica, Manichaica and Apochrypha. Ostraca of biblical content are always excluded.
 
 ### 6. A classification and description of all the physical places related to the production, storage and circulation of codicological units and bibliological units, available in the Archaeological Atlas of Coptic Literature
 
