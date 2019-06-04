@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.132f2be2.chunk.css",
-  "main.js": "/static/js/main.9fce5f59.chunk.js",
-  "main.js.map": "/static/js/main.9fce5f59.chunk.js.map",
+  "main.js": "/static/js/main.252eb7c8.chunk.js",
+  "main.js.map": "/static/js/main.252eb7c8.chunk.js.map",
   "static/js/1.c432ed96.chunk.js": "/static/js/1.c432ed96.chunk.js",
   "static/js/1.c432ed96.chunk.js.map": "/static/js/1.c432ed96.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -10,7 +10,7 @@
   "static/media/erc.jpg": "/static/media/erc.9fb24811.jpg",
   "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
   "static/media/IntroMd.md": "/static/media/IntroMd.a1ede9f8.md",
-  "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.853ccd40.md",
+  "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.70efd13e.md",
   "static/media/lod.md": "/static/media/lod.3a5d08d7.md",
   "static/media/license.md": "/static/media/license.69087295.md",
   "static/media/Ripple-1.7s-200px.svg": "/static/media/Ripple-1.7s-200px.7466db60.svg",
@@ -32,6 +32,6 @@
   "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
   "static/css/main.132f2be2.chunk.css.map": "/static/css/main.132f2be2.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.0010964ee10c42638074df0d791f07de.js": "/precache-manifest.0010964ee10c42638074df0d791f07de.js",
+  "precache-manifest.aaf20c79bc92a1851cb4d4afd65874ef.js": "/precache-manifest.aaf20c79bc92a1851cb4d4afd65874ef.js",
   "service-worker.js": "/service-worker.js"
 }
