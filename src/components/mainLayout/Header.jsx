@@ -68,22 +68,10 @@ render() {
                     <NavLink to="/cite" tag={RRNavLink}>
                       How to cite PAThs</NavLink>
                   </NavItem>
-                  <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
-                      API
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths-pelagios-void.rdf">
-                          <FontAwesomeIcon icon="share-alt" /> LOD: Pelagios VoID
-                      </DropdownItem>
-                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths.places.ttl">
-                          <FontAwesomeIcon icon="share-alt" /> LOD: Places
-                      </DropdownItem>
-                      <DropdownItem target="_blank" href="https://www.zotero.org/groups/2189557/erc-paths/">
-                          Zotero repository
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
+                  <NavItem>
+                    <NavLink to="/api" tag={RRNavLink}>
+                      API</NavLink>
+                  </NavItem>
                 </Nav>
               </Collapse>
             </Navbar>
