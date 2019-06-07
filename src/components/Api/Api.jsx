@@ -21,7 +21,7 @@ export default class Api extends React.Component{
         <div className="container">
           <div className="my-5 px-5">
             <p>“PAThs” makes available freely the contents of its database in different formats and for different purposes.
-              All files are available for download in our Github docs&data repository.</p>
+              All files are available for download in our Github documentation and data repository.</p>
             <p>Data can also be exported directly from our database by using the database API.</p>
 
 
