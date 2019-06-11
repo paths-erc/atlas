@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, DropdownMenu, DropdownToggle, DropdownItem, Collapse, UncontrolledDropdown } from 'reactstrap';
+import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, Collapse } from 'reactstrap';
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -20,8 +20,6 @@ class FixedNavbar extends Component {
   }
 
 render() {
-  // borderBottom: '1px solid #f4dcde'
-
     return (
           <div>
             <Navbar color="dark" dark expand="md" className="fixed-top">
