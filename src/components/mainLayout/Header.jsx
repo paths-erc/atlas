@@ -73,10 +73,10 @@ render() {
                       API
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths-pelagios-void.rdf">
+                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/pelagios-rdf/paths-pelagios-void.rdf">
                           <FontAwesomeIcon icon="share-alt" /> LOD: Pelagios VoID
                       </DropdownItem>
-                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/paths.places.ttl">
+                      <DropdownItem target="_blank" href="https://raw.githubusercontent.com/paths-erc/docs/master/data/pelagios-rdf/paths.places.ttl">
                           <FontAwesomeIcon icon="share-alt" /> LOD: Places
                       </DropdownItem>
                       <DropdownItem target="_blank" href="https://www.zotero.org/groups/2189557/erc-paths/">
