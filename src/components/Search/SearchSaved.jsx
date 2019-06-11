@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Alert } from 'reactstrap';
 import qs from 'qs';
 
 import SubHead from '../SubHead/SubHead';
@@ -37,6 +38,16 @@ export default class SearchSaved extends Component {
   }
 
   render() {
+    if (typeof SavedQueries[this.props.match.params.table][this.state.saved] === 'undefined'){
+      return (
+        <div className="container">
+          <Alert color="warning" className="mt-5">
+              <h4 className="alert-heading">Ooops!</h4>
+              No saved query <code>{this.state.saved}</code> found.
+          </Alert>
+        </div>
+      );
+    }
     return (
       <div>
         <SubHead tb={ this.props.match.params.table } text={SavedQueries[this.props.match.params.table][this.state.saved].title} />
