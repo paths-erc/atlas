@@ -155,13 +155,22 @@ export default class ManuscriptBody extends Component {
         ]} />
 
 
+      <FieldSet legend="Coloured pigments" fields={[
+          rec.core.pgmcol,
+          rec.core.pgmlocation,
+          rec.core.pgmnotes
+        ]} />
+
+      <FieldSet legend="Black inks" fields={[
+          rec.core.blktype,
+          rec.core.blklocation,
+          rec.core.blknotes
+        ]} />
+
         <FieldSet legend="Additional information" fields={[
           rec.core.marginalnotes,
           rec.core.palimpsest,
           rec.core.palimpsestnotes,
-          rec.core.inks,
-          rec.core.redink,
-          rec.core.redinknotes,
           rec.core.decortype,
           rec.core.decorsubj,
           rec.core.decorationdescr,
