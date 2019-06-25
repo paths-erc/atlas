@@ -275,9 +275,11 @@ export default class PathsMap extends Component {
 
           <Map className="sidebar-map maxHeight" zoomControl={true} ref={this.mapRef}>
             <LayersControl position="topright">
+              { /**
               <BaseLayer name="Imperium (Pelagios)">
                 <TileLayer url="http://pelagios.org/tilesets/imperium/{z}/{x}/{y}.png" />
               </BaseLayer>
+              */ }
               <BaseLayer name="Imperium (DARE)">
                 <TileLayer url="http://dare.ht.lu.se/tiles/imperium/{z}/{x}/{y}.png" />
               </BaseLayer>

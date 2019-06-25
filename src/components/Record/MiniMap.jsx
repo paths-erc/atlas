@@ -11,8 +11,8 @@ class MiniMap extends Component {
 
     return (
       <div style={{ height: '300px', width: '100%' }}>
-        <Map className="sidebar-map maxHeight" center={ position } zoom={11} zoomControl={true}>
-          <TileLayer url="http://pelagios.org/tilesets/imperium/{z}/{x}/{y}.png" />
+        <Map className="sidebar-map maxHeight" center={ position } zoom={10} zoomControl={true}>
+          <TileLayer url="http://dare.ht.lu.se/tiles/imperium/{z}/{x}/{y}.png" />
 
           { this.props.geom.map( (e, i) => {
             const coord = JSON.parse(e.geojson).coordinates.reverse();
