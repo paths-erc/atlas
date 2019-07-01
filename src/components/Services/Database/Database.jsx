@@ -23,6 +23,11 @@ export default class Database {
       }
     })
     .then(res => {
+      if (res.data.type && res.data.type === 'error'){
+        console.log('API error:');
+        console.log(res.data.text);
+        return false;
+      }
       callback(res.data);
     })
     .catch( res => {
@@ -184,7 +189,9 @@ export default class Database {
     this.getData(
       'places?verb=search&geojson=true&type=encoded',
       data,
-      d => { cb( d ) }
+      d => {
+        cb( d );
+      }
     );
   }
 
