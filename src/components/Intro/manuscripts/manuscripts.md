@@ -26,7 +26,11 @@ The **PAThs** database does not include:
 - Liturgical manuscripts (except for those already included in the CMCL, mainly from the White Monastery)
 -	Non-literary manuscripts of magical and astrological content
 
-The database also provides a new detailed protocol of codicological description. It takes into account the most recent theoretical and terminological achievements of Greek and Latin codicology but is of course targeted at the specific features of Coptic manuscripts. An analytical description of the codicological protocol is provided in the *Manual of use*.
+The database also provides a new detailed protocol of codicological description. It takes into account the most recent theoretical and terminological achievements of Greek and Latin codicology but is of course targeted at the specific features of Coptic manuscripts.
+
+Thanks to the multidisciplinary approach of the PAThs project, in addition to traditional codicology, we can count also on archaeometric analysis of inks to characterize the material features of manuscripts. After careful scientific investigation, the ink(s) of main text, titles and marginalia of a codicological unit are divided into categories according to their elemental composition: carbon ink, iron-gall ink containing only iron and manganese, iron-gall ink containing also copper, iron-gall ink containing also copper and zinc, mixed inks carbon + iron-gall, mixed ink carbon + tannin, tannin ink. This classification enables the user to compare the technology of ink production applied in manuscripts from different areas and time span.
+
+An analytical description of the codicological protocol is provided in the [*Manual of use*](https://docs.paths-erc.eu/handbook/manuscripts).
 
 This model of description is easily expandable in case of a need to describe new features and can be easily queried (manually or programmatically), in order to provide scholars with an easy-to-use tool for their research.
 
@@ -38,7 +42,6 @@ Currently, more than 6,100 `codicological units` have been filed. Within this co
 -	Codices from Antinoopolis
 -	Parchment codices from the Monastery of the Archangel Michael near Phantoou
 -	Parchment codices from the Monastery of Saint Macarius in the Wādī al-Naṭrūn
-- Parchment codices from the Monastery of Saint Macarius in the Wādī al-Naṭrūn
 - Papyrus fragments from Diospolis Mikra (Huw) kept at the Pierpont Morgan Library
 
 **PAThs** takes advantage of the invaluable data contained in the Corpus dei [Manoscritti Copti Letterari](http://www.cmcl.it/), used as a solid foundation to build a new database, that will represent a change of perspective in the study of Coptic literature. In the immediate future **PAThs** and CMCL will be kept synchronised, while in the longer term **PAThs** is meant to inherit fully the mission of the CMCL.
