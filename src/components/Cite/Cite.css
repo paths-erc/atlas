@@ -12,6 +12,6 @@ td, th{
   padding: .8rem;
 }
 
-code{
+.cite code{
   white-space:nowrap;
 }

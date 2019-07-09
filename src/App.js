@@ -23,6 +23,7 @@ import Intro from './components/Intro/Intro';
 import ViewOne from './components/Record/ViewOne';
 import Charts from './components/Charts/Charts';
 import Cite from './components/Cite/Cite';
+import Api from './components/Api/Api';
 import ReactGA from 'react-ga';
 import { detect } from 'detect-browser';
 
@@ -82,6 +83,7 @@ class App extends Component {
 
             <Route exact path='/charts/:id?' component={Charts} />
             <Route exact path='/cite' component={Cite} />
+            <Route exact path='/api' component={Api} />
 
           </MainTemplate>
         </Switch>

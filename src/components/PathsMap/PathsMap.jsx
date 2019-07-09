@@ -16,6 +16,7 @@ import TabLegend from './TabLegend';
 import TabSavedQueries from './TabSavedQueries';
 import ClearButton from './ClearButton';
 import Loading from '../Loading/Loading';
+import ShowError from '../ShowError/ShowError';
 
 import Database from '../Services/Database/Database';
 
@@ -35,7 +36,8 @@ export default class PathsMap extends Component {
       urlFilter: false,
       sidebarCollapsed: false,
       selected: 'home',
-      manualFilter: ''
+      manualFilter: '',
+      error: false
     };
     this.placesLayerRef = React.createRef();
     this.mapRef = React.createRef();
@@ -196,6 +198,12 @@ export default class PathsMap extends Component {
 
     } else {
       Database.getPlaces(null, data => {
+        if (data.type && data.type === 'error') {
+          this.setState({
+            error: <div>Sorry. There was an error in getting the data from database. Please report this error to <a href="mailto:julian.bogdani@uniroma1.it">julian.bogdani@uniroma1.it</a> and be sure to copy and paste the following lines:<br /><div className="border p-3 mt-3"><code>{window.location.href}</code><pre>{data.text}</pre></div></div>
+          });
+          return;
+        }
         this.setState({
           places: data,
           shownPlaces: data,
@@ -268,6 +276,8 @@ export default class PathsMap extends Component {
               </div>
             </Tab>
           </Sidebar>
+
+          {this.state.error && <ShowError>{this.state.error}</ShowError>}
 
           { !this.state.shownPlaces && <div style={{ position: 'absolute', top: '5rem', textAlign: 'center', zIndex: 999, width: '100%'}}>
                 <Loading>Loading map data...</Loading>
