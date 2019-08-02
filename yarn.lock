@@ -8584,9 +8584,9 @@ react-markdown@^4.0.8:
     xtend "^4.0.1"
 
 react-nl2br@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-nl2br/-/react-nl2br-0.4.0.tgz#cb9d9af7d15c91303a50a633a489ee8ca055bf24"
-  integrity sha512-gU46zhxs7JykgxlBjCI/nr9xyaBHLm441IXm9xZ6WKJehhXfPane0uMS/XNzXzh3V4XMWXmI4pwHWvdoZxWpAw==
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-nl2br/-/react-nl2br-0.4.1.tgz#bf7b0508aa51711d6f4e8aeb90e4345d82314a9a"
+  integrity sha512-Bs5rQEkQvF4Dk5uK6Ihsh0xUfJDBD/Ca6Qw/VHGSbTj54yCiKn7etPmNDfPNWQnGydZFcyfFxpEUChHk9idaEQ==
 
 react-overlays@^0.8.1:
   version "0.8.3"
