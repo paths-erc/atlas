@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import imgPathsLogo from './paths-logo.png';
 
 import intro from './IntroMd.md';
+import logo from './LogoMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
 import license from './license.md';
@@ -17,6 +18,11 @@ export default function Home(){
        id    : 'intro',
        title : "Introduction",
        path  : intro
+     },
+     {
+       id    : 'logo',
+       title : "Logo",
+       path  : logo
      },
      {
        id    : 'missionstatement',
