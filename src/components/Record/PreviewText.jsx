@@ -1,51 +1,21 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import nl2br from 'react-nl2br';
+import relaxedSplit from '../Utils/relaxedSplit.jsx';
+import internalLinks from '../Utils/internalLinks.jsx';
 
-
-const add_db_links = (text) => {
-  return text.replace(
-    /@([a-z]+)\.([a-z0-9/]+)(\[([^\]]+)\])?/gi,
-    function(match, p1, p2, p3, p4, offset, string){
-      return `<a href="/${p1}/${p2}">
-        ${ p3 && p4 ? p4 : `paths.${p1}.${p2}` }
-      </a>`;
-    });
-};
 
 const parseText = (text) => {
   const nltext = nl2br(text);
   const linktext = nltext.map( (t, i) => {
     if (typeof t === 'string'){
-      return <span key={i} dangerouslySetInnerHTML={{ __html: add_db_links(t) }}></span>;
+      return <span className="internal-link" key={i} dangerouslySetInnerHTML={{ __html: internalLinks(t) }}></span>;
     } else {
       return t;
     }
   });
-
   return linktext;
 }
-
-const relaxedSplit = (str, offset, until = '.') => {
-
-  if (!str || str.length <= offset){
-    return [str, false];
-  }
-  const str1 = str.substr(0, offset);
-
-  if (str1.substr(str1.length - 1) === until){
-    return [str1, false];
-  }
-
-  const start = str1 + '' + str.replace(str1, '').split(until)[0];
-  const cont = str.replace(start + '' + until, '');
-  return [
-    start + until,
-    cont === start ? false : cont
-  ];
-};
-
-
 
 
 export default class PreviewText extends Component {
