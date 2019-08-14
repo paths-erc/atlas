@@ -92,7 +92,7 @@ The principal aim of this database is to provide each `codicological unit` with 
 
 ### 7. A selection of marked-up texts
 
-A selected corpus of hagiographic and homiletic texts—that are consistent and homogeneous in terms of cultural and literary milieu, period and genre —are being marked-up, in order to:
+A [selected corpus](https://github.com/paths-erc/coptic-texts) of hagiographic and homiletic texts—that are consistent and homogeneous in terms of cultural and literary milieu, period and genre —are being marked-up, in order to:
 - provide useful geographical information for the Archaeological Atlas of
 Coptic Literature (places, architectural typologies, historical characters,
 heresiological groups, etc.);
@@ -100,13 +100,13 @@ heresiological groups, etc.);
 annotated texts useful for any further research.
 The selection has been made considering the geographical proximity of their creation, the chronological and cultural context, that is the monastic homogeneous environment of the so-called Middle Egypt. All the selected texts were already available in electronic version in the CMCL database. The texts selected so far are:
 - CC 0084: Basil of Pemge, In Longinum
-- CC 0152: Vita Pauli Tamma
--  CC 0248: Paul of Tamma, Epistula
+- [CC 0152: Vita Pauli Tamma](https://github.com/paths-erc/coptic-texts/blob/master/cc0152.xml)
+- CC 0248: Paul of Tamma, Epistula
 - CC 0251: Paul of Tamma, De cella
-- CC 0256: Vita Phif, Vita Apollinis
+- [CC 0256: Vita Phif, Vita Apollinis](https://github.com/paths-erc/coptic-texts/blob/master/cc0256.xml)
 - CC 0376: Stephen of Hnes, In Apollinem archimandritam
-- CC 0418: Vita Longini
-- CC 0407: Vita Aphou
+- [CC 0418: Vita Longini](https://github.com/paths-erc/coptic-texts/blob/master/cc0418.xml)
+- [CC 0407: Vita Aphou](https://github.com/paths-erc/coptic-texts/blob/master/cc0407.xml)
 
 The electronic edition of texts uses Unicode encoding standard and Antinoou font and does not represent the punctuation and the enlarged initials. A specific text encoding converter is being used for this purpose (see section 10. Text encoding converter).
 
