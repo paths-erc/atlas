@@ -52,8 +52,6 @@ This protocol of description is easily expandable in case of need to describe ne
 As it is well known, not all the author names related to literary works are “Coptic” and some of them are fictitious or semi-fictitious. Moreover, there are cases of works with missing titles, whose author can therefore only be deduced from the tradition or from the work’s content. Finally many author attributions found in the titles cannot be considered authentic. After a long reflection, authors attribution has therefore been classified according to the following categories which, as it is obvious, can be combined:
 - Creator: original author of the work, no matter if this was originally
 written in Greek and translated into Coptic at a later time.
-- Author of a master work: author of a work that not only circulates anonymously in the Coptic tradition, but that is considerably modified, to the point of becoming independent from the original (see the case of
-Plato’s Republic, NH VI, 5).
 - Stated author: Author to whom a work is attributed by the title, the
 content of the work itself, the scribal subscription or other paratexts. The source for the attribution of a specific work to a specific author is always clearly stated. 
 A stated author may or may not coincide with the creator and it may or may not be fictitious (this information is clearly recorded and stored).
