@@ -1,9 +1,8 @@
 /* jshint esversion: 6 */
-import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React from "react";
+import ReactMarkdownPath from '../ReactMarkdownPath/ReactMarkdownPath';
 
 import SubHead from '../SubHead/SubHead';
-import Loading from '../Loading/Loading';
 
 import PlacesMd from './places/places.md';
 import PlacesImg from './places/places.jpg';
@@ -12,6 +11,7 @@ import ManuscriptsMd from './manuscripts/manuscripts.md';
 import ManuscriptsImg from './manuscripts/manuscripts.jpg';
 
 import WorksMd from './works/works.md';
+import WorksWithoutClavisMd from './works/works-without-clavis.md';
 import WorksImg from './works/works.jpg';
 
 import TitlesMd from './titles/titles.md';
@@ -26,115 +26,106 @@ import ColophonsImg from './colophons/colophons.jpg';
 import CollectionsMd from './collections/collections.md';
 import CollectionsImg from './collections/collections.jpg';
 
-export default class PlacePage extends Component {
+export default function Intro(props){
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      tb: props.match.params.table,
-      label: false,
-      text: false,
-      img: false
+  const tb = props.match.params.table;
+
+  const dataMap = {
+    places: {
+      label: "Places",
+      img: PlacesImg,
+      data: [{
+        title: false,
+        mdPath: PlacesMd
+      }]
+    },
+    manuscripts: {
+      label: "Manuscripts",
+      img: ManuscriptsImg,
+      data: [{
+        title: false,
+        mdPath: ManuscriptsMd
+      }]
+    },
+    works: {
+      label: "Works",
+      img: WorksImg,
+      data: [{
+        title: false,
+        mdPath: WorksMd
+      }, {
+        title: "Literary works currently without a Clavis Coptica entry",
+        mdPath: WorksWithoutClavisMd
+      }]
+    },
+    titles: {
+      label: "Titles",
+      img: TitlesImg,
+      data: [{
+        title: false,
+        mdPath: TitlesMd
+      }]
+    },
+    authors: {
+      label: "Authors",
+      img: AuthorsImg,
+      data: [{
+        title: false,
+        mdPath: AuthorsMd
+      }]
+    },
+    colophons: {
+      label: "Colophons",
+      img: ColophonsImg,
+      data: [{
+        title: false,
+        mdPath: ColophonsMd
+      }]
+    },
+    collections: {
+      label: "Collections",
+      img: CollectionsImg,
+      data: [{
+        title: false,
+        mdPath: CollectionsMd
+      }]
+    }
+  };
+  
+
+  if (!dataMap.hasOwnProperty(tb)) {
+    return <div className="container m-5 p-5 text-center text-danger">Error: invalid table name <code>{ tb }</code></div>;
+  }
+
+  const d = dataMap[tb];
+
+  let styles = {};
+
+  if(d.img){
+    styles = {
+      width: '100%',
+      height: '300px',
+      backgroundImage: 'url(' + d.img +')',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '50% 50%'
     };
   }
 
-  _updateData(tb){
-    let md = false;
-    let img = false;
-    let label = false;
+  return <div>
+    <div style={ styles }></div>
 
-    switch (tb) {
-      case 'places':
-        md = PlacesMd;
-        img = PlacesImg;
-        label = 'Places';
-        break;
-      case 'manuscripts':
-        md = ManuscriptsMd;
-        img = ManuscriptsImg;
-        label = 'Manuscripts';
-        break;
-      case 'works':
-        md = WorksMd;
-        img = WorksImg;
-        label = 'Works';
-        break;
-      case 'titles':
-        md = TitlesMd;
-        img = TitlesImg;
-        label = 'Titles';
-        break;
-      case 'authors':
-        md = AuthorsMd;
-        img = AuthorsImg;
-        label = 'Authors';
-        break;
-      case 'colophons':
-        md = ColophonsMd;
-        img = ColophonsImg;
-        label = 'Colophons';
-        break;
-      case 'collections':
-        md = CollectionsMd;
-        img = CollectionsImg;
-        label = 'Collections';
-        break;
-      default:
-        return false;
-    }
-
-    fetch(md).then((response) => response.text()).then((text) => {
-      this.setState({
-        tb: tb,
-        text: text,
-        img: img,
-        label: label
-      });
-    });
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.table !== prevProps.match.params.table) {
-      this._updateData(this.props.match.params.table);
-    }
-  }
-
-  componentDidMount() {
-    this._updateData(this.state.tb);
-  }
-
-
-  render() {
-    if(!this.state.text){
-      return <Loading />
-    }
-    let styles;
-
-    if(this.state.img){
-      styles = {
-        width: '100%',
-        height: '300px',
-        backgroundImage: 'url(' + this.state.img +')',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '50% 50%'
-      };
-    }
-
-    return (
-      <div>
-        <div style={ styles }>
-
-        </div>
-
-        <SubHead tblabel={this.state.label} tb={this.state.tb} text="Introduction" />
-
-        <div className="container">
+    <SubHead tblabel={d.label} tb={tb} text="Introduction" />
+    <div className="container">
+      { d.data.map( (i, k) => {
+        return (<div key={ k } className="mt-5 border-top pt-5">
+          { i.title && <h1>{ i.title }</h1> }
           <div className="my-3 px-md-5 double-column text-justify">
-            <ReactMarkdown source={this.state.text} escapeHtml={false} />
+            <ReactMarkdownPath path={i.mdPath} />
           </div>
-        </div>
-      </div>
-    );
-  }
+        </div>)
+      } )}
+
+    </div>
+  </div>
 }

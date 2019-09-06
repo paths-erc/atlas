@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
-import ReactMarkdown from 'react-markdown';
+import React from "react";
 
+import ReactMarkdownPath from '../ReactMarkdownPath/ReactMarkdownPath';
 import api from './Api.md';
-import Loading from '../Loading/Loading';
 
 export default function Api(){
-
-  const [html, setHtml] = useState(<Loading />);
-
-  useEffect( ()=> {
-    fetch(api).then((response) => response.text()).then((text) => {
-      setHtml(<ReactMarkdown source={text} escapeHtml={false} />);
-    });
-  }, []);
 
   return (
     <div>
@@ -23,7 +14,7 @@ export default function Api(){
       </div>
       <div className="container">
         <div className="my-5 px-5">
-          { html }
+          <ReactMarkdownPath path={api} />
         </div>
       </div>
     </div>

@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
-import ReactMarkdown from 'react-markdown/with-html';
+import React from "react";
 
 import imgPathsLogo from './paths-logo.png';
 
+import ReactMarkdownPath from '../ReactMarkdownPath/ReactMarkdownPath';
 import intro from './IntroMd.md';
 import logo from './LogoMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
 import license from './license.md';
-import Loading from '../Loading/Loading';
 import Disclaimer from './Disclaimer';
 
 
@@ -41,53 +40,32 @@ export default function Home(){
      }
    ];
 
-   const [htmlHash, setHtml] = useState(false);
-
-   useEffect( ()=> {
-
-     async function getAll(){
-       let htmlArr = {};
-       for ( const e of titles){
-         await fetch(e.path).then((response) => response.text()).then((text) => {
-           htmlArr[e.id] = <ReactMarkdown source={text} escapeHtml={false} />;
-         });
-       }
-       setHtml(htmlArr);
-     }
-     getAll();
-// eslint-disable-next-line
-   }, []);
 
    const showContentAndToc = function(){
-     if (!htmlHash ){
-       return (<Loading />);
-     } else {
-       return (
-         <div>
-           <div className="border p-3 d-inline-block bg-light float-right ml-5 mb-5 shadow">
-             <h4>Table of contents</h4>
-             <ul className="p-0 m-0">
-               {titles.map( (k, i) =>{
-                 return (
-                   <li key={i} style={{ listStyle: 'none' }}>
-                     <a href={ '#' + k.id }>{ k.title }</a>
-                   </li>
-                 );
-               })}
-             </ul>
-           </div>
-           { titles.map( (k, i) =>{
-             return (
-               <div key={i} className="text-justify">
-                 <h1 id={ k.id } className="mt-5">{ k.title }</h1>
-                 { htmlHash[k.id] }
-
-               </div>
-             );
-           })}
+     return (
+       <div>
+         <div className="border p-3 d-inline-block bg-light float-right ml-5 mb-5 shadow">
+           <h4>Table of contents</h4>
+           <ul className="p-0 m-0">
+             {titles.map( (k, i) =>{
+               return (
+                 <li key={i} style={{ listStyle: 'none' }}>
+                   <a href={ '#' + k.id }>{ k.title }</a>
+                 </li>
+               );
+             })}
+           </ul>
          </div>
-       );
-     }
+         { titles.map( (k, i) =>{
+           return (
+             <div key={i} className="text-justify">
+               <h1 id={ k.id } className="mt-5">{ k.title }</h1>
+               <ReactMarkdownPath path={k.path} />
+             </div>
+           );
+         })}
+       </div>
+     );
    }
 
    return (
