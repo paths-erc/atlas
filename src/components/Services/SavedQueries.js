@@ -112,6 +112,14 @@ export default {
     }
   },
   manuscripts: {
+    travelling_ms: {
+      id: "travelling_ms",
+      title: "“Travelling” manuscripts",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`id` IN ( SELECT `mp`.`id_link` FROM `paths__m_msplaces` as `mp` GROUP BY `mp`.`id_link` HAVING COUNT(DISTINCT `place`) > 1 )")
+      }
+    },
     ms_has_bindings: {
       id: "ms_has_bindings",
       title: "Manuscripts with ancient bookbindings",
