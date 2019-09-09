@@ -19,7 +19,6 @@ class SubHead extends Component {
   }
 
   toggleSaved(e){
-    e.preventDefault();
     this.setState({
       showSaved: !this.state.showSaved
     });
@@ -70,7 +69,7 @@ class SubHead extends Component {
                   );
                 })
               }
-              { SavedQueries[tb] && (<NavItem><NavLink onClick={this.toggleSaved.bind(this)} to="#" tag={Link}><FontAwesomeIcon icon="save" /><span className="d-none d-md-inline"> Saved queries</span></NavLink></NavItem>)}
+              { SavedQueries[tb] && (<NavItem><NavLink onClick={this.toggleSaved.bind(this)} style={{cursor: 'pointer'}}><FontAwesomeIcon icon="save" /><span className="d-none d-md-inline"> Saved queries</span></NavLink></NavItem>)}
             </Nav>
           </Navbar>
 

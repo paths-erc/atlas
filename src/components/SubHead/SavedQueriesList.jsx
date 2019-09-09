@@ -23,7 +23,7 @@ export default class SavedQueriesList extends Component {
           <CardTitle>Saved queries for {tblabel}</CardTitle>
             <ListGroup>
               { Object.values(SavedQueries[tb]).map( (e, i) => {
-                return <ListGroupItem key={i}  className="mb-3" tag={Link} to={ `/search/${tb}/saved?q=${e.id}`} color="secondary">
+                return <ListGroupItem key={i}  onClick={this.props.closeFn} className="mb-3" tag={Link} to={ `/search/${tb}/saved?q=${e.id}`} color="secondary">
                     <FontAwesomeIcon icon="arrow-circle-right" /> { e.title }
                 </ListGroupItem>
               }) }
