@@ -158,7 +158,7 @@ export default {
     },
     travelling_ms: {
       id: "travelling_ms",
-      title: "“Travelling” manuscripts",
+      title: "“Travelling” manuscripts (for instance manufactured in a place but stored in another palace, etc.)",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
         "q_encoded": btoa("`id` IN ( SELECT `mp`.`id_link` FROM `paths__m_msplaces` as `mp` GROUP BY `mp`.`id_link` HAVING COUNT(DISTINCT `place`) > 1 )")
