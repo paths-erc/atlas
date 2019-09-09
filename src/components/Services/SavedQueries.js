@@ -14,6 +14,18 @@ export default {
         "q_encoded": btoa(" `mp`.`type` = 'discovery' ")
       }
     },
+    storage_places: {
+      id: 'storage_places',
+      title: 'Storage places of Coptic literary manuscripts',
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "join": " JOIN `paths__m_msplaces` as mp ON `mp`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `mp`.`place` ",
+        "group": "paths__places.id",
+        "limit_start": "0",
+        "limit_end": "500",
+        "q_encoded": btoa(" `mp`.`type` = 'storage' ")
+      }
+    },
     episcopal_sees: {
       id: "episcopal_sees",
       title: "Episcopal sees",
