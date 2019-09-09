@@ -567,6 +567,14 @@ export default {
       data: {
         "q_encoded": btoa(unescape(encodeURIComponent("`cryptography`=1 ")))
       }
+    },
+    greek_minuscule: {
+      id: 'greek_minuscule',
+      title: "Colophons with Greek minuscule",
+      url: 'colophons?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`minusculegreek`=1 ")))
+      }
     }
   },
   map: {
