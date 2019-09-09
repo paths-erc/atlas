@@ -148,6 +148,14 @@ export default {
     }
   },
   manuscripts: {
+    palimpsest_ms: {
+      id: "palimpsest_ms",
+      title: "Palimpsest manuscripts",
+      url: 'manuscripts?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`palimpsest` = 1")
+      }
+    },
     travelling_ms: {
       id: "travelling_ms",
       title: "“Travelling” manuscripts",
