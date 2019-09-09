@@ -26,6 +26,8 @@ import ColophonsImg from './colophons/colophons.jpg';
 import CollectionsMd from './collections/collections.md';
 import CollectionsImg from './collections/collections.jpg';
 
+import './Intro.css';
+
 export default function Intro(props){
 
   const tb = props.match.params.table;
@@ -91,10 +93,13 @@ export default function Intro(props){
       }]
     }
   };
-  
+
 
   if (!dataMap.hasOwnProperty(tb)) {
-    return <div className="container m-5 p-5 text-center text-danger">Error: invalid table name <code>{ tb }</code></div>;
+    return (<div className="container m-5 p-5 text-center text-danger">
+      Error: invalid table name
+      <code>{ tb }</code>
+    </div>);
   }
 
   const d = dataMap[tb];
@@ -118,7 +123,7 @@ export default function Intro(props){
     <SubHead tblabel={d.label} tb={tb} text="Introduction" />
     <div className="container">
       { d.data.map( (i, k) => {
-        return (<div key={ k } className="mt-5 border-top pt-5">
+        return (<div key={ k } className={`intro-level-${k} mt-5 border-top pt-5`}>
           { i.title && <h1>{ i.title }</h1> }
           <div className="my-3 px-md-5 double-column text-justify">
             <ReactMarkdownPath path={i.mdPath} />

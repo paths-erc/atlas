@@ -1,3 +1,5 @@
+Curated by F. Berno and F. Valerio
+
 - *Homily on the Devil* (frag.) \[Vat. copt. 65, ff. 117-118 (*scriptio inferior*)\]. Ref.: A. van Lantschoot, “Un texte palimpseste de Vat. Copte 65”, *Le Muséon* 60 (1947), 261-268.
 - *Praeconium Davidis in tono Adam* \[Vat. copt. 6, f. 226r-v\]. Ref.: A. Hebbelynck- A. van Lantschoot, *Codices coptici vaticani, barberiniani, borgiani, rossiani*, vol.1, Città del Vaticano 1937, 15.
 - Evagrius, *In Mt 6* (catena). Ref.: P. de Lagarde, *Catenae in Evangelia Aegyptiacae Quae Supersunt*, Gottingae 1986, pp. 14-15.
