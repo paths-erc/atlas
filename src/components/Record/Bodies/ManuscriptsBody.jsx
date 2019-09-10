@@ -169,6 +169,8 @@ export default class ManuscriptBody extends Component {
 
         <FieldSet legend="Additional information" fields={[
           rec.core.marginalnotes,
+          rec.core.greekminuscule,
+          rec.core.greekminusculenotes,
           rec.core.palimpsest,
           rec.core.palimpsestnotes,
           rec.core.decortype,
