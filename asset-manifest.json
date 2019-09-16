@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c97c5e1c.chunk.css",
-    "main.js": "/static/js/main.ed11cfe8.chunk.js",
-    "main.js.map": "/static/js/main.ed11cfe8.chunk.js.map",
+    "main.css": "/static/css/main.0bb5ac64.chunk.css",
+    "main.js": "/static/js/main.7a933985.chunk.js",
+    "main.js.map": "/static/js/main.7a933985.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.4b9aee80.chunk.js": "/static/js/2.4b9aee80.chunk.js",
-    "static/js/2.4b9aee80.chunk.js.map": "/static/js/2.4b9aee80.chunk.js.map",
+    "static/js/2.3bc71f40.chunk.js": "/static/js/2.3bc71f40.chunk.js",
+    "static/js/2.3bc71f40.chunk.js.map": "/static/js/2.3bc71f40.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b9b8da816bc36854d764640d2aabf8f2.js": "/precache-manifest.b9b8da816bc36854d764640d2aabf8f2.js",
+    "precache-manifest.bee7136c06dbfc2c6e63f3ea73744ac3.js": "/precache-manifest.bee7136c06dbfc2c6e63f3ea73744ac3.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c97c5e1c.chunk.css.map": "/static/css/main.c97c5e1c.chunk.css.map",
+    "static/css/main.0bb5ac64.chunk.css.map": "/static/css/main.0bb5ac64.chunk.css.map",
     "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
     "static/media/Api.md": "/static/media/Api.ed3fdf35.md",
     "static/media/Cite.md": "/static/media/Cite.0ac293ef.md",
@@ -35,7 +35,7 @@
     "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
     "static/media/titles.md": "/static/media/titles.018dac5d.md",
     "static/media/titles.jpg": "/static/media/titles.2b8757e2.jpg",
-    "static/media/works-without-clavis.md": "/static/media/works-without-clavis.3625f7dc.md",
+    "static/media/works-without-clavis.md": "/static/media/works-without-clavis.786838a8.md",
     "static/media/works.jpg": "/static/media/works.7aa6593a.jpg",
     "static/media/works.md": "/static/media/works.a14c270e.md"
   }
