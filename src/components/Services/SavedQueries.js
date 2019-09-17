@@ -575,6 +575,14 @@ export default {
       data: {
         "q_encoded": btoa(unescape(encodeURIComponent("`minusculegreek`=1 ")))
       }
+    },
+    coptic_minuscule: {
+      id: 'coptic_minuscule',
+      title: "Colophons with Coptic minuscule",
+      url: 'colophons?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`minusculecopitc`=1 ")))
+      }
     }
   },
   map: {
