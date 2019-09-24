@@ -8,8 +8,6 @@ import logo from './LogoMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
 import license from './license.md';
-import Disclaimer from './Disclaimer';
-
 
 export default function Home(){
    const titles = [
@@ -70,7 +68,6 @@ export default function Home(){
 
    return (
      <div>
-       <Disclaimer />
        <div className="jumbotron">
          <div className="container text-center">
            <img className="img-fluid shadow-lg" src={ imgPathsLogo } alt="Tracking Papyrus and Parchment Paths. An Archaeological Atlas of Coptic Literature. Literary Texts in their Geographical Context: Production, Copying, Usage, Dissemination and Preservation" />
