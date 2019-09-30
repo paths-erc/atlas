@@ -33,7 +33,8 @@ export default {
       "biblio.creator",
       "biblio.editors",
       "m_quires.id",
-      "m_hands.id"
+      "m_hands.id",
+      "m_placephase.id"
     ],
     "id_fld": {
       "manuscripts": "id",
