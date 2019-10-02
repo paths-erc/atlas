@@ -506,42 +506,36 @@ const list = [
   }
 ];
 
-const loadGeoJson(bounds, zoom){
-
-  list.map(e => {
-    if (zoom >= e.z - 5 && bounds.contains(e.c)){
-      fetch(`https://docs.paths-erc.eu/data/geojson/${e.n}.geojson`).then( function(response){
-        response.json().then(function(j){
-          if ($this.state.loadedSites.includes(e.n)){
-            return;
-          }
-
-          let added = $this.state.siteMaps;
-          added.push(j);
-
-          let loaded = $this.state.loadedSites;
-          loaded.push(e.n);
-
-          $this.setState({
-            siteMaps: added,
-            loadedSites: loaded
-          });
-        });
-      });
-    }
-    return true;
-  });
-}
 
 
 function SiteMaps(props){
+  const bounds = props.bounds;
+  const zoom = props.zoom;
 
   const [loadedSites, addLoadedSite] = useState([]);
   const [siteMaps, addSiteMap] = useState([]);
 
+
+  useEffect( ()=>{
+    list.map( e => {
+      if (zoom >= e.z - 5 && bounds.contains(e.c)){
+        fetch(`https://docs.paths-erc.eu/data/geojson/${e.n}.geojson`).then( function(response){
+          response.json().then(function(j){
+            if (loadedSites.includes(e.n)){
+              return;
+            }
+            addLoadedSite(loadedSites.concat(e.n));
+            addSiteMap(siteMaps.concat(j));
+          });
+        });
+      }
+      return true;
+    });
+  });
+
   return (
     <React.Fragment>
-      { props.siteMaps && props.siteMaps.map((e, i)=>{
+      { siteMaps.map((e, i)=>{
         return <GeoJSON
             key={i}
             data={e}
