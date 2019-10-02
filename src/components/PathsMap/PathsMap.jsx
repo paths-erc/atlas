@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, LayersControl, GeoJSON, WMSTileLayer } from 'react-leaflet';
+import { Map, TileLayer, LayersControl, WMSTileLayer } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import qs from 'qs';
-import hash from 'object-hash';
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
-import L from 'leaflet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GoogleLayer } from 'react-leaflet-google';
 
@@ -19,6 +17,7 @@ import Loading from '../Loading/Loading';
 import ShowError from '../ShowError/ShowError';
 
 import SiteMaps from './SiteMaps';
+import PathsPlaces from './PathsPlaces';
 
 import Database from '../Services/Database/Database';
 
@@ -40,8 +39,9 @@ export default class PathsMap extends Component {
       selected: 'home',
       manualFilter: '',
       error: false,
-      bounds: false,
-      zoom: false
+      mapBounds: false,
+      zoom: false,
+      geoJsonBounds: false
     };
     this.placesLayerRef = React.createRef();
     this.mapRef = React.createRef();
@@ -58,62 +58,6 @@ export default class PathsMap extends Component {
       sidebarCollapsed: false,
       selected: id,
     })
-  }
-
-
-  pointToLayer(t, i) {
-    let col = '#0f4880'; // 15, 72, 128
-
-    if (t.properties.type){
-
-      // discovery && storage && production
-      if (t.properties.type.includes('discovery') && t.properties.type.includes('storage') && t.properties.type.includes('production')) {
-        col = '#939393'; //147, 147, 147
-
-      // dicovery && storage
-      } else if (t.properties.type.includes('discovery') && t.properties.type.includes('storage')) {
-        col = '#00aa55'; // rgb 0,170,85
-
-      // storage && production
-      } else if (t.properties.type.includes('storage') && t.properties.type.includes('production')) {
-        col = '#009fd4'; // 0, 159, 212
-
-      // dicovery && production
-      } else if (t.properties.type.includes('discovery') && t.properties.type.includes('production')) {
-        col = '#b381b3'; // 179, 129, 179
-
-      // discovery
-      } else if (t.properties.type.includes('discovery')){
-        col = '#aa8f00'; // 170, 143, 0
-
-      // storage
-      } else if (t.properties.type.includes('storage')) {
-        col = '#d47500'; // 212, 117, 0
-
-      // production
-      } else if (t.properties.type.includes('production')) {
-        col = '#f64747'; // 246, 71, 71
-      }
-    }
-
-    return new L.CircleMarker(i, {
-      radius: 5,
-      weight: 1,
-      color: "#fff",
-      opacity: 0.9,
-      fillColor: col,
-      fillOpacity: 1
-    })
-  }
-
-  onEachFeature(feature, layer){
-    const base = window.location.pathname.replace(/\/map(.*)/, '');
-    layer.bindPopup(`<strong>${feature.properties.name}</strong>` +
-       (feature.properties.copticname ? '<br /><span class="coptic">' + feature.properties.copticname + '</span>': '') +
-       (feature.properties.type ? `<br /><span class="text-secondary">${feature.properties.type}</span>` : '') +
-       `<br /><a href="${base}/places/${feature.properties.id}">paths/places/${feature.properties.id}</a>`
-    );
-    layer.on('mouseover', function() { layer.openPopup(); });
   }
 
   filterPlaces(e) {
@@ -133,8 +77,6 @@ export default class PathsMap extends Component {
       }
     }
 
-    // this.placesLayerRef.current.leafletElement.clearLayers();
-    // this.placesLayerRef.current.leafletElement.addData(fgj);
     this.setState({
       manualFilter: str,
       shownPlaces: fgj
@@ -152,16 +94,13 @@ export default class PathsMap extends Component {
 
   fitMapToBounds(){
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
-    if (this.placesLayerRef && this.placesLayerRef.current.props.data.features.length > 1){
-      bounds = this.placesLayerRef.current.leafletElement.getBounds();
-
+    if (this.state.geoJsonBounds){
+      bounds = this.state.geoJsonBounds;
       if(bounds._northEast.lat === bounds._southWest.lat && bounds._northEast.lng === bounds._southWest.lng){
         bounds.pad();
       }
     }
-
     this.mapRef.current.leafletElement.fitBounds(bounds);
-
   }
 
 
@@ -218,10 +157,10 @@ export default class PathsMap extends Component {
   }
 
   onViewportChanged(e){
-    const bounds = this.mapRef.current.leafletElement.getBounds();
+    const mapBounds = this.mapRef.current.leafletElement.getBounds();
     const zoom = e.zoom;
     this.setState({
-      bounds: bounds,
+      mapBounds: mapBounds,
       zoom: zoom
     });
   }
@@ -249,6 +188,11 @@ export default class PathsMap extends Component {
           <Loading>Loading map data...</Loading>
         </div>
     }
+  }
+  onAddgeoJson(e){
+    this.setState({
+      geoJsonBounds: e.target.getBounds()
+    });
   }
 
   render() {
@@ -332,15 +276,18 @@ export default class PathsMap extends Component {
                   url="http://wms.paths-erc.eu/"
                 />
               </BaseLayer>
-              { this.state.shownPlaces && <GeoJSON
-                ref={this.placesLayerRef}
-                key={ hash(this.state.shownPlaces) }
-                data={this.state.shownPlaces}
-                pointToLayer={this.pointToLayer.bind(this)}
-                onEachFeature={this.onEachFeature.bind(this) }
-                /> }
+              { this.state.shownPlaces &&
+                <PathsPlaces
+                  shownPlaces={this.state.shownPlaces}
+                  onAdd={ this.onAddgeoJson.bind(this) }
+                  />
+              }
 
-              { this.state.bounds && this.state.zoom && <SiteMaps bounds={this.state.bounds} zoom={this.state.zoom} />}
+              { this.state.mapBounds && this.state.zoom &&
+                <SiteMaps
+                  bounds={this.state.mapBounds}
+                  zoom={this.state.zoom} />
+              }
 
             </LayersControl>
 

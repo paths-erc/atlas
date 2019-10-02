@@ -508,7 +508,7 @@ const list = [
 
 
 
-function SiteMaps(props){
+export default function SiteMaps(props){
   const bounds = props.bounds;
   const zoom = props.zoom;
 
@@ -547,6 +547,3 @@ function SiteMaps(props){
   );
 
 }
-
-
-export default SiteMaps;
