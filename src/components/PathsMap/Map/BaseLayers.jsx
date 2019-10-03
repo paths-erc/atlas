@@ -45,6 +45,19 @@ const google = [
   }
   ];
 
+  const wms = [
+    {
+      "name": "Series 4085 - GB &amp; USA",
+      "url": "http://wms.paths-erc.eu/",
+      "layers": "Series 4085-Great Britain War Office-U.S. Army Map Service-1941-"
+    },
+    {
+      "name": "Arrowsmith 1807",
+      "url": "http://wms.paths-erc.eu/",
+      "layers": "Arrowsmith 1807"
+    }
+  ];
+
 export default function BaseLayers(props){
 
   return (
@@ -65,20 +78,15 @@ export default function BaseLayers(props){
             </BaseLayer>)
           })
       }
+      
+      {
+        wms.map( (e,i) => {
+          return (<BaseLayer name={ e.name } key={ i }>
+            <WMSTileLayer layers={ e.layers } url={ e.url } />
+          </BaseLayer>);
+        })
+      }
 
-
-      <BaseLayer name="Series 4085 - GB &amp; USA">
-        <WMSTileLayer
-          layers='Series 4085-Great Britain War Office-U.S. Army Map Service-1941-'
-          url="http://wms.paths-erc.eu/"
-        />
-      </BaseLayer>
-      <BaseLayer name="Arrowsmith 1807">
-        <WMSTileLayer
-          layers='Arrowsmith 1807'
-          url="http://wms.paths-erc.eu/"
-        />
-      </BaseLayer>
 
       { props.shownPlaces &&
         <PathsPlaces
