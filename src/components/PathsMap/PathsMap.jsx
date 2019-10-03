@@ -243,7 +243,7 @@ export default class PathsMap extends Component {
           <BaseLayers
               shownPlaces={ this.state.shownPlaces }
               onAdd={this.onAddgeoJson.bind(this) }
-              bounds={this.state.mapBounds}
+              mapBounds={this.state.mapBounds}
               zoom={this.state.zoom}
             />
           </Map>
