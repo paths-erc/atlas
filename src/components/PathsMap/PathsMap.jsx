@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, LayersControl, WMSTileLayer } from 'react-leaflet';
+import { Map } from 'react-leaflet';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import qs from 'qs';
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GoogleLayer } from 'react-leaflet-google';
 
 
 import Header from "../mainLayout/Header"
 import ListPlaces from './ListPlaces';
 import UrlFilterButton from './UrlFilterButton';
-import TabLegend from './TabLegend';
-import TabSavedQueries from './TabSavedQueries';
+import Legend from './Tabs/Legend';
+import MapSavedQueries from './Tabs/MapSavedQueries';
 import ClearButton from './ClearButton';
 import Loading from '../Loading/Loading';
 import ShowError from '../ShowError/ShowError';
 
-import SiteMaps from './SiteMaps';
-import PathsPlaces from './PathsPlaces';
+import BaseLayers from './Map/BaseLayers';
 
 import Database from '../Services/Database/Database';
 
 import './PathsMap.css';
 
-const { BaseLayer } = LayersControl
 
-const googleKey = "AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o";
+
 export default class PathsMap extends Component {
 
   constructor(props) {
@@ -224,13 +221,13 @@ export default class PathsMap extends Component {
 
             <Tab id="savedQueries" header="Saved queries" icon={<FontAwesomeIcon icon="save" />}>
               <div className="mt-5">
-                <TabSavedQueries />
+                <MapSavedQueries />
               </div>
             </Tab>
 
             <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />}>
               <div className="mt-5">
-                <TabLegend />
+                <Legend />
               </div>
             </Tab>
           </Sidebar>
@@ -242,55 +239,13 @@ export default class PathsMap extends Component {
               </div> }
 
           <Map className="sidebar-map maxHeight" zoomControl={true} ref={this.mapRef} onViewportChanged={ this.onViewportChanged.bind(this) }>
-            <LayersControl position="topright">
-              { /**
-              <BaseLayer name="Imperium (Pelagios)">
-                <TileLayer url="http://pelagios.org/tilesets/imperium/{z}/{x}/{y}.png" />
-              </BaseLayer>
-              */ }
-              <BaseLayer name="Imperium (DARE)">
-                <TileLayer url="http://dare.ht.lu.se/tiles/imperium/{z}/{x}/{y}.png" />
-              </BaseLayer>
-              <BaseLayer name="AWMC" checked={true}>
-                <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
-              </BaseLayer>
-              <BaseLayer name='Google Maps Roads'>
-                 <GoogleLayer googlekey={googleKey}  maptype='ROADMAP'/>
-              </BaseLayer>
 
-              <BaseLayer name='Google Satellite'>
-               <GoogleLayer googlekey={googleKey}  maptype='SATELLITE'/>
-              </BaseLayer>
-              <BaseLayer name="OpenStreetMap">
-                <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-              </BaseLayer>
-              <BaseLayer name="Series 4085 - GB &amp; USA">
-                <WMSTileLayer
-                  layers='Series 4085-Great Britain War Office-U.S. Army Map Service-1941-'
-                  url="http://wms.paths-erc.eu/"
-                />
-              </BaseLayer>
-              <BaseLayer name="Arrowsmith 1807">
-                <WMSTileLayer
-                  layers='Arrowsmith 1807'
-                  url="http://wms.paths-erc.eu/"
-                />
-              </BaseLayer>
-              { this.state.shownPlaces &&
-                <PathsPlaces
-                  shownPlaces={this.state.shownPlaces}
-                  onAdd={ this.onAddgeoJson.bind(this) }
-                  />
-              }
-
-              { this.state.mapBounds && this.state.zoom &&
-                <SiteMaps
-                  bounds={this.state.mapBounds}
-                  zoom={this.state.zoom} />
-              }
-
-            </LayersControl>
-
+          <BaseLayers
+              shownPlaces={ this.state.shownPlaces }
+              onAdd={this.onAddgeoJson.bind(this) }
+              bounds={this.state.mapBounds}
+              zoom={this.state.zoom}
+            />
           </Map>
         </main>
       </div>

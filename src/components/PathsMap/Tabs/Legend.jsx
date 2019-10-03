@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-export default class TabLegend extends Component {
+export default class Legend extends Component {
 
   render() {
 
     return (
-      <div>
+      <React.Fragment>
 
         <h5>Map legend</h5>
         <ul style={{ listStyle: 'none', margin: 0, padding: 0}}>
@@ -55,7 +55,7 @@ export default class TabLegend extends Component {
             <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">Open Street Map</a>
           </li>
         </ul>
-      </div>
+      </React.Fragment>
     );
   }
 }
