@@ -238,7 +238,12 @@ export default class PathsMap extends Component {
                 <Loading>Loading map data...</Loading>
               </div> }
 
-          <Map className="sidebar-map maxHeight" zoomControl={true} ref={this.mapRef} onViewportChanged={ this.onViewportChanged.bind(this) }>
+          <Map
+              className="sidebar-map maxHeight"
+              zoomControl={true}
+              ref={this.mapRef}
+              onViewportChanged={ this.onViewportChanged.bind(this) }
+              >
 
           <BaseLayers
               shownPlaces={ this.state.shownPlaces }
