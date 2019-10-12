@@ -1,16 +1,42 @@
-import React from 'react';
-import { TileLayer, LayersControl, WMSTileLayer } from 'react-leaflet';
+import React, { useState, useEffect } from 'react';
+import { TileLayer, LayersControl, WMSTileLayer, GeoJSON } from 'react-leaflet';
 
 import { GoogleLayer } from 'react-leaflet-google';
 
 import SiteMaps from './SiteMaps';
 import PathsPlaces from './PathsPlaces';
+import { Themes as GisThemes} from '../../Services/Cfg/remoteGisSources';
+import { pointToLayer, onEachFeature } from './Defaults';
 
-const { BaseLayer } = LayersControl
+const { BaseLayer, Overlay } = LayersControl;
+
 
 const googleKey = "AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o";
 
 export default function Layers(props){
+
+  const [cached, addToCache] = useState([]);
+  const [remotes, addRemote] = useState([]);
+
+  useEffect( ()=>{
+    GisThemes.map(e => {
+      if (cached.includes(e.name)){
+        return false;
+      }
+      fetch(e.url).then( function(response){
+        response.json().then(function(j){
+          addToCache(cached.concat(e.name));
+          addRemote(remotes.concat({
+            "name": e.name,
+            "url": e.url,
+            "info": e.info,
+            "geojson": j,
+          }));
+        });
+      });
+      return true;
+    });
+  });
 
   return (
     <LayersControl position="topright">
@@ -53,7 +79,6 @@ export default function Layers(props){
             layers="Arrowsmith 1807" />
       </BaseLayer>
 
-
       { props.shownPlaces &&
         <PathsPlaces
           shownPlaces={ props.shownPlaces }
@@ -66,7 +91,18 @@ export default function Layers(props){
           bounds={ props.mapBounds }
           zoom={ props.zoom } />
       }
-
+      {
+        remotes.map( (r, i) =>{
+          const col = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+          return (<Overlay name={r.name} key={i}>
+            <GeoJSON
+              data={r.geojson}
+              pointToLayer={ (t, i) => pointToLayer(t, i, col) }
+              onEachFeature={ (feature, layer) => onEachFeature(feature, layer, r) }
+              />
+          </Overlay>)
+        })
+      }
     </LayersControl>
   );
 

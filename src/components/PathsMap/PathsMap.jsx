@@ -236,7 +236,8 @@ export default class PathsMap extends Component {
 
           { !this.state.shownPlaces && <div style={{ position: 'absolute', top: '5rem', textAlign: 'center', zIndex: 999, width: '100%'}}>
                 <Loading>Loading map data...</Loading>
-              </div> }
+              </div>
+          }
 
           <Map
               className="sidebar-map maxHeight"
