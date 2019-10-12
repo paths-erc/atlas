@@ -10,7 +10,7 @@ const { BaseLayer } = LayersControl
 
 const googleKey = "AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o";
 
-export default function BaseLayers(props){
+export default function Layers(props){
 
   return (
     <LayersControl position="topright">

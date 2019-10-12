@@ -15,7 +15,7 @@ import ClearButton from './ClearButton';
 import Loading from '../Loading/Loading';
 import ShowError from '../ShowError/ShowError';
 
-import BaseLayers from './Map/BaseLayers';
+import Layers from './Map/Layers';
 
 import Database from '../Services/Database/Database';
 
@@ -245,7 +245,7 @@ export default class PathsMap extends Component {
               onViewportChanged={ this.onViewportChanged.bind(this) }
               >
 
-          <BaseLayers
+          <Layers
               shownPlaces={ this.state.shownPlaces }
               onAdd={this.onAddgeoJson.bind(this) }
               mapBounds={this.state.mapBounds}
