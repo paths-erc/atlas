@@ -28,7 +28,7 @@ render() {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
-                    <NavLink style={{ backgroundColor: '#cc545a', color: '#fff'}} to="/map" tag={RRNavLink}>
+                    <NavLink style={{ backgroundColor: '#cc545a', color: '#fff'}} to="/map/saved/all_ms_places" tag={RRNavLink}>
                       <FontAwesomeIcon icon="map" /> Atlas
                     </NavLink>
                   </NavItem>
