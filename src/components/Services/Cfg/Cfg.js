@@ -80,7 +80,7 @@ export default {
     "fld_whitelist": [
         "paths__places:id",
         "paths__places:name",
-        "paths__places:tm",
+        "paths__places:tmgeo",
         "paths__places:pleiades",
         "paths__places:region",
         "paths__places:area",
