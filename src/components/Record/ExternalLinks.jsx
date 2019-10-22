@@ -8,6 +8,7 @@ import TmPlaces from './ExternalLinks/TmPlaces';
 import Ldab from './ExternalLinks/Ldab';
 import Pleiades from './ExternalLinks/Pleiades';
 import CopticColophons from './ExternalLinks/CopticColophons';
+import Dbmnt from './ExternalLinks/Dbmnt';
 
 
 export default class ExternalLinks extends Component {
@@ -27,6 +28,7 @@ export default class ExternalLinks extends Component {
             <CoptOT   data={this.props.rec.lcbm}  tb={this.props.tb}/>
             <TM       data={this.props.rec.tm}    tb={this.props.tb} />
             <Ldab     data={this.props.rec.ldab}  tb={this.props.tb} />
+            <Dbmnt    data={this.props.rec.dbmnt} tb={this.props.tb} />
 
             <TmPlaces data={this.props.rec.tm}    tb={this.props.tb} />
             <Pleiades data={this.props.rec.pleiades} tb={this.props.tb} />
