@@ -18,8 +18,10 @@ export default class ManuscriptBody extends Component {
             rec.core.tm,
             rec.core.ldab,
             rec.core.lcbm,
+            rec.core.dbmnt,
             rec.core.alias,
             rec.core.issinglefrag,
+            rec.core.reusedinbinding,
             rec.core.stratigraphy,
             rec.core.modernhistory,
             rec.core.contents
