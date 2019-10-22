@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ListGroupItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-export default class CoptOT extends Component {
+export default function CoptOT (props) {
 
-  render() {
-    if ( this.props.tb !== 'manuscripts' || !this.props.data.val || this.props.data.val.length < 1 ) {
-      return null;
-    }
-    return <ListGroupItem>
-      <a href={"http://coptot.manuscriptroom.com/manuscript-catalog/?gaNum=" + encodeURIComponent(this.props.data.val)} target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon="external-link-alt" /> The Digital Edition of the Coptic Old Testament
-      </a>
-    </ListGroupItem>
+  if ( props.tb !== 'manuscripts' || !props.data.val || props.data.val.length < 1 ) {
+    return null;
   }
+  return <ListGroupItem>
+    <a href={"http://coptot.manuscriptroom.com/manuscript-catalog/?gaNum=" + encodeURIComponent(props.data.val)} target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon="external-link-alt" /> The Digital Edition of the Coptic Old Testament
+    </a>
+  </ListGroupItem>
 }
