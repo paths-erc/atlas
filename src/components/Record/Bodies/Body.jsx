@@ -26,6 +26,7 @@ export default class ViewOne extends Component {
                     coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                     greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                     label={ i.label }
+                    name={ i.name }
                     val={ i.val_label ? i.val_label : i.val }
                     key={k} />
               })
