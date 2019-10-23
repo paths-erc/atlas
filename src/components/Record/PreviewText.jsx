@@ -41,7 +41,7 @@ export default function PreviewText(props) {
   const text = props.text;
   const separator = props.separator;
   const fld = props.fld;
-
+  
   const [display, setDisplay] = useState('none');
 
   const linkedText = text.split(',').map( (t, key) => {
@@ -57,8 +57,6 @@ export default function PreviewText(props) {
   if (linkedText.length > 0){
     return linkedText;
   }
-
-
 
 
   const toggleDisplay = () => {

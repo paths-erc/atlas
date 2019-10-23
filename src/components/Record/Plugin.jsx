@@ -35,13 +35,18 @@ class Plugin extends Component {
           {
             this.props.data.data.map( (d, di) =>{
               return (<CardBody key={di} className="border border-info mb-2">{
+                /**
+                 * Fields listed in Cfg.hidden and sort fields are not shown
+                 */
                   Object.keys(d).map( (f, fi) => {
-                    if (Cfg.hidden.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1){
+                    if (
+                      Cfg.hidden.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1
+                      ||
+                      f === 'sort'
+                      ){
                       return null;
                     }
-                    if (f === 'sort'){
-                      return null;
-                    }
+                    
                     if (d[f].label){
                       return <RecordCell val={ d[f].val_label ? d[f].val_label : d[f].val } label={ d[f].label } key={fi} />
                     } else {
