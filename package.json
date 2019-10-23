@@ -7,7 +7,7 @@
   "license": "Creative Commons Attribution 4.0 International License.",
   "author": "Julian Bogdani <julian.bogdani@uniroma1.it> (http://www.lettere.uniroma1.it/users/julian-bogdani)",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://atlas.paths-erc.eu",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
