@@ -63,7 +63,7 @@ export default {
       "titles":       [ "cc", "type", "workcc", "msid" ],
       "colophons":    [ "id", "msid", "dialect", "chronofrom", "chronoto", "datingcriteria" ],
       "authors":      [ "name", "title", "copticname", "greekname", "cmclname" ],
-      "places":       [ "id", "name", "tm", "pleiades", "region", "area", "episcopalsee" ],
+      "places":       [ "id", "name", "tmgeo", "pleiades", "region", "area", "episcopalsee" ],
       "persons":      [ "id", "name", "type", "profession", "patronymic" ]
     },
     "label": {
