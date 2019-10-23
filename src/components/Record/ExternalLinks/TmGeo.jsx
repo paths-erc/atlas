@@ -3,7 +3,7 @@ import { ListGroupItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-export default function TmPlaces (props) {
+export default function TmGeo (props) {
 
   if ( props.tb !== 'places' || !props.data.val || props.data.val.length < 1 ) {
     return null;
