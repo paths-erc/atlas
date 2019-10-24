@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class OpenInMap extends Component {
+export default function OpenInMap(props) {
 
-render() {
-
-  const tb = this.props.tb;
+  const tb = props.tb;
 
   if (['manuscripts', 'places'].indexOf(tb) < 0){
     return null;
@@ -18,7 +16,5 @@ render() {
       </Link>
     </div>
   );
-  }
 }
 
-export default OpenInMap;

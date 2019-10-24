@@ -3,18 +3,14 @@ import Header from "./Header"
 import Footer from "./Footer"
 import './MainTemplate.css';
 
-export default class MainTemplate extends React.Component{
-
-  render(){
-    return (
-      <div>
-        <Header location={this.props.location} />
-          <main role="main" className="maxHeight">
-            { this.props.children }
-          </main>
-
-        <Footer />
-      </div>
-    );
-  }
+export default function MainTemplate (props){
+  return (
+    <div>
+      <Header location={ props.location } />
+        <main role="main" className="maxHeight">
+          { props.children }
+        </main>
+      <Footer />
+    </div>
+  );
 }

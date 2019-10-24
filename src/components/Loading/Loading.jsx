@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Ripple from './Ripple-1.7s-200px.svg';
 
 
 
-export default class Loading extends Component {
+export default function Loading(props) {
 
-  render() {
-    const style = {
-      width: this.props.width ? this.props.width : '100px'
-    };
-    return (
-      <span>
-        <img src={Ripple} style={style} alt="Loading..."/>
-        {
-          this.props.children !== '' ? this.props.children : <span>Loading...</span>
-        }
-      </span>
-    );
-  }
+  const style = {
+    width: props.width ? props.width : '100px'
+  };
+  return (
+    <span>
+      <img src={Ripple} style={style} alt="Loading..."/>
+      {
+        props.children !== '' ? props.children : <span>Loading...</span>
+      }
+    </span>
+  );
 }

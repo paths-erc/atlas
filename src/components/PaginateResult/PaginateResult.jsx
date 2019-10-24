@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 import SqlModal from '../SqlModal/SqlModal';
 
 
-function build_object(path, queryString, tot_rows, curr_page = 1)
-{
+function build_object(path, queryString, tot_rows, curr_page = 1) {
 
   const rpp = 30;
 
