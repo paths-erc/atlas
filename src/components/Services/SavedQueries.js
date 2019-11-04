@@ -46,6 +46,14 @@ export default {
         "q_encoded": btoa("`episcopalsee`=1")
       }
     },
+    ms_in_graves: {
+      id: "ms_in_graves",
+      title: "Places with manuscrips used in funerary context",
+      url: 'places?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa("`id` IN (24, 28, 74, 83, 174, 178, 274)")
+      }
+    },
     // has_monasteries: {
     //   id: "has_monasteries",
     //   title: "Sites with one or more monasteries",
