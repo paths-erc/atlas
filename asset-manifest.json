@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.0bb5ac64.chunk.css",
-    "main.js": "/static/js/main.10c78dd8.chunk.js",
-    "main.js.map": "/static/js/main.10c78dd8.chunk.js.map",
+    "main.js": "/static/js/main.1411a675.chunk.js",
+    "main.js.map": "/static/js/main.1411a675.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3e6bde08.js",
     "runtime-main.js.map": "/static/js/runtime-main.3e6bde08.js.map",
     "static/js/2.626ea622.chunk.js": "/static/js/2.626ea622.chunk.js",
     "static/js/2.626ea622.chunk.js.map": "/static/js/2.626ea622.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.07f4105b6a5e060290b44e66d87a60f3.js": "/precache-manifest.07f4105b6a5e060290b44e66d87a60f3.js",
+    "precache-manifest.9cc9f0bceebb34f93ef9ace13b3a56f7.js": "/precache-manifest.9cc9f0bceebb34f93ef9ace13b3a56f7.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.0bb5ac64.chunk.css.map": "/static/css/main.0bb5ac64.chunk.css.map",
     "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
@@ -43,6 +43,6 @@
     "static/js/runtime-main.3e6bde08.js",
     "static/js/2.626ea622.chunk.js",
     "static/css/main.0bb5ac64.chunk.css",
-    "static/js/main.10c78dd8.chunk.js"
+    "static/js/main.1411a675.chunk.js"
   ]
 }
