@@ -91,7 +91,7 @@ export default class PathsMap extends Component {
 
   fitMapToBounds(){
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
-    if (this.state.geoJsonBounds){
+    if (this.state.geoJsonBounds && bounds._northEast && bounds._southWest){
       bounds = this.state.geoJsonBounds;
       if(bounds._northEast.lat === bounds._southWest.lat && bounds._northEast.lng === bounds._southWest.lng){
         bounds.pad();
