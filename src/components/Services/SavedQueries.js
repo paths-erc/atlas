@@ -48,7 +48,7 @@ export default {
     },
     ms_in_graves: {
       id: "ms_in_graves",
-      title: "Places with manuscrips used in funerary context",
+      title: "Places where manuscrips used in funerary contexts have been found",
       url: 'places?verb=search&type=encoded',
       data: {
         "q_encoded": btoa("`id` IN (24, 28, 74, 83, 174, 178, 274)")
@@ -62,14 +62,14 @@ export default {
     //     "q_encoded": btoa("`hasmonastery` = 1")
     //   }
     // },
-    churches: {
-      id: "churches",
-      title: "Churches",
-      url: 'places?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`typology` = 'church'")
-      }
-    },
+    // churches: {
+    //   id: "churches",
+    //   title: "Churches",
+    //   url: 'places?verb=search&type=encoded',
+    //   data: {
+    //     "q_encoded": btoa("`typology` = 'church'")
+    //   }
+    // },
     cemeteries: {
       id: "cemeteries",
       title: "Catacombs, cemeteries tombs or necropoleis",
