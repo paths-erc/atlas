@@ -4,7 +4,8 @@ import qs from 'qs';
 import {withRouter} from 'react-router';
 
 import Database from '../Services/Database/Database';
-import {PaginateResult, PaginateResultSummary} from '../PaginateResult/PaginateResult';
+import PaginateResult from '../PaginateResult/PaginateResult';
+import PaginateResultSummary from '../PaginateResult/PaginateResultSummary';
 import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
 import OpenInMap from '../Manuscripts/OpenInMap';
 import Loading from '../Loading/Loading';

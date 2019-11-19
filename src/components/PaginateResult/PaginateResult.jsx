@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import qs from 'qs';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
-import SqlModal from '../SqlModal/SqlModal';
 
 
 function build_object(path, queryString, tot_rows, curr_page = 1) {
@@ -80,15 +78,14 @@ function build_object(path, queryString, tot_rows, curr_page = 1) {
   return result;
 }
 
-class PaginateResult extends Component {
+export default function PaginateResult (props) {
 
-  render() {
 
     const result = build_object(
-      this.props.path,
-      this.props.search,
-      this.props.totalRows,
-      this.props.page
+      props.path,
+      props.search,
+      props.totalRows,
+      props.page
     );
 
     return (
@@ -110,27 +107,4 @@ class PaginateResult extends Component {
 
       </Pagination>
     );
-
-  }
 }
-class PaginateResultSummary extends Component {
-
-  render() {
-
-    const curr_page =  this.props.page ? this.props.page : 1;
-    const start_at = curr_page * 30 - 30 + 1;
-    const up_to = (curr_page * 30) < this.props.totalRows ? curr_page * 30 : this.props.totalRows;
-
-    return (
-      <div className="mb-3">
-        Showing records <span className="badge badge-primary">
-        { start_at } –  { up_to } </span> of <span className="badge badge-success">
-        { this.props.totalRows }</span> records found
-        &nbsp;<SqlModal sql={this.props.query}/>
-      </div>
-    );
-
-  }
-}
-
-export {PaginateResult, PaginateResultSummary};
