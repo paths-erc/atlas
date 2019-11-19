@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { InputGroupAddon, Button } from 'reactstrap';
 
-export default class ListPlaces extends Component {
+export default function ListPlaces (props) {
 
-  render() {
-    if (!this.props.show){
+    if (!props.show){
       return null;
     }
     return (
       <InputGroupAddon addonType="append">
-        <Button color="danger" onClick = { this.props.onClick }>
+        <Button color="danger" onClick = { props.onClick }>
           <span aria-hidden="true">&times;</span>
         </Button>
       </InputGroupAddon>
     );
-  }
 }
