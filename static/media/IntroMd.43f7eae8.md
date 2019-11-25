@@ -11,7 +11,7 @@ The **Atlas** gives full access to the main database and provides different type
 
 To help and guide users towards interesting research results some default search filters are prepared and made available, ready to be run and visualised. These “Saved queries” are available for single parts and for geographic data visualisation.
 
-The [welcome page of the Atlas](/map) shows by default all Places that are available in PAThs database. If you are looking only for places related to manuscripts, please use the saved queries of the Atlas or [follow this link](/map/saved/all_ms_places).
+The [welcome page of the Atlas](/map) shows by default all Places that are related to Coptic LIterary Manuscripts, and by disabling the filter in the left bar all recorded Places are shown.
 
 Amongst other products, **PAThs** presently includes:
 -	A complete classification of the Coptic manuscript tradition, by means of the attribution of `stable identifiers` for each manuscript (`codicological unit`), in order to have univocal coordinates of reference for the entirety of Coptic literary production. Such a classification can be progressively expanded as new manuscripts are discovered.
