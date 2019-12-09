@@ -40,6 +40,9 @@ export default function FixedNavbar(props) {
                   <NavLink to="/colophons" tag={RRNavLink}>Colophons</NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink to="/persons" tag={RRNavLink}>Persons</NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink to="/collections" tag={RRNavLink}>Collections</NavLink>
                 </NavItem>
               </Nav>

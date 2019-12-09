@@ -23,6 +23,9 @@ import AuthorsImg from './authors/authors.jpg';
 import ColophonsMd from './colophons/colophons.md';
 import ColophonsImg from './colophons/colophons.jpg';
 
+import PersonsMd from './persons/persons.md';
+import PersonsImg from './persons/persons.jpg';
+
 import CollectionsMd from './collections/collections.md';
 import CollectionsImg from './collections/collections.jpg';
 
@@ -82,6 +85,14 @@ export default function Intro(props){
       data: [{
         title: false,
         mdPath: ColophonsMd
+      }]
+    },
+    persons: {
+      label: "Persons",
+      img: PersonsImg,
+      data: [{
+        title: false,
+        mdPath: PersonsMd
       }]
     },
     collections: {

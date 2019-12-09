@@ -1,7 +1,9 @@
 Curated by F. Berno and F. Valerio
 
-(Updated on 17/09/2019)
+(Updated on 04/12/2019)
 
+- *Apocryphal composition with biblical excerpts* \[[CLM 6568](manuscripts/6568)\].  Ref. Hasznos, in *Katalogisierung der Orientalischen Handschriften in Deutschland*
+- *Homily on God's Judgement* \[[CLM 823](manuscripts/823)\]. Ref.: B. Layton, *Catalogue of Coptic Literary Manuscripts in the British Library acquired since the year 1906*,  British Library, London 1987, pp. 207-208.
 - *Homily on the Devil* (frag.) \[[CLM 131](manuscripts/131), ff. 117-118 (*scriptio inferior*)\]. Ref.: A. van Lantschoot, “Un texte palimpseste de Vat. Copte 65”, *Le Muséon* 60 (1947), 261-268.
 - *Praeconium Davidis in tono Adam* \[[CLM 2](manuscripts/2), f. 226r-v\]. Ref.: A. Hebbelynck - A. van Lantschoot, *Codices Coptici Vaticani, Barberiniani, Borgiani, Rossiani*, I, Città del Vaticano 1937, p. 15.
 - Evagrius, In Mt 6 (catena). Ref.: P. de Lagarde, *Catenae in Evangelia Aegyptiacae Quae Supersunt*, Gottingae 1986, pp. 14-15.
@@ -20,10 +22,6 @@ The Acts of Pantoleon and the Martyrdom of St Cornelius”, *Journal of Coptic S
 - *The descent into Amenti* [CLM 1365](manuscripts/1365). Ref.: White, *The Monasteries*, no. IV (fr. 1).
 - *The descent into Amenti* [CLM 4467](manuscripts/4467). Ref.: White, *The Monasteries*, no. IV (frr. 2+4).
 - *Fragment of an Apocryphal Gospel* [CLM 3983](manuscripts/3983). Ref.: White, *The Monasteries*, no. V.
-
----
-
----
 
 ---
 

@@ -593,6 +593,24 @@ export default {
       }
     }
   },
+  persons: {
+    donors: {
+      id: 'donors',
+      title: 'Donors',
+      url: 'persons?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`type`='donor'")))
+      }
+    },
+    copyists: {
+      id: 'copyists',
+      title: 'Copyists',
+      url: 'persons?verb=search&type=encoded',
+      data: {
+        "q_encoded": btoa(unescape(encodeURIComponent("`type`='copyist'")))
+      }
+    }
+  },
   map: {
     discovery_places: {
       id: 'discovery_places',

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -60,8 +60,8 @@ if (browser){
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
 
 
-class App extends Component {
-  render() {
+export default function App () {
+
     if (notSupported){
       return <BrowserNotSupported browser={browser} compatibility={compatibility} />
     }
@@ -72,14 +72,14 @@ class App extends Component {
           <Route path='/map/:action?/:data?' component={PathsMap}/>
           <MainTemplate>
             <Route exact path='/' component={ Home } />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|collections)' component={Intro} />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|collections)/:id' component={ViewOne} />
+            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={Intro} />
+            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/:id' component={ViewOne} />
 
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/saved' component={SearchSaved} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/all' component={SearchAll} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/adv' component={SearchAdv} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)/encoded' component={SearchEncoded} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|collections)' component={SearchSimple} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/saved' component={SearchSaved} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/all' component={SearchAll} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/adv' component={SearchAdv} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/encoded' component={SearchEncoded} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchSimple} />
 
             <Route exact path='/charts/:id?' component={Charts} />
             <Route exact path='/cite' component={Cite} />
@@ -88,8 +88,4 @@ class App extends Component {
           </MainTemplate>
         </Switch>
       </BrowserRouter>
-    );
-  }
-}
-
-export default App;
+    );}
