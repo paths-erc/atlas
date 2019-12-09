@@ -13,14 +13,14 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "axios": "^0.19.0",
     "chart.js": "^2.9.3",
     "detect-browser": "^4.8.0",
     "gh-pages": "^2.1.1",
     "google-maps": "^3.3.0",
     "leaflet": "^1.6.0",
-    "object-hash": "^2.0.0",
+    "object-hash": "^2.0.1",
     "prop-types": "^15.7.2",
     "qs": "^6.9.1",
     "quirematrix": "^1.2.0",
@@ -37,9 +37,9 @@
     "react-markdown": "^4.2.2",
     "react-nl2br": "^0.6.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0",
+    "react-scripts": "^3.3.0",
     "react-select": "^3.0.8",
-    "reactstrap": "^8.1.1"
+    "reactstrap": "^8.2.0"
   },
   "scripts": {
     "predeploy": "npm run build",
