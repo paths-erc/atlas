@@ -189,7 +189,8 @@ export default class ManuscriptBody extends Component {
         <FieldSet legend="Metadata" fields={[
           rec.core.sourceinfo,
           rec.core.editors,
-          rec.core.status
+          rec.core.status,
+          rec.core.lastmodified
         ]} />
 
       </div>
