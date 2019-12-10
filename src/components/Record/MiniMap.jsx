@@ -2,6 +2,9 @@ import React from 'react';
 import { Map, TileLayer, Marker, Popup, LayersControl } from 'react-leaflet';
 import SiteMaps from '../PathsMap/Map/SiteMaps';
 import { GoogleLayer } from 'react-leaflet-google-v2';
+import 'react-leaflet-fullscreen/dist/styles.css'
+import FullscreenControl from 'react-leaflet-fullscreen';
+
 
 import GoogleApiKey from '../Services/Cfg/GoogleApiKey';
 const { BaseLayer } = LayersControl;
@@ -24,7 +27,7 @@ export default function MiniMap(props) {
               zoom={15} 
               zoomControl={true}
               >
-
+          <FullscreenControl position="topleft" />
           <LayersControl position="topright">
             <BaseLayer name="AWMC">
               <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
