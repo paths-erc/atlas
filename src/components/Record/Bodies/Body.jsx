@@ -5,7 +5,7 @@ import RecordCell from '../RecordCell';
 import Plugin from '../Plugin';
 import Loading from '../../Loading/Loading';
 import ManuscriptsBody from './ManuscriptsBody';
-import ColophonText from '../ColophonText';
+
 
 
 
@@ -24,16 +24,16 @@ export default class ViewOne extends Component {
                 if (Cfg.hidden.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1){
                   return null;
                 }
-                if (rec.metadata.tb_stripped === 'colophons' && i.name === 'text'){
-                  return <ColophonText id={rec.core.id.val} />
-                }
+                
                 return <RecordCell
                     coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                     greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                     label={ i.label }
                     name={ i.name }
                     val={ i.val_label ? i.val_label : i.val }
-                    key={k} />
+                    key={k} 
+                    colophonId={ (rec.metadata.tb_stripped === 'colophons' && i.name === 'text') ? rec.core.id.val : false}
+                    />
               })
             }
             {

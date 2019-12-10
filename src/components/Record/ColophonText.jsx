@@ -35,7 +35,7 @@ const formatColophon = (xml) => {
 
 export default function ColophonText(props) {
 
-  const clph = props.id;
+  const clph = props.colophon;
 
   const [clphText, setClphText] = useState();
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import QuireMatrixView from './QuireMatrixView';
 import PreviewText from './PreviewText';
-
+import ColophonText from './ColophonText';
 
 
 export default function RecordCell(props) {
@@ -12,6 +12,7 @@ export default function RecordCell(props) {
   const isCoptic = props.coptic;
   const isGreek = props.greek;
   const fld = props.name;
+  const colophonId = props.colophonId;
 
 
   if (!val || val === '') {
@@ -33,7 +34,16 @@ export default function RecordCell(props) {
       </Col>
       <Col>
         <div className={ className.join(' ') }>
-          {  ( label === 'Quire layout' ) ? (<QuireMatrixView string={val} />) : <PreviewText text={val} fld={fld} separator={isCoptic ? '\u2027' : '.'} /> }
+          {  
+            label === 'Quire layout' ? 
+              <QuireMatrixView string={val} />
+              :
+                colophonId ? 
+                  <ColophonText colophon={colophonId} /> 
+                  : 
+                  <PreviewText text={val} fld={fld} separator={isCoptic ? '\u2027' : '.'} />
+              
+          }
         </div>
       </Col>
     </Row>

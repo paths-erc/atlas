@@ -18,7 +18,7 @@ export default function MiniMap(props) {
   const position = JSON.parse(geom[0].geojson).coordinates.reverse();
 
   return (
-    <div style={{ height: '300px', width: '100%'}}>
+    <div style={{ height: '300px', width: '100%'}} className="mb-5">
         <Map  className="sidebar-map maxHeight" 
               center={ position } 
               zoom={15} 
