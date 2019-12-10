@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.0bb5ac64.chunk.css",
-    "main.js": "/static/js/main.af748fb0.chunk.js",
-    "main.js.map": "/static/js/main.af748fb0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3e6bde08.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3e6bde08.js.map",
-    "static/js/2.669d19a9.chunk.js": "/static/js/2.669d19a9.chunk.js",
-    "static/js/2.669d19a9.chunk.js.map": "/static/js/2.669d19a9.chunk.js.map",
+    "main.js": "/static/js/main.22b46378.chunk.js",
+    "main.js.map": "/static/js/main.22b46378.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c09eea8e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c09eea8e.js.map",
+    "static/js/2.0b348e44.chunk.js": "/static/js/2.0b348e44.chunk.js",
+    "static/js/2.0b348e44.chunk.js.map": "/static/js/2.0b348e44.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d624d58fb5c884185c0e0cc65f34dd97.js": "/precache-manifest.d624d58fb5c884185c0e0cc65f34dd97.js",
+    "precache-manifest.9ac976fa4363bd65b454aa3d236d1b0f.js": "/precache-manifest.9ac976fa4363bd65b454aa3d236d1b0f.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.0bb5ac64.chunk.css.map": "/static/css/main.0bb5ac64.chunk.css.map",
+    "static/js/2.0b348e44.chunk.js.LICENSE": "/static/js/2.0b348e44.chunk.js.LICENSE",
     "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
     "static/media/Api.md": "/static/media/Api.ed3fdf35.md",
     "static/media/Cite.md": "/static/media/Cite.0ac293ef.md",
@@ -30,19 +31,21 @@
     "static/media/manuscripts.md": "/static/media/manuscripts.a19f686b.md",
     "static/media/manuscripts.jpg": "/static/media/manuscripts.ef53f386.jpg",
     "static/media/paths-logo.png": "/static/media/paths-logo.d0a2b412.png",
+    "static/media/persons.jpg": "/static/media/persons.0df9164b.jpg",
+    "static/media/persons.md": "/static/media/persons.aa28867d.md",
     "static/media/places.jpg": "/static/media/places.1485b780.jpg",
     "static/media/places.md": "/static/media/places.c6fdd924.md",
     "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
     "static/media/titles.md": "/static/media/titles.018dac5d.md",
     "static/media/titles.jpg": "/static/media/titles.2b8757e2.jpg",
-    "static/media/works-without-clavis.md": "/static/media/works-without-clavis.107bee25.md",
+    "static/media/works-without-clavis.md": "/static/media/works-without-clavis.44aa06a8.md",
     "static/media/works.jpg": "/static/media/works.7aa6593a.jpg",
     "static/media/works.md": "/static/media/works.a14c270e.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.3e6bde08.js",
-    "static/js/2.669d19a9.chunk.js",
+    "static/js/runtime-main.c09eea8e.js",
+    "static/js/2.0b348e44.chunk.js",
     "static/css/main.0bb5ac64.chunk.css",
-    "static/js/main.af748fb0.chunk.js"
+    "static/js/main.22b46378.chunk.js"
   ]
 }
