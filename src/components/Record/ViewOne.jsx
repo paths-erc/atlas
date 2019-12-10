@@ -13,6 +13,8 @@ import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
 
+import ColophonText from './ColophonText';
+
 export default class ViewOne extends Component {
 
   constructor(props) {
@@ -73,6 +75,8 @@ export default class ViewOne extends Component {
 
             <SubHead tb={ rec.metadata.tb_stripped } tblabel={rec.metadata.tb_label} text="View record" />
 
+            { rec.metadata.tb_stripped === 'colophons'  && <ColophonText id={rec.core.id.val} />}
+
             <Row className="mt-2">
               <Col sm="8">
                 <Card>
@@ -99,12 +103,12 @@ export default class ViewOne extends Component {
                       </div>
                   </CardHeader>
                   <CardBody>
+                    <MiniMap geom={ rec.geodata } id={rec.core.id.val} />
                     <Body rec={ rec } />
                   </CardBody>
                 </Card>
               </Col>
               <Col sm="4">
-                <MiniMap geom={ rec.geodata } />
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
                 <UserLinks links={ rec.manualLinks } />

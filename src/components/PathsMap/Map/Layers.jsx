@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { TileLayer, LayersControl, WMSTileLayer, GeoJSON } from 'react-leaflet';
 
-import { GoogleLayer } from 'react-leaflet-google';
+import { GoogleLayer } from 'react-leaflet-google-v2';
 
 import SiteMaps from './SiteMaps';
 import PathsPlaces from './PathsPlaces';
 import { Themes as GisThemes} from '../../Services/Cfg/remoteGisSources';
+import GoogleApiKey from '../../Services/Cfg/GoogleApiKey';
 import { pointToLayer, onEachFeature } from './Defaults';
 
 const { BaseLayer, Overlay } = LayersControl;
 
-
-const googleKey = "AIzaSyCLRylxZwGnCbbDE7pH-oUURTZHOre7h5o";
 
 export default function Layers(props){
 
@@ -61,11 +60,11 @@ export default function Layers(props){
 
 
       <BaseLayer name="Google Maps">
-        <GoogleLayer googlekey={googleKey}  maptype="ROADMAP" />
+        <GoogleLayer googlekey={GoogleApiKey}  maptype="ROADMAP" />
       </BaseLayer>
 
       <BaseLayer name="Google Satellite">
-        <GoogleLayer googlekey={googleKey}  maptype="SATELLITE" />
+        <GoogleLayer googlekey={GoogleApiKey}  maptype="SATELLITE" />
       </BaseLayer>
 
 
@@ -84,12 +83,6 @@ export default function Layers(props){
           shownPlaces={ props.shownPlaces }
           onAdd={ props.onAdd }
           />
-      }
-
-      { props.mapBounds && props.zoom &&
-        <SiteMaps
-          bounds={ props.mapBounds }
-          zoom={ props.zoom } />
       }
       {
         remotes.map( (r, i) =>{

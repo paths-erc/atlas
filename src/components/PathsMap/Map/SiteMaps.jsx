@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GeoJSON } from 'react-leaflet';
+import axios from 'axios';
 
 import { SiteMapsList } from '../../Services/Cfg/remoteGisSources';
 
@@ -89,27 +90,38 @@ const onEachFeature = (feature, layer) => {
 export default function SiteMaps(props){
   const bounds = props.bounds;
   const zoom = props.zoom;
+  const siteId = props.siteId;
 
-  const [loadedSites, addLoadedSite] = useState([]);
-  const [siteMaps, addSiteMap] = useState([]);
+  const [siteMaps, addSiteMaps] = useState();
 
 
   useEffect( ()=>{
-    SiteMapsList.map( e => {
-      if (zoom >= e.z - 5 && bounds.contains(e.c)){
-        fetch(`https://docs.paths-erc.eu/data/geojson/${e.n}.geojson`).then( function(response){
-          response.json().then(function(j){
-            if (loadedSites.includes(e.n)){
-              return;
-            }
-            addLoadedSite(loadedSites.concat(e.n));
-            addSiteMap(siteMaps.concat(j));
+    const axiosArray = SiteMapsList.map( e => {
+      if (
+          ( zoom >= e.z - 5 && bounds.contains(e.c) )
+          ||
+          e.n.startsWith(`paths.places.${siteId}-`)
+        ){
+          return axios({
+            method: 'get',
+            url: `https://docs.paths-erc.eu/data/geojson/${e.n}.geojson`
           });
-        });
+      } else {
+        return false;
       }
-      return true;
-    });
-  });
+    }).filter(Boolean);
+
+    let gj = [];
+    axios.all(axiosArray).then(respArr => {
+      gj = respArr.map(e => e.data );
+      addSiteMaps(gj);
+    })
+
+  }, [bounds, zoom, siteId]);
+
+  if (!siteMaps){
+    return null;
+  }
 
   return (
     <React.Fragment>
