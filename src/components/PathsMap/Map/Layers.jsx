@@ -3,7 +3,6 @@ import { TileLayer, LayersControl, WMSTileLayer, GeoJSON } from 'react-leaflet';
 
 import { GoogleLayer } from 'react-leaflet-google-v2';
 
-import SiteMaps from './SiteMaps';
 import PathsPlaces from './PathsPlaces';
 import { Themes as GisThemes} from '../../Services/Cfg/remoteGisSources';
 import GoogleApiKey from '../../Services/Cfg/GoogleApiKey';

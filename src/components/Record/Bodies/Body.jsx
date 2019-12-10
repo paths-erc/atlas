@@ -7,6 +7,8 @@ import Loading from '../../Loading/Loading';
 import ManuscriptsBody from './ManuscriptsBody';
 
 
+
+
 export default class ViewOne extends Component {
 
   renderTemplate(rec) {
@@ -22,13 +24,16 @@ export default class ViewOne extends Component {
                 if (Cfg.hidden.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1){
                   return null;
                 }
+                
                 return <RecordCell
                     coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                     greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
                     label={ i.label }
                     name={ i.name }
                     val={ i.val_label ? i.val_label : i.val }
-                    key={k} />
+                    key={k} 
+                    colophonId={ (rec.metadata.tb_stripped === 'colophons' && i.name === 'text') ? rec.core.id.val : false}
+                    />
               })
             }
             {

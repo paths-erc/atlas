@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputGroupAddon, Button } from 'reactstrap';
 
-export default function ListPlaces (props) {
+export default function ClearButton (props) {
 
     if (!props.show){
       return null;
