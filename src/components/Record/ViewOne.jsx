@@ -13,8 +13,6 @@ import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
 
-import ColophonText from './ColophonText';
-
 export default class ViewOne extends Component {
 
   constructor(props) {
@@ -74,8 +72,6 @@ export default class ViewOne extends Component {
           <div className="container">
 
             <SubHead tb={ rec.metadata.tb_stripped } tblabel={rec.metadata.tb_label} text="View record" />
-
-            { rec.metadata.tb_stripped === 'colophons'  && <ColophonText id={rec.core.id.val} />}
 
             <Row className="mt-2">
               <Col sm="8">

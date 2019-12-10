@@ -1,0 +1,17 @@
+ol.colophons {
+    list-style: none;
+    counter-reset: item;
+    column-count: 2;
+}
+ol.colophons li {
+    counter-increment: item;
+    font-family: Antinoou;
+}
+ol.colophons li:before {
+    margin-left: -25px;
+    margin-right: 10px;
+    content: counter(item);
+    color: #cccccc;
+    text-align: center;
+    display: inline-block;
+  }
