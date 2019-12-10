@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TileLayer, LayersControl, WMSTileLayer, GeoJSON } from 'react-leaflet';
-
 import { GoogleLayer } from 'react-leaflet-google-v2';
+import axios from 'axios';
 
 import PathsPlaces from './PathsPlaces';
 import { Themes as GisThemes} from '../../Services/Cfg/remoteGisSources';
@@ -13,28 +13,30 @@ const { BaseLayer, Overlay } = LayersControl;
 
 export default function Layers(props){
 
-  const [cached, addToCache] = useState([]);
-  const [remotes, addRemote] = useState([]);
+  const [remotes, setRemotes] = useState();
 
   useEffect( ()=>{
-    GisThemes.map(e => {
-      if (cached.includes(e.name)){
-        return false;
-      }
-      fetch(e.url).then( function(response){
-        response.json().then(function(j){
-          addToCache(cached.concat(e.name));
-          addRemote(remotes.concat({
-            "name": e.name,
-            "url": e.url,
-            "info": e.info,
-            "geojson": j,
-          }));
-        });
+    let remotesArr = [];
+    const axiosArray = GisThemes.map( e => {
+      
+      remotesArr.push({
+        name: e.name,
+        url: e.url,
+        info: e.info
       });
-      return true;
+      return axios({
+        method: 'get',
+        url: e.url
+      });
     });
-  });
+    axios.all(axiosArray).then(respArr => {
+      respArr.map((geojson, k) => {
+        remotesArr[k].geojson = geojson.data;
+        return true;
+      });
+      setRemotes(remotesArr);
+    });
+  }, []);
 
   return (
     <LayersControl position="topright">
@@ -57,7 +59,6 @@ export default function Layers(props){
         <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       </BaseLayer>
 
-
       <BaseLayer name="Google Maps">
         <GoogleLayer googlekey={GoogleApiKey}  maptype="ROADMAP" />
       </BaseLayer>
@@ -76,15 +77,13 @@ export default function Layers(props){
         <WMSTileLayer url="http://wms.paths-erc.eu/"
             layers="Arrowsmith 1807" />
       </BaseLayer>
-
-      { props.shownPlaces &&
-        <PathsPlaces
-          shownPlaces={ props.shownPlaces }
-          onAdd={ props.onAdd }
-          />
+      { 
+      props.shownPlaces &&
+        <PathsPlaces shownPlaces={ props.shownPlaces } onAdd={ props.onAdd } />
       }
       {
-        remotes.map( (r, i) =>{
+        remotes && remotes.map( (r, i) => {
+          
           const col = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
           return (<Overlay name={r.name} key={i}>
             <GeoJSON

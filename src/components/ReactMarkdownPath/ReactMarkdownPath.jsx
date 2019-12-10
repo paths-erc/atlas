@@ -18,7 +18,7 @@ export default function ReactMarkdownPath(props){
       });
     }
     getMd(props.path);
-  } );
+  }, [props.path]);
 
   if (mdText){
     return <ReactMarkdown source={mdText} escapeHtml={false} />;

@@ -48,6 +48,7 @@ export default function ColophonText(props) {
         setClphText(parsedtext);
       })
       .catch( e => {
+        setClphText(`Error in getting marked text of colophon #${clph}`)
         console.log(e);
       })
   }, [clph]);
