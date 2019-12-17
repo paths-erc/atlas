@@ -225,6 +225,11 @@ export const SiteMapsList = [
     "c": [28.705347801871415, 33.63495371489594]
   },
   {
+    "n": "paths.places.19-Luxor-complex/BGQ6JNX2-68",
+    "z": 21,
+    "c": [25.70027, 32.63996]
+  },
+  {
     "n": "paths.places.19-Luxor-complex/BGQ6JNX2-69",
     "z": 21,
     "c": [25.701256443006596, 32.64115390712226]
@@ -243,6 +248,11 @@ export const SiteMapsList = [
     "n": "paths.places.20-Koptos/BGQ6JNX2-64",
     "z": 22,
     "c": [25.996230777036267, 32.81373241040219]
+  },
+  {
+    "n": "paths.places.68-Pbou/BGQ6JNX2-162a",
+    "z": 20,
+    "c": [26.11258, 32.40308]
   },
   {
     "n": "paths.places.68-Pbou/BGQ6JNX2-162b",
@@ -433,5 +443,25 @@ export const SiteMapsList = [
     "n": "paths.places.28-Hermopolis-Magna/BGQ6JNX2-59",
     "z": 20,
     "c": [26.548895680414724, 31.815046089715846]
+  },
+  {
+    "n": "paths.places.72-Deir-Ambra-Adra/BGQ6JNX2_177",
+    "z": 20,
+    "c": [24.09473, 32.87600]
+  },
+  {
+    "n": "paths.places.73-Bawit/BGQ6JNX2-142",
+    "z": 20,
+    "c": [27.55150, 30.70855]
+  },
+  {
+    "n": "paths.places.73-Bawit/BGQ6JNX2-143",
+    "z": 20,
+    "c": [27.55391, 30.70630]
+  },
+  {
+    "n": "paths.places.75-Apa-Jeremiah/BGQ6JNX2-126",
+    "z": 20,
+    "c": [29.86617, 31.21927]
   }
 ];
