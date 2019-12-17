@@ -97,14 +97,10 @@ export default function SiteMaps(props){
 
   useEffect( ()=>{
     const axiosArray = SiteMapsList.map( e => {
-      if (
-          ( zoom >= e.z - 5 && bounds.contains(e.c) )
-          ||
-          e.n.startsWith(`paths.places.${siteId}-`)
-        ){
+      if ( e.startsWith(`paths.places.${siteId}-`) ){
           return axios({
             method: 'get',
-            url: `https://docs.paths-erc.eu/data/geojson/${e.n}.geojson`
+            url: `https://docs.paths-erc.eu/data/geojson/${e}.geojson`
           });
       } else {
         return false;
