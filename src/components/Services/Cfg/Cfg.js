@@ -92,6 +92,7 @@ export default {
         "paths__places:description",
         "paths__places:hasmonastery",
         "paths__places:isnomoscapital",
+        "paths__places:status",
         "paths__m_toponyms:toponym",
         "paths__m_placephase:fperiod",
         "paths__m_placephase:ftypology",
@@ -116,6 +117,7 @@ export default {
         "paths__authors:greekname",
         "paths__authors:viaf",
         "paths__authors:title",
+        "paths__authors:status",
 
         "paths__titles:id",
         "paths__titles:cc",
