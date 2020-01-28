@@ -55,6 +55,13 @@ export default class Legend extends Component {
             <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">Open Street Map</a>
           </li>
         </ul>
+
+        <hr />
+        <h5>Other vector data</h5>
+        <p>Other vector themes are being made available by PAThs. These data are produced by other parallel projects and reworked by PAThs
+          or newly created by sub-projects. Data, metadata and credits are freely 
+          published at <a href="https://docs.paths-erc.eu/gis/vectors" target="_blank" rel="noopener noreferrer">https://docs.paths-erc.eu/gis/vectors</a>
+        </p>
       </React.Fragment>
     );
   }
