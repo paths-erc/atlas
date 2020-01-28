@@ -3,7 +3,7 @@ PAThs resource | URI | URL | Responsible Persons(s)
 --- |:---:| :---: | ---:
 **Atlas** | `paths.atlas` | http://paths.uniroma1.it/atlas/map | [Julian **Bogdani**](mailto:julian.bogdani@uniroma1.it)<br />[Paolo **Rosati**](mailto:paolo.rosati@uniroma1.it) (digital cartography)
 **Places** | `paths.places` | http://paths.uniroma1.it/atlas/places | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Angelo **Colonna**](mailto:angelo.colonna@uniroma1.it), [Ilaria **Rossetti**](mailto:ilaria.rossetti@uniroma1.it)
-**Manuscripts** | `paths.manuscripts`	| http://paths.uniroma1.it/atlas/manuscripts | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Nathan **Carlig**](mailto:nathan.carlig@uniroma1.it), [Francesco **Valerio**](mailto:francesco.valerio@uniroma1.it), [Tea **Ghigo**](mailto:tea.ghigo@uniroma1.it) (inks), [Eliana **Dal Sasso**](mailto:eliana.dalsasso@uniroma1.it) (bookbindings)
+**Manuscripts** | `paths.manuscripts`	| http://paths.uniroma1.it/atlas/manuscripts | [Francesco **Valerio**](mailto:francesco.valerio@uniroma1.it), [Annunziata Di Rienzo](mailto:annunziata.dirienzo@uniroma1.it), [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Nathan **Carlig**](mailto:nathan.carlig@uniroma1.it), [Tea **Ghigo**](mailto:tea.ghigo@uniroma1.it) (inks), [Eliana **Dal Sasso**](mailto:eliana.dalsasso@uniroma1.it) (bookbindings)
 **Works** | `paths.works` | http://paths.uniroma1.it/atlas/works | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
 **Authors** | `paths.authors` | http://paths.uniroma1.it/atlas/authors | [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
 **Titles** | `paths.titles` | http://paths.uniroma1.it/atlas/titles | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it)
@@ -21,7 +21,7 @@ Single database records must be cited by using the full URI and the relative URL
 - **Buzi**, Paola, Francesco **Berno**, Julian **Bogdani**. 2018. “The ‘PAThs’ Project: an Effort to Represent the Physical Dimension of Coptic Literary Production (Third–Eleventh centuries)”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 39-58 (ISSN: 2410-0951) https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/39-58.pdf
 
 #### Places
-- **Buzi**, Paola, Julian **Bogdani** and Angelo **Colonna**, “The Egyptological research activities of Sapienza University of Rome”, forthcoming
+- **Buzi**, Paola, Julian **Bogdani**, Angelo **Colonna**, Ilaria **Rossetti**. 2019. “The Egyptological research activities of Sapienza University of Rome. From archaeology to topography and beyond”. In *Archaeology in Africa Potentials and perspectives on laboratory & fieldwork research. Papers of the 1rst Workshop* edited by Savino di Lernia and Marina Gallinaro, Firenze: All’Insegna del Giglio, 73-87 (ISBN: 978-88-7814-944-1, 978-88-7814-945-8) https://iris.uniroma1.it/preview-item/954114.
 
 #### Manuscripts
 - **Buzi**, Paola, Francesco **Berno**, Agostino **Soldati**, and Francesco **Valerio**. 2018. “Vat. copt. 57: A Codicological, Literary, and Paratextual Analysis” in *Comparative Oriental Manuscripts Studies Bulletin* 4.2, 161-93 (ISSN: 2410-0951) https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-2/161-194.pdf
