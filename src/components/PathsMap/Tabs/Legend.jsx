@@ -46,7 +46,7 @@ export default class Legend extends Component {
             <a href="http://pelagios.org/maps/greco-roman/" target="_blank" rel="noopener noreferrer">Imperium, Pelagios</a>
           </li>
           <li className="p-1 m-1">
-            <a href="http://dare.ht.lu.se/" target="_blank" rel="noopener noreferrer">Imperium, Digital Atlas of Ancient World (DARE)</a>
+            <a href="https://dh.gu.se/dare/" target="_blank" rel="noopener noreferrer">Imperium, Digital Atlas of Ancient World (DARE)</a>
           </li>
           <li className="p-1 m-1">
             <a href="http://awmc.unc.edu/wordpress/" target="_blank" rel="noopener noreferrer">Ancient World Mapping Center</a>

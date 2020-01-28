@@ -34,7 +34,7 @@ export default function MiniMap(props) {
             </BaseLayer>
 
             <BaseLayer name="Imperium (DARE)">
-              <TileLayer url="http://dare.ht.lu.se/tiles/imperium/{z}/{x}/{y}.png" />
+              <TileLayer url="https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png" />
             </BaseLayer>
 
             <BaseLayer name="OpenStreetMap">
