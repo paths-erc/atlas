@@ -24,6 +24,7 @@ Single database records must be cited by using the full URI and the relative URL
 - **Buzi**, Paola, Julian **Bogdani**, Angelo **Colonna**, Ilaria **Rossetti**. 2019. “The Egyptological research activities of Sapienza University of Rome. From archaeology to topography and beyond”. In *Archaeology in Africa Potentials and perspectives on laboratory & fieldwork research. Papers of the 1rst Workshop* edited by Savino di Lernia and Marina Gallinaro, Firenze: All’Insegna del Giglio, 73-87 (ISBN: 978-88-7814-944-1, 978-88-7814-945-8) https://iris.uniroma1.it/preview-item/954114.
 
 #### Manuscripts
+- **Buzi**, Paola (ed.). 2019. *Detecting Early Mediaeval coptic literature in Dayr Al-Anbā Maqār, between textual conservation and literary rearrangement: the case of Vat. Copt. 57.* Città del Vaticano: Biblioteca Apostolica Vaticana. ISBN 978-88-210-1025-5. https://iris.uniroma1.it/handle/11573/1321646
 - **Buzi**, Paola, Francesco **Berno**, Agostino **Soldati**, and Francesco **Valerio**. 2018. “Vat. copt. 57: A Codicological, Literary, and Paratextual Analysis” in *Comparative Oriental Manuscripts Studies Bulletin* 4.2, 161-93 (ISSN: 2410-0951) https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-2/161-194.pdf
 - **Carlig**, Nathan. 2018. “Dealing with the Stratigraphy of Coptic Codices: the Cases of MSS Pierpont Morgan Library M578 and Coptic Museum, inv. 13446”, in *Comparative Oriental Manuscripts Studies Bulletin* 4.1, 69-78 (ISSN: 2410-0951) https://www.aai.uni-hamburg.de/en/comst/pdf/bulletin4-1/69-78.pdf
 
