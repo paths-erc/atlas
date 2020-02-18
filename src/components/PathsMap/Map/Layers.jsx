@@ -69,17 +69,17 @@ export default function Layers(props){
 
 
       <BaseLayer name="Napoleonic survey of Egypt (Pierre Jacotin 1827)">
-        <WMSTileLayer url="http://wms.paths-erc.eu/"
+        <WMSTileLayer url="http://wms.paths-erc.eu/pierre-jacotin-1827"
             layers="Pierre Jacotin 1827" />
       </BaseLayer>
       
       <BaseLayer name="Series 4085 - GB &amp; USA">
-        <WMSTileLayer url="http://wms.paths-erc.eu/"
+        <WMSTileLayer url="http://wms.paths-erc.eu/series-4045-gb-usa"
             layers="Series 4085-Great Britain War Office-U.S. Army Map Service-1941-" />
       </BaseLayer>
 
       <BaseLayer name="Arrowsmith 1807">
-        <WMSTileLayer url="http://wms.paths-erc.eu/"
+        <WMSTileLayer url="http://wms.paths-erc.eu/arrowsmith-1807"
             layers="Arrowsmith 1807" />
       </BaseLayer>
       { 
