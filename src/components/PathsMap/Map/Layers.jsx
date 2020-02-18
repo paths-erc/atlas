@@ -74,7 +74,7 @@ export default function Layers(props){
       </BaseLayer>
       
       <BaseLayer name="Series 4085 - GB &amp; USA">
-        <WMSTileLayer url="http://wms.paths-erc.eu/series-4045-gb-usa"
+        <WMSTileLayer url="http://wms.paths-erc.eu/series-4085-gb-usa"
             layers="Series 4085-Great Britain War Office-U.S. Army Map Service-1941-" />
       </BaseLayer>
 
