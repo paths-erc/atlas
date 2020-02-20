@@ -69,21 +69,21 @@ export default function Layers(props){
 
       <BaseLayer name="Napoleonic survey of Egypt (Pierre Jacotin 1827)">
         <TileLayer
-          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="http://xyz.paths-erc.eu/jacotin-1827/{z}/{x}/{y}.png"
           />
       </BaseLayer>
       
       <BaseLayer name="Series 4085 - GB &amp; USA">
         <TileLayer
-          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="http://xyz.paths-erc.eu/series-4085-gb-usa/{z}/{x}/{y}.png"
           />
       </BaseLayer>
 
       <BaseLayer name="Arrowsmith 1807">
         <TileLayer
-            attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+            attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
             url="http://xyz.paths-erc.eu/arrowsmith-1807/{z}/{x}/{y}.png"
             />
       </BaseLayer>
