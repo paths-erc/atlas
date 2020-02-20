@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TileLayer, LayersControl, WMSTileLayer, GeoJSON } from 'react-leaflet';
+import { TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
 import { GoogleLayer } from 'react-leaflet-google-v2';
 import axios from 'axios';
 
@@ -67,20 +67,25 @@ export default function Layers(props){
         <GoogleLayer googlekey={GoogleApiKey}  maptype="SATELLITE" />
       </BaseLayer>
 
-
       <BaseLayer name="Napoleonic survey of Egypt (Pierre Jacotin 1827)">
-        <WMSTileLayer url="https://wms.paths-erc.eu/pierre-jacotin-1827"
-            layers="Pierre Jacotin 1827" />
+        <TileLayer
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/jacotin-1827/{z}/{x}/{y}.png"
+          />
       </BaseLayer>
       
       <BaseLayer name="Series 4085 - GB &amp; USA">
-        <WMSTileLayer url="https://wms.paths-erc.eu/series-4085-gb-usa"
-            layers="Series 4085-Great Britain War Office-U.S. Army Map Service-1941-" />
+        <TileLayer
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/series-4085-gb-usa/{z}/{x}/{y}.png"
+          />
       </BaseLayer>
 
       <BaseLayer name="Arrowsmith 1807">
-        <WMSTileLayer url="https://wms.paths-erc.eu/arrowsmith-1807"
-            layers="Arrowsmith 1807" />
+        <TileLayer
+            attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+            url="http://xyz.paths-erc.eu/arrowsmith-1807/{z}/{x}/{y}.png"
+            />
       </BaseLayer>
       { 
       props.shownPlaces &&
