@@ -23,3 +23,16 @@ Each Place is assigned a unique identifying number and a standard site name, whi
 **Places** are linked to **Manuscripts**.
 
 **Places** offer an unusual but stimulating perspective to the study of Coptic literary manuscript culture. Since manuscripts might be related to different places by many qualified connections (production, storage, discovery, etc.), geography and archaeology can positively contribute to (re-)materialise the contexts of their production and circulation, thus providing an effective representation of the historical and cultural environment of the intellectual work of literary creation. Ultimately, **Places** represent active factors in the process of development of Coptic literature and they need, consequently, to be accurately identified and documented.
+
+### Notice
+
+**The PAThs team is currently working on the georeferencing and vectorization of the maps of Christian religious buildings,
+such as chapels, churches, monasteries, basilicas, etc. When possible these data will be completed with information on previous buildings and phases. In some cases, a broader urban context is provided, but in this case the current coverage is highly uneven.**
+
+**A very premature stage of this work is being published in real time in this Atlas. 
+The map preview of each Place displays the already available maps of the site; 
+the coverage and the quality of the information is being updated on a daily basis 
+and no warranty is currently provided for these highly incomplete work.**
+
+**The PAThs team highly discourages the usage of these still unstable data; in any case, 
+usage is free but all credits goes to the PAThs project, which must be clearly and unmistakeably aknowledged.**
