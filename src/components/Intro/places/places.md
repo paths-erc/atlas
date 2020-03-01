@@ -25,6 +25,7 @@ Each Place is assigned a unique identifying number and a standard site name, whi
 **Places** offer an unusual but stimulating perspective to the study of Coptic literary manuscript culture. Since manuscripts might be related to different places by many qualified connections (production, storage, discovery, etc.), geography and archaeology can positively contribute to (re-)materialise the contexts of their production and circulation, thus providing an effective representation of the historical and cultural environment of the intellectual work of literary creation. Ultimately, **Places** represent active factors in the process of development of Coptic literature and they need, consequently, to be accurately identified and documented.
 
 ### Notice
+(28 February 2020)
 
 **The PAThs team is currently working on the georeferencing and vectorisation of the maps of Christian religious buildings, such as chapels, churches, monasteries, basilicas, etc. When possible these data will be completed with information on previous building phases. In some cases, a broader urban context is also provided, although the current coverage is highly uneven.**
 
