@@ -8,6 +8,7 @@ PAThs resource | URI | URL | Responsible Persons(s)
 **Authors** | `paths.authors` | http://paths.uniroma1.it/atlas/authors | [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
 **Titles** | `paths.titles` | http://paths.uniroma1.it/atlas/titles | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it)
 **Colophons** | `paths.colophons` | http://paths.uniroma1.it/atlas/colophons | [Agostino **Soldati**](mailto:agostino.soldati@uniroma1.it)
+**Persons** | `paths.persons` | http://paths.uniroma1.it/atlas/persons | [Agostino **Soldati**](mailto:agostino.soldati@uniroma1.it)
 
 Single database records must be cited by using the full URI and the relative URL. The full URI is composed by the resource URI followed by the record id. e.g. `paths.manuscripts.263`. The full URL is built in the same way, e.g. `http://paths.uniroma1.it/atlas/manuscripts/263`.
 

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "787f0bedfe1ecdff94a66de990014dc6",
+    "revision": "25e44dea0628964b66526398557f191f",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.d5599186.chunk.css"
   },
   {
-    "revision": "07f2d844249c6c77dd52",
+    "revision": "3c098daa19e26157eab9",
     "url": "/static/css/main.014b2b1b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.588e4a52.chunk.js.LICENSE"
   },
   {
-    "revision": "07f2d844249c6c77dd52",
-    "url": "/static/js/main.757f8f49.chunk.js"
+    "revision": "3c098daa19e26157eab9",
+    "url": "/static/js/main.28a5d4c1.chunk.js"
   },
   {
     "revision": "e0d0929b361951fe627f",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Api.735f70e9.md"
   },
   {
-    "revision": "6cd2c2d4ee3b59fa217ec93f2a72f967",
-    "url": "/static/media/Cite.6cd2c2d4.md"
+    "revision": "010382d3235a1abe499f04c12fa5a154",
+    "url": "/static/media/Cite.010382d3.md"
   },
   {
     "revision": "035bdbc067dce1b098c5bb161978df35",
@@ -92,8 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/lod.3a5d08d7.md"
   },
   {
-    "revision": "a19f686b52eb95b0484c4d276c94789d",
-    "url": "/static/media/manuscripts.a19f686b.md"
+    "revision": "b25260c909c8be3f70c984f2ff7b7548",
+    "url": "/static/media/manuscripts.b25260c9.md"
   },
   {
     "revision": "ef53f386d2df750b8f2d98a375b4e773",
@@ -116,8 +116,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/places.1485b780.jpg"
   },
   {
-    "revision": "586c3939332cd7b011b3f5d2b61e1026",
-    "url": "/static/media/places.586c3939.md"
+    "revision": "9dc73e79ab091a7b775d74e770ba4cfb",
+    "url": "/static/media/places.9dc73e79.md"
   },
   {
     "revision": "8672e003a2c395d25f33df7e5f7a5d23",
