@@ -41,7 +41,7 @@ export const SiteMapsList = [
   "paths.places.68-Pbou/BGQ6JNX2-162a",
   "paths.places.68-Pbou/BGQ6JNX2-162b",
   "paths.places.70-Hermonthis/BGQ6JNX2-74",
-  "paths.places.72-Deir-Ambra-Adra/BGQ6JNX2_177",
+  "paths.places.72-Deir-Ambra-Adra/BGQ6JNX2-177",
   "paths.places.73-Bawit/BGQ6JNX2-142",
   "paths.places.73-Bawit/BGQ6JNX2-143",
   "paths.places.75-Apa-Jeremiah/BGQ6JNX2-126",
