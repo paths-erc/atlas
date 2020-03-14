@@ -37,6 +37,7 @@ export default class ValueInput extends Component {
       <div>
         <AsyncTypeahead
           {...this.state}
+          id="get-value-from-db"
           minLength={1}
           placeholder="Add a value"
           onSearch={this._handleSearch}
