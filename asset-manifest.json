@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.191f216a.chunk.css",
-    "main.js": "/static/js/main.7d6edb6c.chunk.js",
-    "main.js.map": "/static/js/main.7d6edb6c.chunk.js.map",
+    "main.js": "/static/js/main.7934c1f9.chunk.js",
+    "main.js.map": "/static/js/main.7934c1f9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d540f969.js",
     "runtime-main.js.map": "/static/js/runtime-main.d540f969.js.map",
     "static/css/2.d5599186.chunk.css": "/static/css/2.d5599186.chunk.css",
-    "static/js/2.6227eec2.chunk.js": "/static/js/2.6227eec2.chunk.js",
-    "static/js/2.6227eec2.chunk.js.map": "/static/js/2.6227eec2.chunk.js.map",
+    "static/js/2.98f076be.chunk.js": "/static/js/2.98f076be.chunk.js",
+    "static/js/2.98f076be.chunk.js.map": "/static/js/2.98f076be.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a950768aad28f237b244a439ac0dac7e.js": "/precache-manifest.a950768aad28f237b244a439ac0dac7e.js",
+    "precache-manifest.d413f8b229a3c4240c21148ba89456bd.js": "/precache-manifest.d413f8b229a3c4240c21148ba89456bd.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.d5599186.chunk.css.map": "/static/css/2.d5599186.chunk.css.map",
     "static/css/main.191f216a.chunk.css.map": "/static/css/main.191f216a.chunk.css.map",
-    "static/js/2.6227eec2.chunk.js.LICENSE.txt": "/static/js/2.6227eec2.chunk.js.LICENSE.txt",
+    "static/js/2.98f076be.chunk.js.LICENSE.txt": "/static/js/2.98f076be.chunk.js.LICENSE.txt",
     "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
     "static/media/Api.md": "/static/media/Api.735f70e9.md",
     "static/media/Cite.md": "/static/media/Cite.010382d3.md",
@@ -36,7 +36,7 @@
     "static/media/persons.jpg": "/static/media/persons.0df9164b.jpg",
     "static/media/persons.md": "/static/media/persons.aa28867d.md",
     "static/media/places.jpg": "/static/media/places.1485b780.jpg",
-    "static/media/places.md": "/static/media/places.9dc73e79.md",
+    "static/media/places.md": "/static/media/places.72d89403.md",
     "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
     "static/media/titles.md": "/static/media/titles.018dac5d.md",
     "static/media/titles.jpg": "/static/media/titles.2b8757e2.jpg",
@@ -47,8 +47,8 @@
   "entrypoints": [
     "static/js/runtime-main.d540f969.js",
     "static/css/2.d5599186.chunk.css",
-    "static/js/2.6227eec2.chunk.js",
+    "static/js/2.98f076be.chunk.js",
     "static/css/main.191f216a.chunk.css",
-    "static/js/main.7d6edb6c.chunk.js"
+    "static/js/main.7934c1f9.chunk.js"
   ]
 }
