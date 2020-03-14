@@ -1,4 +1,4 @@
-This section of the **PAThs** database contains a catalogue of Late Antique Egyptian sites active between the 3<sup>rd</sup> and 11<sup>th</sup> centuries.
+This section of the **PAThs** database contains a catalogue of Late Antique Egyptian sites active between the 3<sup>rd</sup> and 12<sup>th</sup> centuries.
 
 ---
 
