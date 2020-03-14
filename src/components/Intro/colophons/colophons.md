@@ -15,7 +15,7 @@ Colophons are carefully described, providing detailed, fully searchable, informa
 - Layout
 - Palaeography (e.g. writing features as axis, presence of thick-and-thin style, presence of Coptic or Greek minuscule)
 
-Prosopographical data contained in colophons texts will be soon available in a separate section of the database, named **Persons attested in colophons**.
+Prosopographical data contained in colophons texts are now available in a separate section of the database, named [Persons attested in colophons](persons).
 
 The texts of Coptic colophons and their translation are fully searchable.
 
