@@ -244,6 +244,7 @@ export default class PathsMap extends Component {
               zoomControl={true}
               ref={this.mapRef}
               onViewportChanged={ this.onViewportChanged.bind(this) }
+              maxZoom="25"
               >
 
           <Layers
