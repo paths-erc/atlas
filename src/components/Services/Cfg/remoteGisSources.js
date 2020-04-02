@@ -154,4 +154,9 @@ export const SiteMapsList = [
   "paths.places.415-Abu-Fana/BGQ6JNX2-135",
   "paths.places.415-Abu-Fana/BGQ6JNX2-136",
   "paths.places.417-Abu-Shaar/BGQ6JNX2-187",
+  "paths.places.422-Kalabasa/BGQ6JNX2-82",
+  "paths.places.423-Kom-Namrud/BGQ6JNX2-132",
+  "paths.places.423-Kom-Namrud/BGQ6JNX2-133",
+  "paths.places.424-El-Tor/BGQ6JNX2-188",
+  "paths.places.425-Tuphium/BGQ6JNX2-75",
 ];
