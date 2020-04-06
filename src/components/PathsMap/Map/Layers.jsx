@@ -81,6 +81,13 @@ export default function Layers(props){
           />
       </BaseLayer>
 
+      <BaseLayer name="Series P502 - USA">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/series-p502-usa/{z}/{x}/{y}.png"
+          />
+      </BaseLayer>
+
       <BaseLayer name="Arrowsmith 1807">
         <TileLayer
             attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
