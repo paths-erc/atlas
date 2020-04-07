@@ -84,7 +84,7 @@ export default function Layers(props){
       <BaseLayer name="Series 4085 - GB &amp; USA (1941)">
         <TileLayer
           attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
-          url="http://xyz.paths-erc.eu/series-4085-gb-usa/{z}/{x}/{y}.png"
+          url="http://xyz.paths-erc.eu/series-4085-gb-usa-1941/{z}/{x}/{y}.png"
           />
       </BaseLayer>
 
@@ -98,7 +98,7 @@ export default function Layers(props){
       <BaseLayer name="Tactical Pilotage Chart Series - World (1979)">
         <TileLayer
           attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
-          url="http://xyz.paths-erc.eu/tpc-500k/{z}/{x}/{y}.png"
+          url="http://xyz.paths-erc.eu/tpc-500k-1979/{z}/{x}/{y}.png"
           />
       </BaseLayer>
       
