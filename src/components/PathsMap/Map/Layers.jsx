@@ -67,33 +67,41 @@ export default function Layers(props){
         <GoogleLayer googlekey={GoogleApiKey}  maptype="SATELLITE" />
       </BaseLayer>
 
-      <BaseLayer name="Napoleonic survey of Egypt (Pierre Jacotin 1827)">
-        <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
-          url="http://xyz.paths-erc.eu/jacotin-1827/{z}/{x}/{y}.png"
-          />
-      </BaseLayer>
-      
-      <BaseLayer name="Series 4085 - GB &amp; USA">
-        <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
-          url="http://xyz.paths-erc.eu/series-4085-gb-usa/{z}/{x}/{y}.png"
-          />
-      </BaseLayer>
-
-      <BaseLayer name="Series P502 - USA">
-        <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
-          url="http://xyz.paths-erc.eu/series-p502-usa/{z}/{x}/{y}.png"
-          />
-      </BaseLayer>
-
       <BaseLayer name="Arrowsmith 1807">
         <TileLayer
             attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
             url="http://xyz.paths-erc.eu/arrowsmith-1807/{z}/{x}/{y}.png"
             />
       </BaseLayer>
+      
+      <BaseLayer name="Napoleonic survey of Egypt by Pierre Jacotin (1815, 1827)">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/jacotin-1827/{z}/{x}/{y}.png"
+          />
+      </BaseLayer>
+
+      <BaseLayer name="Series 4085 - GB &amp; USA (1941)">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/series-4085-gb-usa/{z}/{x}/{y}.png"
+          />
+      </BaseLayer>
+
+      <BaseLayer name="Series P502 - USA (1954)">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/series-p502-usa/{z}/{x}/{y}.png"
+          />
+      </BaseLayer>
+      
+      <BaseLayer name="Tactical Pilotage Chart Series - World (1979)">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/tpc-500k/{z}/{x}/{y}.png"
+          />
+      </BaseLayer>
+      
       { 
       props.shownPlaces &&
         <PathsPlaces shownPlaces={ props.shownPlaces } onAdd={ props.onAdd } />
