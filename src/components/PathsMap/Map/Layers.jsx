@@ -67,17 +67,19 @@ export default function Layers(props){
         <GoogleLayer googlekey={GoogleApiKey}  maptype="SATELLITE" />
       </BaseLayer>
 
-      <BaseLayer name="Arrowsmith 1807">
+      <BaseLayer name="Composite: A Map of Lower Egypt from Various Surveys by A. Arrowsmith (1807)">
         <TileLayer
             attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
             url="http://xyz.paths-erc.eu/arrowsmith-1807/{z}/{x}/{y}.png"
+            maxZoom={15}
             />
       </BaseLayer>
       
-      <BaseLayer name="Napoleonic survey of Egypt by Pierre Jacotin (1815, 1827)">
+      <BaseLayer name="Carte geographique de l'Egypte et des pays environnans by Pierre Jacotin (1818, 1828)">
         <TileLayer
           attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="http://xyz.paths-erc.eu/jacotin-1827/{z}/{x}/{y}.png"
+          maxZoom={15}
           />
       </BaseLayer>
 
@@ -85,13 +87,31 @@ export default function Layers(props){
         <TileLayer
           attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="http://xyz.paths-erc.eu/series-4085-gb-usa-1941/{z}/{x}/{y}.png"
+          maxZoom={15}
           />
       </BaseLayer>
 
       <BaseLayer name="Series P502 - USA (1954)">
         <TileLayer
           attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
-          url="http://xyz.paths-erc.eu/series-p502-usa/{z}/{x}/{y}.png"
+          url="http://xyz.paths-erc.eu/series-p502-usa-1954/{z}/{x}/{y}.png"
+          maxZoom={14}
+          />
+      </BaseLayer>
+      
+      <BaseLayer name="Series 1404, Great Britain War Office and Air Ministry, 1958-">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/series-1404-gb-1960/{z}/{x}/{y}.png"
+          maxZoom={13}
+          />
+      </BaseLayer>
+      
+      <BaseLayer name="International Map of the World (1960)">
+        <TileLayer
+          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          url="http://xyz.paths-erc.eu/imw-1m-1960/{z}/{x}/{y}.png"
+          maxZoom={12}
           />
       </BaseLayer>
       
@@ -99,6 +119,7 @@ export default function Layers(props){
         <TileLayer
           attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="http://xyz.paths-erc.eu/tpc-500k-1979/{z}/{x}/{y}.png"
+          maxZoom={14}
           />
       </BaseLayer>
       
