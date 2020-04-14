@@ -100,7 +100,8 @@ export default function SiteMaps(props){
       if ( e.startsWith(`paths.places.${siteId}-`) ){
           return axios({
             method: 'get',
-            url: `https://docs.paths-erc.eu/data/geojson/${e}.geojson`
+            // url: `https://docs.paths-erc.eu/data/geojson/${e}.geojson`
+            url: `https://xyz.paths-erc.eu/geojson/${e}.geojson`
           });
       } else {
         return false;
