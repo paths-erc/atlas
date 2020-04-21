@@ -20,6 +20,7 @@ export default {
       "works.period",
       "works.problems",
       "titles.creator",
+      "titles.taggedtext",
       "colophons.creator",
       "authors.id",
       "authors.creator",

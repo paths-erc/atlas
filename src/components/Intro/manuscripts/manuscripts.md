@@ -2,12 +2,6 @@ This section of the **PAThs** database contains the Coptic and bilingual Graeco-
 
 Manuscripts are an important means of disseminating knowledge about an ancient literature. Yet, every book has its destiny, and the destiny of Coptic manuscripts has been a very capricious one. First of all, after many centuries of flourishing production, there was neglect: when Coptic was superseded by Arabic and became a dead language, ancient Coptic manuscripts were no longer consulted and in some cases were even relegated to remote storerooms of the monasteries. Then, when the monks realised that those relics which were, in their opinion, no longer useful could raise the interest of many Western collectors, they had no scruples in taking them apart and selling them off separately in order to increase income. The result is that manuscripts from the same ancient library (e.g. the library of the White Monastery, or of the Monastery of Saint Macarius), and even portions of a single manuscript, are now scattered throughout the world in a number of different collections. In the last decades, many efforts have been made to reconstruct the dispersed Coptic libraries and their often dismembered manuscripts, or better `codicological units`. Moreover, archaeological explorations and more or less fortuitous finds have greatly enriched our knowledge of the Coptic book production, especially of its earlier phases (e.g. the Nag Hammadi Codices, the Bodmer Papyri as well as the manuscripts from the Monastery of the Archangel Michael near Phantoou).
 
----
-
-> A manual of use of the **Manuscripts** section is available at the [PAThs official documentation repository on GitHub](https://docs.paths-erc.eu/handbook/manuscripts). A [PDF version](https://github.com/paths-erc/docs/raw/master/Pdf/paths-docs-v-0.9.pdf) is also available for offline access.
-
----
-
 Each `codicological unit` is identified by a new, stable and unique identifier, called **Coptic Literary Manuscript** (`CLM`). When the `codicological units` have already been classified and/or described by other projects ([Corpus dei Manoscritti Copti Letterari](http://www.cmcl.it/) mainly, but also [Trismegistos](https://www.trismegistos.org/tm/index.php), [Leuven Database of Ancient Book](https://www.trismegistos.org/ldab/), [Digital Edition of Coptic Old Testament](https://www.uni-goettingen.de/en/digital+edition+of+the+coptic+%28sahidic%29+old+testament/475974.html)) a reference to the respective identifiers is always provided.
 
 To find a manuscript by its current shelfmark number, you should compose an advanced query and use both `Shelfmark: Collection` and `Shelfmark: Shelfmark` keys.
@@ -31,7 +25,8 @@ The database also provides a new detailed protocol of codicological description.
 Thanks to the multidisciplinary approach of the PAThs project, in addition to traditional codicology, we make use also of archaeometric analysis of inks to characterize the material features of manuscripts. After careful scientific investigation, the ink(s) of main text, titles and marginalia of a codicological unit are divided into categories according to their elemental composition: carbon ink, iron-gall ink containing only iron, iron-gall ink containing also copper, iron-gall ink containing also copper and zinc, plant inks, mixed inks. The analytical protocol used includes two main steps: 1) near-infrared reflectography to determine the type of ink (carbon, iron-gall, plant) and 2) X-ray fluorescence to detect its elemental composition (the presence of metals or other elements), although, due to conservation reasons, it was not always possible to apply both analytical techniques. Pictures obtained through reflectographic analysis are added to the description of the codicological unit, while further information on the elemental composition is reported in the notes, where necessary.
 
 
-An analytical description of the codicological protocol is provided in the [*Manual of use*](https://docs.paths-erc.eu/handbook/manuscripts).
+An analytical description of the codicological protocol is provided in the [*Manual of use section of the PAThs official documentation repository*](https://docs.paths-erc.eu/handbook/manuscripts).
+
 
 This model of description is easily expandable in case of a need to describe new features and can be easily queried (manually or programmatically), in order to provide scholars with an easy-to-use tool for their research.
 
