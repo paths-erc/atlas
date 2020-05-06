@@ -158,7 +158,7 @@ export default {
   manuscripts: {
     palimpsest_ms: {
       id: "palimpsest_ms",
-      title: "Palimpsest manuscripts",
+      title: "Palimpsests",
       url: 'manuscripts?verb=search&type=encoded',
       data: {
         "q_encoded": btoa("`palimpsest` = 1")
