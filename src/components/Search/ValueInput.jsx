@@ -17,6 +17,9 @@ export default function ValueInput (props) {
     });
   };
 
+  const defSelected = props.val && props.val.customOption ? props.val.customOption.label :
+    ( props.val ? [props.val] : [] );
+
   return (
     
     <AsyncTypeahead
@@ -24,12 +27,12 @@ export default function ValueInput (props) {
       isLoading={ isLoading }
       minLength={1}
       options={ options }
- 
       multiple={ false }
       placeholder="Add a value"
       onSearch={handleSearch}
       onChange={props.onChange}
-      defaultSelected={props.val ? props.val.split(';') : []}
+      allowNew={true}
+      defaultSelected={ defSelected }
       />
   );
 }
