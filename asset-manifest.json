@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.191f216a.chunk.css",
-    "main.js": "/static/js/main.60f67bb3.chunk.js",
-    "main.js.map": "/static/js/main.60f67bb3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d540f969.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d540f969.js.map",
+    "main.css": "/static/css/main.43062309.chunk.css",
+    "main.js": "/static/js/main.deb11522.chunk.js",
+    "main.js.map": "/static/js/main.deb11522.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.26be81ae.js",
+    "runtime-main.js.map": "/static/js/runtime-main.26be81ae.js.map",
     "static/css/2.d5599186.chunk.css": "/static/css/2.d5599186.chunk.css",
-    "static/js/2.fa468f35.chunk.js": "/static/js/2.fa468f35.chunk.js",
-    "static/js/2.fa468f35.chunk.js.map": "/static/js/2.fa468f35.chunk.js.map",
+    "static/js/2.697f98a6.chunk.js": "/static/js/2.697f98a6.chunk.js",
+    "static/js/2.697f98a6.chunk.js.map": "/static/js/2.697f98a6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.eb3d06b28a32b175624eea1711744270.js": "/precache-manifest.eb3d06b28a32b175624eea1711744270.js",
+    "precache-manifest.fda500f4ba70284ad5c5d1a075d798ee.js": "/precache-manifest.fda500f4ba70284ad5c5d1a075d798ee.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.d5599186.chunk.css.map": "/static/css/2.d5599186.chunk.css.map",
-    "static/css/main.191f216a.chunk.css.map": "/static/css/main.191f216a.chunk.css.map",
-    "static/js/2.fa468f35.chunk.js.LICENSE.txt": "/static/js/2.fa468f35.chunk.js.LICENSE.txt",
+    "static/css/main.43062309.chunk.css.map": "/static/css/main.43062309.chunk.css.map",
+    "static/js/2.697f98a6.chunk.js.LICENSE.txt": "/static/js/2.697f98a6.chunk.js.LICENSE.txt",
     "static/media/MainTemplate.css": "/static/media/Antinoou.65b2feb2.ttf",
     "static/media/Api.md": "/static/media/Api.735f70e9.md",
     "static/media/Cite.md": "/static/media/Cite.bc6f07d1.md",
@@ -36,7 +36,7 @@
     "static/media/persons.jpg": "/static/media/persons.0df9164b.jpg",
     "static/media/persons.md": "/static/media/persons.aa28867d.md",
     "static/media/places.jpg": "/static/media/places.1485b780.jpg",
-    "static/media/places.md": "/static/media/places.72d89403.md",
+    "static/media/places.md": "/static/media/places.b9f76ab2.md",
     "static/media/sapienza.jpg": "/static/media/sapienza.8672e003.jpg",
     "static/media/titles.md": "/static/media/titles.018dac5d.md",
     "static/media/titles.jpg": "/static/media/titles.2b8757e2.jpg",
@@ -45,10 +45,10 @@
     "static/media/works.md": "/static/media/works.a14c270e.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.d540f969.js",
+    "static/js/runtime-main.26be81ae.js",
     "static/css/2.d5599186.chunk.css",
-    "static/js/2.fa468f35.chunk.js",
-    "static/css/main.191f216a.chunk.css",
-    "static/js/main.60f67bb3.chunk.js"
+    "static/js/2.697f98a6.chunk.js",
+    "static/css/main.43062309.chunk.css",
+    "static/js/main.deb11522.chunk.js"
   ]
 }
