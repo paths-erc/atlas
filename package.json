@@ -24,7 +24,7 @@
     "qs": "^6.9.4",
     "quirematrix": "^1.2.0",
     "react": "^16.13.1",
-    "react-bootstrap-typeahead": "^5.0.0-rc.2",
+    "react-bootstrap-typeahead": "^5.0.0",
     "react-chartjs-2": "^2.8.0",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",

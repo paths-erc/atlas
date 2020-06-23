@@ -1,51 +1,35 @@
-import React, { Component } from 'react';
-import {AsyncTypeahead} from 'react-bootstrap-typeahead';
+import React, {useState} from 'react';
+import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 
 import Database from '../Services/Database/Database';
 
+export default function ValueInput (props) {
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState([]);
 
-export default class ValueInput extends Component {
-
-  constructor(props) {
-    super();
-
-    this.state = {
-      isLoading: false,
-      multiple: false,
-      options: []
-    }
-  }
-
-  _handleSearch = (string) => {
-    this.setState({isLoading: true});
-    const [tb, fld] = this.props.fld.split(':');
+  const handleSearch = (string) => {
+    setIsLoading(true);
+    const [tb, fld] = props.fld.split(':');
     Database.getUniqueVal(tb, fld, string, d => {
-      this.setState({
-        options : d,
-        isLoading: false
-      })
+      setOptions(d);
+      setIsLoading(false)
     });
-  }
+  };
 
-  render() {
-    if(!this.state.options){
-      return null;
-    }
-
-    return (
-      <div>
-        <AsyncTypeahead
-          {...this.state}
-          id="get-value-from-db"
-          minLength={1}
-          placeholder="Add a value"
-          onSearch={this._handleSearch}
-          onInputChange={this.props.onChange}
-          onChange={this.props.onChange}
-          defaultInputValue={this.props.val ? this.props.val : ''}
-          />
-      </div>
-    );
-  }
+  return (
+    
+    <AsyncTypeahead
+      id="get-value-from-db"
+      isLoading={ isLoading }
+      minLength={1}
+      options={ options }
+ 
+      multiple={ false }
+      placeholder="Add a value"
+      onSearch={handleSearch}
+      onChange={props.onChange}
+      defaultSelected={props.val ? props.val.split(';') : []}
+      />
+  );
 }
