@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 
 import Database from '../Services/Database/Database';
@@ -8,14 +8,14 @@ export default function ValueInput (props) {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
 
-  const handleSearch = (string) => {
+  const handleSearch = useCallback((string) => {
     setIsLoading(true);
     const [tb, fld] = props.fld.split(':');
     Database.getUniqueVal(tb, fld, string, d => {
       setOptions(d);
       setIsLoading(false)
     });
-  };
+  }, [props.fld]);
 
   const defSelected = props.val && props.val.customOption ? props.val.customOption.label :
     ( props.val ? [props.val] : [] );
@@ -31,7 +31,7 @@ export default function ValueInput (props) {
       placeholder="Add a value"
       onSearch={handleSearch}
       onChange={props.onChange}
-      allowNew={true}
+      onInputChange={props.onChange}
       defaultSelected={ defSelected }
       />
   );
