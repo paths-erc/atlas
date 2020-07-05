@@ -1,0 +1,1 @@
+{"version":3,"sources":["Cite.css"],"names":[],"mappings":"AAAA,MACE,UAAW,CACX,aAEF,CAEA,SAHE,wBAKF,CAEA,MACE,aACF,CAEA,WACE,kBACF","file":"20.31bb4852.chunk.css","sourcesContent":["table{\n  width: 100%;\n  margin: 3rem 0;\n  border: 1px solid #dfe2e5;\n}\n\ntr{\n  border: 1px solid #dfe2e5;\n}\n\ntd, th{\n  padding: .8rem;\n}\n\n.cite code{\n  white-space:nowrap;\n}\n"]}
