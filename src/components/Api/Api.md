@@ -23,8 +23,8 @@ Dump files for Pelagios are freely available for download on Github. Since PAThs
 database is continuously being updated these files are versioned. Please refer to the
 version number to cite the data.
 
-- **VoID**: [VoID File v.1.0.0](https://raw.githubusercontent.com/paths-erc/docs/master/data/pelagios-rdf/paths-pelagios-void.rdf)
-- **Places**: [paths.places.ttl v.1.0.0](https://raw.githubusercontent.com/paths-erc/docs/master/data/pelagios-rdf/paths.places.ttl)
+- **VoID**: [VoID File v.1.0.0](https://raw.githubusercontent.com/paths-erc/docs/master/raw-data/pelagios-rdf/paths-pelagios-void.rdf)
+- **Places**: [paths.places.ttl v.1.0.0](https://raw.githubusercontent.com/paths-erc/docs/master/raw-data/pelagios-rdf/paths.places.ttl)
 
 
 

@@ -3,12 +3,12 @@
 export const Themes = [
   {
     "name": "Holy family in Egypt",
-    "url": "https://raw.githubusercontent.com/paths-erc/docs/master/data/gis/sacra-famiglia-in-egitto/sacra-famiglia-in-egitto.geojson",
+    "url": "https://raw.githubusercontent.com/paths-erc/docs/master/raw-data/gis/sacra-famiglia-in-egitto/sacra-famiglia-in-egitto.geojson",
     "info": "https://docs.paths-erc.eu/gis/vectors"
   },
   {
     "name": "Coptic monasteries with coordinates",
-    "url": "https://raw.githubusercontent.com/paths-erc/docs/master/data/gis/coptic-monasteries-with-coordinates/coptic-monasteries-with-coordinates.geojson",
+    "url": "https://raw.githubusercontent.com/paths-erc/docs/master/raw-data/gis/coptic-monasteries-with-coordinates/coptic-monasteries-with-coordinates.geojson",
     "info": "https://docs.paths-erc.eu/gis/vectors"
   }
 ];
