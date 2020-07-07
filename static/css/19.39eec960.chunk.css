@@ -1,2 +1,0 @@
-ol.colophons{list-style:none;counter-reset:item;-webkit-column-count:2;column-count:2}ol.colophons li{counter-increment:item;font-family:Antinoou}ol.colophons li:before{margin-left:-25px;margin-right:10px;content:counter(item);color:#ccc;text-align:center;display:inline-block}
-/*# sourceMappingURL=19.39eec960.chunk.css.map */
