@@ -94,6 +94,7 @@ export default {
         "paths__places:hasmonastery",
         "paths__places:isnomoscapital",
         "paths__places:status",
+
         "paths__m_toponyms:toponym",
         "paths__m_placephase:fperiod",
         "paths__m_placephase:ftypology",
@@ -108,6 +109,7 @@ export default {
         "paths__works:bhg",
         "paths__works:bhl",
         "paths__works:cae",
+
         "paths__works:litperiod",
         "paths__m_wkauthors:type",
         "paths__m_wkauthors:author",
