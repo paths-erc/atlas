@@ -2,7 +2,7 @@ import axios from 'axios';
 import SavedQueries from '../SavedQueries';
 
 
-let baseUrl = 'https://db-dev.bradypus.net/api/paths/';
+let baseUrl = 'https://db.bradypus.net/api/paths/';
 
 if (window.location.hostname === 'localhost'){
   baseUrl = 'http://db.localhost/api/paths/';
@@ -171,6 +171,7 @@ export default class Database {
   }
 
   static getPlaces(where, cb) {
+    console.log('run');
     let data = {
       "join": "JOIN paths__geodata as g ON g.table_link = 'paths__places' AND g.id_link = paths__places.id "
       + " JOIN paths__m_toponyms as t ON t.table_link = 'paths__places' AND t.id_link = paths__places.id",
