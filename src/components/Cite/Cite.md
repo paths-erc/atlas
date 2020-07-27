@@ -1,14 +1,14 @@
 
 PAThs resource | URI | URL | Responsible Persons(s)
 --- |:---:| :---: | ---:
-**Atlas** | `paths.atlas` | http://paths.uniroma1.it/atlas/map | [Julian **Bogdani**](mailto:julian.bogdani@uniroma1.it)<br />[Paolo **Rosati**](mailto:paolo.rosati@uniroma1.it) (digital cartography)
-**Places** | `paths.places` | http://paths.uniroma1.it/atlas/places | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Angelo **Colonna**](mailto:angelo.colonna@uniroma1.it), [Ilaria **Rossetti**](mailto:ilaria.rossetti@uniroma1.it)
-**Manuscripts** | `paths.manuscripts`	| http://paths.uniroma1.it/atlas/manuscripts | [Francesco **Valerio**](mailto:francesco.valerio@uniroma1.it), [Annunziata Di Rienzo](mailto:annunziata.dirienzo@uniroma1.it), [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Nathan **Carlig**](mailto:nathan.carlig@uniroma1.it), [Tea **Ghigo**](mailto:tea.ghigo@uniroma1.it) (inks), [Eliana **Dal Sasso**](mailto:eliana.dalsasso@uniroma1.it) (bookbindings)
-**Works** | `paths.works` | http://paths.uniroma1.it/atlas/works | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it), [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
-**Authors** | `paths.authors` | http://paths.uniroma1.it/atlas/authors | [Francesco **Berno**](mailto:francesco.berno@uniroma1.it)
-**Titles** | `paths.titles` | http://paths.uniroma1.it/atlas/titles | [Paola **Buzi**](mailto:paola.buzi@uniroma1.it)
-**Colophons** | `paths.colophons` | http://paths.uniroma1.it/atlas/colophons | [Agostino **Soldati**](mailto:agostino.soldati@uniroma1.it)
-**Persons** | `paths.persons` | http://paths.uniroma1.it/atlas/persons | [Agostino **Soldati**](mailto:agostino.soldati@uniroma1.it)
+**Atlas** | `paths.atlas` | http://paths.uniroma1.it/atlas/map | [Julian **Bogdani** (JB)](mailto:julian.bogdani@uniroma1.it)<br />[Paolo **Rosati** (PR)](mailto:paolo.rosati@uniroma1.it) (digital cartography)
+**Places** | `paths.places` | http://paths.uniroma1.it/atlas/places | [Paola **Buzi** (PB)](mailto:paola.buzi@uniroma1.it), [Angelo **Colonna** (AC)](mailto:angelo.colonna@uniroma1.it), [Ilaria **Rossetti** (IR)](mailto:ilaria.rossetti@uniroma1.it)
+**Manuscripts** | `paths.manuscripts`	| http://paths.uniroma1.it/atlas/manuscripts | [Francesco **Valerio** (FV)](mailto:francesco.valerio@uniroma1.it), [Annunziata Di Rienzo (AD)](mailto:annunziata.dirienzo@uniroma1.it), [Paola **Buzi** (PB)](mailto:paola.buzi@uniroma1.it), [Nathan **Carlig** (NC)](mailto:nathan.carlig@uniroma1.it), [Tea **Ghigo** (TG)](mailto:tea.ghigo@uniroma1.it) (inks), [Eliana **Dal Sasso** (ED)](mailto:eliana.dalsasso@uniroma1.it) (bookbindings), Alexandros **Tsakos** (AT)(Coptic manuscripts from Nubia, Schøyen Collection, Fayyumic manuscripts), Ivan **Miroshnikov** (IM)(Schøyen Collection, Fayyumic manuscripts)
+**Works** | `paths.works` | http://paths.uniroma1.it/atlas/works | [Paola **Buzi** (PB)](mailto:paola.buzi@uniroma1.it), [Francesco **Berno** (FB)](mailto:francesco.berno@uniroma1.it)
+**Authors** | `paths.authors` | http://paths.uniroma1.it/atlas/authors | [Francesco **Berno** (FB)](mailto:francesco.berno@uniroma1.it)
+**Titles** | `paths.titles` | http://paths.uniroma1.it/atlas/titles | [Paola **Buzi** (PB)](mailto:paola.buzi@uniroma1.it)
+**Colophons** | `paths.colophons` | http://paths.uniroma1.it/atlas/colophons | [Agostino **Soldati** (AS)](mailto:agostino.soldati@uniroma1.it)
+**Persons** | `paths.persons` | http://paths.uniroma1.it/atlas/persons | [Agostino **Soldati** (AS)](mailto:agostino.soldati@uniroma1.it)
 
 Single database records must be cited by using the full URI and the relative URL. The full URI is composed by the resource URI followed by the record id. e.g. `paths.manuscripts.263`. The full URL is built in the same way, e.g. `http://paths.uniroma1.it/atlas/manuscripts/263`.
 
