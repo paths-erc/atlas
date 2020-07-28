@@ -40,7 +40,7 @@ Currently, more than 6,100 `codicological units` have been filed. Within this co
 -	Parchment codices from the Monastery of Saint Macarius in the Wādī al-Naṭrūn
 - Papyrus fragments from Diospolis Mikra (Huw) kept at the Pierpont Morgan Library
 
-**We inform the users  that most of the codicological reconstructions of the manuscripts from the White Monastery are to be considered in progress.**
+**We inform the users that the codicological reconstructions of the manuscripts from the White Monastery - if not otherwise stated - are to be considered in progress.**
 
 **As for the Schøyen Collection, PAThs avails itself of the precious collaboration of Alexandros Tsakos and Ivan Miroshnikov, who are working at the edition of the Fayyumic manuscripts. Moreover, Alexandros Tsakos is responsible for the description of the Coptic manuscripts from Nubia.**
 
