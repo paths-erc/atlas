@@ -20,7 +20,7 @@ export default class PluginBiblio extends Component {
           <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
           <CardBody>
           {
-            this.props.data.data.map( (d, di) =>{
+            Object.values(this.props.data.data).map( (d, di) =>{
               return (
                 <span key={di} className="mr-3">
                   { showLink(d.zotero.val, d.short.val) }
