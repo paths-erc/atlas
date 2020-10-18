@@ -1211,36 +1211,36 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@fortawesome/fontawesome-common-types@^0.2.30":
-  version "0.2.30"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.30.tgz#2f1cc5b46bd76723be41d0013a8450c9ba92b777"
-  integrity sha512-TsRwpTuKwFNiPhk1UfKgw7zNPeV5RhNp2Uw3pws+9gDAkPGKrtjR1y2lI3SYn7+YzyfuNknflpBA1LRKjt7hMg==
+"@fortawesome/fontawesome-common-types@^0.2.32":
+  version "0.2.32"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.32.tgz#3436795d5684f22742989bfa08f46f50f516f259"
+  integrity sha512-ux2EDjKMpcdHBVLi/eWZynnPxs0BtFVXJkgHIxXRl+9ZFaHPvYamAfCzeeQFqHRjuJtX90wVnMRaMQAAlctz3w==
 
-"@fortawesome/fontawesome-free@^5.14.0":
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.14.0.tgz#a371e91029ebf265015e64f81bfbf7d228c9681f"
-  integrity sha512-OfdMsF+ZQgdKHP9jUbmDcRrP0eX90XXrsXIdyjLbkmSBzmMXPABB8eobUJtivaupucYaByz6WNe1PI1JuYm3qA==
+"@fortawesome/fontawesome-free@^5.15.1":
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.1.tgz#ccfef6ddbe59f8fe8f694783e1d3eb88902dc5eb"
+  integrity sha512-OEdH7SyC1suTdhBGW91/zBfR6qaIhThbcN8PUXtXilY4GYnSBbVqOntdHbC1vXwsDnX0Qix2m2+DSU1J51ybOQ==
 
-"@fortawesome/fontawesome-svg-core@^1.2.30":
-  version "1.2.30"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.30.tgz#f56dc6791861fe5d1af04fb8abddb94658c576db"
-  integrity sha512-E3sAXATKCSVnT17HYmZjjbcmwihrNOCkoU7dVMlasrcwiJAHxSKeZ+4WN5O+ElgO/FaYgJmASl8p9N7/B/RttA==
+"@fortawesome/fontawesome-svg-core@^1.2.32":
+  version "1.2.32"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.32.tgz#da092bfc7266aa274be8604de610d7115f9ba6cf"
+  integrity sha512-XjqyeLCsR/c/usUpdWcOdVtWFVjPbDFBTQkn2fQRrWhhUoxriQohO2RWDxLyUM8XpD+Zzg5xwJ8gqTYGDLeGaQ==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.30"
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
 
-"@fortawesome/free-brands-svg-icons@^5.14.0":
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.14.0.tgz#98555518ba41bdff82fbae2f4d1bc36cd3b1c043"
-  integrity sha512-WsqPFTvJFI7MYkcy0jeFE2zY+blC4OrnB9MJOcn1NxRXT/sSfEEhrI7CwzIkiYajLiVDBKWeErYOvpsMeodmCQ==
+"@fortawesome/free-brands-svg-icons@^5.15.1":
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.15.1.tgz#1dc0563f4036639e53d24b8e532ea78a53ca2250"
+  integrity sha512-pkTZIWn7iuliCCgV+huDfZmZb2UjslalXGDA2PcqOVUYJmYL11y6ooFiMJkJvUZu+xgAc1gZgQe+Px12mZF0CA==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.30"
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
 
-"@fortawesome/free-solid-svg-icons@^5.14.0":
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.14.0.tgz#970453f5e8c4915ad57856c3a0252ac63f6fec18"
-  integrity sha512-M933RDM8cecaKMWDSk3FRYdnzWGW7kBBlGNGfvqLVwcwhUPNj9gcw+xZMrqBdRqxnSXdl3zWzTCNNGEtFUq67Q==
+"@fortawesome/free-solid-svg-icons@^5.15.1":
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.1.tgz#e1432676ddd43108b41197fee9f86d910ad458ef"
+  integrity sha512-EFMuKtzRMNbvjab/SvJBaOOpaqJfdSap/Nl6hst7CgrJxwfORR1drdTV6q1Ib/JVzq4xObdTDcT6sqTaXMqfdg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.30"
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
 
 "@fortawesome/react-fontawesome@^0.1.11":
   version "0.1.11"
@@ -3812,10 +3812,10 @@ destroy@~1.0.4:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
-detect-browser@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/detect-browser/-/detect-browser-5.1.1.tgz#a800db91d3fd60d0861669f5984f1be9ffbe009c"
-  integrity sha512-5n2aWI57qC3kZaK4j2zYsG6L1LrxgLptGCNhMQgdKhVn6cSdcq43pp6xHPfTHG3TYM6myF4tIPWiZtfdVDgb9w==
+detect-browser@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/detect-browser/-/detect-browser-5.2.0.tgz#c9cd5afa96a6a19fda0bbe9e9be48a6b6e1e9c97"
+  integrity sha512-tr7XntDAu50BVENgQfajMLzacmSe34D+qZc4zjnniz0ZVuw/TZcLcyxHQjYpJTM36sGEkZZlYLnIM1hH7alTMA==
 
 detect-newline@^2.1.0:
   version "2.1.0"
@@ -8946,10 +8946,10 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-bootstrap-typeahead@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/react-bootstrap-typeahead/-/react-bootstrap-typeahead-5.1.1.tgz#cc9b4e4c27834065eb6037ffeea877e78f859b68"
-  integrity sha512-fjbeF9xenZ7AqH+yQr9ad7PvntA4SSmHMDD56F25B/EmN0NAJsqobXMW8/Y2jllMpcziGG2H4A7GyAdQfyVRFA==
+react-bootstrap-typeahead@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-typeahead/-/react-bootstrap-typeahead-5.1.2.tgz#ff91a04fbfbc5b48742b55f32576c5b176a82a5e"
+  integrity sha512-GQ6lRtVkgE5UcQPBgX4foJ/WcRdMgXzi1x1eg9RyXRLF0G3m/TfUJ6+kGkLg+X7U3b1/r+21JurH1OQ2gf1uBg==
   dependencies:
     "@babel/runtime" "^7.3.4"
     "@restart/hooks" "^0.3.22"
@@ -9009,10 +9009,10 @@ react-dev-utils@^10.2.1:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
-  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
+react-dom@^16.14.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -9031,10 +9031,10 @@ react-fontawesome@^1.7.1:
   dependencies:
     prop-types "^15.5.6"
 
-react-ga@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-3.1.2.tgz#e13f211c51a2e5c401ea69cf094b9501fe3c51ce"
-  integrity sha512-OJrMqaHEHbodm+XsnjA6ISBEHTwvpFrxco65mctzl/v3CASMSLSyUkFqz9yYrPDKGBUfNQzKCjuMJwctjlWBbw==
+react-ga@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-3.2.0.tgz#a8ea91e8e681f49d30afcee72d71fc5c71b67d57"
+  integrity sha512-YHHG5QIzRdDToB9ST1/BrGQhLZPzkrNjoeTu3SZLgwdqzeA9F2XOStuOGXAp1ak/SAo9pyR1Uo/hY0C5wZwfqA==
 
 react-input-autosize@^2.2.2:
   version "2.2.2"
@@ -9220,10 +9220,10 @@ react-scripts@^3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-scroll-up@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/react-scroll-up/-/react-scroll-up-1.3.3.tgz#c02dcf57feb9b33e1491e864ccad220e7f7e50d3"
-  integrity sha1-wC3PV/65sz4UkehkzK0iDn9+UNM=
+react-scroll-up@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/react-scroll-up/-/react-scroll-up-1.3.5.tgz#c117148426f186e5170c4dd41e09e4a32dbe69f6"
+  integrity sha512-RpAobxiI8vQQPbK0qm4rTJAD16zZQ7sHS4H39pZHvMreQtPPDsoE8uR3Yj6rxO8Y9QlxGBjwrwz6AE+cuzCE7g==
   dependencies:
     detect-passive-events "^1.0.0"
     object-assign "^4.0.1"
@@ -9264,19 +9264,19 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
-  integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
+react@^16.14.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-reactstrap@^8.5.1:
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-8.5.1.tgz#dde43539602117888a138042b53703b7621c4318"
-  integrity sha512-igpdw8DiW48ZtwGOo2unwlsILFlF7deiqFUAqc3wrsX/0H0OkvmezJdkjJx2X9jaHfjGdPpm0vu5VN/kk7tv+A==
+reactstrap@^8.6.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-8.6.0.tgz#baee0d12990c9fef3c82199fb05e84d9f0af1a26"
+  integrity sha512-03/UMbLPR6MhVStVUfCLuKh8xh4JOtNVkRxDB9/uHixN+cEQPOpSYa0K69YyK1/2YdZBs2qS6y0cQkK8NQKBHA==
   dependencies:
     "@babel/runtime" "^7.2.0"
     classnames "^2.2.3"
