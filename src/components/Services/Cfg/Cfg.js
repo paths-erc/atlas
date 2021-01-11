@@ -234,5 +234,19 @@ export default {
         "paths__m_biblio:short",
         "paths__m_biblio:details",
 
+        "paths__persons:id",
+        "paths__persons:name",
+        "paths__persons:type",
+        "paths__persons:profession",
+        "paths__persons:patronymiccarnal",
+        "paths__persons:patronymicspirit",
+        "paths__persons:hasbrother",
+        "paths__persons:hasfather",
+        "paths__persons:placebirth",
+        "paths__persons:placeaffiliation",
+        "paths__persons:sex",
+        "paths__persons:datefrom",
+        "paths__persons:dateto",
+
       ]
 };

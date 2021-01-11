@@ -10,7 +10,7 @@ import Results from './Results';
 export default class SearchSimple extends Component {
 
   constructor(props) {
-    super(props);
+    super();
 
     const qstring = qs.parse(props.location.search, {ignoreQueryPrefix: true});
     this.state = {
