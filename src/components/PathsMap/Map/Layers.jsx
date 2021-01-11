@@ -47,11 +47,11 @@ export default function Layers(props){
       // </BaseLayer>
       }
 
-      <BaseLayer name="AWMC" checked="true">
+      <BaseLayer name="AWMC">
         <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
       </BaseLayer>
 
-      <BaseLayer name="Imperium (DARE)">
+      <BaseLayer name="Imperium (DARE)" checked="true">
         <TileLayer url="https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png" />
       </BaseLayer>
 
