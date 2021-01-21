@@ -2,11 +2,13 @@ import axios from 'axios';
 import SavedQueries from '../SavedQueries';
 
 
-let baseUrl = 'https://db.bradypus.net/api/paths/';
+let baseUrl = 'https://bdus.cloud/';
 
 if (window.location.hostname === 'localhost'){
-  baseUrl = 'http://db.localhost/api/paths/';
+  baseUrl = 'http://bdus.localhost/';
 }
+
+baseUrl += 'api/v2/paths/';
 
 export default class Database {
 
@@ -24,8 +26,7 @@ export default class Database {
     })
     .then(res => {
       if (res.data.type && res.data.type === 'error'){
-        console.log('API error:');
-        console.log(res.data.text);
+        console.log(`API error: ${res.data.text}`);
         return false;
       }
       callback(res.data);
@@ -44,7 +45,7 @@ export default class Database {
   }
 
   static getUniqueVal(tb, fld, string, cb) {
-    this.getData('../v2/paths/' + tb, {
+    this.getData('./' + tb, {
       verb: 'getUniqueVal',
       tb: tb.replace('paths__', ''),
       fld: fld,
@@ -74,7 +75,7 @@ export default class Database {
       shortsql: `@${tb}~?${fld.replace(':', '.')}|${ strict ? '=' : 'LIKE' }|${val}`,
       page: page
     };
-    this.getData(`../v2/paths/${tb}`, data, d => { cb(d); }, true);
+    this.getData('', data, d => { cb(d); }, true);
   }
 
   /**
@@ -119,15 +120,15 @@ export default class Database {
   }
 
   static getAll(tb, page, cb) {
-    this.getData(tb, {
+    this.getData('', {
       verb : 'search',
-      type: 'all',
+      shortsql: `@${tb}`,
       page: page
     }, d => { cb(d); });
   }
 
   static getOne(tb, id, cb) {
-    this.getData('../v2/paths', {
+    this.getData('', {
       tb: tb,
       verb : 'read',
       id : id
@@ -135,14 +136,14 @@ export default class Database {
   }
 
   static inspect(tb, cb) {
-    this.getData('../v2/paths' , {
+    this.getData('' , {
       tb: tb,
       'verb':'inspect'
     }, d => { cb(d); });
   }
 
   static getChart(id, cb) {
-    this.getData('../v2/paths/' + id, {
+    this.getData('' + id, {
       id: id,
       'verb':'getChart'
     }, d => { cb(d); });
@@ -193,6 +194,7 @@ export default class Database {
   }
 
   static getMsPlaces(ms_where, cb) {
+
     const data = {
       "join": " JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id" +
               " JOIN `paths__m_msplaces` ON `paths__m_msplaces`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `paths__m_msplaces`.`place` ",
