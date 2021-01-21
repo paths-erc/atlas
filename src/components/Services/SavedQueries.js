@@ -51,7 +51,7 @@ export default {
       title: "Places where manuscrips used in funerary contexts have been found",
       url: 'places?verb=search&type=encoded',
       data: {
-        "q_encoded": btoa("`id` IN (24, 28, 74, 83, 174, 178, 274)")
+        "q_encoded": btoa("`id` IN (24, 27, 28, 74, 83, 178, 274)")
       }
     },
     // has_monasteries: {
