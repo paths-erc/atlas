@@ -1,7 +1,14 @@
 Curated by F. Berno and F. Valerio
 
-(Updated on 04/12/2019)
+(Updated on 21/01/2021
 
+- *Fragment of a Homily on the Virgin* \[[CLM 5304](manuscripts/5304)\]. Ref.: E. Porcher, *Analyse des manuscrits Coptes 131.1-8 de la Bibliothèque Nationale*, 1936, p. 103.
+- *Shenoute, Acephalous work A4* \[[CLM 695](manuscripts/695)\]. Ref.: S. Emmel, *Shenoute's Literary Corpus*, 2004, p. 690-691.
+- *Shenoute, Let Our Eyes* \[[CLM 695](manuscripts/695)\]. Ref.: S. Emmel, *Shenoute's Literary Corpus*, 2004, p. 680.
+- *Shenoute, Apocalyptic Vision* \[[CLM 1002](manuscripts/1002)\]. Ref.: S. Emmel, *Shenoute's Literary Corpus*, 2004, p. 903.
+- Hymnic Composition (fragment) \[[CLM 1023](manuscripts/1023)\]. Ref.: L.T. Lefort, *Fragments d'apocryphe en copte-akhmîmique*, 1939, pp. 1-7.
+- *Unidentified fragment* \[[CLM 5158](manuscripts/5158)\]
+- *Unidentified fragment* \[[CLM 1050](manuscripts/5158)\]. Ref.: W. Till, *Wiener Faijumica*, 1936, pp. 207-208.
 - *Apocryphal composition with biblical excerpts* \[[CLM 6568](manuscripts/6568)\].  Ref. Hasznos, in *Katalogisierung der Orientalischen Handschriften in Deutschland*
 - *Homily on God's Judgement* \[[CLM 823](manuscripts/823)\]. Ref.: B. Layton, *Catalogue of Coptic Literary Manuscripts in the British Library acquired since the year 1906*,  British Library, London 1987, pp. 207-208.
 - *Homily on the Devil* (frag.) \[[CLM 131](manuscripts/131), ff. 117-118 (*scriptio inferior*)\]. Ref.: A. van Lantschoot, “Un texte palimpseste de Vat. Copte 65”, *Le Muséon* 60 (1947), 261-268.
