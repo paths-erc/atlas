@@ -47,7 +47,7 @@ export default {
       title: "Places where manuscrips used in funerary contexts have been found",
       url: makeShortSql([
         '@places',
-        `?id|IN|(24, 28, 74, 83, 174, 178, 274)`,
+        `?id|IN|(24, 27, 28, 74, 83, 178, 274)`,
       ]),
       data: {}
     },
