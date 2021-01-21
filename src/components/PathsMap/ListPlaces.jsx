@@ -31,7 +31,7 @@ export default class ListPlaces extends Component {
                 }
 
                 {
-                  e.properties['count(mp.id_link)'] ?  <div className="text-right"><Badge color="secondary">{ e.properties['count(mp.id_link)'] } manuscripts related</Badge></div>  : null
+                  e.properties['tot_ms'] ?  <div className="text-right"><Badge color="secondary">{ e.properties['tot_ms'] } manuscripts related</Badge></div>  : null
                 }
 
                 <div><small><FontAwesomeIcon icon="id-badge" /> <Link to={ '/places/' + e.properties.id }>paths.places.{e.properties.id}</Link></small></div>
