@@ -169,27 +169,15 @@ export default class Database {
   }
 
   static getPlaces(where, cb) {
-    let data = {
-      "join": "JOIN paths__geodata as g ON g.table_link = 'paths__places' AND g.id_link = paths__places.id "
-      + " JOIN paths__m_toponyms as t ON t.table_link = 'paths__places' AND t.id_link = paths__places.id",
-      "fields[g.geometry]": "Geometry",
-      "fields[paths__places.id]": "Id",
-      "fields[paths__places.name]": "Name",
-      "fields[paths__places.pleiades]": "Pleiades Id",
-      "fields[paths__places.typology]": "Site typology",
-      "fields[GROUP_CONCAT(t.toponym)]": "Toponyms",
-      "group": "paths__places.id",
-      "limit_start": "0",
-      "limit_end": "500",
-      "q_encoded": btoa( ( where ? where.replace(/`id`/gi, '`paths__places`.`id`') : " 1" ))
-    };
-
-    this.getData(
-      'places?verb=search&geojson=true&type=encoded',
-      data,
-      d => {
-        cb( d );
-      }
+    // TODO: implement where
+    this.getData('?verb=search&geojson=true&shortsql='+
+      [
+        '@places',
+        '[geodata.geometry,id,name,pleiades,typology,{@m_toponyms~[toponym|group_concat~?table_link|=|paths__places||and|id_link|=|^places.id}:toponyms',
+        '-500:0'
+      ].join('~'),
+      {},
+      d => { cb( d ); }
     );
   }
 
