@@ -628,7 +628,8 @@ export default {
       url: makeShortSql([
         '@places',
         '[geodata.geometry,places.id,places.name,places.pleiades,places.typology,{!@m_msplaces~[id|count~?place|=|^places.id}:tot_ms',
-        '-500:0'
+        '-500:0',
+        '?tot_ms|>|^0'
       ]) + '&geojson=1',
       data: {}
     },
