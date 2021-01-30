@@ -141,10 +141,12 @@ export default {
     wandering_ms: {
       id: "wandering_ms",
       title: "“Wandering” manuscripts (for instance manufactured in a place but stored in another palace, etc.)",
-      url: 'manuscripts?verb=search&type=encoded',
-      data: {
-        "q_encoded": btoa("`id` IN ( SELECT `mp`.`id_link` FROM `paths__m_msplaces` as `mp` GROUP BY `mp`.`id_link` HAVING COUNT(DISTINCT `place`) > 1 )")
-      }
+      url: makeShortSql([
+        '@manuscripts',
+        `[paths__manuscripts.*,{@m_msplaces~[m_msplaces.place|count_distinct~?table_link|=|paths__manuscripts||and|id_link|=|^paths__manuscripts.id}:pl_ms`,
+        `?pl_ms|<|1`,
+      ]),
+      data: {}
     },
     ms_has_bindings: {
       id: "ms_has_bindings",
