@@ -1,9 +1,5 @@
 import React from 'react';
 
-import SqlModal from '../SqlModal/SqlModal';
-
-
-
 
 export default function PaginateResultSummary (props) {
 
@@ -16,7 +12,6 @@ export default function PaginateResultSummary (props) {
         Showing records <span className="badge badge-primary">
         { start_at } –  { up_to } </span> of <span className="badge badge-success">
         { props.totalRows }</span> records found
-        &nbsp;<SqlModal sql={props.query}/>
       </div>
     );
 }
