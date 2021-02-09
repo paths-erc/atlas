@@ -24,9 +24,7 @@ export default class SearchSimple extends Component {
   }
 
   _onFormSubmit(fld, val, strict){
-    const s = "f=" + encodeURIComponent(fld) +
-                  (strict ? "&s=1" : '')+
-                  "&v=" + encodeURIComponent(val);
+    const s = `f=${encodeURIComponent(fld)}${ (strict ? "&s=1" : '') }&v=${encodeURIComponent(val)}`;
 
     this.setState({
       fld: fld,
