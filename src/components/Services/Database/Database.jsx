@@ -86,19 +86,52 @@ export default class Database {
    * @param  {Function} cb   Callback function
    */
   static getAdv(tb, data, page, cb) {
-    let d = {
-      verb: 'search',
-      type: 'advanced',
-      page: page
-    };
+    let where = [];
     Object.entries(data).forEach(([k, v]) => {
-      d[`adv[${k}][fld]`] = v.f;
-      d[`adv[${k}][value]`] = v.v;
-      d[`adv[${k}][operator]`] = v.o;
-      d[`adv[${k}][connector]`] = v.c;
+      let wp = [];
+      switch(v.o){
+        case 'LIKE':
+          v.v = `%${v.v}%`;
+          break;
+        case 'starts_with':
+          v.o = 'LIKE';
+          v.v = `${v.v}%`;
+          break;
+        case 'ends_with':
+          v.o = 'LIKE';
+          v.v = `%${v.v}`;
+          break;
+        case 'is_empty':
+          v.o = 'is';
+          v.v = '^null';
+          v.c = 'or'
+          where.push(`${v.f.replace(':', '.')}|=|^`);
+          console.log(where);
+          break;
+        case 'is_not_empty':
+          v.o = 'is not';
+          v.v = '^null';
+          v.c = 'or'
+          where.push(`${v.f.replace(':', '.')}|!=|^`)
+          break;
+      }
+      if (v.c) {
+        wp.push(v.c);
+      }
+      wp.push(v.f.replace(':', '.'));
+      wp.push(v.o);
+      wp.push(v.v);
+      where.push(wp.join('|'));
+      console.log(where);
+
     });
 
-    this.getData(tb, d, d => { cb(d); }, true);
+    this.getData('', {
+        verb: 'search',
+        shortsql: `@${tb}~?${where.join('||')}`,
+        page: page
+      }, d => { cb(d); }
+    );
   }
 
   static getStr(tb, string, page, cb) {
