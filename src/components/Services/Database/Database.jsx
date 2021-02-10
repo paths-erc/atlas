@@ -72,7 +72,7 @@ export default class Database {
   static getSimple(tb, fld, val, strict, page, cb){
     const data = {
       verb: 'search',
-      shortsql: `@${tb}~?${fld.replace(':', '.')}|${ strict ? '=' : 'LIKE' }|${val}`,
+      shortsql: `@${tb}~?${fld.replace(':', '.')}|${ strict ? '=' : 'LIKE' }|${ strict ? val : `%${val}%`}`,
       page: page
     };
     this.getData('', data, d => { cb(d); }, true);
