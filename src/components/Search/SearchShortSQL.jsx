@@ -6,7 +6,7 @@ import SubHead from '../SubHead/SubHead';
 
 
 
-export default class SearchSimple extends Component {
+export default class SearchShortSQL extends Component {
 
 
   render() {
@@ -17,7 +17,7 @@ export default class SearchSimple extends Component {
         <SubHead tb={ this.props.match.params.table } text='Custom query' />
         <Results
             tb={this.props.match.params.table}
-            type="encoded"
+            type="shortsql"
             q={qstring.q}
             page={qstring.page}
             />

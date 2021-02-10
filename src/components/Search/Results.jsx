@@ -56,8 +56,12 @@ class Results extends Component {
           });
           break;
 
-        case 'encoded':
-          Database.getByEncodedSql(this.props.tb, this.props.q, this.props.page, d => {
+        case 'shortsql':
+          Database.getData('', {
+            verb: 'search',
+            shortsql: this.props.q,
+            page: this.props.page
+          }, d => {
             this.setState({
               result: d
             });

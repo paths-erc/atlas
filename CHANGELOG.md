@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Database and saved queries use BDUS4 API and ShortSQL
 - PluginShelfmarks changed to meet BDUS4 API data structure
 - UserLinks changed to meet BDUS4 API data structure
+- SearchEncoded replaced by SearchShortSQL
 
 ### Deprecated
 

@@ -143,15 +143,6 @@ export default class Database {
     }, d => { cb(d, 'Search [' + string + '] in ' + d.head.table_label); }, true);
   }
 
-  static getByEncodedSql(tb, sql, page, cb) {
-      this.getData(tb, {
-        verb: 'search',
-        type: 'encoded',
-        'q_encoded': sql,
-        page: page
-      }, d => { cb(d); }, true);
-  }
-
   static getAll(tb, page, cb) {
     this.getData('', {
       verb : 'search',
