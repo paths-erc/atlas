@@ -8,7 +8,7 @@ if (window.location.hostname === 'localhost'){
   baseUrl = 'http://bdus.localhost/';
 }
 
-baseUrl += 'api/v2/paths/';
+baseUrl += 'api/paths/';
 
 export default class Database {
 
