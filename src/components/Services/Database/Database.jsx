@@ -173,31 +173,19 @@ export default class Database {
     }, d => { cb(d); });
   }
 
-  static simplifyGeojson(gj) {
-    let newgj = {
-      type: "FeatureCollection",
-      features: [ ]
-    };
-    let currentId = false;
+  static getPlaces(shortsql, cb) {
+    let where = '1';
+    if (shortsql){
+      let where_arr = shortsql.split('?');
+      where_arr.shift();
+      where = encodeURIComponent(where_arr.join('?'));
+    }
 
-    Object.entries(gj.features).forEach( ([key, value]) => {
-      if (!currentId || currentId !== value.properties.id){
-        newgj.features.push(value);
-        currentId = value.properties.id;
-      }
-      if (currentId === value.properties.id){
-        newgj.features[newgj.features.length-1].properties.toponym += '|'+value.properties.toponym;
-      }
-    });
-    return newgj;
-  }
-
-  static getPlaces(where, cb) {
-    // TODO: implement where
     this.getData('?verb=search&geojson=true&shortsql='+
       [
         '@places',
         '[geodata.geometry,id,name,pleiades,typology,{@m_toponyms~[toponym|group_concat~?table_link|=|paths__places||and|id_link|=|^places.id}:toponyms',
+        `?${where}`,
         '-500:0'
       ].join('~'),
       {},
@@ -207,25 +195,15 @@ export default class Database {
 
   static getMsPlaces(ms_where, cb) {
 
-    const data = {
-      "join": " JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id" +
-              " JOIN `paths__m_msplaces` ON `paths__m_msplaces`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `paths__m_msplaces`.`place` ",
-      "fields[paths__geodata.geometry]": "Geometry",
-      "fields[paths__places.id]": "Id",
-      "fields[paths__places.name]": "Name",
-      "fields[paths__places.pleiades]": "Pleiades Id",
-      "fields[paths__places.typology]": "Site typology",
-      "fields[paths__m_msplaces.type]": "Place type",
-      "group": "paths__places.id",
-      "limit_start": "0",
-      "limit_end": "500",
-      "q_encoded": btoa(" `paths__m_msplaces`.`id_link` IN (SELECT `id` FROM `paths__manuscripts` WHERE " + ms_where + " )")
-    };
-    this.getData(
-      'geodata?verb=search&geojson=true&type=encoded',
-      data,
-      d => { cb(d) }
-    );
+    this.getData('', {
+      verb: 'search',
+      geojson: 1,
+      shortsql: [
+        '@places',
+        ']m_msplaces||paths__places.id|=|^m_msplaces.place',
+        `?m_msplaces.table_link|=|paths__manuscripts||and|m_msplaces.id_link|in|{@manuscripts~[id~?${ms_where}}~*places.id,places.name,places.pleiades,places.typology,geodata.geometry`
+      ].join('~')
+    }, d => cb(d) );
   }
 
 }
