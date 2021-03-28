@@ -2,7 +2,7 @@ import axios from 'axios';
 import SavedQueries from '../SavedQueries';
 
 
-let baseUrl = 'https://bdus.cloud/';
+let baseUrl = 'https://bdus.cloud/db/';
 
 if (window.location.hostname === 'localhost'){
   baseUrl = 'http://bdus.localhost/';
@@ -106,7 +106,6 @@ export default class Database {
           v.v = '^null';
           v.c = 'or'
           where.push(`${v.f.replace(':', '.')}|=|^`);
-          console.log(where);
           break;
         case 'is_not_empty':
           v.o = 'is not';
@@ -122,8 +121,6 @@ export default class Database {
       wp.push(v.o);
       wp.push(v.v);
       where.push(wp.join('|'));
-      console.log(where);
-
     });
 
     this.getData('', {
@@ -194,14 +191,18 @@ export default class Database {
   }
 
   static getMsPlaces(ms_where, cb) {
-
+    // Where is set only if a valid filter is provided.
+    let where = '';
+    if(ms_where !== '@manuscripts'){
+      where = `~?${ms_where}`;
+    }
     this.getData('', {
       verb: 'search',
       geojson: 1,
       shortsql: [
         '@places',
         ']m_msplaces||paths__places.id|=|^m_msplaces.place',
-        `?m_msplaces.table_link|=|paths__manuscripts||and|m_msplaces.id_link|in|{@manuscripts~[id~?${ms_where}}~*places.id,places.name,places.pleiades,places.typology,geodata.geometry`
+        `?m_msplaces.table_link|=|paths__manuscripts||and|m_msplaces.id_link|in|{@manuscripts~[id${where}}~*places.id,places.name,places.pleiades,places.typology,geodata.geometry`
       ].join('~')
     }, d => cb(d) );
   }
