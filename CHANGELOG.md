@@ -5,7 +5,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.0]
+## [2.0.0] - 2021-04-05
 ### Added
 - Added CHANGELOG.md
 
@@ -14,8 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PluginShelfmarks changed to meet BDUS4 API data structure
 - UserLinks changed to meet BDUS4 API data structure
 - SearchEncoded replaced by SearchShortSQL
-
-### Deprecated
 
 ### Removed
 - Removed, for security reasons, SqlModal from UI
