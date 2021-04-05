@@ -2,7 +2,7 @@ import axios from 'axios';
 import SavedQueries from '../SavedQueries';
 
 
-let baseUrl = 'https://db.bradypus.net/api/paths/';
+let baseUrl = 'https://v3.bdus.cloud/api/paths/';
 
 if (window.location.hostname === 'localhost'){
   baseUrl = 'http://db.localhost/api/paths/';
