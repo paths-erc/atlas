@@ -33,7 +33,7 @@ class UserLinks extends Component {
         <CardBody>
           <ListGroup>
             {
-              links.map(
+              Object.values(links).map(
                 (l, i) => {
                   return <ListGroupItem key={i} tag={Link} to={ this.makeHref(l.tb_stripped, l.ref_id) }>
                     <FontAwesomeIcon icon="external-link-square-alt" />  { l.tb_label } #{ l.ref_label ? l.ref_label : l.ref_id }

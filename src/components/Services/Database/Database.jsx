@@ -2,11 +2,13 @@ import axios from 'axios';
 import SavedQueries from '../SavedQueries';
 
 
-let baseUrl = 'https://v3.bdus.cloud/api/paths/';
+let baseUrl = 'https://bdus.cloud/db/';
 
 if (window.location.hostname === 'localhost'){
-  baseUrl = 'http://db.localhost/api/paths/';
+  baseUrl = 'http://bdus.localhost/';
 }
+
+baseUrl += 'api/paths/';
 
 export default class Database {
 
@@ -24,8 +26,7 @@ export default class Database {
     })
     .then(res => {
       if (res.data.type && res.data.type === 'error'){
-        console.log('API error:');
-        console.log(res.data.text);
+        console.log(`API error: ${res.data.text}`);
         return false;
       }
       callback(res.data);
@@ -44,7 +45,7 @@ export default class Database {
   }
 
   static getUniqueVal(tb, fld, string, cb) {
-    this.getData('../v2/paths/' + tb, {
+    this.getData('./' + tb, {
       verb: 'getUniqueVal',
       tb: tb.replace('paths__', ''),
       fld: fld,
@@ -71,13 +72,10 @@ export default class Database {
   static getSimple(tb, fld, val, strict, page, cb){
     const data = {
       verb: 'search',
-      type: 'advanced',
-      page: page,
-      'adv[a0][fld]': fld,
-      'adv[a0][operator]': strict ? '=' : 'LIKE',
-      'adv[a0][value]': val
+      shortsql: `@${tb}~?${fld.replace(':', '.')}|${ strict ? '=' : 'LIKE' }|${ strict ? val : `%${val}%`}`,
+      page: page
     };
-    this.getData(tb, data, d => { cb(d); }, true);
+    this.getData('', data, d => { cb(d); }, true);
   }
 
   /**
@@ -88,19 +86,49 @@ export default class Database {
    * @param  {Function} cb   Callback function
    */
   static getAdv(tb, data, page, cb) {
-    let d = {
-      verb: 'search',
-      type: 'advanced',
-      page: page
-    };
+    let where = [];
     Object.entries(data).forEach(([k, v]) => {
-      d[`adv[${k}][fld]`] = v.f;
-      d[`adv[${k}][value]`] = v.v;
-      d[`adv[${k}][operator]`] = v.o;
-      d[`adv[${k}][connector]`] = v.c;
+      let wp = [];
+      switch(v.o){
+        case 'LIKE':
+          v.v = `%${v.v}%`;
+          break;
+        case 'starts_with':
+          v.o = 'LIKE';
+          v.v = `${v.v}%`;
+          break;
+        case 'ends_with':
+          v.o = 'LIKE';
+          v.v = `%${v.v}`;
+          break;
+        case 'is_empty':
+          v.o = 'is';
+          v.v = '^null';
+          v.c = 'or'
+          where.push(`${v.f.replace(':', '.')}|=|^`);
+          break;
+        case 'is_not_empty':
+          v.o = 'is not';
+          v.v = '^null';
+          v.c = 'or'
+          where.push(`${v.f.replace(':', '.')}|!=|^`)
+          break;
+      }
+      if (v.c) {
+        wp.push(v.c);
+      }
+      wp.push(v.f.replace(':', '.'));
+      wp.push(v.o);
+      wp.push(v.v);
+      where.push(wp.join('|'));
     });
 
-    this.getData(tb, d, d => { cb(d); }, true);
+    this.getData('', {
+        verb: 'search',
+        shortsql: `@${tb}~?${where.join('||')}`,
+        page: page
+      }, d => { cb(d); }
+    );
   }
 
   static getStr(tb, string, page, cb) {
@@ -112,25 +140,16 @@ export default class Database {
     }, d => { cb(d, 'Search [' + string + '] in ' + d.head.table_label); }, true);
   }
 
-  static getByEncodedSql(tb, sql, page, cb) {
-      this.getData(tb, {
-        verb: 'search',
-        type: 'encoded',
-        'q_encoded': sql,
-        page: page
-      }, d => { cb(d); }, true);
-  }
-
   static getAll(tb, page, cb) {
-    this.getData(tb, {
+    this.getData('', {
       verb : 'search',
-      type: 'all',
+      shortsql: `@${tb}`,
       page: page
     }, d => { cb(d); });
   }
 
   static getOne(tb, id, cb) {
-    this.getData('../v2/paths', {
+    this.getData('', {
       tb: tb,
       verb : 'read',
       id : id
@@ -138,84 +157,54 @@ export default class Database {
   }
 
   static inspect(tb, cb) {
-    this.getData('../v2/paths' , {
+    this.getData('' , {
       tb: tb,
       'verb':'inspect'
     }, d => { cb(d); });
   }
 
   static getChart(id, cb) {
-    this.getData('../v2/paths/' + id, {
+    this.getData('' + id, {
       id: id,
       'verb':'getChart'
     }, d => { cb(d); });
   }
 
-  static simplifyGeojson(gj) {
-    let newgj = {
-      type: "FeatureCollection",
-      features: [ ]
-    };
-    let currentId = false;
+  static getPlaces(shortsql, cb) {
+    let where = '1';
+    if (shortsql){
+      let where_arr = shortsql.split('?');
+      where_arr.shift();
+      where = encodeURIComponent(where_arr.join('?'));
+    }
 
-    Object.entries(gj.features).forEach( ([key, value]) => {
-      if (!currentId || currentId !== value.properties.id){
-        newgj.features.push(value);
-        currentId = value.properties.id;
-      }
-      if (currentId === value.properties.id){
-        newgj.features[newgj.features.length-1].properties.toponym += '|'+value.properties.toponym;
-      }
-    });
-    return newgj;
-  }
-
-  static getPlaces(where, cb) {
-    console.log('run');
-    let data = {
-      "join": "JOIN paths__geodata as g ON g.table_link = 'paths__places' AND g.id_link = paths__places.id "
-      + " JOIN paths__m_toponyms as t ON t.table_link = 'paths__places' AND t.id_link = paths__places.id",
-      "fields[g.geometry]": "Geometry",
-      "fields[paths__places.id]": "Id",
-      "fields[paths__places.name]": "Name",
-      "fields[paths__places.pleiades]": "Pleiades Id",
-      "fields[paths__places.typology]": "Site typology",
-      "fields[GROUP_CONCAT(t.toponym)]": "Toponyms",
-      "group": "paths__places.id",
-      "limit_start": "0",
-      "limit_end": "500",
-      "q_encoded": btoa( ( where ? where.replace(/`id`/gi, '`paths__places`.`id`') : " 1" ))
-    };
-
-    this.getData(
-      'places?verb=search&geojson=true&type=encoded',
-      data,
-      d => {
-        cb( d );
-      }
+    this.getData('?verb=search&geojson=true&shortsql='+
+      [
+        '@places',
+        '[geodata.geometry,id,name,pleiades,typology,{@m_toponyms~[toponym|group_concat~?table_link|=|paths__places||and|id_link|=|^places.id}:toponyms',
+        `?${where}`,
+        '-500:0'
+      ].join('~'),
+      {},
+      d => { cb( d ); }
     );
   }
 
   static getMsPlaces(ms_where, cb) {
-    const data = {
-      "join": " JOIN paths__places ON paths__geodata.table_link = 'paths__places' AND paths__geodata.id_link = paths__places.id" +
-              " JOIN `paths__m_msplaces` ON `paths__m_msplaces`.`table_link`= 'paths__manuscripts' AND `paths__places`.`id` = `paths__m_msplaces`.`place` ",
-      "fields[paths__geodata.geometry]": "Geometry",
-      "fields[paths__places.id]": "Id",
-      "fields[paths__places.name]": "Name",
-      "fields[paths__places.pleiades]": "Pleiades Id",
-      "fields[paths__places.typology]": "Site typology",
-      "fields[paths__m_msplaces.type]": "Place type",
-      "group": "paths__places.id",
-      "limit_start": "0",
-      "limit_end": "500",
-      "q_encoded": btoa(" `paths__m_msplaces`.`id_link` IN (SELECT `id` FROM `paths__manuscripts` WHERE " + ms_where + " )")
-    };
-    this.getData(
-      'geodata?verb=search&geojson=true&type=encoded',
-      data,
-      d => { cb(d) }
-    );
+    // Where is set only if a valid filter is provided.
+    let where = '';
+    if(ms_where !== '@manuscripts'){
+      where = `~?${ms_where}`;
+    }
+    this.getData('', {
+      verb: 'search',
+      geojson: 1,
+      shortsql: [
+        '@places',
+        ']m_msplaces||paths__places.id|=|^m_msplaces.place',
+        `?m_msplaces.table_link|=|paths__manuscripts||and|m_msplaces.id_link|in|{@manuscripts~[id${where}}~*places.id,places.name,places.pleiades,places.typology,geodata.geometry`
+      ].join('~')
+    }, d => cb(d) );
   }
 
 }

@@ -51,7 +51,7 @@ export default class PluginShelfmarks extends Component {
           <CardBody>
             <ul>
             {
-              this.props.data.data.map( (d, di) =>{
+              Object.values(this.props.data.data).map( (d, di) =>{
                 return (
                   <li key={di}>
                     <Button style={{margin: '0 0 4px 0', padding: 0}} color="link" onClick={ () => this.toggle(d) }>

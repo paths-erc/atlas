@@ -15,7 +15,7 @@ import PathsMap from './components/PathsMap/PathsMap';
 import SearchSaved from './components/Search/SearchSaved';
 import SearchSimple from './components/Search/SearchSimple';
 import SearchAdv from './components/Search/SearchAdv';
-import SearchEncoded from './components/Search/SearchEncoded';
+import SearchShortSQL from './components/Search/SearchShortSQL';
 import SearchAll from './components/Search/SearchAll';
 
 import Intro from './components/Intro/Intro';
@@ -78,7 +78,7 @@ export default function App () {
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/saved' component={SearchSaved} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/all' component={SearchAll} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/adv' component={SearchAdv} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/encoded' component={SearchEncoded} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/shortsql' component={SearchShortSQL} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchSimple} />
 
             <Route exact path='/charts/:id?' component={Charts} />

@@ -7,7 +7,7 @@ import PreviewModal from './PreviewModal';
 export default class Files extends Component {
 
   render() {
-    let files = this.props.files || [];
+    let files = Object.values(this.props.files) || [];
 
     files = files.map( f => {
       if (['jpg', 'png', 'gif', 'tif', 'tiff', 'jpeg'].includes(f.ext.toLowerCase())){

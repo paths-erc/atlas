@@ -33,7 +33,7 @@ class Plugin extends Component {
         <Card className="mt-2">
           <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
           {
-            this.props.data.data.map( (d, di) =>{
+            Object.values(this.props.data.data).map ( (d, di) =>{
               return (<CardBody key={di} className="border border-info mb-2">{
                 /**
                  * Fields listed in Cfg.hidden and sort fields are not shown

@@ -14,8 +14,8 @@ class RecordLinks extends Component {
       '/',
       strippedTb,
       '/',
-      'encoded',
-      '?q=' + window.btoa('SELECT * FROM ' + table + ' WHERE ' + query)
+      'shortsql',
+      `?q=@${table}~?${query}`
     ];
 
     return url.join('');

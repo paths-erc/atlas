@@ -11,14 +11,14 @@ const { BaseLayer } = LayersControl;
 
 export default function MiniMap(props) {
 
-  const geom = props.geom;
+  const geom_arr = props.geom ? Object.values(props.geom) : false;
   const id = props.id;
   
-  if (geom.length < 1) {
+  if (!geom_arr || geom_arr.length < 1) {
     return null;
   }
 
-  const position = JSON.parse(geom[0].geojson).coordinates.reverse();
+  const position = JSON.parse(geom_arr[0].geojson).coordinates.reverse();
 
   return (
     <div style={{ height: '300px', width: '100%'}} className="mb-5">
@@ -48,7 +48,7 @@ export default function MiniMap(props) {
           <SiteMaps siteId={id} />
 
           {
-            geom.map( (e, i) => {
+            geom_arr.map( (e, i) => {
               const coord = JSON.parse(e.geojson).coordinates.reverse();
               return <Marker position={ coord } key={ i }>
                 <Popup>

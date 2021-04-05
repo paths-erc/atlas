@@ -15,12 +15,26 @@ class ItemPreviewWrapper extends Component {
 class ItemPreview extends Component {
 
   render() {
-
+    /**
+     * Object containing data, key (column name): value 
+     */
     const el = this.props.record;
+    /**
+     * Full field name: table_name:fld_name
+     */
     const flds = this.props.fields;
-    const tb = this.props.tb;
 
+    /**
+     * Current table name, with no prefix
+     */
+    const tb = this.props.tb;
+    /**
+     * Array of preview fields, no table, no prefix
+     */
     const preview_flds = this.props.previewFlds;
+    /**
+     * Id field for tabel, no table, no prefix
+     */
     const id_field = this.props.idField;
 
     return (

@@ -49,17 +49,13 @@ export default function FixedNavbar(props) {
 
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="http://paths.uniroma1.it">
-                    Website
-                  </NavLink>
+                  <NavLink href="http://paths.uniroma1.it">Website</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/cite" tag={RRNavLink}>
-                    How to cite PAThs</NavLink>
+                  <NavLink to="/cite" tag={RRNavLink}>How to cite PAThs</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/api" tag={RRNavLink}>
-                    API</NavLink>
+                  <NavLink to="/api" tag={RRNavLink}>API</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

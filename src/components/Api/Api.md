@@ -36,9 +36,9 @@ Please refer to the GitHub hosted version`**
 Semantic data for **Places** are also available as live web services
 in the following formats:
 
-- [Turtle](https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=turtle)
-- [JSON](https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=json)
-- [N-Triples](https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=ntriples)
-- [RDF/XML](https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=rdfxml)
-- [Graphviz Dot](https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=dot)
-- [N3](https://db.bradypus.net/api/paths/places?verb=search&type=encoded&q_encoded=MSBMSU1JVCAwLCA1MDA=&fullRecords=true&format=n3)
+- [Turtle](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=turtle)
+- [JSON](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=json)
+- [N-Triples](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=ntriples)
+- [RDF/XML](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=rdfxml)
+- [Graphviz Dot](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=dot)
+- [N3](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=n3)

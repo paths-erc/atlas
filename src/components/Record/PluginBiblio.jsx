@@ -13,14 +13,17 @@ export default class PluginBiblio extends Component {
 
   render() {
 
+    const data = this.props.data.data;
+    const metadata = this.props.data.metadata;
+
     return (
       <div className="plugins">
 
         <Card className="mt-2">
-          <CardHeader><h5>{ this.props.data.metadata.tb_label }</h5></CardHeader>
+          <CardHeader><h5>{ metadata.tb_label }</h5></CardHeader>
           <CardBody>
           {
-            this.props.data.data.map( (d, di) =>{
+            Object.values(data).map( (d, di) =>{
               return (
                 <span key={di} className="mr-3">
                   { showLink(d.zotero.val, d.short.val) }

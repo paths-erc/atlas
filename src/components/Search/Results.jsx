@@ -56,8 +56,12 @@ class Results extends Component {
           });
           break;
 
-        case 'encoded':
-          Database.getByEncodedSql(this.props.tb, this.props.q, this.props.page, d => {
+        case 'shortsql':
+          Database.getData('', {
+            verb: 'search',
+            shortsql: this.props.q,
+            page: this.props.page
+          }, d => {
             this.setState({
               result: d
             });
@@ -147,9 +151,7 @@ class Results extends Component {
 
             <OpenInMap
                 tb={this.state.result.head.stripped_table}
-                where={this.state.result.head.query_where}
-                type={this.props.match.params.type}
-                search={ qs.parse(this.props.location.search, {ignoreQueryPrefix: true}) }
+                shortsql={this.state.result.head.shortsql}
                 />
 
             <PaginateResultSummary
