@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2021-04-09
+### Fixed
+- Fixed issue with bibliographic records showing id not label for `short` field
+
 ## [2.0.0] - 2021-04-05
 ### Added
 - Added CHANGELOG.md
