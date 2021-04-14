@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2021-04-14
+### Fixed
+- Fixed issue id_link and table_link being printed
+
 ## [2.0.1] - 2021-04-09
 ### Fixed
 - Fixed issue with bibliographic records showing id not label for `short` field

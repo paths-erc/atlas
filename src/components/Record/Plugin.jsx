@@ -43,6 +43,10 @@ class Plugin extends Component {
                       Cfg.hidden.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1
                       ||
                       f === 'sort'
+                      ||
+                      f === 'table_link'
+                      ||
+                      f === 'id_link'
                       ){
                       return null;
                     }
