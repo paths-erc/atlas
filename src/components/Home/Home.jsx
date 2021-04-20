@@ -75,6 +75,16 @@ export default function Home(){
        </div>
        <div className="container">
          <div className="my-5 px-5">
+        <div class="border border-danger p-5">
+         <h1>Maintainance notice</h1>
+         <p>We inform all users of PAThs database and online Atlas that starting 
+           from <strong>Friday, April 23<sup>rd</sup> 2021, 14:00</strong>, until <strong>Friday, April 30<sup>th</sup> 2021, 18:00</strong>,
+           the <a href="https://garr.it/" target="_blank" rel="">GARR</a> datacenter where PAThs digital resources are hosted will 
+           be shut down due to maintenance of the systems in the server room.</p>
+           <p>Real time updates are available on <a href="https://twitter.com/hashtag/bdusdown">Twitter #bdusdown</a></p>
+           <p>We apologise for the inconvenience.</p>
+           <p class="text-right">— PAThs team</p>
+          </div>
 
            { showContentAndToc() }
          </div>
