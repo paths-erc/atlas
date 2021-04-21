@@ -35,7 +35,8 @@ export default {
       "biblio.editors",
       "m_quires.id",
       "m_hands.id",
-      "m_placephase.id"
+      "m_placephase.id",
+      "m_msplaces.id"
     ],
     "id_fld": {
       "manuscripts": "id",
