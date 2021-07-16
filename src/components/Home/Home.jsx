@@ -4,6 +4,7 @@ import imgPathsLogo from './paths-logo.png';
 
 import ReactMarkdownPath from '../ReactMarkdownPath/ReactMarkdownPath';
 import intro from './IntroMd.md';
+import latest from './Latest.md';
 import logo from './LogoMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
@@ -11,6 +12,11 @@ import license from './license.md';
 
 export default function Home(){
    const titles = [
+     {
+       id    : 'latest',
+       title : "PAThs scientific results recently achieved",
+       path  : latest
+     },
      {
        id    : 'intro',
        title : "Introduction",
