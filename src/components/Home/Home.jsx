@@ -15,7 +15,13 @@ export default function Home(){
      {
        id    : 'latest',
        title : "PAThs scientific results recently achieved",
-       path  : latest
+       path  : latest,
+       style : {
+         color: '#42429b',
+         fontSize: '.9rem',
+         backgroundColor: '#f7f7ff',
+         padding: '2rem'
+       }
      },
      {
        id    : 'intro',
@@ -62,7 +68,7 @@ export default function Home(){
          </div>
          { titles.map( (k, i) =>{
            return (
-             <div key={i} className="text-justify">
+             <div key={i} className="text-justify" style={k.style}>
                <h1 id={ k.id } className="mt-5">{ k.title }</h1>
                <ReactMarkdownPath path={k.path} />
              </div>
