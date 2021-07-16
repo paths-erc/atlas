@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.4f87abe8.chunk.css",
-    "main.js": "/static/js/main.7a39f239.chunk.js",
-    "main.js.map": "/static/js/main.7a39f239.chunk.js.map",
+    "main.js": "/static/js/main.040845cd.chunk.js",
+    "main.js.map": "/static/js/main.040845cd.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6d600faf.js",
     "runtime-main.js.map": "/static/js/runtime-main.6d600faf.js.map",
     "static/css/2.50ebcad5.chunk.css": "/static/css/2.50ebcad5.chunk.css",
@@ -16,7 +16,7 @@
     "static/media/Api.8f01dbe1.md": "/static/media/Api.8f01dbe1.md",
     "static/media/Cite.a0d89a54.md": "/static/media/Cite.a0d89a54.md",
     "static/media/IntroMd.ed4eaa26.md": "/static/media/IntroMd.ed4eaa26.md",
-    "static/media/Latest.ec98fb4d.md": "/static/media/Latest.ec98fb4d.md",
+    "static/media/Latest.9196c954.md": "/static/media/Latest.9196c954.md",
     "static/media/LogoMd.0bd1fd06.md": "/static/media/LogoMd.0bd1fd06.md",
     "static/media/MissionStatementMd.4db2c7d3.md": "/static/media/MissionStatementMd.4db2c7d3.md",
     "static/media/Ripple-1.7s-200px.ec9bf62a.svg": "/static/media/Ripple-1.7s-200px.ec9bf62a.svg",
@@ -48,6 +48,6 @@
     "static/css/2.50ebcad5.chunk.css",
     "static/js/2.d977768e.chunk.js",
     "static/css/main.4f87abe8.chunk.css",
-    "static/js/main.7a39f239.chunk.js"
+    "static/js/main.040845cd.chunk.js"
   ]
 }
