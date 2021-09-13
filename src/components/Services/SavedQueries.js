@@ -512,7 +512,7 @@ export default {
       data: {}
     },
     original_lit_later_hag: {
-      id: "original_lit_early_hag",
+      id: "original_lit_later_hag",
       title: "Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)",
       url: makeShortSql([
         '@works',
