@@ -22,7 +22,6 @@ The Acts of Pantoleon and the Martyrdom of St Cornelius”, *Journal of Coptic S
 - *Life of Macarius of Alexandria* (Historia Lausiaca 18) [CLM 160](manuscripts/160). Ref.: A. de Vogüé, “Le texte copte du chapitre XVIII de l’Histoire Lausiaque. L’édition d’Amélineau et le manuscrit”, *Orientalia* 61.4 (1992), 459-462.
 - *Historical narrative* [CLM 3837](manuscripts/3837). Ref.: W.E. Crum, “A Coptic Palimpsest: I, Prayer of the Virgin in ‘Bastos’; II, Fragment of a Patriarchal History”, *Proceedings of the Society of Biblical Archaeology* 19 (1897), 210-222.
 - *De angelo* [[CLM 92](manuscripts/92), f. 167r-v]. Ref.: A. Hebbelynck - A. van Lantschoot, *Codices Coptici*, p. 411.
-- *On Dioscorus* [CLM 6517](manuscripts/6517). Ref.: W.H.P. Hatch, “A Fragment of a Lost Work on Dioscorus”, *Harvard Theological Review* 19 (1926), 377-381.
 - Unidentified [[CLM 129](manuscripts/129), f. 1r]. Ref.: A. Hebbelynck - A. van Lantschoot, *Codices Coptici*, p. 467; A. van Lantschoot, “Un texte palimpseste de Vat. Copte 65”, p. 262.
 - *Apocryphal Fragment on Adam* [CLM 3986](manuscripts/3986). Ref.: E. White, *The Monasteries of the Wadi ‘n Natrûn, I: New Coptic Texts from the Monastery of Saint Macarius*, New York 1926, no. I.
 - *Fragment from an Apocryphal Gospel* [CLM 3987](manuscripts/3987). Ref.: White, The *Monasteries*, no. III.
