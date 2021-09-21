@@ -286,39 +286,39 @@ export default {
     
   },
   works: {
-    translations_biblical_sahidic: {
-      id: "translations_biblical_sahidic",
-      title: "Translations of biblical works into Sahidic - first phase (3rd-4th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translations of biblical works into Sahidic - first phase (3rd-4th cent.)`,
-      ]),
-      data: {}
-    },
-    translations_biblical_bohairic: {
-      id: "translations_biblical_bohairic",
-      title: "Translations of biblical works into Bohairic - first phase (4th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translations of biblical works into Bohairic - first phase (4th cent.)`,
-      ]),
-      data: {}
-    },
-    early_translations_other: {
-      id: "early_translations_other",
-      title: "Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)`,
-      ]),
-      data: {}
-    },
+    // translations_biblical_sahidic: {
+    //   id: "translations_biblical_sahidic",
+    //   title: "Translations of biblical works into Sahidic - first phase (3rd-4th cent.)",
+    //   url: makeShortSql([
+    //     '@works',
+    //     `?litperiod|=|Translations of biblical works into Sahidic - first phase (3rd-4th cent.)`,
+    //   ]),
+    //   data: {}
+    // },
+    // translations_biblical_bohairic: {
+    //   id: "translations_biblical_bohairic",
+    //   title: "Translations of biblical works into Bohairic - first phase (4th cent.)",
+    //   url: makeShortSql([
+    //     '@works',
+    //     `?litperiod|=|Translations of biblical works into Bohairic - first phase (4th cent.)`,
+    //   ]),
+    //   data: {}
+    // },
+    // early_translations_other: {
+    //   id: "early_translations_other",
+    //   title: "Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)",
+    //   url: makeShortSql([
+    //     '@works',
+    //     `?litperiod|=|Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)`,
+    //   ]),
+    //   data: {}
+    // },
     translations_apocryphal: {
       id: "translations_apocryphal",
-      title: "Translations of apocryphal works – first phase (4th cent.)",
+      title: "Early translations of apocryphal works – first phase (4th cent.)",
       url: makeShortSql([
         '@works',
-        `?litperiod|=|Translations of apocryphal works – first phase (4th cent.)`,
+        `?litperiod|=|Tarly translations of apocryphal works – first phase (4th cent.)`,
       ]),
       data: {}
     },
@@ -342,10 +342,10 @@ export default {
     },
     translations_patristic: {
       id: "translations_patristic",
-      title: "Translation of patristic works – first phase (3th-5th cent.)",
+      title: "Early translation of patristic works – first phase (3th-5th cent.)",
       url: makeShortSql([
         '@works',
-        `?litperiod|=|Translation of patristic works – first phase (3th-5th cent.)`,
+        `?litperiod|=|Early translation of patristic works – first phase (3th-5th cent.)`,
       ]),
       data: {}
     },
@@ -367,15 +367,15 @@ export default {
       ]),
       data: {}
     },
-    standard_translations: {
-      id: "standard_translations",
-      title: "“Standard” translations of biblical works into Sahidic (5th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|“Standard” translations of biblical works into Sahidic (5th cent.)`,
-      ]),
-      data: {}
-    },
+    // standard_translations: {
+    //   id: "standard_translations",
+    //   title: "“Standard” translations of biblical works into Sahidic (5th cent.)",
+    //   url: makeShortSql([
+    //     '@works',
+    //     `?litperiod|=|“Standard” translations of biblical works into Sahidic (5th cent.)`,
+    //   ]),
+    //   data: {}
+    // },
     translations_apocryphal_second: {
       id: "translations_apocryphal_second",
       title: "Translations of apocryphal texts – second phase (4th-5th cent.)",
@@ -502,15 +502,15 @@ export default {
       ]),
       data: {}
     },
-    standard_translations_in_bohairic: {
-      id: "standard_translations_in_bohairic",
-      title: "“Standard” translations of biblical works into Bohairic (7th-8th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|“Standard” translations of biblical works into Bohairic (7th-8th cent.)`,
-      ]),
-      data: {}
-    },
+    // standard_translations_in_bohairic: {
+    //   id: "standard_translations_in_bohairic",
+    //   title: "“Standard” translations of biblical works into Bohairic (7th-8th cent.)",
+    //   url: makeShortSql([
+    //     '@works',
+    //     `?litperiod|=|“Standard” translations of biblical works into Bohairic (7th-8th cent.)`,
+    //   ]),
+    //   data: {}
+    // },
     original_lit_later_hag: {
       id: "original_lit_later_hag",
       title: "Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)",
@@ -520,15 +520,15 @@ export default {
       ]),
       data: {}
     },
-    synaxarial: {
-      id: "synaxarial",
-      title: "Synaxarial arrangement (9th-10th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Synaxarial arrangement (9th-10th cent.)`,
-      ]),
-      data: {}
-    },
+    // synaxarial: {
+    //   id: "synaxarial",
+    //   title: "Synaxarial arrangement (9th-10th cent.)",
+    //   url: makeShortSql([
+    //     '@works',
+    //     `?litperiod|=|Synaxarial arrangement (9th-10th cent.)`,
+    //   ]),
+    //   data: {}
+    // },
     late_liturgical: {
       id: "late_liturgical",
       title: "Late liturgical production (10th-14th cent.)",

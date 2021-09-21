@@ -5,6 +5,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.7] - 2021-09-21
+### Fixed
+- Fix of litperiods in Saved Queries of Works sesction
+
+## [2.0.6] - 2021-00-13
+### Fixed
+- Fixed type in saved queries
+
+## [2.0.5] - 2021-07-16
+### Fixed
+- Changed color of latest news
+
+## [2.0.4] - 2021-04-14
+### Fixed
+- Fixed issue id_link and table_link being printed
+
+## [2.0.3] - 2021-04-14
+### Fixed
+- Fixed issue id_link and table_link being printed
+
 ## [2.0.2] - 2021-04-14
 ### Fixed
 - Fixed issue id_link and table_link being printed
