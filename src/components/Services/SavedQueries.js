@@ -318,7 +318,7 @@ export default {
       title: "Early translations of apocryphal works – first phase (4th cent.)",
       url: makeShortSql([
         '@works',
-        `?litperiod|=|Tarly translations of apocryphal works – first phase (4th cent.)`,
+        `?litperiod|=|Early translations of apocryphal works – first phase (4th cent.)`,
       ]),
       data: {}
     },

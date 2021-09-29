@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.8] - 2021-09-29
+### Fixed
+- Typo fix in search queries
+
 ## [2.0.7] - 2021-09-21
 ### Fixed
 - Fix of litperiods in Saved Queries of Works sesction
