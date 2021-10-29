@@ -21,7 +21,7 @@
     "leaflet": "^1.7.1",
     "object-hash": "^2.2.0",
     "prop-types": "^15.7.2",
-    "qs": "^6.9.4",
+    "qs": "^6.10.1",
     "quirematrix": "^1.2.0",
     "react": "^17.0.1",
     "react-bootstrap-typeahead": "^5.1.2",
