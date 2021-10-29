@@ -12,10 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated @fortawesome/fontawesome-svg-core from v1.2.32 to v1.2.36
 - Updated @fortawesome/free-brands-svg-icons from v5.15.1 to v5.15.4
 - Updated @fortawesome/free-solid-svg-icons from v5.15.1 to v5.15.4
-- Updated @fortawesome/react-fontawesome from v0.1.14 to 0.1.16
-- Updated axios from v0.21.1 to 0.24.0
-- Updated detect-browser from v5.2.0 to 5.2.1
-- Updated gh-pages from v3.1.0 to 3.2.3
+- Updated @fortawesome/react-fontawesome from v0.1.14 to v0.1.16
+- Updated axios from v0.21.1 to v0.24.0
+- Updated detect-browser from v5.2.0 to v5.2.1
+- Updated gh-pages from v3.1.0 to v3.2.3
+- Updated object-hash from v2.1.1 to v2.2.0
 
 ## [2.0.8] - 2021-09-29
 ### Fixed
