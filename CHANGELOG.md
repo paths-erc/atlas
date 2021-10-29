@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added new manuscript fields for Bindings
 - Updated @fortawesome/fontawesome-free from v5.15.1 to v5.15.4
 - Updated @fortawesome/fontawesome-svg-core from v1.2.32 to v1.2.36
+- Updated @fortawesome/free-brands-svg-icons from v5.15.1 to v5.15.4
 
 ## [2.0.8] - 2021-09-29
 ### Fixed
