@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated gh-pages from v3.1.0 to v3.2.3
 - Updated object-hash from v2.1.1 to v2.2.0
 - Updated qs from v6.9.4 to v6.10.1
+- Updated react-nl2br from v1.0.1 to v1.0.2
 
 ## [2.0.8] - 2021-09-29
 ### Fixed
