@@ -89,6 +89,7 @@ export default class ManuscriptBody extends Component {
         <FieldSet fields={[ rec.core.quirenotes ]} />
 
         <FieldSet legend="Quire signature" fields={[
+          rec.core.quirenotes,
           rec.core.quiresig,
           rec.core.quiretype,
           rec.core.quireposition,
@@ -147,13 +148,35 @@ export default class ManuscriptBody extends Component {
 
         <FieldSet legend="Binding" fields={[
           rec.core.bindings,
-          rec.core.covers,
-          rec.core.coversnotes,
+          rec.core.bindformer,
+          rec.core.boardw,
+          rec.core.boardh,
+          rec.core.boardt,
+          rec.core.spinew,
+          rec.core.boarddimnotes,
           rec.core.sewings,
           rec.core.sewingtype,
-          rec.core.holesno,
-          rec.core.holesarrangement,
-          rec.core.holesnotes
+          rec.core.sewingstationsno,
+          rec.core.foldpattern,
+          rec.core.sewingnotes,
+          rec.core.boardmat,
+          rec.core.boardfeatures,
+          rec.core.boardattachment,
+          rec.core.boardnotes,
+          rec.core.covers,
+          rec.core.covermat,
+          rec.core.turnins,
+          rec.core.mitres,
+          rec.core.foreedgeflap,
+          rec.core.coverdecoration,
+          rec.core.covernotes,
+          rec.core.splinelining,
+          rec.core.endbandtype,
+          rec.core.endbandnotes,
+          rec.core.fasteningtype,
+          rec.core.fasteningnotes,
+          rec.core.othertiesposition,
+          rec.core.othertiesnotes
         ]} />
 
 

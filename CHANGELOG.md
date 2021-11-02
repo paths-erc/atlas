@@ -5,7 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.1.0] - 2021-09-29
+## [2.1.1] - 2021-11-02
+### Fixes
+- Fixed issue with manuscript template returning error
+
+## [2.1.0] - 2021-10-29
 ### Changed
 - Added new manuscript fields for Bindings
 - Updated @fortawesome/fontawesome-free from v5.15.1 to v5.15.4
