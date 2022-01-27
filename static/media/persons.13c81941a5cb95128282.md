@@ -1,0 +1,7 @@
+This section of the PAThs database contains a thorough description of each person mentioned in the colophons.
+
+Each entry, endowed with an ID number, contains a normalized form of the known onomastic and identifying information (name, patronymic, mention of carnal or spiritual relatives, ethnic, mention of the declared profession or rank, wherever specified), while the original onomastic form occurring in the text is reported in the specific area “Other name or attestations” both in the original language (Coptic / Greek / Arabic) and in its Latin transliteration. 
+
+The field “Type” defines the role played by the person: mainly copyist or donor, commemorated person or a simple reader of the manuscript who left a notation, as well as other roles such as restorer, deliverer, sponsor, founder and eponym, that is to say the monastic authority during whose headship (Copt. <span class="coptic">ϩⲛ̄ⲛⲉϩⲟⲟⲩ ⲛ̄-</span>) the manuscript preserving the colophon was acquired by the institution. 
+
+The record is completed by information about the gender, the possibly expressed affiliation to any religious institution, the chronological range during which the person is attested. A link to the edition of the text allows a prompt insight into the context of the occurrence.      
