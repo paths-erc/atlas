@@ -1,10 +1,10 @@
-**Last updated on July 2021**
+**Last updated on January 2022**
 
 The following are some of the main results achieved by the PAThs project in the last year.
 
 #### Manuscripts: codicological units and bookbindings
 
-Almost completed the codicological description of the Vatican collection of liturgical/homiletic manuscripts from the Monastery of San Macarius (Vat. copt. 57-69, autoptic analysis), and that of the Manichaean codices from Medinet Madi.
+Completed the codicological description of the Vatican collection of liturgical/homiletic manuscripts from the Monastery of San Macarius (Vat. copt. 57-69, autoptic analysis), and that of the Manichaean codices from Medinet Madi.
 
 Almost completed the codicological description of the so-called “Edfu Collection” and the Vatican Borg. copt. collection (autoptic analysis).
 
@@ -13,7 +13,7 @@ Several bookbindings described in the “Manuscripts” section. Unfortunately, 
 
 #### Authors and Works
 
-Biographical accounts and lists of the related Coptic and Greek works, with brief discussions of the most relevant ongoing issues, are now available for about 75% of the [Coptic ‘authors’ recorded by PAThs](search/authors/all).
+Biographical accounts and lists of the related Coptic and Greek works, with brief discussions of the most relevant ongoing issues, are now available for about 80% of the [Coptic ‘authors’ recorded by PAThs](search/authors/all).
 
 
 #### Colophons and Persons (attested in colophons)
