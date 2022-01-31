@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.760670d5.css",
-    "main.js": "/static/js/main.5be8f8ff.js",
+    "main.js": "/static/js/main.010589e2.js",
     "static/media/Antinoou.ttf": "/static/media/Antinoou.511b6d96e1144a3f680d.ttf",
     "static/media/colophons.jpg": "/static/media/colophons.7e23657b297750a0ddef.jpg",
     "static/media/works.jpg": "/static/media/works.c6227c93d71d09d43117.jpg",
@@ -21,8 +21,8 @@
     "static/media/works.md": "/static/media/works.1287edb22774e59d8868.md",
     "static/media/IntroMd.md": "/static/media/IntroMd.ed4eaa26207fc22b502b.md",
     "static/media/places.md": "/static/media/places.2f644bcff1efd32d875d.md",
-    "static/media/Latest.md": "/static/media/Latest.47eb9363ed53f0f5dd31.md",
     "static/media/titles.md": "/static/media/titles.f28094ccec2b6f8fae9a.md",
+    "static/media/Latest.md": "/static/media/Latest.b6f48960a9d54255aac5.md",
     "static/media/Api.md": "/static/media/Api.8f01dbe13d02584a28ee.md",
     "index.html": "/index.html",
     "static/media/authors.md": "/static/media/authors.00655ea7c9078f676d36.md",
@@ -34,10 +34,10 @@
     "static/media/LogoMd.md": "/static/media/LogoMd.0bd1fd06109b64b96ccf.md",
     "static/media/collections.md": "/static/media/collections.c3d31f1dbe643b54af06.md",
     "main.760670d5.css.map": "/static/css/main.760670d5.css.map",
-    "main.5be8f8ff.js.map": "/static/js/main.5be8f8ff.js.map"
+    "main.010589e2.js.map": "/static/js/main.010589e2.js.map"
   },
   "entrypoints": [
     "static/css/main.760670d5.css",
-    "static/js/main.5be8f8ff.js"
+    "static/js/main.010589e2.js"
   ]
 }
