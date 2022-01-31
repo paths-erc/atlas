@@ -18,7 +18,7 @@ Biographical accounts and lists of the related Coptic and Greek works, with brie
 
 #### Colophons and Persons (attested in colophons)
 
-Several freshly created entries devoted to important historical figures of mediaeval Christian Egypt attested in colophons: for instance, that of [John VI](persons/163) the seventy-fourth patriarch of the See of Saint Mark (1189-1216), or that of [Matthew I](persons/171), eighty-seventh patriarch (1378-1409), as well as that of a prominent Christian personality of Ayyūbid Egypt (A.H. 565-648 / A.D. 1169-1250), [Al-Amǧad Abū Al-Maǧd ibn Al-‘Assal](persons/182): he was secretary of the dīwān of the army and belonged to the renowned Awlād al-‘Assal, the Coptic family native from the village of Sadamant, which played a prevalent role in late Coptic culture.
+Corpus of colophons completely revised and integrated with new texts; list of persons extended to more typological categories (Marta Addessi).
 
 
 #### Titles

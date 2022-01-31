@@ -5,6 +5,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.1] - 2022-01-31
+### Fixes
+- Updated presentantion content
+
+## [2.2.0] - 2022-01-27
+### Fixes
+- Updated presentantion content
+
+### Changed
+- Updated ReactMarkdown
+
+
 ## [2.1.1] - 2021-11-02
 ### Fixes
 - Fixed issue with manuscript template returning error
