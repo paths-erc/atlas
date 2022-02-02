@@ -8,7 +8,7 @@ Completed the codicological description of the Vatican collection of liturgical/
 
 Almost completed the codicological description of the so-called “Edfu Collection” and the Vatican Borg. copt. collection (autoptic analysis).
 
-Several bookbindings described in the “Manuscripts” section. Unfortunately, latest reports confirm that some of the known bindings have been lost ([CLM 686](manuscripts/686), [CLM 6501](manuscripts/6501), [CLM 6502](manuscripts/6502), [CLM 6503](manuscripts/6503), [CLM 6504](manuscripts/6504), [CLM 6508](manuscripts/6508), [CLM 6509](manuscripts/6509)), but more previously unknown bindings have surfaced at the Chester Beatty Library.
+New protocol for bookbinding description introduced.
 
 
 #### Authors and Works
