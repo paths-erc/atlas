@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.760670d5.css",
-    "main.js": "/static/js/main.f2abb398.js",
+    "main.js": "/static/js/main.cdcff3d4.js",
     "static/media/Antinoou.ttf": "/static/media/Antinoou.511b6d96e1144a3f680d.ttf",
     "static/media/colophons.jpg": "/static/media/colophons.7e23657b297750a0ddef.jpg",
     "static/media/works.jpg": "/static/media/works.c6227c93d71d09d43117.jpg",
@@ -26,7 +26,7 @@
     "static/media/Api.md": "/static/media/Api.8f01dbe13d02584a28ee.md",
     "index.html": "/index.html",
     "static/media/authors.md": "/static/media/authors.00655ea7c9078f676d36.md",
-    "static/media/colophons.md": "/static/media/colophons.92373147e5fe9ebc9391.md",
+    "static/media/colophons.md": "/static/media/colophons.4e382698d0ac7c0659ff.md",
     "static/media/persons.md": "/static/media/persons.13c81941a5cb95128282.md",
     "static/media/Ripple-1.7s-200px.svg": "/static/media/Ripple-1.7s-200px.ec9bf62a9f4986549a8c52fd98c15bef.svg",
     "static/media/license.md": "/static/media/license.19b9a123e4c0440c7ada.md",
@@ -34,10 +34,10 @@
     "static/media/LogoMd.md": "/static/media/LogoMd.0bd1fd06109b64b96ccf.md",
     "static/media/collections.md": "/static/media/collections.c3d31f1dbe643b54af06.md",
     "main.760670d5.css.map": "/static/css/main.760670d5.css.map",
-    "main.f2abb398.js.map": "/static/js/main.f2abb398.js.map"
+    "main.cdcff3d4.js.map": "/static/js/main.cdcff3d4.js.map"
   },
   "entrypoints": [
     "static/css/main.760670d5.css",
-    "static/js/main.f2abb398.js"
+    "static/js/main.cdcff3d4.js"
   ]
 }
