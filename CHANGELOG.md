@@ -5,6 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.2] - 2022-03-24
+### Fixes
+- Updated presentation text about colophons
+
+- Updated latest results
 ## [2.2.1] - 2022-01-31
 ### Fixes
 - Updated latest results

@@ -1,7 +1,5 @@
 This section of the **PAThs** database contains the edition, with English translation, of the entire corpus of the extant Coptic colophons written between the 7<sup>th</sup> and the 13<sup>th</sup> centuries.
 
-The scribal notes of the Nag Hammadi codices are not included in this census because of their different nature compared to the *codified*  scribal subscriptions of later centuries.
-
 Each colophon is identified by a specific numeric `unique identifier`.
 
 **Colophons** are directly linked to the related **Manuscripts** by means of the CLM ID.
