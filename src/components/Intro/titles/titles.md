@@ -7,6 +7,13 @@ E.g.:
 - T0444-S
 - T0234-SH01
 
+In view of their peculiarity, the titles contained within the codices of Nag Hammadi are further defined by the addition of the letters NH to the title identifier.
+
+E.g.:
+- T0690-INH
+- T0691-SNH
+- T0692-GFNH.
+
 **Titles** are directly linked to the related **Manuscripts**, by means of the CLM ID, and to the **Works** they refer to, by means of the *Clavis Coptica*.
 
 A brief description of the decorations and of the script (modular typology, axis, possible presence of thick-and-thin style) is also provided, when possible.
