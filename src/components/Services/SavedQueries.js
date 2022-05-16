@@ -566,6 +566,15 @@ export default {
         `?minusminusculecopitcculegreek|=|1`,
       ]),
       data: {}
+    },
+    nag_hammadi: {
+      id: 'nag_hammadi',
+      title: '“Colophons” of the Nag Hammadi Codices',
+      url: makeShortSql([
+        '@colophons',
+        '?id|=|236||or|id|=|237||or|id|=|238||or|id|=|255||or|id|=|256||or|id|=|257'
+      ]),
+      data: {}
     }
   },
   persons: {

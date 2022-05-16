@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.4] - 2022-05-16
+### Fixes
+- Added new saved query for colophons
+
 ## [2.2.3] - 2022-04-21
 ### Fixes
 - Updated presentation text about titles
