@@ -1,6 +1,6 @@
 {
   "name": "paths-atlas",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "The Archaeological Atlas of Coptic Literature by PAThs, an ERC Advanced funded project",
   "bugs": "https://github.com/paths-erc/atlas/issues",
   "email": "julian.bogdani@uniroma1.it",
@@ -56,5 +56,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "rehype-raw": "^6.1.1"
+  }
 }

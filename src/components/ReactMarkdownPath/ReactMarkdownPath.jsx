@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 
 import Loading from '../Loading/Loading';
@@ -22,7 +23,7 @@ export default function ReactMarkdownPath(props){
   }, [props.path]);
 
   if (mdText){
-    return <ReactMarkdown children={mdText} escapeHtml={false} remarkPlugins={[remarkGfm]} />;
+    return <ReactMarkdown children={mdText} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} />;
   } else {
     return <Loading />
   }
