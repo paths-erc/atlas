@@ -1,6 +1,6 @@
 Curated by F. Berno and F. Valerio
 
-(Updated on 21/01/2021
+(Updated on 07/06/2022
 
 - *Fragment of a Homily on the Virgin* \[[CLM 5304](manuscripts/5304)\]. Ref.: E. Porcher, *Analyse des manuscrits Coptes 131.1-8 de la Bibliothèque Nationale*, 1936, p. 103.
 - *Shenoute, Acephalous work A4* \[[CLM 695](manuscripts/695)\]. Ref.: S. Emmel, *Shenoute's Literary Corpus*, 2004, p. 690-691.
