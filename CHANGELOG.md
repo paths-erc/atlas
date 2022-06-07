@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.5] - 2022-06-07
+### Fixes
+- Updated list of Works without clavis
+
 ## [2.2.4] - 2022-05-16
 ### Fixes
 - Added new saved query for colophons

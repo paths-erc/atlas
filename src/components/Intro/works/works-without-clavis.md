@@ -28,6 +28,9 @@ The Acts of Pantoleon and the Martyrdom of St Cornelius”, *Journal of Coptic S
 - *The descent into Amenti* [CLM 1365](manuscripts/1365). Ref.: White, *The Monasteries*, no. IV (fr. 1).
 - *The descent into Amenti* [CLM 4467](manuscripts/4467). Ref.: White, *The Monasteries*, no. IV (frr. 2+4).
 - *Fragment of an Apocryphal Gospel* [CLM 3983](manuscripts/3983). Ref.: White, *The Monasteries*, no. V.
+- *Fragments of an anti-Manichaean treatise* [[CLM 1171](manuscripts/1171); *scriptio inferior* of [CLM 6626](manuscripts/6626)]. Ref.: J. Simon, "Note sur le dossier des textes subakhmimiques", *Le Muséon* 59, 1946, 497-509; 506.
+- *Fragments of an anti-Manichaean treatise* [CLM 1027](manuscripts/1027). Ref.: C.Wessely, *Les plus anciens monuments du christianisme*, 1946, 185-186.
+
 
 ---
 
