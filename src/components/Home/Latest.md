@@ -1,4 +1,4 @@
-**Last updated on January 2022**
+**Last updated on July 2022**
 
 The following are some of the main results achieved by the PAThs project in the last year.
 

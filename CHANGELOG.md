@@ -5,6 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.6] - 2022-07-06
+### Fixes
+- Updated list of TODOs/DONEs
+
+- Updated list of Works without clavis
 ## [2.2.5] - 2022-06-07
 ### Fixes
 - Updated list of Works without clavis

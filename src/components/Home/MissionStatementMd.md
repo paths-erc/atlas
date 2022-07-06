@@ -53,7 +53,7 @@ As it is well known, not all the author names related to literary works are “C
 - Creator: original author of the work, no matter if this was originally
 written in Greek and translated into Coptic at a later time.
 - Stated author: Author to whom a work is attributed by the title, the
-content of the work itself, the scribal subscription or other paratexts. The source for the attribution of a specific work to a specific author is always clearly stated. 
+content of the work itself, the scribal subscription or other paratexts. The source for the attribution of a specific work to a specific author is always clearly stated.
 A stated author may or may not coincide with the creator and it may or may not be fictitious (this information is clearly recorded and stored).
 
 Each author is identified by a **PAThs** stable identifier. When available, reference to VIAF (Virtual International Authority File) identifiers is regularly made.
@@ -79,7 +79,7 @@ The definition of “Coptic literary works” also includes texts of the Bible, 
 (See also section 1. A digital Archaeological Atlas of Coptic Literature)
 A rich set of ‘places’ related to manuscripts and works is considered and thoroughly described in a dedicated database. The following categories are so far provided:
 
-- Place of provenance: each `codicological unit` is to be referred to a specific area of provenance, more or less accurate and precise (from a large cultural or administrative region to a precise room of a settlement) depending mainly on reliability of the available data: archaeological reports, notes of purchase, archive information, internal/stylistic elements, contents, palaeography, etc.). 
+- Place of provenance: each `codicological unit` is to be referred to a specific area of provenance, more or less accurate and precise (from a large cultural or administrative region to a precise room of a settlement) depending mainly on reliability of the available data: archaeological reports, notes of purchase, archive information, internal/stylistic elements, contents, palaeography, etc.).
 The source of information used for the geolocation is always clearly stated.
 -  Place of discovery: `codicological units`, or part of them, are provided
 with information concerning their discovery, when available, obtained
@@ -140,16 +140,23 @@ The electronic edition of colophons is made by using Unicode encoding standard a
 The CMCL to Unicode converter—still under active development— is available for free usage at http://paths.uniroma1.it/cmcl2unicode/index.html. Its source code is hosted on **PAThs** repository on Github (https://github.com/paths-erc/cmcl2unicode) and is released with open source license (MIT: https://opensource.org/licenses/MIT). All users are warmly invited to report any issue that might help further development at https:// github.com/paths-erc/cmcl2unicode/issues.
 The converter is currently being used—and will continue to be used in the future—to parse and migrate Coptic texts from CMCL to **PAThs** databases and online repositories, specially for texts being marked up (see section 7. A selection of marked-up texts).
 
+### 11. A complete list of names of copyists, with their parental relationship and their scribal networks, and indication of the place where they practiced their work, on the basis of the information provided by the colophons.
+
+
+### 12. A large-scale codicological description of the codicological units which at the moment is limited to a few cases.
+
+
+### 13. A complete list of ancient and modern bibliological units
+
+
+
 
 ## What you will find in the future in PAThs?
 
 Aside the work that is already finished or is still ongoing the following issues are a core priority of the **PAThs** project and will be faced in the near future:
 
-- A complete list of names of copyists, with their parental relationship and
-their scribal networks, and indication of the place where they practiced their work, on the basis of the information provided by the colophons.
 - A complete list of names of historical characters, gods, ecclesiastic and civil titles and roles, religious groups, and other notabilia, as they appear in titles and colophons.
-- A large-scale codicological description of the `codicological units` which at the moment is limited to a few cases.
-- A complete list of ancient and modern `bibliological units`.
+- A complete classification of book bindings with related ad-hoc descriptive terminology.
 
 ## What you will not find in PAThs?
 
