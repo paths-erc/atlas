@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.760670d5.css",
-    "main.js": "/static/js/main.1a02ea40.js",
+    "main.js": "/static/js/main.21c357d4.js",
     "static/media/Antinoou.ttf": "/static/media/Antinoou.511b6d96e1144a3f680d.ttf",
     "static/media/colophons.jpg": "/static/media/colophons.7e23657b297750a0ddef.jpg",
     "static/media/works.jpg": "/static/media/works.c6227c93d71d09d43117.jpg",
@@ -14,7 +14,7 @@
     "static/media/paths-logo.png": "/static/media/paths-logo.98acd17b6cec198f96b5.png",
     "static/media/sapienza.jpg": "/static/media/sapienza.acddf49269550bf6cd07.jpg",
     "static/media/erc.jpg": "/static/media/erc.6935dc7bb35f24088592.jpg",
-    "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.4db2c7d391f0017d0ca3.md",
+    "static/media/MissionStatementMd.md": "/static/media/MissionStatementMd.b6338557b509b721eb11.md",
     "static/media/Cite.md": "/static/media/Cite.656592de49b759a21feb.md",
     "static/media/works-without-clavis.md": "/static/media/works-without-clavis.b92d3f8ea0f26f4356f8.md",
     "static/media/manuscripts.md": "/static/media/manuscripts.8f62d77a4fe5860929f8.md",
@@ -22,7 +22,7 @@
     "static/media/IntroMd.md": "/static/media/IntroMd.ed4eaa26207fc22b502b.md",
     "static/media/places.md": "/static/media/places.2f644bcff1efd32d875d.md",
     "static/media/titles.md": "/static/media/titles.21daecc8e74d6ce4eb08.md",
-    "static/media/Latest.md": "/static/media/Latest.b340bf7f9b340ffb5f57.md",
+    "static/media/Latest.md": "/static/media/Latest.06b19c5112fb9173dc83.md",
     "static/media/Api.md": "/static/media/Api.8f01dbe13d02584a28ee.md",
     "index.html": "/index.html",
     "static/media/authors.md": "/static/media/authors.00655ea7c9078f676d36.md",
@@ -34,10 +34,10 @@
     "static/media/LogoMd.md": "/static/media/LogoMd.0bd1fd06109b64b96ccf.md",
     "static/media/collections.md": "/static/media/collections.c3d31f1dbe643b54af06.md",
     "main.760670d5.css.map": "/static/css/main.760670d5.css.map",
-    "main.1a02ea40.js.map": "/static/js/main.1a02ea40.js.map"
+    "main.21c357d4.js.map": "/static/js/main.21c357d4.js.map"
   },
   "entrypoints": [
     "static/css/main.760670d5.css",
-    "static/js/main.1a02ea40.js"
+    "static/js/main.21c357d4.js"
   ]
 }
