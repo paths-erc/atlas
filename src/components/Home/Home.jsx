@@ -14,7 +14,7 @@ export default function Home(){
    const titles = [
      {
        id    : 'latest',
-       title : "PAThs scientific results recently achieved",
+       title : "Latest",
        path  : latest,
        style : {
          color: '#42429b',
