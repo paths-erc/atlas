@@ -5,7 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.2.6] - 2022-07-06
+## [2.3.0] - 2023-07-01
+### Changed
+- Added links to Coptic Scriptorium
+
+## [2.2.6] - 2022-07-07
 ### Fixes
 - Updated list of TODOs/DONEs
 

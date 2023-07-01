@@ -9,6 +9,7 @@ import Ldab from './ExternalLinks/Ldab';
 import Pleiades from './ExternalLinks/Pleiades';
 import CopticColophons from './ExternalLinks/CopticColophons';
 import Dbmnt from './ExternalLinks/Dbmnt';
+import CS from './ExternalLinks/CS';
 
 
 export default class ExternalLinks extends Component {
@@ -33,6 +34,7 @@ export default class ExternalLinks extends Component {
             <TmGeo data={this.props.rec.tmgeo}    tb={this.props.tb} />
             <Pleiades data={this.props.rec.pleiades} tb={this.props.tb} />
             <CopticColophons data={this.props.rec.id} tb={this.props.tb} />
+            <CS data={this.props.rec.id.val} tb={this.props.tb} />
 
     	    </ListGroup>
         </CardBody>

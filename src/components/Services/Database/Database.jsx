@@ -4,9 +4,9 @@ import SavedQueries from '../SavedQueries';
 
 let baseUrl = 'https://bdus.cloud/db/';
 
-if (window.location.hostname === 'localhost'){
-  baseUrl = 'http://bdus.localhost/';
-}
+// if (window.location.hostname === 'localhost'){
+//   baseUrl = 'http://bdus.localhost/';
+// }
 
 baseUrl += 'api/paths/';
 
