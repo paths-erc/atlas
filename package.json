@@ -5,7 +5,7 @@
   "bugs": "https://github.com/paths-erc/atlas/issues",
   "email": "julian.bogdani@uniroma1.it",
   "license": "Creative Commons Attribution 4.0 International License.",
-  "author": "Julian Bogdani <julian.bogdani@uniroma1.it> (http://www.lettere.uniroma1.it/users/julian-bogdani)",
+  "author": "Julian Bogdani <julian.bogdani@uniroma1.it>",
   "private": true,
   "homepage": "https://atlas.paths-erc.eu",
   "dependencies": {
@@ -29,7 +29,6 @@
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.1",
     "react-fontawesome": "^1.7.1",
-    "react-ga": "^3.3.0",
     "react-leaflet": "^2.7.0",
     "react-leaflet-fullscreen": "^1.0.1",
     "react-leaflet-google-v2": "^5.1.3",
