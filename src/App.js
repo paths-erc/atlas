@@ -24,16 +24,10 @@ import ViewOne from './components/Record/ViewOne';
 import Charts from './components/Charts/Charts';
 import Cite from './components/Cite/Cite';
 import Api from './components/Api/Api';
-import ReactGA from 'react-ga';
 import { detect } from 'detect-browser';
 
 const browser = detect();
 
-
-if(window.location.href.match(/atlas\.paths-erc\.eu/g)){
-  ReactGA.initialize('UA-10461068-45');
-  ReactGA.pageview(window.location.pathname + window.location.search);
-}
 
 const compatibility = {
   'ie': 10000,
