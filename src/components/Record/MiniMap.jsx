@@ -1,12 +1,9 @@
 import React from 'react';
 import { Map, TileLayer, Marker, Popup, LayersControl } from 'react-leaflet';
 import SiteMaps from '../PathsMap/Map/SiteMaps';
-import { GoogleLayer } from 'react-leaflet-google-v2';
-import 'react-leaflet-fullscreen/dist/styles.css'
-import FullscreenControl from 'react-leaflet-fullscreen';
+// import { GoogleLayer } from 'react-leaflet-google-v2';
 
-
-import GoogleApiKey from '../Services/Cfg/GoogleApiKey';
+// import GoogleApiKey from '../Services/Cfg/GoogleApiKey';
 const { BaseLayer } = LayersControl;
 
 export default function MiniMap(props) {
@@ -27,23 +24,22 @@ export default function MiniMap(props) {
               zoom={15} 
               zoomControl={true}
               >
-          <FullscreenControl position="topleft" />
           <LayersControl position="topright">
-            <BaseLayer name="AWMC">
+            {/* <BaseLayer name="AWMC">
               <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
-            </BaseLayer>
+            </BaseLayer> */}
 
             <BaseLayer name="Imperium (DARE)">
               <TileLayer url="https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png" />
             </BaseLayer>
 
-            <BaseLayer name="OpenStreetMap">
+            <BaseLayer name="OpenStreetMap" checked="true">
               <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
             </BaseLayer>
 
-            <BaseLayer name="Google Satellite" checked="true">
+            {/* <BaseLayer name="Google Satellite">
               <GoogleLayer googlekey={GoogleApiKey}  maptype="SATELLITE" />
-            </BaseLayer>
+            </BaseLayer> */}
           
           <SiteMaps siteId={id} />
 

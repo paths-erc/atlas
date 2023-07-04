@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TileLayer, LayersControl, GeoJSON } from 'react-leaflet';
-import { GoogleLayer } from 'react-leaflet-google-v2';
+// import { GoogleLayer } from 'react-leaflet-google-v2';
 import axios from 'axios';
 
 import PathsPlaces from './PathsPlaces';
@@ -47,9 +47,9 @@ export default function Layers(props){
       // </BaseLayer>
       }
 
-      <BaseLayer name="AWMC">
+      {/* <BaseLayer name="AWMC">
         <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
-      </BaseLayer>
+      </BaseLayer> */}
 
       <BaseLayer name="Imperium (DARE)" checked="true">
         <TileLayer url="https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png" />
@@ -59,13 +59,13 @@ export default function Layers(props){
         <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       </BaseLayer>
 
-      <BaseLayer name="Google Maps">
+      {/* <BaseLayer name="Google Maps">
         <GoogleLayer googlekey={GoogleApiKey}  maptype="ROADMAP" />
       </BaseLayer>
 
       <BaseLayer name="Google Satellite">
         <GoogleLayer googlekey={GoogleApiKey}  maptype="SATELLITE" />
-      </BaseLayer>
+      </BaseLayer> */}
 
       <BaseLayer name="Composite: A Map of Lower Egypt from Various Surveys by A. Arrowsmith (1807)">
         <TileLayer

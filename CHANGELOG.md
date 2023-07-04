@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.1] - 2023-07-01
+### Changed
+- Removed support for Google Maps and AWMC
+
 ## [2.3.0] - 2023-07-01
 ### Changed
 - Added links to Coptic Scriptorium
