@@ -6,7 +6,6 @@ import CSMap from '../../Services/CSMap';
 
 
 export default function CS(props) {
-  console.log(props)
 
   if ( !CSMap.hasOwnProperty(props.tb)  || !CSMap[props.tb].hasOwnProperty(props.data) ) {
     return null;
