@@ -5,7 +5,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.3.1] - 2023-07-01
+## [2.3.1] - 2023-07-04
 ### Changed
 - Removed support for Google Maps and AWMC
 
