@@ -15,7 +15,11 @@ export default function CS(props) {
     <div>
       { CSMap[props.tb][props.data].map( (v, k) => {
         return <ListGroupItem key={k}>
-          <a href={`https://data.copticscriptorium.org/${v.trim()}` } target="_blank" rel="noopener noreferrer">
+          <a 
+            href={`https://data.copticscriptorium.org/${v.trim()}` } 
+            target="_blank" 
+            rel="noopener noreferrer"
+            title="Link to Coptic text in Coptic Scriptorium">
             <FontAwesomeIcon icon="external-link-alt" /> Coptic Scriptorium {v}
           </a>
         </ListGroupItem>
