@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.4.0] - 2023-09-16
+### Changed
+- GeoJSON files are loaded locally: dropped support for remote xyz.paths-erc.eu server
+
 ## [2.3.1] - 2023-07-04
 ### Changed
 - Removed support for Google Maps and AWMC
