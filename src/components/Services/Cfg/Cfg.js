@@ -135,6 +135,7 @@ export default {
         "paths__colophons:msid",
         "paths__colophons:chronofrom",
         "paths__colophons:chronoto",
+        "paths__colophons:istitutionplace",
         "paths__colophons:dialect",
         "paths__colophons:dialectnotes",
         "paths__colophons:greektext",
