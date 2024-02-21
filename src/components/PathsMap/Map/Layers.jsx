@@ -69,7 +69,7 @@ export default function Layers(props){
 
       <BaseLayer name="Composite: A Map of Lower Egypt from Various Surveys by A. Arrowsmith (1807)">
         <TileLayer
-            attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+            attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
             url="https://swift.cloud.garr.it/swift/v1/arrowsmith-1807/{z}/{x}/{y}.png"
             maxZoom={15}
             />
@@ -77,7 +77,7 @@ export default function Layers(props){
       
       <BaseLayer name="Carte geographique de l'Egypte et des pays environnans by Pierre Jacotin (1818, 1828)">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/jacotin-1827/{z}/{x}/{y}.png"
           maxZoom={15}
           />
@@ -85,7 +85,7 @@ export default function Layers(props){
 
       <BaseLayer name="Series 4085 - GB &amp; USA (1941)">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/series-4085-gb-usa-1941/{z}/{x}/{y}.png"
           maxZoom={15}
           />
@@ -93,7 +93,7 @@ export default function Layers(props){
 
       <BaseLayer name="Series P502 - USA (1954)">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/series-p502-usa-1954/{z}/{x}/{y}.png"
           maxZoom={14}
           />
@@ -101,7 +101,7 @@ export default function Layers(props){
       
       <BaseLayer name="Series 1404, Great Britain War Office and Air Ministry, 1958-">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/imw-1m-1960/{z}/{x}/{y}.png"
           maxZoom={13}
           />
@@ -109,7 +109,7 @@ export default function Layers(props){
       
       <BaseLayer name="International Map of the World (1960)">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/imw-1m-1960/{z}/{x}/{y}.png"
           maxZoom={12}
           />
@@ -117,14 +117,14 @@ export default function Layers(props){
       
       <BaseLayer name="Tactical Pilotage Chart Series - World (1979)">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/tpc-500k-1979/{z}/{x}/{y}.png"
           maxZoom={14}
           />
       </BaseLayer>
       <BaseLayer name="Ministry of Finance, Egypt - Atlas of Egypt: Lower and Upper Egypt (1914)">
         <TileLayer
-          attribution='&copy; <a href="https://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
+          attribution='&copy; <a href="http://paths.uniroma1.it/">PAThs: Archaeological Atlas of Coptic Literature</a>'
           url="https://swift.cloud.garr.it/swift/v1/min-fin-1914/{z}/{x}/{y}.png"
           maxZoom={17}
           />
