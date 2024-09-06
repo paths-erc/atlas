@@ -5,6 +5,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.0] - 2024-09-06
+### Changed
+- Added Esri Satellete basemap
+
+## [2.5.2] - 2024-09-06
+### Changed
+- Removed Latest from home page
+
+## [2.5.0] - 2024-03-04
+### Changed
+- Updated Coptic Scriptorium data source
+
+## [2.4.0] - 2024-02-21
+### Changed
+- Updated Coptic Scriptorium data source
+- no https for paths.uniroma1.it
+
 ## [2.4.0] - 2023-09-16
 ### Changed
 - GeoJSON files are loaded locally: dropped support for remote xyz.paths-erc.eu server

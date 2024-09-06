@@ -51,12 +51,16 @@ export default function Layers(props){
         <TileLayer url="http://{s}.tiles.mapbox.com/v3/isawnyu.map-knmctlkh/{z}/{x}/{y}.png" />
       </BaseLayer> */}
 
-      <BaseLayer name="Imperium (DARE)" checked="true">
+      <BaseLayer name="Imperium (DARE)">
         <TileLayer url="https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png" />
       </BaseLayer>
 
       <BaseLayer name="OpenStreetMap">
         <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+      </BaseLayer>
+
+      <BaseLayer name="ESRI Satellite" checked="true">
+        <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
       </BaseLayer>
 
       {/* <BaseLayer name="Google Maps">
