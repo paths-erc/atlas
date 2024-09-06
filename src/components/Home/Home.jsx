@@ -4,7 +4,7 @@ import imgPathsLogo from './paths-logo.png';
 
 import ReactMarkdownPath from '../ReactMarkdownPath/ReactMarkdownPath';
 import intro from './IntroMd.md';
-import latest from './Latest.md';
+// import latest from './Latest.md';
 import logo from './LogoMd.md';
 import missionstatement from './MissionStatementMd.md';
 import lod from './lod.md';
@@ -12,17 +12,17 @@ import license from './license.md';
 
 export default function Home(){
    const titles = [
-     {
-       id    : 'latest',
-       title : "Latest",
-       path  : latest,
-       style : {
-         color: '#42429b',
-         fontSize: '.9rem',
-         backgroundColor: '#f7f7ff',
-         padding: '2rem'
-       }
-     },
+    //  {
+    //    id    : 'latest',
+    //    title : "Latest",
+    //    path  : latest,
+    //    style : {
+    //      color: '#42429b',
+    //      fontSize: '.9rem',
+    //      backgroundColor: '#f7f7ff',
+    //      padding: '2rem'
+    //    }
+    //  },
      {
        id    : 'intro',
        title : "Introduction",

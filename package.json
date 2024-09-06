@@ -1,6 +1,6 @@
 {
   "name": "paths-atlas",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "The Archaeological Atlas of Coptic Literature by PAThs, an ERC Advanced funded project",
   "bugs": "https://github.com/paths-erc/atlas/issues",
   "email": "julian.bogdani@uniroma1.it",
@@ -55,6 +55,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "rehype-raw": "^6.1.1"
+    "rehype-raw": "^6.1.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
