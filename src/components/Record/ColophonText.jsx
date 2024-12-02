@@ -2,34 +2,32 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
 import './ColophonText.css';
+// import { JSDOM } from 'jsdom';
 
 const formatColophon = (xml) => {
-
-  let text = xml.match(/<body>(.*)<\/body>/si)[1];
-  
-  // Remove 2+ white spaces
-  text = text.replace(/\s{2,}/gmi, ' ').replace(/\|/gmi, '\n');
-  
+  // Replace 2+ white spaces with single one
+  xml = xml.replace(/\s{2,}/gmi, ' ')
+  // replace | with new lines
+  xml = xml.replace(/\|/gmi, '\n');
   // Remove line numbers
-  text = text.replace(/\([0-9]{1,2}\)/gmi, '');
-
-  // Remove PAThs tags
-  text = text.replace(/<\/?\b(?:roleName|p|date|gap|org|quote|rs)\b[^>]*>/gmi, '');
-
-  // Trim text
-  text = text.replace(/^\s+|\s+$/g, '');
-
-  // Convert tags to link
-  text = text.replace(/<\s*(?:place|pers)Name[^>]*ref="([^"]+)"[^>]*>(.*?)<\s*\/\s*(?:place|pers)Name>/gi, (match, ref, content) => {
-    const ref_parts = ref.split('.');
-    if (!ref_parts[1] || !ref_parts[2]){
-        return content;
+  xml = xml.replace(/\([0-9]{1,2}\)/gmi, '')
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(xml.trim(), "application/xml");
+  doc.querySelectorAll('roleName,persName,date,gap,org,quote,rs,b').forEach(e => e.replaceWith(e.innerHTML));
+  doc.querySelectorAll('placeName, persName').forEach(e => {
+    const ref_parts = e.getAttribute('ref').split('.');
+    if (!ref_parts[0] && !ref_parts[1]) {
+      return e.innerHTML;
     }
     return `<a href="/${ref_parts[1]}/${ref_parts[2]}">${content}</a>`;
-    // return <a onClick={()=>{ history.push(`/${ref_parts[1]}/${ref_parts[2]}`)} } href="#" target="_blank" rel="noreferrer noopener">{content}</a>;
   });
-
-  return text;
+  const allParagraphs = Array.from(doc.querySelectorAll('body p')).map(e => {
+    return {
+      fol: e.getAttribute('fol'),
+      content: e.innerHTML.trim()
+    }
+  });
+  return allParagraphs;
 }
 
 
@@ -40,32 +38,39 @@ export default function ColophonText(props) {
   const [clphText, setClphText] = useState();
 
 
-  useEffect( () => {
+  useEffect(() => {
     axios
       .get(`https://raw.githubusercontent.com/paths-erc/coptic-texts/master/colophons/paths.colophons.${clph}.xml`)
-      .then( xml => {
+      .then(xml => {
         const parsedtext = formatColophon(xml.data);
         setClphText(parsedtext);
       })
-      .catch( e => {
+      .catch(e => {
         setClphText(`Error in getting marked text of colophon #${clph}`)
         console.log(e);
       })
   }, [clph]);
 
 
-  
-  if (!clphText){
+
+  if (!clphText) {
     return <Loading>Loading the marked text of the colophon #{clph}</Loading>;
   }
 
   return (
     <div>
-      <ol className="colophons">
-      { clphText.split('\n').map( (line, key) => {
-        return <li key={key} dangerouslySetInnerHTML={{ __html: line.trim() }} />
-      } ) }
-      </ol>
+      {
+        clphText.map((p, k) => {
+          return <React.Fragment key={k}>
+            <small>fol. {p.fol}</small>
+            <ol className='colophons'>
+              {p.content.split('\n').map((line, key) => {
+                return <li key={key} dangerouslySetInnerHTML={{ __html: line.trim() }} />
+              })}
+            </ol>
+          </React.Fragment>
+        })
+      }
     </div>
   );
 }
