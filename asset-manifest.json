@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dabccda0.css",
-    "main.js": "/static/js/main.61be0a61.js",
+    "main.js": "/static/js/main.6f429cb7.js",
     "static/media/Antinoou.ttf": "/static/media/Antinoou.511b6d96e1144a3f680d.ttf",
     "static/media/colophons.jpg": "/static/media/colophons.7e23657b297750a0ddef.jpg",
     "static/media/works.jpg": "/static/media/works.c6227c93d71d09d43117.jpg",
@@ -33,10 +33,10 @@
     "static/media/LogoMd.md": "/static/media/LogoMd.0bd1fd06109b64b96ccf.md",
     "static/media/collections.md": "/static/media/collections.c3d31f1dbe643b54af06.md",
     "main.dabccda0.css.map": "/static/css/main.dabccda0.css.map",
-    "main.61be0a61.js.map": "/static/js/main.61be0a61.js.map"
+    "main.6f429cb7.js.map": "/static/js/main.6f429cb7.js.map"
   },
   "entrypoints": [
     "static/css/main.dabccda0.css",
-    "static/js/main.61be0a61.js"
+    "static/js/main.6f429cb7.js"
   ]
 }
