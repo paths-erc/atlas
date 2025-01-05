@@ -30,8 +30,51 @@ const formatColophon = (xml) => {
   return allParagraphs;
 }
 
+/**
+ * Component to render a single colophon text item.
+ * @param {Object} props - The properties object.
+ * @param {Object} props.paragraph - The colophon text item.
+ * @returns {JSX.Element} The rendered colophon text item.
+ */
+const ColophonTextItem = ({ paragraph }) => (
+  <React.Fragment>
+    {paragraph.fol && <small>fol. {paragraph.fol}</small>}
+    <ol className='colophons'>
+      {paragraph.content.split('\n').map((line, key) => (
+        <li key={key} dangerouslySetInnerHTML={{ __html: line.trim() }} />
+      ))}
+    </ol>
+  </React.Fragment>
+);
 
-export default function ColophonText(props) {
+/**
+ * Component to render the colophon text.
+ * @param {Object} props - The properties object.
+ * @param {string} props.clph - The colophon identifier.
+ * @param {Array} props.clphText - The colophon text data.
+ * @returns {JSX.Element} The rendered colophon text.
+ */
+const ColophonText = ({ clph, clphText }) => {
+  if (!clphText) {
+    return <Loading>Loading the marked text of the colophon #{clph}</Loading>;
+  }
+
+  return (
+    <div>
+      {clphText.map((p, k) => (
+        <ColophonTextItem key={k} paragraph={p} />
+      ))}
+    </div>
+  );
+};
+
+/**
+ * Wrapper component to fetch and manage the state of the colophon text.
+ * @param {Object} props - The properties object.
+ * @param {number} props.colophon - The id of the colohpon to fetch.
+ * @returns {JSX.Element} The rendered colophon text wrapper.
+ */
+export default function ColophonTextWrapper(props) {
 
   const clph = props.colophon;
 
@@ -55,27 +98,10 @@ export default function ColophonText(props) {
 
 
   if (errorText) {
-    return <div className='text-danger'>{errorText}</div>;
+    return <div>{errorText}</div>;
   }
-  if (!clphText) {
-    return <Loading>Loading the marked text of the colophon #{clph}</Loading>;
-  }
-  
 
   return (
-    <div>
-      {
-        clphText.map((p, k) => {
-          return <React.Fragment key={k}>
-            {p.fol && <small>fol. {p.fol}</small>}
-            <ol className='colophons'>
-              {p.content.split('\n').map((line, key) => {
-                return <li key={key} dangerouslySetInnerHTML={{ __html: line.trim() }} />
-              })}
-            </ol>
-          </React.Fragment>
-        })
-      }
-    </div>
+    <ColophonText clph={clph} clphText={clphText} />
   );
 }
