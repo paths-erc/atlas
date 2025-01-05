@@ -17,9 +17,9 @@ const formatColophon = (xml) => {
   doc.querySelectorAll('placeName, persName').forEach(e => {
     const ref_parts = e.getAttribute('ref').split('.');
     if (!ref_parts[0] && !ref_parts[1]) {
-      return e.innerHTML;
+      return e.innerHTML.trim();
     }
-    return `<a href="/${ref_parts[1]}/${ref_parts[2]}">${content}</a>`;
+    return `<a href="/${ref_parts[1]}/${ref_parts[2]}">${e.innerHTML.trim()}</a>`;
   });
   const allParagraphs = Array.from(doc.querySelectorAll('body p')).map(e => {
     return {
@@ -36,6 +36,7 @@ export default function ColophonText(props) {
   const clph = props.colophon;
 
   const [clphText, setClphText] = useState();
+  const [errorText, setErrorText] = useState(null);
 
 
   useEffect(() => {
@@ -46,23 +47,27 @@ export default function ColophonText(props) {
         setClphText(parsedtext);
       })
       .catch(e => {
-        setClphText(`Error in getting marked text of colophon #${clph}`)
+        setErrorText(`Error in getting marked text of colophon #${clph}`)
         console.log(e);
       })
   }, [clph]);
 
 
 
+  if (errorText) {
+    return <div className='text-danger'>{errorText}</div>;
+  }
   if (!clphText) {
     return <Loading>Loading the marked text of the colophon #{clph}</Loading>;
   }
+  
 
   return (
     <div>
       {
         clphText.map((p, k) => {
           return <React.Fragment key={k}>
-            <small>fol. {p.fol}</small>
+            {p.fol && <small>fol. {p.fol}</small>}
             <ol className='colophons'>
               {p.content.split('\n').map((line, key) => {
                 return <li key={key} dangerouslySetInnerHTML={{ __html: line.trim() }} />
