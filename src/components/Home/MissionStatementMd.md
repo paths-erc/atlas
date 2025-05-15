@@ -153,18 +153,9 @@ The converter is currently being used—and will continue to be used in the futu
 &nbsp;
 
 
-## What you will find in the future in PAThs?
-
-Aside the work that is already finished or is still ongoing the following issues are a core priority of the **PAThs** project and will be faced in the near future:
-
-- A complete list of names of historical characters, gods, ecclesiastic and civil titles and roles, religious groups, and other notabilia, as they appear in titles and colophons.
-- A complete classification of book bindings with related ad-hoc descriptive terminology.
-
 ## What you will not find in PAThs?
 
 There are some important research topics that, although of fundamental interest, cannot be directly addressed by **PAThs**, because they fall beyond the stated chronological or scientific borders of the **PAThs** project. These topics will certainly be considered but no original output is announced at present.
-
-Information about Nubian sites are not included at present in the **PAThs** database.
 
 ### 1. Copto-Arabic manuscripts
 

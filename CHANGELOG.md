@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.3] - 2025-05-15
+### Changed
+- Updated homepage text
+
 ## [2.7.2] - 2025-01-05
 ### Changed
 - Refactored ColophonText
