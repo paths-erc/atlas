@@ -5,7 +5,7 @@ are available for download, in different formats. Other dump formats (CSV and SQ
 will be published on a regular basis.
 
 Data can be downloaded as versioned, static files hosted on GitHub or can also be
-programmatically harvested using the [BraDypUS database API](https://github.com/jbogdani/BraDypUS/blob/master/docs/api.md).
+programmatically harvested using the [BraDypUS database API](https://docs.bdus.cloud/api/).
 
 
 
