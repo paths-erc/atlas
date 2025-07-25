@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dabccda0.css",
-    "main.js": "/static/js/main.5f914854.js",
+    "main.js": "/static/js/main.79762da5.js",
     "static/media/Antinoou.ttf": "/static/media/Antinoou.511b6d96e1144a3f680d.ttf",
     "static/media/colophons.jpg": "/static/media/colophons.7e23657b297750a0ddef.jpg",
     "static/media/works.jpg": "/static/media/works.c6227c93d71d09d43117.jpg",
@@ -19,7 +19,7 @@
     "static/media/works-without-clavis.md": "/static/media/works-without-clavis.b92d3f8ea0f26f4356f8.md",
     "static/media/manuscripts.md": "/static/media/manuscripts.8f62d77a4fe5860929f8.md",
     "static/media/works.md": "/static/media/works.1287edb22774e59d8868.md",
-    "static/media/IntroMd.md": "/static/media/IntroMd.c3f6063919a73ab96470.md",
+    "static/media/IntroMd.md": "/static/media/IntroMd.7c245fa1d96c3c11bb8a.md",
     "static/media/places.md": "/static/media/places.2f644bcff1efd32d875d.md",
     "static/media/titles.md": "/static/media/titles.21daecc8e74d6ce4eb08.md",
     "static/media/Api.md": "/static/media/Api.317ff35e2ce5ef6fba49.md",
@@ -33,10 +33,10 @@
     "static/media/LogoMd.md": "/static/media/LogoMd.0bd1fd06109b64b96ccf.md",
     "static/media/collections.md": "/static/media/collections.c3d31f1dbe643b54af06.md",
     "main.dabccda0.css.map": "/static/css/main.dabccda0.css.map",
-    "main.5f914854.js.map": "/static/js/main.5f914854.js.map"
+    "main.79762da5.js.map": "/static/js/main.79762da5.js.map"
   },
   "entrypoints": [
     "static/css/main.dabccda0.css",
-    "static/js/main.5f914854.js"
+    "static/js/main.79762da5.js"
   ]
 }
