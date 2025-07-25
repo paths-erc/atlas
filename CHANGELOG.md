@@ -5,6 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.5] - 2025-07-25
+### Changed
+- Remove caniuse-lite dependency from package-lock.json
+- Fix typos and improve clarity in IntroMd.md
+
 ## [2.7.4] - 2025-07-10
 ### Changed
 - Updated link to Bradypus API docs
