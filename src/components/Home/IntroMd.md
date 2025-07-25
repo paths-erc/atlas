@@ -1,7 +1,9 @@
-**PAThs** is an **ERC granted project** (Advanced Grant 2015, project number 687567, P.I. Paola Buzi), aimed at providing an in-depth diachronic understanding and effective representation of the geography of Coptic literary and manuscript production and, in particular, of the corpus of literary writings, almost exclusively of religious content, produced in Egypt between the 3<sup>rd</sup> and 14<sup>th</sup> centuries in the Coptic language.
+**PAThs** is an ERC granted project (Advanced Grant 2015, project number 687567, P.I. Paola Buzi), that aimes at providing an in-depth diachronic understanding and effective representation of the geography of Coptic literature, produced in Egypt between the 3<sup>rd</sup> and 14<sup>th</sup> centuries.
 **PAThs** takes an original and pluridisciplinary approach, combining philology, codicology, palaeography, archaeology and digital humanities, in order to explore the process of production, copying, usage, dissemination and storage of Coptic works in relation to the geographical contexts of origin of both the texts themselves and their related writing supports.
 
-An exhaustive digital **Archaeological Atlas of Coptic Literature**, that is **regularly updated** provides a new comprehensive perspective on the spread and development of Coptic literature and manuscript culture. This versatile tool allows detailed and focused research and correlation of chronological, regional and thematic data. It also illustrates the relationship between settlements uncovered by the archaeological and topographical investigations and intellectual activity revealed in manuscripts.
+An exhaustive digital **Archaeological Atlas of Coptic Literature**, that **continues to be regularly updated**, provides a new comprehensive perspective on the spread and development of Coptic literature and manuscript culture. This versatile tool allows detailed and focused research and correlation of chronological, regional and thematic data. It also illustrates the relationship between settlements uncovered by the archaeological and topographical investigations and intellectual activity revealed in manuscripts.
+
+**In May 2023 PAThs, Coptic Scriptorium and CMCL signed an agreement for an effective and regular exchange of data in order to integrate their scientific results.**
 
 The Archaeological Atlas of Coptic Literature is based on a central web database. It is composed of eight fundamental parts (entities), dedicated to Places, Manuscripts, Works, Authors, Titles, Colophons, Persons attested in colophons and Collections. Each part addresses specific issues and follows its own methodological guidelines and descriptive protocols which are closely linked to each other in a network pattern that draws it strength from these links. The principal aim is to provide the literary and manuscript tradition with a sound archaeological and geographical context and vice-versa.
 
@@ -9,7 +11,7 @@ The **Atlas** gives full access to the main database and provides different type
 
 To help and guide users towards interesting research results some default search filters are prepared and made available, ready to be run and visualised. These “Saved queries” are available for single parts and for geographic data visualisation.
 
-**The welcome page of the Atlas shows by default all Places that are related to Coptic Literary Manuscripts, and by disabling the filter in the left bar all recorded Places are shown.**
+**Please note that the welcome page of the Atlas shows by default all Places that are related to Coptic Literary Manuscripts, and by disabling the filter in the left bar all recorded Places are shown.**
 
 Amongst other products, **PAThs** presently includes:
 -	A complete classification of the Coptic manuscript tradition, by means of the attribution of `stable identifiers` for each manuscript (`codicological unit`), in order to have univocal coordinates of reference for the entirety of Coptic literary production. Such a classification can be progressively expanded as new manuscripts are discovered.
