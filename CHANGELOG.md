@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.6] - 2025-12-02
+### Changed
+- Updated saved query manuscripts.wandering_ms
+
 ## [2.7.5] - 2025-07-25
 ### Changed
 - Remove caniuse-lite dependency from package-lock.json

@@ -144,7 +144,7 @@ export default {
       url: makeShortSql([
         '@manuscripts',
         `[paths__manuscripts.*,{@m_msplaces~[m_msplaces.place|count_distinct~?table_link|=|paths__manuscripts||and|id_link|=|^paths__manuscripts.id}:pl_ms`,
-        `?pl_ms|<|1`,
+        `?pl_ms|>|1`,
       ]),
       data: {}
     },
