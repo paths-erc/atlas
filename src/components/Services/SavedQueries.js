@@ -138,16 +138,16 @@ export default {
       ]),
       data: {}
     },
-    wandering_ms: {
-      id: "wandering_ms",
-      title: "“Wandering” manuscripts (for instance manufactured in a place but stored in another palace, etc.)",
-      url: makeShortSql([
-        '@manuscripts',
-        `[paths__manuscripts.*,{@m_msplaces~[m_msplaces.place|count_distinct~?table_link|=|paths__manuscripts||and|id_link|=|^paths__manuscripts.id}:pl_ms`,
-        `?pl_ms|>|1`,
-      ]),
-      data: {}
-    },
+    // wandering_ms: {
+    //   id: "wandering_ms",
+    //   title: "“Wandering” manuscripts (for instance manufactured in a place but stored in another palace, etc.)",
+    //   url: makeShortSql([
+    //     '@manuscripts',
+    //     `[paths__manuscripts.*,{@m_msplaces~[m_msplaces.place|count_distinct~?table_link|=|paths__manuscripts||and|id_link|=|^paths__manuscripts.id}:pl_ms`,
+    //     `?pl_ms|>|1`,
+    //   ]),
+    //   data: {}
+    // },
     ms_has_bindings: {
       id: "ms_has_bindings",
       title: "Manuscripts with ancient bookbindings",

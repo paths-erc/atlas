@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.7] - 2025-12-11
+### Changed
+- Removed saved query manuscripts.wandering_ms
+
 ## [2.7.6] - 2025-12-02
 ### Changed
 - Updated saved query manuscripts.wandering_ms
