@@ -18,6 +18,7 @@ import ShowError from '../ShowError/ShowError';
 import Layers from './Map/Layers';
 
 import Database from '../Services/Database/Database';
+import SavedQueries from '../Services/SavedQueries';
 
 import './PathsMap.css';
 
@@ -102,53 +103,40 @@ export default class PathsMap extends Component {
 
 
   fetchData(savedQ, locationSearch){
-    if (savedQ) {
-      Database.getSaved('map', savedQ, null, data => {
+    const onGeoData = (data) => {
+      if (!data || data.status === 'error') {
         this.setState({
-          places: data,
-          shownPlaces: data,
-          urlFilter: true
+          error: <div>Sorry. There was an error loading map data. Please report this to <a href="mailto:julian.bogdani@uniroma1.it">julian.bogdani@uniroma1.it</a>.</div>
         });
-        this.fitMapToBounds()
-      });
-    } else if (locationSearch) {
-      const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true})
-      if (qstring.tb === 'manuscripts') {
-        Database.getMsPlaces(qstring.shortsql, data => {
-          this.setState({
-            places: data,
-            shownPlaces: data,
-            urlFilter: qstring.shortsql
-          });
-          this.fitMapToBounds()
-        });
-      } else if (qstring.tb === 'places') {
-        Database.getPlaces(qstring.shortsql, data => {
-          this.setState({
-            places: data,
-            shownPlaces: data,
-            urlFilter: qstring.shortsql
-          });
-          this.fitMapToBounds()
-        });
-      } else {
-        return false;
+        return;
       }
+      this.setState({ places: data, shownPlaces: data });
+      this.fitMapToBounds();
+    };
 
-    } else {
-      Database.getPlaces(null, data => {
-        if (data.type && data.type === 'error') {
-          this.setState({
-            error: <div>Sorry. There was an error in getting the data from database. Please report this error to <a href="mailto:julian.bogdani@uniroma1.it">julian.bogdani@uniroma1.it</a> and be sure to copy and paste the following lines:<br /><div className="border p-3 mt-3"><code>{window.location.href}</code><pre>{data.text}</pre></div></div>
-          });
-          return;
-        }
-        this.setState({
-          places: data,
-          shownPlaces: data,
-        });
+    if (savedQ) {
+      const sq = SavedQueries.map && SavedQueries.map[savedQ];
+      Database.getPlaces(sq ? sq.filter : null, data => {
+        if (!data || data.status === 'error') { onGeoData(data); return; }
+        this.setState({ places: data, shownPlaces: data, urlFilter: true });
         this.fitMapToBounds();
       });
+    } else if (locationSearch) {
+      const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
+      const filter = qstring.filter ? JSON.parse(qstring.filter) : null;
+      if (qstring.tb === 'manuscripts') {
+        Database.getMsPlaces(filter, data => {
+          if (!data || data.status === 'error') { onGeoData(data); return; }
+          this.setState({ places: data, shownPlaces: data, urlFilter: !!filter });
+          this.fitMapToBounds();
+        });
+      } else if (qstring.tb === 'places') {
+        Database.getPlaces(filter, onGeoData);
+      } else {
+        Database.getPlaces(null, onGeoData);
+      }
+    } else {
+      Database.getPlaces(null, onGeoData);
     }
   }
 

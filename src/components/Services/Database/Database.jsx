@@ -1,210 +1,139 @@
 import axios from 'axios';
-import SavedQueries from '../SavedQueries';
+import qs from 'qs';
 
+const API_BASE = process.env.REACT_APP_API_BASE || '';
+const API_KEY  = process.env.REACT_APP_API_KEY;
+const APP      = process.env.REACT_APP_APP || 'paths';
 
-let baseUrl = 'https://bdus.cloud/db/';
+const AUTH = { api_key: API_KEY, app: APP };
 
-// if (window.location.hostname === 'localhost'){
-//   baseUrl = 'http://bdus.localhost/';
-// }
+const api = axios.create({
+  baseURL: `${API_BASE}/api`,
+  headers: { 'Content-Type': 'application/json' },
+  paramsSerializer: params => qs.stringify(params, { arrayFormat: 'brackets', encode: false }),
+});
 
-baseUrl += 'api/paths/';
+const onError = (err, cb) => {
+  const msg = err?.response?.data?.code || err?.response?.data?.detail || err.message || 'Network error';
+  console.error('[Database]', msg);
+  cb({ status: 'error', detail: msg });
+};
+
+const listParams = (extra, page) => ({ ...AUTH, page: page || 1, ...extra });
+
+const fieldName = fld => fld.includes(':') ? fld.split(':')[1] : fld;
+
+const buildFilter = (tb, fld, op, val) => {
+  if (fld.includes(':')) {
+    const [fldTb, fldName] = fld.split(':');
+    if (fldTb !== tb) {
+      return { [fldTb]: { [fldName]: { [op]: val } } };
+    }
+    return { [fldName]: { [op]: val } };
+  }
+  return { [fld]: { [op]: val } };
+};
 
 export default class Database {
 
-  static getData(url, params, callback) {
-
-    url = baseUrl + url;
-
-    axios({
-      method: 'post',
-      url: url,
-      params: params,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-    .then(res => {
-      if (res.data.type && res.data.type === 'error'){
-        console.log(`API error: ${res.data.text}`);
-        return false;
-      }
-      callback(res.data);
-    })
-    .catch( res => {
-      if(res instanceof Error) {
-        console.log(res.message);
-      } else {
-        console.log(res.data);
-      }
-    });
+  static getBaseUrl() {
+    return `${API_BASE}/projects/${APP}/`;
   }
 
-  static getBaseUrl(){
-    return baseUrl;
-  }
-
-  static getUniqueVal(tb, fld, string, cb) {
-    this.getData('./' + tb, {
-      verb: 'getUniqueVal',
-      tb: tb.replace('paths__', ''),
-      fld: fld,
-      s: string
-    }, d => { cb(d); }, true);
-
-  }
-
-  static getSaved(grp, q, page, cb) {
-    if (typeof SavedQueries[grp][q] === 'undefined') {
-      cb({
-        status: 'error',
-        text: `No saved query found for id: ${grp}.${q}`
-      });
-      return;
-    } else {
-      SavedQueries[grp][q].data.page = page;
-      this.getData(SavedQueries[grp][q].url, SavedQueries[grp][q].data, d => {
-        cb(d, SavedQueries[grp][q].title);
-      });
-    }
-  }
-
-  static getSimple(tb, fld, val, strict, page, cb){
-    const data = {
-      verb: 'search',
-      shortsql: `@${tb}~?${fld.replace(':', '.')}|${ strict ? '=' : 'LIKE' }|${ strict ? val : `%${val}%`}`,
-      page: page
-    };
-    this.getData('', data, d => { cb(d); }, true);
-  }
-
-  /**
-   * Executes an advanced query on the database
-   * @param  {String}   tb   Table to be queried, no prefix
-   * @param  {Object}   data Object of query data: {a:{f:'fieldname', v:'value', o: 'operator'}, a2:{f:'fieldname', v:'value', o: 'operator', c: 'connector'}}
-   * @param  {Integer}   page Page number
-   * @param  {Function} cb   Callback function
-   */
-  static getAdv(tb, data, page, cb) {
-    let where = [];
-    Object.entries(data).forEach(([k, v]) => {
-      let wp = [];
-      switch(v.o){
-        case 'LIKE':
-          v.v = `%${v.v}%`;
-          break;
-        case 'starts_with':
-          v.o = 'LIKE';
-          v.v = `${v.v}%`;
-          break;
-        case 'ends_with':
-          v.o = 'LIKE';
-          v.v = `%${v.v}`;
-          break;
-        case 'is_empty':
-          v.o = 'is';
-          v.v = '^null';
-          v.c = 'or'
-          where.push(`${v.f.replace(':', '.')}|=|^`);
-          break;
-        case 'is_not_empty':
-          v.o = 'is not';
-          v.v = '^null';
-          v.c = 'or'
-          where.push(`${v.f.replace(':', '.')}|!=|^`)
-          break;
-      }
-      if (v.c) {
-        wp.push(v.c);
-      }
-      wp.push(v.f.replace(':', '.'));
-      wp.push(v.o);
-      wp.push(v.v);
-      where.push(wp.join('|'));
-    });
-
-    this.getData('', {
-        verb: 'search',
-        shortsql: `@${tb}~?${where.join('||')}`,
-        page: page
-      }, d => { cb(d); }
-    );
-  }
-
-  static getStr(tb, string, page, cb) {
-    this.getData(tb, {
-      verb: 'search',
-      type: 'fast',
-      string: string,
-      page: page
-    }, d => { cb(d, 'Search [' + string + '] in ' + d.head.table_label); }, true);
-  }
-
-  static getAll(tb, page, cb) {
-    this.getData('', {
-      verb : 'search',
-      shortsql: `@${tb}`,
-      page: page
-    }, d => { cb(d); });
+  static getApp() {
+    return APP;
   }
 
   static getOne(tb, id, cb) {
-    this.getData('', {
-      tb: tb,
-      verb : 'read',
-      id : id
-    }, d => { cb(d); });
+    api.get(`/record/${tb}/${id}`, { params: AUTH })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
+  static getAll(tb, page, cb) {
+    api.get(`/records/${tb}`, { params: listParams({}, page) })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
+  static getSimple(tb, fld, val, strict, page, cb) {
+    const op = strict ? '_eq' : '_icontains';
+    const filter = buildFilter(tb, fld, op, val);
+    api.get(`/records/${tb}`, { params: listParams({ filter }, page) })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
+  static getAdv(tb, rows, page, cb) {
+    const entries = Object.values(rows).filter(r => r.f && r.v !== '');
+    const hasOr = entries.some(r => r.c === 'OR');
+    let filter;
+    if (hasOr) {
+      filter = { _or: entries.map(r => buildFilter(tb, r.f, r.o, r.v)) };
+    } else {
+      filter = { _and: entries.map(r => buildFilter(tb, r.f, r.o, r.v)) };
+    }
+    api.get(`/records/${tb}`, { params: listParams({ filter }, page) })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
+  static getStr(tb, string, page, cb) {
+    api.get(`/records/${tb}`, { params: listParams({ search: string }, page) })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
+  static getUniqueVal(tb, fld, string, cb) {
+    api.get(`/search/${tb}/values`, { params: { ...AUTH, fld } })
+      .then(res => cb(res.data.values || []))
+      .catch(() => cb([]));
   }
 
   static inspect(tb, cb) {
-    this.getData('' , {
-      tb: tb,
-      'verb':'inspect'
-    }, d => { cb(d); });
+    api.get(`/search/${tb}/config`, { params: AUTH })
+      .then(res => {
+        const fields = {};
+        (res.data.fields || []).forEach(f => { fields[f.value] = { label: f.label }; });
+        cb({ fields });
+      })
+      .catch(() => cb({ fields: {} }));
+  }
+
+  static getSaved(grp, queryKey, page, cb) {
+    const SavedQueries = require('../SavedQueries').default;
+    const query = SavedQueries[grp]?.[queryKey];
+    if (!query) {
+      cb({ status: 'error', detail: `No saved query: ${grp}.${queryKey}` });
+      return;
+    }
+    api.get(`/records/${grp}`, { params: listParams({ filter: query.filter }, page) })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
+  static getPlaces(filter, cb) {
+    const params = { ...AUTH, tb: 'places' };
+    if (filter) params.filter = filter;
+    api.get('/geoface', { params })
+      .then(res => {
+        const gj = res.data.geojson;
+        if (!gj) { cb(null); return; }
+        cb(typeof gj === 'string' ? JSON.parse(gj) : gj);
+      })
+      .catch(err => onError(err, cb));
+  }
+
+  static getMsPlaces(msFilter, cb) {
+    const filter = msFilter ? { m_msplaces: { manuscripts: msFilter } } : null;
+    Database.getPlaces(filter, cb);
   }
 
   static getChart(id, cb) {
-    this.getData('' + id, {
-      id: id,
-      'verb':'getChart'
-    }, d => { cb(d); });
+    cb(null);
   }
 
-  static getPlaces(shortsql, cb) {
-    let where = '1';
-    if (shortsql){
-      let where_arr = shortsql.split('?');
-      where_arr.shift();
-      where = encodeURIComponent(where_arr.join('?'));
-    }
-
-    this.getData('?verb=search&geojson=true&shortsql='+
-      [
-        '@places',
-        '[geodata.geometry,id,name,pleiades,typology,{@m_toponyms~[toponym|group_concat~?table_link|=|paths__places||and|id_link|=|^places.id}:toponyms',
-        `?${where}`,
-        '-500:0'
-      ].join('~'),
-      {},
-      d => { cb( d ); }
-    );
+  static getData(url, params, cb) {
+    cb({ status: 'error', detail: 'ShortSQL not supported in v5' });
   }
-
-  static getMsPlaces(ms_where, cb) {
-    // Where is set only if a valid filter is provided.
-    let where = '';
-    if(ms_where !== '@manuscripts'){
-      where = `~?${ms_where}`;
-    }
-    this.getData('', {
-      verb: 'search',
-      geojson: 1,
-      shortsql: [
-        '@places',
-        ']m_msplaces||paths__places.id|=|^m_msplaces.place',
-        `?m_msplaces.table_link|=|paths__manuscripts||and|m_msplaces.id_link|in|{@manuscripts~[id${where}}~*places.id,places.name,places.pleiades,places.typology,geodata.geometry`
-      ].join('~')
-    }, d => cb(d) );
-  }
-
 }

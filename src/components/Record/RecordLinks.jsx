@@ -2,61 +2,73 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import qs from 'qs';
 
 
 class RecordLinks extends Component {
 
-  makeHref(table, query){
-    const strippedTb = table.replace('paths__', '');
-    let url = [
-      '/',
-      'search',
-      '/',
-      strippedTb,
-      '/',
-      'shortsql',
-      `?q=@${table}~?${query}`
-    ];
-
-    return url.join('');
-  }
-
-  renderLinks(links){
-
-     return Object.entries(links).map(
-      ([tb, info], i) => {
-        if (info.tot < 1) {
-          return null;
+  makeHref(tbId, filter) {
+    const tb = tbId;
+    if (filter) {
+      const entries = Object.entries(filter);
+      if (entries.length === 1) {
+        const [fld, ops] = entries[0];
+        if (ops._eq !== undefined) {
+          const rows = { a: { f: fld, o: '_eq', v: String(ops._eq) } };
+          return `/search/${tb}?${qs.stringify(rows)}`;
         }
-        return <ListGroupItem key={i} tag={Link} to={ this.makeHref(tb, info.where) }>
-          <FontAwesomeIcon icon="external-link-square-alt" /> {info.tot + ' referenced item' + (info.tot > 1 ? 's': '') + ' in ' + info.tb_label}
-        </ListGroupItem>
+        if (ops._in !== undefined && Array.isArray(ops._in)) {
+          const keys = 'abcdefghijklmnopqrstuvwxyz';
+          const rows = {};
+          ops._in.forEach((val, i) => {
+            rows[keys[i] || `r${i}`] = { f: fld, o: '_eq', v: String(val), ...(i > 0 ? { c: 'OR' } : {}) };
+          });
+          return `/search/${tb}?${qs.stringify(rows)}`;
+        }
       }
-    )
-  }
-
-  renderBackLinks(backlinks){
-    if (typeof backlinks === 'undefined' || backlinks.length < 1){
-      return false;
     }
+    return `/search/${tb}/all`;
+  }
 
-    return Object.entries(backlinks).map(
-      ([tb, arr], i) => {
-        if (arr.tot < 1){
-          return false;
-        }
-
-        return <ListGroupItem key={i} tag={Link} to={ this.makeHref(tb, arr.where) }>
-          <FontAwesomeIcon icon="external-link-square-alt" /> {arr.tot + ' referenced item' + (arr.tot > 1 ? 's': '') + ' in ' + arr.tb_label}
+  renderLinks(links) {
+    if (!links || Object.keys(links).length === 0) {
+      return null;
+    }
+    return Object.entries(links).map(([tb, info], i) => {
+      if (!info || info.tot < 1) return null;
+      return (
+        <ListGroupItem key={i} tag={Link} to={ this.makeHref(tb, info.filter) }>
+          <FontAwesomeIcon icon="external-link-square-alt" />{' '}
+          {info.tot + ' referenced item' + (info.tot > 1 ? 's' : '') + ' in ' + info.tb_label}
         </ListGroupItem>
-      }
-    )
+      );
+    });
+  }
+
+  renderBackLinks(backlinks) {
+    if (!backlinks || Object.keys(backlinks).length === 0) {
+      return null;
+    }
+    return Object.values(backlinks).map((info, i) => {
+      if (!info || info.tot < 1) return null;
+      return (
+        <ListGroupItem key={i} tag={Link} to={ this.makeHref(info.tb_id, info.filter) }>
+          <FontAwesomeIcon icon="external-link-square-alt" />{' '}
+          {info.tot + ' referenced item' + (info.tot > 1 ? 's' : '') + ' in ' + info.tb_label}
+        </ListGroupItem>
+      );
+    });
   }
 
   render() {
-    if( (!this.props.links && !this.props.backlinks) || (this.props.links.length < 1 && this.props.backlinks.length < 1) ){
+    const { links, backlinks } = this.props;
+    const hasLinks = links && Object.keys(links).length > 0;
+    const hasBacklinks = backlinks && Object.keys(backlinks).length > 0;
+
+    if (!hasLinks && !hasBacklinks) {
       return null;
     }
+
     return (
       <Card className="mt-2">
         <CardHeader>
@@ -64,9 +76,9 @@ class RecordLinks extends Component {
         </CardHeader>
         <CardBody>
           <ListGroup>
-            { this.renderLinks(this.props.links) }
-            { this.renderBackLinks(this.props.backlinks) }
-    	    </ListGroup>
+            { this.renderLinks(links) }
+            { this.renderBackLinks(backlinks) }
+          </ListGroup>
         </CardBody>
       </Card>
     );

@@ -13,7 +13,6 @@ import BrowserNotSupported from './components/Home/BrowserNotSupported';
 import PathsMap from './components/PathsMap/PathsMap';
 
 import SearchSaved from './components/Search/SearchSaved';
-import SearchSimple from './components/Search/SearchSimple';
 import SearchAdv from './components/Search/SearchAdv';
 import SearchShortSQL from './components/Search/SearchShortSQL';
 import SearchAll from './components/Search/SearchAll';
@@ -71,9 +70,8 @@ export default function App () {
 
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/saved' component={SearchSaved} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/all' component={SearchAll} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/adv' component={SearchAdv} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/shortsql' component={SearchShortSQL} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchSimple} />
+            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchAdv} />
 
             <Route exact path='/charts/:id?' component={Charts} />
             <Route exact path='/cite' component={Cite} />

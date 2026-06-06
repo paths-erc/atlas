@@ -31,7 +31,8 @@ export default class FldSelect extends Component {
       })[0];
     } else {
       if (Cfg.searchDefault[this.props.tb]){
-        const v = Cfg.searchDefault[this.props.tb].includes('paths') ? Cfg.searchDefault[this.props.tb] : `paths__${this.props.tb}:${Cfg.searchDefault[this.props.tb]}`;
+        const def = Cfg.searchDefault[this.props.tb];
+        const v = def.includes(':') ? def : `${this.props.tb}:${def}`;
 
         selObj = fldList.filter( e => {
           return e.value === v;

@@ -36,14 +36,9 @@ class SubHead extends Component {
         text: 'Show all'
       },
       {
-        to: '/search/' + tb ,
+        to: '/search/' + tb,
         icon: 'search',
         text: 'Search'
-      },
-      {
-        to: '/search/' + tb + '/adv',
-        icon: 'search-plus',
-        text: 'Advanced search'
       }
     ];
 

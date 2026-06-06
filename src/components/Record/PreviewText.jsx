@@ -38,7 +38,7 @@ const getExternalLink = (service, val) => {
 
 export default function PreviewText(props) {
 
-  const text = props.text;
+  const text = props.text !== null && props.text !== undefined ? String(props.text) : '';
   const separator = props.separator;
   const fld = props.fld;
   

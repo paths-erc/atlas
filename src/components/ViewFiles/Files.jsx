@@ -30,7 +30,7 @@ export default class Files extends Component {
         {
           firstFiles.map( (f, id) => {
             return <PreviewModal key={id}
-              file={this.props.baseUrl.replace('/api/', '/projects/') + 'files/' + f.id + '.' + f.ext} description={f.description} />
+              file={this.props.baseUrl + 'files/' + f.id + '.' + f.ext} description={f.description} />
           })
         }
         <MoreImages files={otherFiles} baseUrl={this.props.baseUrl} />

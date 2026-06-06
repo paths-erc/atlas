@@ -27,7 +27,7 @@ export default class ManuscriptBody extends Component {
             rec.core.contents
           ]} />
 
-        { rec.plugins['paths__m_shelfmarks'] && <Plugin data={rec.plugins['paths__m_shelfmarks']} /> }
+        { rec.plugins['m_shelfmarks'] && <Plugin data={rec.plugins['m_shelfmarks']} /> }
 
         <FieldSet legend="Dialects" fields={[
           rec.core.dialect,
@@ -41,7 +41,7 @@ export default class ManuscriptBody extends Component {
           rec.core.datingcriteria
         ]} />
 
-        { rec.plugins['paths__m_msplaces'] && <Plugin data={rec.plugins['paths__m_msplaces']} /> }
+        { rec.plugins['m_msplaces'] && <Plugin data={rec.plugins['m_msplaces']} /> }
 
         <FieldSet legend="Book form" fields={[
           rec.core.bookform,
@@ -84,7 +84,7 @@ export default class ManuscriptBody extends Component {
           rec.core.dimnotes
         ]} />
 
-        { rec.plugins['paths__m_quires'] && <Plugin data={rec.plugins['paths__m_quires']} /> }
+        { rec.plugins['m_quires'] && <Plugin data={rec.plugins['m_quires']} /> }
 
         <FieldSet fields={[ rec.core.quirenotes ]} />
 
@@ -112,7 +112,7 @@ export default class ManuscriptBody extends Component {
 
         <RecordCellDb data={ rec.core.handstot } />
 
-        { rec.plugins['paths__m_hands'] && <Plugin data={rec.plugins['paths__m_hands']} /> }
+        { rec.plugins['m_hands'] && <Plugin data={rec.plugins['m_hands']} /> }
 
         <FieldSet legend="Diacritical signs" fields={[
           rec.core.lectionalsigns,
@@ -206,7 +206,7 @@ export default class ManuscriptBody extends Component {
           rec.core.restmodern
         ]} />
 
-      { rec.plugins['paths__m_biblio'] && <Plugin data={rec.plugins['paths__m_biblio']} /> }
+      { rec.plugins['m_biblio'] && <Plugin data={rec.plugins['m_biblio']} /> }
 
 
         <FieldSet legend="Metadata" fields={[

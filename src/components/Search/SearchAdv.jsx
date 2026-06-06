@@ -24,7 +24,7 @@ export default class AdvSearchForm extends Component {
       rows = {
         'a': {
           f: '',
-          o: 'LIKE',
+          o: '_icontains',
           v: ''
         }
       };
@@ -60,7 +60,7 @@ export default class AdvSearchForm extends Component {
   _addRow(){
     let rows = this.state.rows;
     const uid = 'a' + Math.random().toString(36).substr(2, 9);
-    rows[uid] = { f: '', o: 'LIKE', v: '', c: 'AND'}
+    rows[uid] = { f: '', o: '_icontains', v: '', c: 'AND'}
     this.setState({
       rows: rows,
       showResults: false
@@ -109,7 +109,7 @@ export default class AdvSearchForm extends Component {
       showResults: true
     });
     const s = qs.stringify(this.state.rows)
-    this.props.history.push(`/search/${this.props.match.params.table}/adv?${s}`);
+    this.props.history.push(`/search/${this.props.match.params.table}?${s}`);
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -124,7 +124,7 @@ export default class AdvSearchForm extends Component {
   render() {
     return (
       <div>
-        <SubHead tb={ this.props.match.params.table } text='Advanced search' />
+        <SubHead tb={ this.props.match.params.table } text='Search' />
 
         <div className="mt-3 p-1 container">
           <form onSubmit={this._handleSubmit.bind(this)} className="form">

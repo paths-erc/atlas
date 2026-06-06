@@ -1,657 +1,367 @@
 /*jshint esversion: 6 */
 
-const makeShortSql = arr => {
-  return `?verb=search&shortsql=${arr.join('~')}`;
-};
-
 export default {
   places: {
     discovery_places: {
       id: 'discovery_places',
       title: 'Discovery places of Coptic literary manuscripts',
-      url: makeShortSql([
-          '@places',
-          `?id|IN|{@m_msplaces~[place~?table_link|=|paths__manuscripts||and|type|=|discovery}`,
-        ]),
-      data: {}
+      filter: { m_msplaces: { type: { _eq: 'discovery' } } }
     },
     storage_places: {
       id: 'storage_places',
       title: 'Storage places of Coptic literary manuscripts',
-      url: makeShortSql([
-          '@places',
-          `?id|IN|{@m_msplaces~[place~?table_link|=|paths__manuscripts||and|type|=|storage}`
-        ]),
-      data: {}
+      filter: { m_msplaces: { type: { _eq: 'storage' } } }
     },
     production_places: {
       id: 'production_places',
       title: 'Production places of Coptic literary manuscripts',
-      url: makeShortSql([
-          '@places',
-          `?id|IN|{@m_msplaces~[place~?table_link|=|paths__manuscripts||and|type|=|production}`,
-        ]),
-      data: {}
+      filter: { m_msplaces: { type: { _eq: 'production' } } }
     },
     episcopal_sees: {
-      id: "episcopal_sees",
-      title: "Episcopal sees",
-      url: makeShortSql([
-        '@places',
-        `?episcopalsee|=|1`,
-      ]),
-      data: {}
+      id: 'episcopal_sees',
+      title: 'Episcopal sees',
+      filter: { episcopalsee: { _eq: 1 } }
     },
     ms_in_graves: {
-      id: "ms_in_graves",
-      title: "Places where manuscrips used in funerary contexts have been found",
-      url: makeShortSql([
-        '@places',
-        `?id|IN|(24, 27, 28, 74, 83, 178, 274)`,
-      ]),
-      data: {}
+      id: 'ms_in_graves',
+      title: 'Places where manuscripts used in funerary contexts have been found',
+      filter: { id: { _in: [24, 27, 28, 74, 83, 178, 274] } }
     },
     cemeteries: {
-      id: "cemeteries",
-      title: "Catacombs, cemeteries tombs or necropoleis",
-      url: makeShortSql([
-        '@places',
-        `?typology|=|catacomb, cemetery, necropolis||or|typology|=|tomb`,
-      ]),
-      data: {}
+      id: 'cemeteries',
+      title: 'Catacombs, cemeteries, tombs or necropoleis',
+      filter: { _or: [
+        { typology: { _eq: 'catacomb, cemetery, necropolis' } },
+        { typology: { _eq: 'tomb' } }
+      ]}
     },
     hermitages: {
-      id: "hermitages",
-      title: "Hermitage units (mainly referred to the area of Western Thebes)",
-      url: makeShortSql([
-        '@places',
-        `?typology|=|hermitage unit(s)`,
-      ]),
-      data: {}
+      id: 'hermitages',
+      title: 'Hermitage units (mainly referred to the area of Western Thebes)',
+      filter: { typology: { _eq: 'hermitage unit(s)' } }
     },
     mines: {
-      id: "mines",
-      title: "Mines or quarries",
-      url: makeShortSql([
-        '@places',
-        `?typology|=|mine, quarry`,
-      ]),
-      data: {}
+      id: 'mines',
+      title: 'Mines or quarries',
+      filter: { typology: { _eq: 'mine, quarry' } }
     },
     monasteries: {
-      id: "monasteries",
-      title: "Monasteries",
-      url: makeShortSql([
-        '@places',
-        `?typology|=|monastery`,
-      ]),
-      data: {}
+      id: 'monasteries',
+      title: 'Monasteries',
+      filter: { typology: { _eq: 'monastery' } }
     },
     settlements: {
-      id: "settlements",
-      title: "Settlement",
-      url: makeShortSql([
-        '@places',
-        `?typology|=|settlement`,
-      ]),
-      data: {}
+      id: 'settlements',
+      title: 'Settlements',
+      filter: { typology: { _eq: 'settlement' } }
     },
   },
+
   titles: {
     final: {
-      id: "final",
-      title: "Final titles",
-      url: makeShortSql([
-        '@titles',
-        `?type|=|final`,
-      ]),
-      data: {}
+      id: 'final',
+      title: 'Final titles',
+      filter: { type: { _eq: 'final' } }
     },
     section_headings: {
-      id: "section_headings",
-      title: "Section headings",
-      url: makeShortSql([
-        '@titles',
-        `?type|=|section heading`,
-      ]),
-      data: {}
+      id: 'section_headings',
+      title: 'Section headings',
+      filter: { type: { _eq: 'section heading' } }
     }
   },
+
   authors: {
     bishops: {
-      id: "bishops",
-      title: "Authors-(arch)bishops",
-      url: makeShortSql([
-        '@authors',
-        `?title|LIKE|%bishop`,
-      ]),
-      data: {}
+      id: 'bishops',
+      title: 'Authors – (arch)bishops',
+      filter: { title: { _ends_with: 'bishop' } }
     }
   },
+
   manuscripts: {
     palimpsest_ms: {
-      id: "palimpsest_ms",
-      title: "Palimpsests",
-      url: makeShortSql([
-        '@manuscripts',
-        `?palimpsest|=|1`,
-      ]),
-      data: {}
+      id: 'palimpsest_ms',
+      title: 'Palimpsests',
+      filter: { palimpsest: { _eq: 1 } }
     },
-    // wandering_ms: {
-    //   id: "wandering_ms",
-    //   title: "“Wandering” manuscripts (for instance manufactured in a place but stored in another palace, etc.)",
-    //   url: makeShortSql([
-    //     '@manuscripts',
-    //     `[paths__manuscripts.*,{@m_msplaces~[m_msplaces.place|count_distinct~?table_link|=|paths__manuscripts||and|id_link|=|^paths__manuscripts.id}:pl_ms`,
-    //     `?pl_ms|>|1`,
-    //   ]),
-    //   data: {}
-    // },
     ms_has_bindings: {
-      id: "ms_has_bindings",
-      title: "Manuscripts with ancient bookbindings",
-      url: makeShortSql([
-        '@manuscripts',
-        `?bindings|=|1`,
-      ]),
-      data: {}
+      id: 'ms_has_bindings',
+      title: 'Manuscripts with ancient bookbindings',
+      filter: { bindings: { _eq: 1 } }
     },
     detached_bindings: {
-      id: "detached_bindings",
-      title: "Bookbindings detached from original manuscripts",
-      url: makeShortSql([
-        '@manuscripts',
-        `?isbookbinding|=|1`,
-      ]),
-      data: {}
+      id: 'detached_bindings',
+      title: 'Bookbindings detached from original manuscripts',
+      filter: { isbookbinding: { _eq: 1 } }
     },
-    horizontal_rolls : {
-      id: "horizontal_rolls",
-      title: "Horizontal rolls",
-      url: makeShortSql([
-        '@manuscripts',
-        `?bookform|=|horizontal roll`,
-      ]),
-      data: {}
+    horizontal_rolls: {
+      id: 'horizontal_rolls',
+      title: 'Horizontal rolls',
+      filter: { bookform: { _eq: 'horizontal roll' } }
     },
-    vertical_rolls : {
-      id: "vertical_rolls",
-      title: "Vertical rolls",
-      url: makeShortSql([
-        '@manuscripts',
-        `?bookform|=|vertical roll`,
-      ]),
-      data: {}
+    vertical_rolls: {
+      id: 'vertical_rolls',
+      title: 'Vertical rolls',
+      filter: { bookform: { _eq: 'vertical roll' } }
     },
-    minor_dialects : {
-      id: "minor_dialects",
-      title: "“Minor” dialects",
-      url: makeShortSql([
-        '@manuscripts',
-        `?dialect|not like|%F;%||and|dialect|not like|%S;%||and|dialect|not like|%B;%||and|dialect|not like|%F||and|dialect|not like|%B`,
-      ]),
-      data: {}
+    minor_dialects: {
+      id: 'minor_dialects',
+      title: '"Minor" dialects',
+      filter: { _and: [
+        { dialect: { _ncontains: 'F;' } },
+        { dialect: { _ncontains: 'S;' } },
+        { dialect: { _ncontains: 'B;' } },
+        { dialect: { _ncontains: 'F' } },
+        { dialect: { _ncontains: 'B' } }
+      ]}
     },
-    miniature_codices : {
-      id: "miniature_codices",
-      title: "Miniature codices",
-      url: makeShortSql([
-        '@manuscripts',
-        `?bookform|=|codex||and|leafw|>|0||and|leafw|<|101`,
-      ]),
-      data: {}
+    miniature_codices: {
+      id: 'miniature_codices',
+      title: 'Miniature codices',
+      filter: { _and: [
+        { bookform: { _eq: 'codex' } },
+        { leafw: { _gt: 0 } },
+        { leafw: { _lt: 101 } }
+      ]}
     },
-    square_codices : {
-      id: "square_codices",
-      title: "Square format codices",
-      url: makeShortSql([
-        '@manuscripts',
-        `?bookform|=|codex||and|prophw|>|.84||and|prophw|<|1.16`,
-      ]),
-      data: {}
+    square_codices: {
+      id: 'square_codices',
+      title: 'Square format codices',
+      filter: { _and: [
+        { bookform: { _eq: 'codex' } },
+        { prophw: { _gt: 0.84 } },
+        { prophw: { _lt: 1.16 } }
+      ]}
     },
-    oblong_codices : {
-      id: "oblong_codices",
-      title: "Oblong format codices",
-      url: makeShortSql([
-        '@manuscripts',
-        `?bookform|=|codex||and|prophw|>|.84`,
-      ]),
-      data: {}
+    oblong_codices: {
+      id: 'oblong_codices',
+      title: 'Oblong format codices',
+      filter: { _and: [
+        { bookform: { _eq: 'codex' } },
+        { prophw: { _gt: 0.84 } }
+      ]}
     },
     early_bohairic: {
-      id: "early_bohairic",
-      title: "Early Bohairic manuscripts (up to 7th cent.)",
-      url: makeShortSql([
-        '@manuscripts',
-        `?dialect|like|%B%||and|chronoto|<|701`,
-      ]),
-      data: {}
+      id: 'early_bohairic',
+      title: 'Early Bohairic manuscripts (up to 7th cent.)',
+      filter: { _and: [
+        { dialect: { _icontains: 'B' } },
+        { chronoto: { _lt: 701 } }
+      ]}
     },
     fayyumic: {
-      id: "fayyumic",
-      title: "Fayyumic dialect manuscripts",
-      url: makeShortSql([
-        '@manuscripts',
-        `?dialect|like|%F%`,
-      ]),
-      data: {}
+      id: 'fayyumic',
+      title: 'Fayyumic dialect manuscripts',
+      filter: { dialect: { _icontains: 'F' } }
     },
     ms_third_c: {
-      id: "ms_third_c",
-      title: "Manuscripts up to the 3rd Century",
-      url: makeShortSql([
-        '@manuscripts',
-        `?chronofrom|<|301`,
-      ]),
-      data: {}
+      id: 'ms_third_c',
+      title: 'Manuscripts up to the 3rd Century',
+      filter: { chronofrom: { _lt: 301 } }
     },
     ms_forth_c: {
-      id: "ms_forth_c",
-      title: "Manuscripts of the 4th Century",
-      url: makeShortSql([
-        '@manuscripts',
-        `?chronofrom|>|299||and|chronofrom|<|400`,
-      ]),
-      data: {}
+      id: 'ms_forth_c',
+      title: 'Manuscripts of the 4th Century',
+      filter: { _and: [
+        { chronofrom: { _gt: 299 } },
+        { chronofrom: { _lt: 400 } }
+      ]}
     },
     ms_fifth_c: {
-      id: "ms_fifth_c",
-      title: "Manuscripts of the 5th Century",
-      url: makeShortSql([
-        '@manuscripts',
-        `?chronofrom|>|399||and|chronofrom|<|500`,
-      ]),
-      data: {}
+      id: 'ms_fifth_c',
+      title: 'Manuscripts of the 5th Century',
+      filter: { _and: [
+        { chronofrom: { _gt: 399 } },
+        { chronofrom: { _lt: 500 } }
+      ]}
     },
     ms_sixth_c: {
-      id: "ms_sixth_c",
-      title: "Manuscripts of the 6th Century",
-      url: makeShortSql([
-        '@manuscripts',
-        `?chronofrom|>|499||and|chronofrom|<|600`,
-      ]),
-      data: {}
+      id: 'ms_sixth_c',
+      title: 'Manuscripts of the 6th Century',
+      filter: { _and: [
+        { chronofrom: { _gt: 499 } },
+        { chronofrom: { _lt: 600 } }
+      ]}
     },
     ms_seventh_c: {
-      id: "ms_seventh_c",
-      title: "Manuscripts of the 7th Century",
-      url: makeShortSql([
-        '@manuscripts',
-        `?chronofrom|>|599||and|chronofrom|<|700`,
-      ]),
-      data: {}
+      id: 'ms_seventh_c',
+      title: 'Manuscripts of the 7th Century',
+      filter: { _and: [
+        { chronofrom: { _gt: 599 } },
+        { chronofrom: { _lt: 700 } }
+      ]}
     },
-    
   },
+
   works: {
-    // translations_biblical_sahidic: {
-    //   id: "translations_biblical_sahidic",
-    //   title: "Translations of biblical works into Sahidic - first phase (3rd-4th cent.)",
-    //   url: makeShortSql([
-    //     '@works',
-    //     `?litperiod|=|Translations of biblical works into Sahidic - first phase (3rd-4th cent.)`,
-    //   ]),
-    //   data: {}
-    // },
-    // translations_biblical_bohairic: {
-    //   id: "translations_biblical_bohairic",
-    //   title: "Translations of biblical works into Bohairic - first phase (4th cent.)",
-    //   url: makeShortSql([
-    //     '@works',
-    //     `?litperiod|=|Translations of biblical works into Bohairic - first phase (4th cent.)`,
-    //   ]),
-    //   data: {}
-    // },
-    // early_translations_other: {
-    //   id: "early_translations_other",
-    //   title: "Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)",
-    //   url: makeShortSql([
-    //     '@works',
-    //     `?litperiod|=|Translations of biblical works into, Akhmimic, Lykopolitan, Oxyrhyrinchite, Fayyumic, etc. (4th cent.)`,
-    //   ]),
-    //   data: {}
-    // },
     translations_apocryphal: {
-      id: "translations_apocryphal",
-      title: "Early translations of apocryphal works – first phase (4th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Early translations of apocryphal works – first phase (4th cent.)`,
-      ]),
-      data: {}
+      id: 'translations_apocryphal',
+      title: 'Early translations of apocryphal works – first phase (4th cent.)',
+      filter: { litperiod: { _eq: 'Early translations of apocryphal works – first phase (4th cent.)' } }
     },
     translations_gnostic: {
-      id: "translations_gnostic",
-      title: "Translation and (eventual) re-elaboration of a “Gnostic” corpus (3rd-4th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translation and (eventual) re-elaboration of a “Gnostic” corpus (3rd-4th cent.)`,
-      ]),
-      data: {}
+      id: 'translations_gnostic',
+      title: 'Translation and (eventual) re-elaboration of a "Gnostic" corpus (3rd-4th cent.)',
+      filter: { litperiod: { _eq: 'Translation and (eventual) re-elaboration of a “Gnostic” corpus (3rd-4th cent.)' } }
     },
     translations_manichaean: {
-      id: "translations_manichaean",
-      title: "Translation and (eventual) re-elaboration of a Manichaean corpus (3th-5th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translation and (eventual) re-elaboration of a Manichaean corpus (3th-5th cent.)`,
-      ]),
-      data: {}
+      id: 'translations_manichaean',
+      title: 'Translation and (eventual) re-elaboration of a Manichaean corpus (3th-5th cent.)',
+      filter: { litperiod: { _eq: 'Translation and (eventual) re-elaboration of a Manichaean corpus (3th-5th cent.)' } }
     },
     translations_patristic: {
-      id: "translations_patristic",
-      title: "Early translation of patristic works – first phase (3th-5th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Early translation of patristic works – first phase (3th-5th cent.)`,
-      ]),
-      data: {}
+      id: 'translations_patristic',
+      title: 'Early translation of patristic works – first phase (3th-5th cent.)',
+      filter: { litperiod: { _eq: 'Early translation of patristic works – first phase (3th-5th cent.)' } }
     },
     pachomius: {
-      id: "pachomius",
-      title: "Pachomius and the early Pachomian milieu (4th-5th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Pachomius and the early Pachomian milieu (4th-5th cent.)`,
-      ]),
-      data: {}
+      id: 'pachomius',
+      title: 'Pachomius and the early Pachomian milieu (4th-5th cent.)',
+      filter: { litperiod: { _eq: 'Pachomius and the early Pachomian milieu (4th-5th cent.)' } }
     },
     shenoute: {
-      id: "shenoute",
-      title: "Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)`,
-      ]),
-      data: {}
+      id: 'shenoute',
+      title: 'Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)',
+      filter: { litperiod: { _eq: 'Early original literary production: Shenoute and the Shenoutean milieu (4th-5th cent.)' } }
     },
-    // standard_translations: {
-    //   id: "standard_translations",
-    //   title: "“Standard” translations of biblical works into Sahidic (5th cent.)",
-    //   url: makeShortSql([
-    //     '@works',
-    //     `?litperiod|=|“Standard” translations of biblical works into Sahidic (5th cent.)`,
-    //   ]),
-    //   data: {}
-    // },
     translations_apocryphal_second: {
-      id: "translations_apocryphal_second",
-      title: "Translations of apocryphal texts – second phase (4th-5th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translations of apocryphal texts – second phase (4th-5th cent.)`,
-      ]),
-      data: {}
+      id: 'translations_apocryphal_second',
+      title: 'Translations of apocryphal texts – second phase (4th-5th cent.)',
+      filter: { litperiod: { _eq: 'Translations of apocryphal texts – second phase (4th-5th cent.)' } }
     },
     translations_hagiographical: {
-      id: "translations_hagiographical",
-      title: "Translations of hagiographical works – first phase (4th-6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Translations of hagiographical works – first phase (4th-6th cent.)`,
-      ]),
-      data: {}
+      id: 'translations_hagiographical',
+      title: 'Translations of hagiographical works – first phase (4th-6th cent.)',
+      filter: { litperiod: { _eq: 'Translations of hagiographical works – first phase (4th-6th cent.)' } }
     },
     classsical_translations_homilies: {
-      id: "classsical_translations_homilies",
-      title: "“Classical” translations - homilies (end of 4th-6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|“Classical” translations - homilies (end of 4th-6th cent.)`,
-      ]),
-      data: {}
+      id: 'classsical_translations_homilies',
+      title: '"Classical" translations - homilies (end of 4th-6th cent.)',
+      filter: { litperiod: { _eq: '“Classical” translations - homilies (end of 4th-6th cent.)' } }
     },
     classsical_translations_historiae: {
-      id: "classsical_translations_historiae",
-      title: "“Classical” translations – historiae monachorum (end of 4th-6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|“Classical” translations – historiae monachorum (end of 4th-6th cent.)`,
-      ]),
-      data: {}
+      id: 'classsical_translations_historiae',
+      title: '"Classical" translations – historiae monachorum (end of 4th-6th cent.)',
+      filter: { litperiod: { _eq: '“Classical” translations – historiae monachorum (end of 4th-6th cent.)' } }
     },
     classical_translations_acts: {
-      id: "classical_translations_acts",
-      title: "“Classical” translations – acts of councils and Canones (end of 4th-6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|“Classical” translations – acts of councils and Canones (end of 4th-6th cent.)`,
-      ]),
-      data: {}
+      id: 'classical_translations_acts',
+      title: '"Classical" translations – acts of councils and Canones (end of 4th-6th cent.)',
+      filter: { litperiod: { _eq: '“Classical” translations – acts of councils and Canones (end of 4th-6th cent.)' } }
     },
     classical_translations_monastic: {
-      id: "classical_translations_monastic",
-      title: "“Classical” translations – monastic works (end of 4th-6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|“Classical” translations – monastic works (end of 4th-6th cent.)`,
-      ]),
-      data: {}
+      id: 'classical_translations_monastic',
+      title: '"Classical" translations – monastic works (end of 4th-6th cent.)',
+      filter: { litperiod: { _eq: '“Classical” translations – monastic works (end of 4th-6th cent.)' } }
     },
     post_chalcedonian: {
-      id: "post_chalcedonian",
-      title: "Post-Chalcedonian opposition literature: the “plerophories” and other works (5th-6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Post-Chalcedonian opposition literature: the “plerophories” and other works (5th-6th cent.)`,
-      ]),
-      data: {}
+      id: 'post_chalcedonian',
+      title: 'Post-Chalcedonian opposition literature: the "plerophories" and other works (5th-6th cent.)',
+      filter: { litperiod: { _eq: 'Post-Chalcedonian opposition literature: the “plerophories” and other works (5th-6th cent.)' } }
     },
     historiographic: {
-      id: "historiographic",
-      title: "Historiographic Production (6th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Historiographic Production (6th cent.)`,
-      ]),
-      data: {}
+      id: 'historiographic',
+      title: 'Historiographic Production (6th cent.)',
+      filter: { litperiod: { _eq: 'Historiographic Production (6th cent.)' } }
     },
     orig_lit_formation: {
-      id: "orig_lit_formation",
-      title: "Original Literature: Formation of the earlier hagiographic cycles (6 cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Original Literature: Formation of the earlier hagiographic cycles (6 cent.)`,
-      ]),
-      data: {}
+      id: 'orig_lit_formation',
+      title: 'Original Literature: Formation of the earlier hagiographic cycles (6 cent.)',
+      filter: { litperiod: { _eq: 'Original Literature: Formation of the earlier hagiographic cycles (6 cent.)' } }
     },
     orig_lit_damian_hag: {
-      id: "orig_lit_damian_hag",
-      title: "Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Hagiographies",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Hagiographies`,
-      ]),
-      data: {}
+      id: 'orig_lit_damian_hag',
+      title: 'Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Hagiographies',
+      filter: { litperiod: { _eq: 'Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Hagiographies' } }
     },
     orig_lit_damian_hom: {
-      id: "orig_lit_damian_hom",
-      title: "Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Homilies",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Homilies`,
-      ]),
-      data: {}
+      id: 'orig_lit_damian_hom',
+      title: 'Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Homilies',
+      filter: { litperiod: { _eq: 'Original Literature: The period of Damian and his cultural circle (6th-7th cent.): Homilies' } }
     },
     poetry: {
-      id: "poetry",
-      title: "Poetic production (7th-8th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Poetic production (7th-8th cent.)`,
-      ]),
-      data: {}
+      id: 'poetry',
+      title: 'Poetic production (7th-8th cent.)',
+      filter: { litperiod: { _eq: 'Poetic production (7th-8th cent.)' } }
     },
     orig_lit_hom: {
-      id: "orig_lit_hom",
-      title: "Original Literature: Homilies with apocryphal insertions (6th -8th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Original Literature: Homilies with apocryphal insertions (6th -8th cent.)`,
-      ]),
-      data: {}
+      id: 'orig_lit_hom',
+      title: 'Original Literature: Homilies with apocryphal insertions (6th -8th cent.)',
+      filter: { litperiod: { _eq: 'Original Literature: Homilies with apocryphal insertions (6th -8th cent.)' } }
     },
     original_lit_early_islamic: {
-      id: "original_lit_early_islamic",
-      title: "Original Literature: Literary production of the early Islamic period (7th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Original Literature: Literary production of the early Islamic period (7th cent.)`,
-      ]),
-      data: {}
+      id: 'original_lit_early_islamic',
+      title: 'Original Literature: Literary production of the early Islamic period (7th cent.)',
+      filter: { litperiod: { _eq: 'Original Literature: Literary production of the early Islamic period (7th cent.)' } }
     },
-    // standard_translations_in_bohairic: {
-    //   id: "standard_translations_in_bohairic",
-    //   title: "“Standard” translations of biblical works into Bohairic (7th-8th cent.)",
-    //   url: makeShortSql([
-    //     '@works',
-    //     `?litperiod|=|“Standard” translations of biblical works into Bohairic (7th-8th cent.)`,
-    //   ]),
-    //   data: {}
-    // },
     original_lit_later_hag: {
-      id: "original_lit_later_hag",
-      title: "Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)`,
-      ]),
-      data: {}
+      id: 'original_lit_later_hag',
+      title: 'Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)',
+      filter: { litperiod: { _eq: 'Original Literature: Formation of the later (pseudo-epigraphical) hagiographic cycles and re-arrangement of homiletic production (7th-8th cent.)' } }
     },
-    // synaxarial: {
-    //   id: "synaxarial",
-    //   title: "Synaxarial arrangement (9th-10th cent.)",
-    //   url: makeShortSql([
-    //     '@works',
-    //     `?litperiod|=|Synaxarial arrangement (9th-10th cent.)`,
-    //   ]),
-    //   data: {}
-    // },
     late_liturgical: {
-      id: "late_liturgical",
-      title: "Late liturgical production (10th-14th cent.)",
-      url: makeShortSql([
-        '@works',
-        `?litperiod|=|Late liturgical production (10th-14th cent.)`,
-      ]),
-      data: {}
+      id: 'late_liturgical',
+      title: 'Late liturgical production (10th-14th cent.)',
+      filter: { litperiod: { _eq: 'Late liturgical production (10th-14th cent.)' } }
     },
   },
+
   colophons: {
     cryptography: {
       id: 'cryptography',
-      title: "Colophons with cryptography",
-      url: makeShortSql([
-        '@colophons',
-        `?cryptography|=|1`,
-      ]),
-      data: {}
+      title: 'Colophons with cryptography',
+      filter: { cryptography: { _eq: 1 } }
     },
     greek_minuscule: {
       id: 'greek_minuscule',
-      title: "Colophons with Greek minuscule",
-      url: makeShortSql([
-        '@colophons',
-        `?minusculegreek|=|1`,
-      ]),
-      data: {}
+      title: 'Colophons with Greek minuscule',
+      filter: { minusculegreek: { _eq: 1 } }
     },
     coptic_minuscule: {
       id: 'coptic_minuscule',
-      title: "Colophons with Coptic minuscule",
-      url: makeShortSql([
-        '@colophons',
-        `?minusminusculecopitcculegreek|=|1`,
-      ]),
-      data: {}
+      title: 'Colophons with Coptic minuscule',
+      filter: { minusculecopitc: { _eq: 1 } }
     },
     nag_hammadi: {
       id: 'nag_hammadi',
-      title: '“Colophons” of the Nag Hammadi Codices',
-      url: makeShortSql([
-        '@colophons',
-        '?id|=|236||or|id|=|237||or|id|=|238||or|id|=|255||or|id|=|256||or|id|=|257'
-      ]),
-      data: {}
+      title: '"Colophons" of the Nag Hammadi Codices',
+      filter: { id: { _in: [236, 237, 238, 255, 256, 257] } }
     }
   },
+
   persons: {
     donors: {
       id: 'donors',
       title: 'Donors',
-      url: makeShortSql([
-        '@persons',
-        `?type|=|donor`,
-      ]),
-      data: {}
+      filter: { type: { _eq: 'donor' } }
     },
     copyists: {
       id: 'copyists',
       title: 'Copyists',
-      url: makeShortSql([
-        '@persons',
-        `?type|=|copyist`,
-      ]),
-      data: {}
+      filter: { type: { _eq: 'copyist' } }
     }
   },
+
   map: {
     discovery_places: {
       id: 'discovery_places',
       title: 'Discovery places of Coptic literary manuscripts',
-      url: makeShortSql([
-        '@places',
-        '[geodata.geometry,places.id,places.name,places.pleiades,places.typology,{!@m_msplaces~[id|count~?place|=|^places.id}:tot_ms',
-        '?places.id|in|{@m_msplaces~[place~?table_link|=|paths__manuscripts||and|type|=|discovery}',
-        '-500:0'
-      ]) + '&geojson=1',
-      data: {}
+      filter: { m_msplaces: { type: { _eq: 'discovery' } } }
     },
     storage_places: {
       id: 'storage_places',
       title: 'Storage places of Coptic literary manuscripts',
-      url: makeShortSql([
-        '@places',
-        '[geodata.geometry,places.id,places.name,places.pleiades,places.typology,{!@m_msplaces~[id|count~?place|=|^places.id}:tot_ms',
-        '?places.id|in|{@m_msplaces~[place~?table_link|=|paths__manuscripts||and|type|=|storage}',
-        '-500:0'
-      ]) + '&geojson=1',
-      data: {}
+      filter: { m_msplaces: { type: { _eq: 'storage' } } }
     },
     production_places: {
       id: 'production_places',
       title: 'Production places of Coptic literary manuscripts',
-      url: makeShortSql([
-        '@places',
-        '[geodata.geometry,places.id,places.name,places.pleiades,places.typology,{!@m_msplaces~[id|count~?place|=|^places.id}:tot_ms',
-        '?places.id|in|{@m_msplaces~[place~?table_link|=|paths__manuscripts||and|type|=|production}',
-        '-500:0'
-      ]) + '&geojson=1',
-      data: {}
-    },
-    all_ms_places: {
-      id: 'all_ms_places',
-      title: 'All places connected to manuscripts',
-      url: makeShortSql([
-        '@places',
-        '[geodata.geometry,places.id,places.name,places.pleiades,places.typology,{!@m_msplaces~[id|count~?place|=|^places.id}:tot_ms',
-        '-500:0',
-        '?tot_ms|>|^0'
-      ]) + '&geojson=1',
-      data: {}
+      filter: { m_msplaces: { type: { _eq: 'production' } } }
     },
     bishoprics: {
       id: 'bishoprics',
       title: 'Bishoprics',
-      url: makeShortSql([
-        '@places',
-        '[geodata.geometry,places.id,places.name,places.pleiades,places.typology',
-        '?episcopalsee|=|1',
-        '-500:0'
-      ]) + '&geojson=1',
-      data: {}
+      filter: { episcopalsee: { _eq: 1 } }
     },
   }
 };

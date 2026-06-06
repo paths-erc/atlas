@@ -17,13 +17,13 @@ class Plugin extends Component {
       return null;
     }
 
-    if(this.props.data.metadata.tb_id === 'paths__m_biblio'){
+    if(this.props.data.metadata.tb_id === 'm_biblio'){
       return <PluginBiblio data={ this.props.data } />
     }
-    if(this.props.data.metadata.tb_id === 'paths__m_shelfmarks'){
+    if(this.props.data.metadata.tb_id === 'm_shelfmarks'){
       return <PluginShelfmarks data={ this.props.data } />
     }
-    if(this.props.data.metadata.tb_id === 'paths__m_toponyms'){
+    if(this.props.data.metadata.tb_id === 'm_toponyms'){
       return <PluginToponyms data={ this.props.data } />
     }
 
@@ -40,7 +40,7 @@ class Plugin extends Component {
                  */
                   Object.keys(d).map( (f, fi) => {
                     if (
-                      Cfg.hidden.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1
+                      Cfg.hidden.indexOf(this.props.data.metadata.tb_id + '.' + f) > -1
                       ||
                       f === 'sort'
                       ||
@@ -53,8 +53,8 @@ class Plugin extends Component {
                     
                     if (d[f].label){
                       return <RecordCell 
-                        coptic= { Cfg.coptic.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1}
-                        greek= { Cfg.greek.indexOf(this.props.data.metadata.tb_stripped + '.' + f) > -1}
+                        coptic= { Cfg.coptic.indexOf(this.props.data.metadata.tb_id + '.' + f) > -1}
+                        greek= { Cfg.greek.indexOf(this.props.data.metadata.tb_id + '.' + f) > -1}
                         val={ d[f].val_label ? d[f].val_label : d[f].val } 
                         label={ d[f].label } 
                         key={fi} />
