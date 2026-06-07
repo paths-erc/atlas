@@ -12,6 +12,16 @@ Last reviewed: 2026-06-07
 | `qs` | 6.11.2 | 6.15.2 | safe minor |
 | `react-copy-to-clipboard` | 5.1.0 | 5.1.1 | patch |
 | `react-leaflet-sidebarv2` | 0.6.0 | — | **removed**, replaced by custom component |
+| `axios` | 0.24.0 | 1.17.0 | `axios.all` → `Promise.all` in SiteMaps + Layers |
+| `gh-pages` | 3.2.3 | 6.3.0 | dev only |
+| `object-hash` | 2.2.0 | 3.0.0 | drop-in |
+| `react` + `react-dom` | 17.0.2 | 18.3.1 | `index.js`: createRoot; `UNSAFE_*` still ok |
+| `@fortawesome/*` | 5.x / 0.1.x | 7.x / 3.x | backward-compatible |
+| `chart.js` | 2.9.4 | 4.5.1 | Charts.jsx è stub, nessun impatto |
+| `react-chartjs-2` | 2.11.2 | 5.3.1 | aggiornato con chart.js |
+| `react-markdown` | 8.0.7 | 10.1.0 | API invariata, build ok |
+| `remark-gfm` | 3.0.1 | 4.0.1 | — |
+| `rehype-raw` | 6.1.1 | 7.0.0 | — |
 
 ---
 
@@ -96,16 +106,17 @@ Può includere anche:
 
 ---
 
-## Ordine suggerito
+## Ordine suggerito (aggiornato)
 
 ```
-1. chore/deps-medium          (axios, gh-pages, object-hash)
-2. chore/deps-markdown        (react-markdown + plugin)
-3. chore/deps-fontawesome     (FA 5 → 7)
-4. chore/deps-charts          (chart.js 2 → 4)
-5. chore/deps-reactstrap      (reactstrap 8→9, typeahead, react-select)
-6. chore/deps-router          (react-router-dom 5 → 7)
-7. chore/deps-react           (react 17 → 19)
+✅ chore/deps-medium          axios, gh-pages, object-hash
+✅ chore/deps-react18         react 17→18, FA 5→7, chart.js 2→4,
+                              react-markdown 8→10, remark-gfm, rehype-raw
+
+⬜ chore/deps-reactstrap      reactstrap 8→9, typeahead 5→6, react-select 3→5
+⬜ chore/deps-router          react-router-dom 5→7  (alto effort)
+⬜ chore/deps-leaflet         react-leaflet 2→5 + SidebarPortal rewrite
+⬜ chore/deps-react19         react 18→19 + fix UNSAFE_componentWillReceiveProps
 ```
 
 Ogni branch va mergiato e verificato prima di iniziare il successivo.
