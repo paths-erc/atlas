@@ -17,7 +17,7 @@ The atlas uses the **BraDypUS v5 API**. All requests require two query parameter
 
 | Parameter | Value |
 |-----------|-------|
-| `api_key` | *(contact the project team)* |
+| `api_key` | *Contact the [project team](paola.buzi@uniroma1.it).* |
 | `app`     | `paths` |
 
 ### Endpoints

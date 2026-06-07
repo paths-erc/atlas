@@ -20,7 +20,6 @@ import SearchAll from './components/Search/SearchAll';
 import Intro from './components/Intro/Intro';
 
 import ViewOne from './components/Record/ViewOne';
-import Charts from './components/Charts/Charts';
 import Cite from './components/Cite/Cite';
 import Api from './components/Api/Api';
 import { detect } from 'detect-browser';
@@ -73,7 +72,6 @@ export default function App () {
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/shortsql' component={SearchShortSQL} />
             <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchAdv} />
 
-            <Route exact path='/charts/:id?' component={Charts} />
             <Route exact path='/cite' component={Cite} />
             <Route exact path='/api' component={Api} />
 

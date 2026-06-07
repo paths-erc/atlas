@@ -129,10 +129,6 @@ export default class Database {
     Database.getPlaces(filter, cb);
   }
 
-  static getChart(id, cb) {
-    cb(null);
-  }
-
   static getData(url, params, cb) {
     cb({ status: 'error', detail: 'ShortSQL not supported in v5' });
   }
