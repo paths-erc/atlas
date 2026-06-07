@@ -3,10 +3,10 @@ import qs from 'qs';
 
 import SubHead from '../SubHead/SubHead';
 import Results from './Results';
+import { withRouter } from '../utils/withRouter';
 
 
-
-export default class SearchAll extends Component {
+class SearchAll extends Component {
 
   constructor(props) {
     super(props);
@@ -31,12 +31,14 @@ export default class SearchAll extends Component {
       <div>
         <SubHead tb={ this.props.match.params.table } text='View all' />
 
-      	<Results
-            tb={this.props.match.params.table}
-            type="all"
-            page={this.state.page}
-            />
+        <Results
+          tb={this.props.match.params.table}
+          type="all"
+          page={this.state.page}
+        />
       </div>
     );
   }
 }
+
+export default withRouter(SearchAll);

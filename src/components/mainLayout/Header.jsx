@@ -4,7 +4,7 @@ import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, Collapse } f
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function FixedNavbar(props) {
+export default function FixedNavbar() {
 
   const [isOpen, toggleOpen] = useState(false);
 
@@ -47,7 +47,7 @@ export default function FixedNavbar(props) {
                 </NavItem>
               </Nav>
 
-              <Nav className="ml-auto" navbar>
+              <Nav className="ms-auto" navbar>
                 <NavItem>
                   <NavLink href="http://paths.uniroma1.it">Website</NavLink>
                 </NavItem>

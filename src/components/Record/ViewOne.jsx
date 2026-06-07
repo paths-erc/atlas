@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Database from '../Services/Database/Database';
+import { withRouter } from '../utils/withRouter';
 import SubHead from '../SubHead/SubHead';
 import Body from './Bodies/Body';
 import RecordLinks from './RecordLinks';
@@ -13,7 +14,7 @@ import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
 
-export default class ViewOne extends Component {
+class ViewOne extends Component {
 
   constructor(props) {
     super(props);
@@ -128,3 +129,5 @@ export default class ViewOne extends Component {
     );
   }
 }
+
+export default withRouter(ViewOne);

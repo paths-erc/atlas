@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Alert } from 'reactstrap';
-import {withRouter} from 'react-router';
 
 import Database from '../Services/Database/Database';
 import SavedQueries from '../Services/SavedQueries';
@@ -10,6 +9,7 @@ import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
 import OpenInMap from '../Manuscripts/OpenInMap';
 import Loading from '../Loading/Loading';
 import Cfg from '../Services/Cfg/Cfg';
+import { withRouter } from '../utils/withRouter';
 
 
 class Results extends Component {
@@ -107,7 +107,7 @@ class Results extends Component {
       );
     }
 
-    const tb = this.props.match.params.table;
+    const tb = this.props.tb;
     const page = this.props.page || 1;
     const fieldsMap = {};
     (this.state.result.fields || []).forEach(f => { fieldsMap[f.name] = f.label; });
@@ -157,4 +157,5 @@ class Results extends Component {
     );
   }
 }
+
 export default withRouter(Results);
