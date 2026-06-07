@@ -1,44 +1,80 @@
-“PAThs” makes available freely the contents of its database in different
-formats and for different purposes. Presently, RDF triples following the
-[Pelagios Gazetteer Interconnection Format](https://github.com/pelagios/pelagios-cookbook/wiki/Pelagios-Gazetteer-Interconnection-Format)
-are available for download, in different formats. Other dump formats (CSV and SQL)
-will be published on a regular basis.
-
-Data can be downloaded as versioned, static files hosted on GitHub or can also be
-programmatically harvested using the [BraDypUS database API](https://docs.bdus.cloud/api/).
-
-
+PAThs makes the contents of its database freely available for research and reuse.
+Data can be browsed interactively through this atlas or accessed programmatically
+via the [BraDypUS v5 REST API](https://docs.bdus.cloud/).
 
 ---
 
 ## Zotero
-All bibliographic data of PAThs project are freely available in the official Zotero
-repository available at this link [https://www.zotero.org/groups/2189557/erc-paths/](https://www.zotero.org/groups/2189557/erc-paths/)
+
+All bibliographic data of the PAThs project are freely available in the official Zotero
+repository: [https://www.zotero.org/groups/2189557/erc-paths/](https://www.zotero.org/groups/2189557/erc-paths/)
 
 ---
 
-## Pelagios
+## REST API
 
-Dump files for Pelagios are freely available for download on Github. Since PAThs
-database is continuously being updated these files are versioned. Please refer to the
-version number to cite the data.
+The atlas uses the **BraDypUS v5 API**. All requests require two query parameters:
 
-- **VoID**: [VoID File v.1.0.0](https://raw.githubusercontent.com/paths-erc/docs/master/raw-data/pelagios-rdf/paths-pelagios-void.rdf)
-- **Places**: [paths.places.ttl v.1.0.0](https://raw.githubusercontent.com/paths-erc/docs/master/raw-data/pelagios-rdf/paths.places.ttl)
+| Parameter | Value |
+|-----------|-------|
+| `api_key` | *(contact the project team)* |
+| `app`     | `paths` |
 
+### Endpoints
 
+#### List records
+```
+GET /api/records/{table}
+```
+Returns a paginated list of records. Supported tables: `manuscripts`, `places`, `works`,
+`authors`, `titles`, `colophons`, `persons`, `collections`.
 
-#### Live version
+Optional parameters:
+- `page` — page number (default: 1, 30 records per page)
+- `filter[field][_op]=value` — filter by field (see operators below)
+- `search=text` — full-text search
 
-**`Pay attention: the live version must NOT be used for production use.
-Please refer to the GitHub hosted version`**
+#### Single record
+```
+GET /api/record/{table}/{id}
+```
+Returns a single record with all fields, related data, links and files.
 
-Semantic data for **Places** are also available as live web services
-in the following formats:
+#### Geographic data (map)
+```
+GET /api/geoface?tb=places
+```
+Returns a GeoJSON `FeatureCollection` of all places. Accepts the same `filter` syntax
+to return a geographic subset (e.g. only discovery places, only episcopal sees).
 
-- [Turtle](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=turtle)
-- [JSON](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=json)
-- [N-Triples](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=ntriples)
-- [RDF/XML](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=rdfxml)
-- [Graphviz Dot](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=dot)
-- [N3](https://bdus.cloud/db/api/paths/?verb=search&shortsql=@places~-500:0&full_records=1&format=n3)
+#### Search configuration
+```
+GET /api/search/{table}/config
+```
+Returns the list of searchable fields for the given table.
+
+#### Autocomplete values
+```
+GET /api/search/{table}/values?fld={field}
+```
+Returns the list of distinct values for a given field, used to drive autocomplete inputs.
+
+---
+
+### Filter operators
+
+Filters follow the Directus query syntax:
+
+| Operator | Meaning |
+|----------|---------|
+| `_eq` | exactly equal |
+| `_icontains` | case-insensitive substring |
+| `_ncontains` | does not contain |
+| `_starts_with` | starts with |
+| `_ends_with` | ends with |
+| `_gt` / `_lt` | greater / less than |
+| `_empty` / `_nempty` | null / not null |
+| `_in` | value in list |
+
+Multiple filters can be combined with `_and` or `_or` arrays.
+Relational fields use dot-notation: `filter[relatedTable][field][_op]=value`.

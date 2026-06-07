@@ -1,19 +1,9 @@
-h1.sidebar-header{
-	z-index: 999;
-}
-
-span.legend-item{
-	width: 25px;
-	height: 25px;
-	display: inline-block;
-	margin-right: 10px;
-	top: 6px;
-	position: relative;
-}
-
-.sidebarSearch{
-	position: 'fixed';
-	width: '380px';
-	background: '#fff';
-	margin-top: '2rem';
+span.legend-item {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 8px;
+  top: 4px;
+  position: relative;
+  border-radius: 50%;
 }
