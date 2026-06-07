@@ -113,7 +113,7 @@ Può includere anche:
 ✅ chore/deps-react18         react 17→18, FA 5→7, chart.js 2→4,
                               react-markdown 8→10, remark-gfm, rehype-raw
 
-⬜ chore/deps-reactstrap      reactstrap 8→9, typeahead 5→6, react-select 3→5
+✅ chore/deps-reactstrap      reactstrap 8→9, typeahead 5→6, react-select 3→5, Bootstrap 4→5
 ⬜ chore/deps-router          react-router-dom 5→7  (alto effort)
 ⬜ chore/deps-leaflet         react-leaflet 2→5 + SidebarPortal rewrite
 ⬜ chore/deps-react19         react 18→19 + fix UNSAFE_componentWillReceiveProps
