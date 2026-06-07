@@ -24,16 +24,13 @@ class ViewOne extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps){
-    if(nextProps !== this.props ){
-      this.setState({
-        rec: null
-      });
-
-      Database.getOne(nextProps.match.params.table, nextProps.match.params.id, (d) =>{
-        this.setState({
-          rec: d
-        });
+  componentDidUpdate(prevProps) {
+    const { table: prevTable, id: prevId } = prevProps.match.params;
+    const { table, id } = this.props.match.params;
+    if (table !== prevTable || id !== prevId) {
+      this.setState({ rec: null });
+      Database.getOne(table, id, (d) => {
+        this.setState({ rec: d });
       });
     }
   }

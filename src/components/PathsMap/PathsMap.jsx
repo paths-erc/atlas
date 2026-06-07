@@ -150,10 +150,10 @@ class PathsMap extends Component {
     this.setState({ mapBounds: bounds, zoom });
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps !== this.props) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.data !== this.props.match.params.data) {
       this.setState({ places: null, urlFilter: null });
-      this.fetchData(nextProps.match.params.data, null);
+      this.fetchData(this.props.match.params.data, null);
     }
   }
 
