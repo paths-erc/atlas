@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -7,25 +7,26 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+// Eager — part of the app shell, always needed immediately
 import MainTemplate from './components/mainLayout/MainTemplate';
-import Home from './components/Home/Home';
 import BrowserNotSupported from './components/Home/BrowserNotSupported';
-import PathsMap from './components/PathsMap/PathsMap';
+import Loading from './components/Loading/Loading';
 
-import SearchSaved from './components/Search/SearchSaved';
-import SearchAdv from './components/Search/SearchAdv';
-import SearchShortSQL from './components/Search/SearchShortSQL';
-import SearchAll from './components/Search/SearchAll';
-
-import Intro from './components/Intro/Intro';
-
-import ViewOne from './components/Record/ViewOne';
-import Cite from './components/Cite/Cite';
-import Api from './components/Api/Api';
 import { detect } from 'detect-browser';
 
-const browser = detect();
+// Lazy — each route is a separate chunk loaded on demand
+const Home          = lazy(() => import('./components/Home/Home'));
+const PathsMap      = lazy(() => import('./components/PathsMap/PathsMap'));
+const Intro         = lazy(() => import('./components/Intro/Intro'));
+const ViewOne       = lazy(() => import('./components/Record/ViewOne'));
+const SearchSaved   = lazy(() => import('./components/Search/SearchSaved'));
+const SearchAdv     = lazy(() => import('./components/Search/SearchAdv'));
+const SearchShortSQL= lazy(() => import('./components/Search/SearchShortSQL'));
+const SearchAll     = lazy(() => import('./components/Search/SearchAll'));
+const Cite          = lazy(() => import('./components/Cite/Cite'));
+const Api           = lazy(() => import('./components/Api/Api'));
 
+const browser = detect();
 
 const compatibility = {
   'ie': 10000,
@@ -37,32 +38,37 @@ const compatibility = {
   'safari': 11,
   'opera': 29,
   'android': 67,
-}
+};
 
 let notSupported = false;
-if (browser){
+if (browser) {
   const bName = browser.name;
   const bVersion = browser.version.split('.')[0];
-
-  if ( Object.keys(compatibility).indexOf(bName) > -1 && bVersion < compatibility[bName] ) {
+  if (Object.keys(compatibility).indexOf(bName) > -1 && bVersion < compatibility[bName]) {
     notSupported = true;
   }
 }
 
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
 
+const fallback = (
+  <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '60vh' }}>
+    <Loading />
+  </div>
+);
 
-export default function App () {
+export default function App() {
 
-    if (notSupported){
-      return <BrowserNotSupported browser={browser} compatibility={compatibility} />
-    }
+  if (notSupported) {
+    return <BrowserNotSupported browser={browser} compatibility={compatibility} />;
+  }
 
-    return (
-      <BrowserRouter basename="/">
+  return (
+    <BrowserRouter basename="/">
+      <Suspense fallback={fallback}>
         <Routes>
           {/* Map — full-screen, no main layout shell */}
-          <Route path='/map/:action?/:data?' element={<PathsMap />}/>
+          <Route path='/map/:action?/:data?' element={<PathsMap />} />
 
           {/* All other pages share the MainTemplate layout (Header + Footer) */}
           <Route element={<MainTemplate />}>
@@ -84,6 +90,7 @@ export default function App () {
             <Route path='/api'  element={<Api />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    );
+      </Suspense>
+    </BrowserRouter>
+  );
 }
