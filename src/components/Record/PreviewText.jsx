@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import nl2br from 'react-nl2br';
 import relaxedSplit from '../Utils/relaxedSplit.jsx';
 import internalLinks from '../Utils/internalLinks.jsx';
 
+// Replaces \n with <br> elements — drop-in for the removed react-nl2br package.
+const nl2br = (text) => {
+  if (typeof text !== 'string') return [text];
+  return text.split('\n').reduce((acc, line, i) => (
+    i === 0 ? [line] : [...acc, <br key={i} />, line]
+  ), []);
+};
 
 const parseText = (text) => {
   const nltext = nl2br(text);
@@ -72,7 +78,7 @@ export default function PreviewText(props) {
     <span>{ parseText(textParts[0]) }
       <span style={{ display: display }}>{ parseText(textParts[1]) }</span>
       { display === 'none' ? '\u2026' : '' }
-      <Button color="info" size="sm" className="ml-3" onClick={ toggleDisplay }>
+      <Button color="info" size="sm" className="ms-3" onClick={ toggleDisplay }>
         { display === 'none' ? '+' : '-'}
       </Button>
     </span>
