@@ -14,7 +14,7 @@ export default function FixedNavbar() {
             <NavbarBrand to="/" tag={Link}>PAThs</NavbarBrand>
             <NavbarToggler onClick={()=>{ toggleOpen(!isOpen) }} />
             <Collapse isOpen={ isOpen } navbar>
-              <Nav navbar>
+              <Nav className="me-auto" navbar>
                 <NavItem>
                   <NavLink style={{ backgroundColor: '#cc545a', color: '#fff'}} to="/map/saved/all_ms_places" tag={RRNavLink}>
                     <FontAwesomeIcon icon="map" /> Atlas
@@ -47,7 +47,7 @@ export default function FixedNavbar() {
                 </NavItem>
               </Nav>
 
-              <Nav className="ms-auto" navbar>
+              <Nav navbar>
                 <NavItem>
                   <NavLink href="http://paths.uniroma1.it">Website</NavLink>
                 </NavItem>
