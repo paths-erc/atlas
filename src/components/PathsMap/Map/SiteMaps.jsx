@@ -109,7 +109,7 @@ export default function SiteMaps(props){
     }).filter(Boolean);
 
     let gj = [];
-    axios.all(axiosArray).then(respArr => {
+    Promise.all(axiosArray).then(respArr => {
       gj = respArr.map(e => e.data );
       addSiteMaps(gj);
     })
