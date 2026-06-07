@@ -11,6 +11,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import MainTemplate from './components/mainLayout/MainTemplate';
 import BrowserNotSupported from './components/Home/BrowserNotSupported';
 import Loading from './components/Loading/Loading';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 import { detect } from 'detect-browser';
 
@@ -65,6 +66,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename="/">
+      <ErrorBoundary>
       <Suspense fallback={fallback}>
         <Routes>
           {/* Map — full-screen, no main layout shell */}
@@ -91,6 +93,7 @@ export default function App() {
           </Route>
         </Routes>
       </Suspense>
+      </ErrorBoundary>
     </BrowserRouter>
   );
 }
