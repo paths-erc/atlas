@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, ZoomControl } from 'react-leaflet';
+import { MapContainer, ZoomControl, useMapEvents } from 'react-leaflet';
 import { InputGroup, Input } from 'reactstrap';
 import qs from 'qs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,6 +23,20 @@ import { withRouter } from '../utils/withRouter';
 import './PathsMap.css';
 
 
+/**
+ * Bridge component: listens to Leaflet map viewport events (move/zoom) and
+ * forwards bounds + zoom level to the parent class component via a callback.
+ * Must live inside <MapContainer>.
+ */
+function ViewportListener({ onChange }) {
+  useMapEvents({
+    moveend: (e) => onChange(e.target.getBounds(), e.target.getZoom()),
+    zoomend: (e) => onChange(e.target.getBounds(), e.target.getZoom()),
+  });
+  return null;
+}
+
+
 class PathsMap extends Component {
 
   constructor(props) {
@@ -39,9 +53,11 @@ class PathsMap extends Component {
       zoom: false,
       geoJsonBounds: false
     };
-    this.placesLayerRef = React.createRef();
+    // In react-leaflet v4, MapContainer forwards its ref to the Leaflet Map
+    // instance directly (no .leafletElement indirection).
     this.mapRef = React.createRef();
     this.onTabClick = this.onTabClick.bind(this);
+    this.onViewportChanged = this.onViewportChanged.bind(this);
   }
 
   onTabClick(id) {
@@ -77,14 +93,18 @@ class PathsMap extends Component {
   }
 
   fitMapToBounds() {
+    // Default bounds covering Egypt
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
-    if (this.state.geoJsonBounds && bounds._northEast && bounds._southWest) {
+    if (this.state.geoJsonBounds && this.state.geoJsonBounds._northEast && this.state.geoJsonBounds._southWest) {
       bounds = this.state.geoJsonBounds;
       if (bounds._northEast.lat === bounds._southWest.lat && bounds._northEast.lng === bounds._southWest.lng) {
-        bounds.pad();
+        bounds = bounds.pad(0.1);
       }
     }
-    this.mapRef.current.leafletElement.fitBounds(bounds);
+    // mapRef.current is the Leaflet Map instance directly in react-leaflet v4+
+    if (this.mapRef.current) {
+      this.mapRef.current.fitBounds(bounds);
+    }
   }
 
   fetchData(savedQ, locationSearch) {
@@ -125,9 +145,9 @@ class PathsMap extends Component {
     }
   }
 
-  onViewportChanged(e) {
-    const mapBounds = this.mapRef.current.leafletElement.getBounds();
-    this.setState({ mapBounds, zoom: e.zoom });
+  // Called by ViewportListener whenever the map moves or zooms.
+  onViewportChanged(bounds, zoom) {
+    this.setState({ mapBounds: bounds, zoom });
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -189,13 +209,15 @@ class PathsMap extends Component {
 
           {this.state.error && <ShowError>{this.state.error}</ShowError>}
 
-          <Map
+          <MapContainer
             className="maxHeight"
             zoomControl={false}
             ref={this.mapRef}
-            onViewportChanged={this.onViewportChanged.bind(this)}
-            maxZoom="25"
+            center={[27, 30]}
+            zoom={6}
+            maxZoom={25}
           >
+            <ViewportListener onChange={this.onViewportChanged} />
             <ZoomControl position="topright" />
 
             <SidebarPortal>
@@ -219,7 +241,7 @@ class PathsMap extends Component {
               mapBounds={this.state.mapBounds}
               zoom={this.state.zoom}
             />
-          </Map>
+          </MapContainer>
         </main>
       </div>
     );

@@ -64,7 +64,7 @@ export default function PathsPlaces(props){
   return(
     <React.Fragment>
       { props.shownPlaces && <GeoJSON
-        onAdd={props.onAdd}
+        eventHandlers={{ add: props.onAdd }}
         key={ hash(props.shownPlaces) }
         data={ props.shownPlaces }
         pointToLayer={ pointToLayer }
