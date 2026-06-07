@@ -1,5 +1,6 @@
 /* jshint esversion: 6 */
 import React from "react";
+import { useParams } from 'react-router-dom';
 import ReactMarkdownPath from '../ReactMarkdownPath/ReactMarkdownPath';
 
 import SubHead from '../SubHead/SubHead';
@@ -31,9 +32,9 @@ import CollectionsImg from './collections/collections.jpg';
 
 import './Intro.css';
 
-export default function Intro(props){
+export default function Intro(){
 
-  const tb = props.match.params.table;
+  const { table: tb } = useParams();
 
   const dataMap = {
     places: {

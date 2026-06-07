@@ -5,11 +5,10 @@ import qs from 'qs';
 import SubHead from '../SubHead/SubHead';
 import Results from './Results';
 import SavedQueries from '../Services/SavedQueries';
+import { withRouter } from '../utils/withRouter';
 
 
-
-
-export default class SearchSaved extends Component {
+class SearchSaved extends Component {
 
   constructor(props) {
     super(props);
@@ -51,13 +50,15 @@ export default class SearchSaved extends Component {
     return (
       <div>
         <SubHead tb={ this.props.match.params.table } text={SavedQueries[this.props.match.params.table][this.state.saved].title} />
-      	<Results
-            tb={this.props.match.params.table}
-            query={this.state.saved}
-            type="saved"
-            page={this.state.page}
-            />
+        <Results
+          tb={this.props.match.params.table}
+          query={this.state.saved}
+          type="saved"
+          page={this.state.page}
+        />
       </div>
     );
   }
 }
+
+export default withRouter(SearchSaved);

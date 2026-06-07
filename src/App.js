@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -33,7 +33,7 @@ const compatibility = {
   'bb10': 10000,
   'edge': 14,
   'firefox': 39,
-  'chrome': 42, // 42
+  'chrome': 42,
   'safari': 11,
   'opera': 29,
   'android': 67,
@@ -60,22 +60,30 @@ export default function App () {
 
     return (
       <BrowserRouter basename="/">
-        <Switch>
-          <Route path='/map/:action?/:data?' component={PathsMap}/>
-          <MainTemplate>
-            <Route exact path='/' component={ Home } />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={Intro} />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/:id' component={ViewOne} />
+        <Routes>
+          {/* Map — full-screen, no main layout shell */}
+          <Route path='/map/:action?/:data?' element={<PathsMap />}/>
 
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/saved' component={SearchSaved} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/all' component={SearchAll} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/shortsql' component={SearchShortSQL} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchAdv} />
+          {/* All other pages share the MainTemplate layout (Header + Footer) */}
+          <Route element={<MainTemplate />}>
+            <Route index element={<Home />} />
 
-            <Route exact path='/cite' component={Cite} />
-            <Route exact path='/api' component={Api} />
+            {/* Table intro pages: /places, /manuscripts, … */}
+            <Route path='/:table' element={<Intro />} />
 
-          </MainTemplate>
-        </Switch>
+            {/* Single record view: /places/1234 */}
+            <Route path='/:table/:id' element={<ViewOne />} />
+
+            {/* Search routes — more-specific paths before the generic one */}
+            <Route path='/search/:table/saved'    element={<SearchSaved />} />
+            <Route path='/search/:table/all'      element={<SearchAll />} />
+            <Route path='/search/:table/shortsql' element={<SearchShortSQL />} />
+            <Route path='/search/:table'          element={<SearchAdv />} />
+
+            <Route path='/cite' element={<Cite />} />
+            <Route path='/api'  element={<Api />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
-    );}
+    );
+}

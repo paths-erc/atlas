@@ -8,9 +8,10 @@ import FldSelect from './FldSelect';
 import ValueInput from './ValueInput';
 import OperatorSelect from './OperatorSelect';
 import ConnectorSelect from './ConnectorSelect';
+import { withRouter } from '../utils/withRouter';
 
 
-export default class AdvSearchForm extends Component {
+class AdvSearchForm extends Component {
 
   constructor(props) {
     super(props);
@@ -190,3 +191,5 @@ export default class AdvSearchForm extends Component {
     );
   }
 }
+
+export default withRouter(AdvSearchForm);

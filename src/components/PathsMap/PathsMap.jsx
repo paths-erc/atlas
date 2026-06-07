@@ -18,11 +18,12 @@ import Layers from './Map/Layers';
 
 import Database from '../Services/Database/Database';
 import SavedQueries from '../Services/SavedQueries';
+import { withRouter } from '../utils/withRouter';
 
 import './PathsMap.css';
 
 
-export default class PathsMap extends Component {
+class PathsMap extends Component {
 
   constructor(props) {
     super(props);
@@ -183,7 +184,7 @@ export default class PathsMap extends Component {
 
     return (
       <div className="maxHeight">
-        <Header location={this.props.location} />
+        <Header />
         <main role="main" className="maxHeight">
 
           {this.state.error && <ShowError>{this.state.error}</ShowError>}
@@ -224,3 +225,5 @@ export default class PathsMap extends Component {
     );
   }
 }
+
+export default withRouter(PathsMap);
