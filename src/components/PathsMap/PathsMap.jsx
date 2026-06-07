@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, ZoomControl } from 'react-leaflet';
-import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { InputGroup, Input } from 'reactstrap';
 import qs from 'qs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -153,7 +153,7 @@ export default class PathsMap extends Component {
         content: (
           <div>
             <InputGroup className="my-2">
-              <InputGroupAddon addonType="prepend">Search:</InputGroupAddon>
+              <span className="input-group-text">Search:</span>
               <Input
                 type="search"
                 value={this.state.manualFilter}

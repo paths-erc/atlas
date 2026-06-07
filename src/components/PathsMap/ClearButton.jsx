@@ -1,16 +1,11 @@
 import React from 'react';
-import { InputGroupAddon, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export default function ClearButton (props) {
-
-    if (!props.show){
-      return null;
-    }
-    return (
-      <InputGroupAddon addonType="append">
-        <Button color="danger" onClick = { props.onClick }>
-          <span aria-hidden="true">&times;</span>
-        </Button>
-      </InputGroupAddon>
-    );
+  if (!props.show) return null;
+  return (
+    <Button color="danger" onClick={props.onClick}>
+      <span aria-hidden="true">&times;</span>
+    </Button>
+  );
 }
