@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
-import ScrollToTop from "react-scroll-up";
+import ScrollToTop from '../Utils/ScrollToTop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from "./Header"
 import Footer from "./Footer"
