@@ -5,7 +5,7 @@ import qs from 'qs';
 import SubHead from '../SubHead/SubHead';
 import Results from './Results';
 import SavedQueries from '../Services/SavedQueries';
-import { withRouter } from '../utils/withRouter';
+import { withRouter } from '../Utils/withRouter';
 
 
 class SearchSaved extends Component {

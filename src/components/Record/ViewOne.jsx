@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Database from '../Services/Database/Database';
-import { withRouter } from '../utils/withRouter';
+import { withRouter } from '../Utils/withRouter';
 import SubHead from '../SubHead/SubHead';
 import Body from './Bodies/Body';
 import RecordLinks from './RecordLinks';

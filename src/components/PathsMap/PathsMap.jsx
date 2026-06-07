@@ -18,7 +18,7 @@ import Layers from './Map/Layers';
 
 import Database from '../Services/Database/Database';
 import SavedQueries from '../Services/SavedQueries';
-import { withRouter } from '../utils/withRouter';
+import { withRouter } from '../Utils/withRouter';
 
 import './PathsMap.css';
 

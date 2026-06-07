@@ -9,7 +9,7 @@ import { ItemPreview, ItemPreviewWrapper } from './ItemPreview';
 import OpenInMap from '../Manuscripts/OpenInMap';
 import Loading from '../Loading/Loading';
 import Cfg from '../Services/Cfg/Cfg';
-import { withRouter } from '../utils/withRouter';
+import { withRouter } from '../Utils/withRouter';
 
 
 class Results extends Component {

@@ -8,7 +8,7 @@ import FldSelect from './FldSelect';
 import ValueInput from './ValueInput';
 import OperatorSelect from './OperatorSelect';
 import ConnectorSelect from './ConnectorSelect';
-import { withRouter } from '../utils/withRouter';
+import { withRouter } from '../Utils/withRouter';
 
 
 class AdvSearchForm extends Component {
