@@ -12,7 +12,7 @@ export default function OpenInMap(props) {
   const filterParam = filter ? '&filter=' + encodeURIComponent(JSON.stringify(filter)) : '';
 
   return (
-    <div className="float-right mt-2">
+    <div className="float-end mt-2">
       <Link to={`/map?tb=${tb}${filterParam}`} className="btn btn-warning">
         <FontAwesomeIcon icon="map-marker-alt" /> View on Map
       </Link>

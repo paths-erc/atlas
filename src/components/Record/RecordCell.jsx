@@ -30,7 +30,7 @@ export default function RecordCell(props) {
   return (
     <Row className={"border-bottom mt-2 mb-2 pb-1" + (val !== null ? '' : ' d-none') }>
       <Col sm="4" md="3">
-        <label className="font-weight-bold">{label}</label>
+        <label className="fw-bold">{label}</label>
       </Col>
       <Col>
         <div className={ className.join(' ') }>

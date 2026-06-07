@@ -22,8 +22,8 @@ class ToggleText extends Component {
   render() {
     return (
       <span>
-        <span style={{ display: this.state.display }} className="ml-3 bg-light text-muted p-2">{ this.props.text }</span>
-        <Button color="info" size="sm" className="ml-3" onClick={ this.toggleDisplay }>
+        <span style={{ display: this.state.display }} className="ms-3 bg-light text-muted p-2">{ this.props.text }</span>
+        <Button color="info" size="sm" className="ms-3" onClick={ this.toggleDisplay }>
           {this.state.display === 'none' ? <FontAwesomeIcon icon="info" /> : '<'}
         </Button>
       </span>
@@ -37,11 +37,11 @@ class TopoCell extends Component{
     const tot = this.props.data.length;
     return (<div>
       {this.props.data.map( (d, di) =>{
-        return <span className={'mr-2 pr-2' + (tot === di+1 ? '' : ' border-right border-warning')} key={di}>
+        return <span className={'me-2 pe-2' + (tot === di+1 ? '' : ' border-end border-warning')} key={di}>
           <span className={ d.language.val ? d.language.val.toLowerCase() : '' } title={d.notes.val}>
             { d.toponym.val }{'\u0020'}
           </span>
-          { d.transcription.val ? <span className="text-muted ml-2">[{d.transcription.val}]</span> : ''}
+          { d.transcription.val ? <span className="text-muted ms-2">[{d.transcription.val}]</span> : ''}
           { d.notes.val ? <ToggleText text={ d.notes.val } /> : ''}
         </span>
       })}
@@ -64,7 +64,7 @@ export default class PluginToponyms extends Component {
     return Object.keys(obj).map((l, i) => {
       return <Row className={"border-bottom mt-2 mb-2 pb-1" } key={i}>
         <Col sm="4" md="3">
-          <label className="font-weight-bold">{l}</label>
+          <label className="fw-bold">{l}</label>
         </Col>
         <Col>
           <div>
