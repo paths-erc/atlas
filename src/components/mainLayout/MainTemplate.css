@@ -31,6 +31,9 @@ main{
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255,255,255,.7);
 }
+.navbar-dark .navbar-nav .nav-link.active {
+  text-decoration: underline;
+}
 
 nav.bg-dark {
   background: #b33939 !important;

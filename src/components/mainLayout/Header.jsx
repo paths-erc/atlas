@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 
 import { NavLink, Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, Collapse } from 'reactstrap';
-import { Link, NavLink as RRNavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+function isEntityActive(pathname, entity) {
+  return pathname === `/${entity}` ||
+         pathname.startsWith(`/${entity}/`) ||
+         pathname.startsWith(`/search/${entity}`);
+}
 
 export default function FixedNavbar() {
 
   const [isOpen, toggleOpen] = useState(false);
+  const { pathname } = useLocation();
 
   return (
         <div>
@@ -16,34 +23,33 @@ export default function FixedNavbar() {
             <Collapse isOpen={ isOpen } navbar>
               <Nav className="me-auto" navbar>
                 <NavItem>
-                  <NavLink style={{ backgroundColor: '#cc545a', color: '#fff'}} to="/map/saved/all_ms_places" tag={RRNavLink}>
+                  <NavLink style={{ backgroundColor: '#cc545a', color: '#fff'}} to="/map/saved/all_ms_places" tag={Link}>
                     <FontAwesomeIcon icon="map" /> Atlas
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/places" tag={RRNavLink}>Places</NavLink>
-                </NavItem>
-
-                <NavItem>
-                  <NavLink to="/manuscripts" tag={RRNavLink}>Manuscripts</NavLink>
+                  <NavLink to="/places" tag={Link} active={isEntityActive(pathname, 'places')}>Places</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/works" tag={RRNavLink}>Works</NavLink>
+                  <NavLink to="/manuscripts" tag={Link} active={isEntityActive(pathname, 'manuscripts')}>Manuscripts</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/authors" tag={RRNavLink}>Authors</NavLink>
+                  <NavLink to="/works" tag={Link} active={isEntityActive(pathname, 'works')}>Works</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/titles" tag={RRNavLink}>Titles</NavLink>
+                  <NavLink to="/authors" tag={Link} active={isEntityActive(pathname, 'authors')}>Authors</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/colophons" tag={RRNavLink}>Colophons</NavLink>
+                  <NavLink to="/titles" tag={Link} active={isEntityActive(pathname, 'titles')}>Titles</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/persons" tag={RRNavLink}>Persons</NavLink>
+                  <NavLink to="/colophons" tag={Link} active={isEntityActive(pathname, 'colophons')}>Colophons</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/collections" tag={RRNavLink}>Collections</NavLink>
+                  <NavLink to="/persons" tag={Link} active={isEntityActive(pathname, 'persons')}>Persons</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/collections" tag={Link} active={isEntityActive(pathname, 'collections')}>Collections</NavLink>
                 </NavItem>
               </Nav>
 
@@ -52,10 +58,10 @@ export default function FixedNavbar() {
                   <NavLink href="http://paths.uniroma1.it">Website</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/cite" tag={RRNavLink}>How to cite PAThs</NavLink>
+                  <NavLink to="/cite" tag={Link} active={pathname === '/cite'}>How to cite PAThs</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/api" tag={RRNavLink}>API</NavLink>
+                  <NavLink to="/api" tag={Link} active={pathname === '/api'}>API</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
