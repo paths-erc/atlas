@@ -1,4 +1,4 @@
-The **PAThs project** was launched thanks to an ERC granted project (Advanced Grant 2015, project number 687567, P.I. Paola Buzi) and remains active to this day.
+The **PAThs project** was launched thanks to a ERC grant (Advanced Grant 2015, project number 687567, P.I. Paola Buzi) and remains active to this day.
 
 It aims at providing an in-depth diachronic understanding and effective representation of the geography of Coptic literature, produced in Egypt between the 3<sup>rd</sup> and 14<sup>th</sup> centuries.
 
