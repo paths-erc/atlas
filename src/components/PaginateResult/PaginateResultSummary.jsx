@@ -11,8 +11,8 @@ export default function PaginateResultSummary (props) {
 
     return (
       <div className="mb-3">
-        Showing records <span className="badge bg-primary">
-        { start_at } –  { up_to } </span> of <span className="badge bg-success">
+        Showing records <span className="badge" style={{ background: '#b33939' }}>
+        { start_at } –  { up_to } </span> of <span className="badge" style={{ background: '#b33939' }}>
         { props.totalRows }</span> records found
       </div>
     );

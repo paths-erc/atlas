@@ -35,6 +35,18 @@ main{
   text-decoration: underline;
 }
 
+.pagination .page-link {
+  color: #b33939;
+}
+.pagination .page-link:hover {
+  color: #8a2929;
+}
+.pagination .page-item.active .page-link {
+  background-color: #b33939;
+  border-color: #b33939;
+  color: #fff;
+}
+
 nav.bg-dark {
   background: #b33939 !important;
 }

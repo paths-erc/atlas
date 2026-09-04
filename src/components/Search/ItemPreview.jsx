@@ -39,8 +39,8 @@ class ItemPreview extends Component {
 
     return (
       <Col sm="4">
-      	<Card className="mt-3" outline color="dark">
-          <CardHeader tag="h4">{ el[id_field] }</CardHeader>
+        <Card className="mt-3 shadow-sm">
+          <CardHeader tag="h6" style={{ background: '#b33939', color: '#fff' }}>{ el[id_field] }</CardHeader>
           <CardBody id={ el.id }>
 
             <Table hover size="sm">
@@ -59,7 +59,7 @@ class ItemPreview extends Component {
             <div className="clearfix">
               <div className="btn-group float-end" role="group">
                 <ButtonGroup>
-                  <Button size="sm" color="info" tag={Link} to={ '/' + [tb, el.id].join('/') }>
+                  <Button size="sm" tag={Link} to={ '/' + [tb, el.id].join('/') } style={{ background: '#b33939', borderColor: '#b33939', color: '#fff' }}>
                     <FontAwesomeIcon icon="eye" /> View
                   </Button>
                 </ButtonGroup>
