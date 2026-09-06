@@ -1,8 +1,8 @@
 /* Portal root — appended directly to the Leaflet map container */
 .sidebar-portal-root {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: .5rem;
+  left: .5rem;
   bottom: 0;
   z-index: 1001; /* above leaflet-top (1000) so sidebar wins */
   display: flex;
