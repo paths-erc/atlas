@@ -119,35 +119,30 @@ class PathsMap extends Component {
   }
 
   fetchData(savedQ, locationSearch) {
-    const onGeoData = (data) => {
+    // `urlFilter` drives the "Filter active — click to disable" button: it must
+    // reflect whether a filter is *actually* applied, not merely that the URL
+    // looked like a saved-query / filtered one.
+    const onGeoData = (data, urlFilter = false) => {
       if (!data || data.status === 'error') {
         this.setState({
           error: <div>Sorry. There was an error loading map data. Please report this to <a href="mailto:julian.bogdani@uniroma1.it">julian.bogdani@uniroma1.it</a>.</div>
         });
         return;
       }
-      this.setState({ places: data, shownPlaces: data });
+      this.setState({ places: data, shownPlaces: data, urlFilter });
       this.fitMapToBounds();
     };
 
     if (savedQ) {
       const sq = SavedQueries.map && SavedQueries.map[savedQ];
-      Database.getPlaces(sq ? sq.filter : null, data => {
-        if (!data || data.status === 'error') { onGeoData(data); return; }
-        this.setState({ places: data, shownPlaces: data, urlFilter: true });
-        this.fitMapToBounds();
-      });
+      Database.getPlaces(sq ? sq.filter : null, data => onGeoData(data, !!(sq && sq.filter)));
     } else if (locationSearch) {
       const qstring = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
       const filter = qstring.filter ? JSON.parse(qstring.filter) : null;
       if (qstring.tb === 'manuscripts') {
-        Database.getMsPlaces(filter, data => {
-          if (!data || data.status === 'error') { onGeoData(data); return; }
-          this.setState({ places: data, shownPlaces: data, urlFilter: !!filter });
-          this.fitMapToBounds();
-        });
+        Database.getMsPlaces(filter, data => onGeoData(data, !!filter));
       } else if (qstring.tb === 'places') {
-        Database.getPlaces(filter, onGeoData);
+        Database.getPlaces(filter, data => onGeoData(data, !!filter));
       } else {
         Database.getPlaces(null, onGeoData);
       }

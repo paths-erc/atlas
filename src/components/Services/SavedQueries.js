@@ -343,6 +343,11 @@ export default {
   },
 
   map: {
+    all_ms_places: {
+      id: 'all_ms_places',
+      title: 'Places attested in Coptic literary manuscripts',
+      filter: { m_msplaces: { type: { _nnull: true } } }
+    },
     discovery_places: {
       id: 'discovery_places',
       title: 'Discovery places of Coptic literary manuscripts',
