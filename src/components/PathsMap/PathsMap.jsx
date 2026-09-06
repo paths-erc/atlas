@@ -93,6 +93,10 @@ class PathsMap extends Component {
   }
 
   fitMapToBounds() {
+    // mapRef.current is the Leaflet Map instance directly in react-leaflet v4+
+    const map = this.mapRef.current;
+    if (!map) return;
+
     // Default bounds covering Egypt
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
     if (this.state.geoJsonBounds && this.state.geoJsonBounds._northEast && this.state.geoJsonBounds._southWest) {
@@ -101,10 +105,17 @@ class PathsMap extends Component {
         bounds = bounds.pad(0.1);
       }
     }
-    // mapRef.current is the Leaflet Map instance directly in react-leaflet v4+
-    if (this.mapRef.current) {
-      this.mapRef.current.fitBounds(bounds);
+
+    // If the container has no width yet (hidden tab, ancestor still laying out,
+    // route transition) fitBounds resolves to the minimum zoom and never
+    // recovers — nothing re-fits on resize. Defer; the ResizeObserver set up in
+    // componentDidMount calls this again once the map has a real size.
+    if (map.getSize().x < 1) {
+      this._needsFit = true;
+      return;
     }
+    this._needsFit = false;
+    map.fitBounds(bounds);
   }
 
   fetchData(savedQ, locationSearch) {
@@ -159,6 +170,30 @@ class PathsMap extends Component {
 
   componentDidMount() {
     this.fetchData(this.props.match.params.data, this.props.location.search);
+
+    // Keep the Leaflet canvas in sync with its container. Covers the map being
+    // created while its box is 0-wide (hidden tab / mid-layout): Leaflet caches
+    // the size once and never re-measures on its own, so without this the map
+    // stays locked at the wrong zoom. Mirrors the bdus-app GeoFace fix.
+    const map = this.mapRef.current;
+    if (map && typeof ResizeObserver !== 'undefined') {
+      this._ro = new ResizeObserver(() => {
+        const m = this.mapRef.current;
+        if (!m) return;
+        m.invalidateSize();
+        if (this._needsFit && m.getSize().x > 0) {
+          this.fitMapToBounds();
+        }
+      });
+      this._ro.observe(map.getContainer());
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._ro) {
+      this._ro.disconnect();
+      this._ro = null;
+    }
   }
 
   onAddgeoJson(e) {
