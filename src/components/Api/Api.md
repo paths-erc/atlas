@@ -13,18 +13,19 @@ repository: [https://www.zotero.org/groups/2189557/erc-paths/](https://www.zoter
 
 ## REST API
 
-The atlas uses the **BraDypUS v5 API**. All requests require two query parameters:
+The atlas uses the **BraDypUS v5 API**. Since bdus v5.9.0 every endpoint is
+application-scoped: the application name (`paths`) is the first path segment,
+`https://<host>/paths/api/…`. Requests carry a single query parameter:
 
 | Parameter | Value |
 |-----------|-------|
-| `api_key` | *Contact the [project team](paola.buzi@uniroma1.it).* |
-| `app`     | `paths` |
+| `api_key` | *Contact the [project team](paola.buzi@uniroma1.it).* The key is bound to the `paths` application. |
 
 ### Endpoints
 
 #### List records
 ```
-GET /api/records/{table}
+GET /paths/api/records/{table}
 ```
 Returns a paginated list of records. Supported tables: `manuscripts`, `places`, `works`,
 `authors`, `titles`, `colophons`, `persons`, `collections`.
@@ -36,26 +37,26 @@ Optional parameters:
 
 #### Single record
 ```
-GET /api/record/{table}/{id}
+GET /paths/api/record/{table}/{id}
 ```
 Returns a single record with all fields, related data, links and files.
 
 #### Geographic data (map)
 ```
-GET /api/geoface?tb=places
+GET /paths/api/geoface?tb=places
 ```
 Returns a GeoJSON `FeatureCollection` of all places. Accepts the same `filter` syntax
 to return a geographic subset (e.g. only discovery places, only episcopal sees).
 
 #### Search configuration
 ```
-GET /api/search/{table}/config
+GET /paths/api/search/{table}/config
 ```
 Returns the list of searchable fields for the given table.
 
 #### Autocomplete values
 ```
-GET /api/search/{table}/values?fld={field}
+GET /paths/api/search/{table}/values?fld={field}
 ```
 Returns the list of distinct values for a given field, used to drive autocomplete inputs.
 

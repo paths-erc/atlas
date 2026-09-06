@@ -5,10 +5,12 @@ const API_BASE = process.env.REACT_APP_API_BASE || '';
 const API_KEY  = process.env.REACT_APP_API_KEY;
 const APP      = process.env.REACT_APP_APP || 'paths';
 
-const AUTH = { api_key: API_KEY, app: APP };
+// Since BraDypUS v5.9.0 the API is application-scoped in the URL: `/{app}/api/…`.
+// The `?app=` query parameter was removed; the API key alone identifies the app.
+const AUTH = { api_key: API_KEY };
 
 const api = axios.create({
-  baseURL: `${API_BASE}/api`,
+  baseURL: `${API_BASE}/${APP}/api`,
   headers: { 'Content-Type': 'application/json' },
   paramsSerializer: params => qs.stringify(params, { arrayFormat: 'brackets', encode: false }),
 });
