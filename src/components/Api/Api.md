@@ -1,6 +1,6 @@
 PAThs makes the contents of its database freely available for research and reuse.
 Data can be browsed interactively through this atlas or accessed programmatically
-via the [BraDypUS v5 REST API](https://docs.bdus.cloud/).
+via the [BraDypUS v5 REST API](https://docs.bdus.lad-sapienza.it/).
 
 ---
 

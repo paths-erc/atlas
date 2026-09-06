@@ -30,9 +30,16 @@ jobs:
 
       # CI=false so CRA build warnings are not treated as errors
       # (matches the local `npm run build` behaviour).
+      #
+      # REACT_APP_API_BASE / REACT_APP_APP come from the committed .env.production.
+      # REACT_APP_API_KEY is a read-only BraDypUS v5 key for the `paths` app; it is
+      # baked into the client bundle at build time, so store it as a repo secret
+      # (Settings → Secrets and variables → Actions → New repository secret:
+      # REACT_APP_API_KEY) rather than committing it.
       - run: npm run build
         env:
           CI: false
+          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
 
       - uses: actions/configure-pages@v5
 
