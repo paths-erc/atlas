@@ -51,10 +51,15 @@ const pointToLayer = (t, i) => {
 
 const onEachFeature = (feature, layer) => {
   const base = window.location.pathname.replace(/\/map(.*)/, '');
-  layer.bindPopup(`<strong>${feature.properties.name}</strong>` +
-     (feature.properties.copticname ? '<br /><span class="coptic">' + feature.properties.copticname + '</span>': '') +
-     (feature.properties.type ? `<br /><span class="text-secondary">${feature.properties.type}</span>` : '') +
-     `<br /><a href="${base}/places/${feature.properties.id}">paths/places/${feature.properties.id}</a>`
+  const p = feature.properties;
+  // /geoface keys the properties by field *label* (e.g. "Site name"), matching
+  // ListPlaces. Fall back through the likely name keys so a label rename in the
+  // bdus config never turns the popup title into "undefined".
+  const name = p['Site name'] || p.name || p['Toponym'] || p['Nome'] || `paths.places.${p.id}`;
+  layer.bindPopup(`<strong>${name}</strong>` +
+     (p.copticname ? '<br /><span class="coptic">' + p.copticname + '</span>' : '') +
+     (p.type ? `<br /><span class="text-secondary">${p.type}</span>` : '') +
+     `<br /><a href="${base}/places/${p.id}">paths/places/${p.id}</a>`
   );
   layer.on('mouseover', function() { layer.openPopup(); });
 };
