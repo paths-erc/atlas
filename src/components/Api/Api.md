@@ -19,7 +19,7 @@ application-scoped: the application name (`paths`) is the first path segment,
 
 | Parameter | Value |
 |-----------|-------|
-| `api_key` | *Contact the [project team](paola.buzi@uniroma1.it).* The key is bound to the `paths` application. |
+| `api_key` | *Contact the [project team](mailto:paola.buzi@uniroma1.it).* The key is bound to the `paths` application. |
 
 ### Endpoints
 
