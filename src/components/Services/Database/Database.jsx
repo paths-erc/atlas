@@ -21,7 +21,14 @@ const onError = (err, cb) => {
   cb({ status: 'error', detail: msg });
 };
 
-const listParams = (extra, page) => ({ ...AUTH, page: page || 1, ...extra });
+// `columns` (array of field names, no table prefix) limits the fields returned
+// for every record; when empty the server applies the table's default preview.
+const listParams = (extra, page, columns) => ({
+  ...AUTH,
+  page: page || 1,
+  ...(columns && columns.length ? { columns: columns.join(',') } : {}),
+  ...extra
+});
 
 const fieldName = fld => fld.includes(':') ? fld.split(':')[1] : fld;
 
@@ -52,8 +59,8 @@ export default class Database {
       .catch(err => onError(err, cb));
   }
 
-  static getAll(tb, page, cb) {
-    api.get(`/records/${tb}`, { params: listParams({}, page) })
+  static getAll(tb, page, cb, columns) {
+    api.get(`/records/${tb}`, { params: listParams({}, page, columns) })
       .then(res => cb(res.data))
       .catch(err => onError(err, cb));
   }
@@ -66,7 +73,7 @@ export default class Database {
       .catch(err => onError(err, cb));
   }
 
-  static getAdv(tb, rows, page, cb) {
+  static getAdv(tb, rows, page, cb, columns) {
     const entries = Object.values(rows).filter(r => r.f && r.v !== '');
     const hasOr = entries.some(r => r.c === 'OR');
     let filter;
@@ -75,7 +82,7 @@ export default class Database {
     } else {
       filter = { _and: entries.map(r => buildFilter(tb, r.f, r.o, r.v)) };
     }
-    api.get(`/records/${tb}`, { params: listParams({ filter }, page) })
+    api.get(`/records/${tb}`, { params: listParams({ filter }, page, columns) })
       .then(res => cb(res.data))
       .catch(err => onError(err, cb));
   }
@@ -102,14 +109,14 @@ export default class Database {
       .catch(() => cb({ fields: {} }));
   }
 
-  static getSaved(grp, queryKey, page, cb) {
+  static getSaved(grp, queryKey, page, cb, columns) {
     const SavedQueries = require('../SavedQueries').default;
     const query = SavedQueries[grp]?.[queryKey];
     if (!query) {
       cb({ status: 'error', detail: `No saved query: ${grp}.${queryKey}` });
       return;
     }
-    api.get(`/records/${grp}`, { params: listParams({ filter: query.filter }, page) })
+    api.get(`/records/${grp}`, { params: listParams({ filter: query.filter }, page, columns) })
       .then(res => cb(res.data))
       .catch(err => onError(err, cb));
   }
