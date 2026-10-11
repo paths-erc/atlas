@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Alert } from 'reactstrap';
+import { Alert, Button, Collapse } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Database from '../Services/Database/Database';
 import SavedQueries from '../Services/SavedQueries';
@@ -22,6 +23,8 @@ class Results extends Component {
       result: false,
       // fields the current result was fetched with (avoids empty cells while reloading)
       shown: null,
+      // visibility of the card-fields panel
+      showFields: false,
       // field labels from the search config, keyed `table:field`
       labels: null,
       // fields chosen by the user for the cards, null = defaults from Cfg.preview
@@ -166,10 +169,24 @@ class Results extends Component {
         <div className="container">
           <div className="clearfix">
             <OpenInMap tb={tb} filter={this._buildMapFilter()} />
-            <PaginateResultSummary
-              totalRows={this.state.result.total}
-              page={page}
-            />
+            <div className="d-flex align-items-start">
+              <PaginateResultSummary
+                totalRows={this.state.result.total}
+                page={page}
+              />
+              <Button
+                color="secondary"
+                outline={!this.state.columns}
+                size="sm"
+                className="ms-2 mb-3 py-0"
+                title="Choose the fields shown in the cards"
+                aria-label="Choose the fields shown in the cards"
+                aria-expanded={this.state.showFields}
+                onClick={() => this.setState({ showFields: !this.state.showFields })}
+              >
+                <FontAwesomeIcon icon="cog" />
+              </Button>
+            </div>
             <PaginateResult
               path={this.props.location.pathname}
               search={this.props.location.search}
@@ -178,13 +195,15 @@ class Results extends Component {
             />
           </div>
 
-          <CardFieldsSelect
-            tb={tb}
-            selected={this.state.columns}
-            defaults={Cfg.preview[tb]}
-            labels={this.state.labels}
-            onChange={cols => this._setColumns(cols)}
-          />
+          <Collapse isOpen={this.state.showFields}>
+            <CardFieldsSelect
+              tb={tb}
+              selected={this.state.columns}
+              defaults={Cfg.preview[tb]}
+              labels={this.state.labels}
+              onChange={cols => this._setColumns(cols)}
+            />
+          </Collapse>
 
           <ItemPreviewWrapper>
             {
