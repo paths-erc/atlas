@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import relaxedSplit from '../Utils/relaxedSplit.jsx';
+import DOMPurify from 'dompurify';
 import internalLinks from '../Utils/internalLinks.jsx';
 
 // Replaces \n with <br> elements — drop-in for the removed react-nl2br package.
@@ -15,7 +16,7 @@ const parseText = (text) => {
   const nltext = nl2br(text);
   const linktext = nltext.map( (t, i) => {
     if (typeof t === 'string'){
-      return <span className="internal-link" key={i} dangerouslySetInnerHTML={{ __html: internalLinks(t) }}></span>;
+      return <span className="internal-link" key={i} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(internalLinks(t)) }}></span>;
     } else {
       return t;
     }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GeoJSON } from 'react-leaflet';
 import axios from 'axios';
+import escapeHtml from '../../Utils/escapeHtml';
 
 import { SiteMapsList } from '../../Services/Cfg/remoteGisSources';
 
@@ -79,10 +80,11 @@ const getStyle = (f) =>{
 };
 
 const onEachFeature = (feature, layer) => {
-  layer.bindPopup(`<a href="https://atlas.paths-erc.eu/places/${feature.properties.place}">paths.places.${feature.properties.place}</a>
-  <br />${feature.properties.subplace}
-  <br />Vectorized from: <a href="https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/${feature.properties.source}" target="_blank">PAThs Zotero ${feature.properties.source} ${feature.properties.subsource}</a>
-  <br />Phase: ${feature.properties.phase}`
+  const p = feature.properties;
+  layer.bindPopup(`<a href="https://atlas.paths-erc.eu/places/${encodeURIComponent(p.place)}">paths.places.${escapeHtml(p.place)}</a>
+  <br />${escapeHtml(p.subplace)}
+  <br />Vectorized from: <a href="https://www.zotero.org/groups/2189557/erc-paths/items/itemKey/${encodeURIComponent(p.source)}" target="_blank" rel="noopener noreferrer">PAThs Zotero ${escapeHtml(p.source)} ${escapeHtml(p.subsource)}</a>
+  <br />Phase: ${escapeHtml(p.phase)}`
   );
 }
 

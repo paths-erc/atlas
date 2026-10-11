@@ -1,6 +1,7 @@
 import React from 'react';
 import { GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
+import escapeHtml from '../../Utils/escapeHtml';
 import hash from 'object-hash';
 
 
@@ -56,10 +57,10 @@ const onEachFeature = (feature, layer) => {
   // ListPlaces. Fall back through the likely name keys so a label rename in the
   // bdus config never turns the popup title into "undefined".
   const name = p['Site name'] || p.name || p['Toponym'] || p['Nome'] || `paths.places.${p.id}`;
-  layer.bindPopup(`<strong>${name}</strong>` +
-     (p.copticname ? '<br /><span class="coptic">' + p.copticname + '</span>' : '') +
-     (p.type ? `<br /><span class="text-secondary">${p.type}</span>` : '') +
-     `<br /><a href="${base}/places/${p.id}">paths/places/${p.id}</a>`
+  layer.bindPopup(`<strong>${escapeHtml(name)}</strong>` +
+     (p.copticname ? '<br /><span class="coptic">' + escapeHtml(p.copticname) + '</span>' : '') +
+     (p.type ? `<br /><span class="text-secondary">${escapeHtml(p.type)}</span>` : '') +
+     `<br /><a href="${escapeHtml(base)}/places/${encodeURIComponent(p.id)}">paths/places/${escapeHtml(p.id)}</a>`
   );
   layer.on('mouseover', function() { layer.openPopup(); });
 };
