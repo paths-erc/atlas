@@ -28,6 +28,10 @@ jobs:
 
       - run: npm ci
 
+      # Fail the deploy on high/critical advisories in what ships to the browser.
+      # (build tooling such as react-scripts is excluded: it is not in the bundle)
+      - run: npm audit --omit=dev --audit-level=high
+
       # CI=false so CRA build warnings are not treated as errors
       # (matches the local `npm run build` behaviour).
       #

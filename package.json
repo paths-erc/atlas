@@ -9,29 +9,27 @@
   "private": true,
   "homepage": "https://atlas.paths-erc.eu",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.3.1",
     "axios": "^1.17.0",
     "detect-browser": "^5.2.1",
+    "dompurify": "^3.4.16",
     "leaflet": "^1.9.4",
     "object-hash": "^3.0.0",
-    "prop-types": "^15.7.2",
     "qs": "^6.15.2",
     "quirematrix": "^1.2.0",
     "react": "^19.2.7",
     "react-bootstrap-typeahead": "^6.4.1",
     "react-copy-to-clipboard": "^5.1.1",
     "react-dom": "^19.2.7",
-    "react-fontawesome": "^1.7.1",
     "react-leaflet": "^5.0.0",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.17.0",
-    "react-scripts": "^5.0.0",
     "react-select": "^5.10.2",
     "reactstrap": "^9.2.3",
+    "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1"
   },
   "scripts": {
@@ -49,6 +47,6 @@
   "proxy": "http://localhost:8080",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "rehype-raw": "^7.0.0"
+    "react-scripts": "^5.0.0"
   }
 }
