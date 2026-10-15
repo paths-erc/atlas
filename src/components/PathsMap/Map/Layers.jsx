@@ -29,7 +29,7 @@ export default function Layers(props){
         url: e.url
       });
     });
-    axios.all(axiosArray).then(respArr => {
+    Promise.all(axiosArray).then(respArr => {
       respArr.map((geojson, k) => {
         remotesArr[k].geojson = geojson.data;
         return true;

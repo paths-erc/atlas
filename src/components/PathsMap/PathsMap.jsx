@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Map } from 'react-leaflet';
-import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { MapContainer, ZoomControl, useMapEvents } from 'react-leaflet';
+import { InputGroup, Input } from 'reactstrap';
 import qs from 'qs';
-import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 import Header from "../mainLayout/Header"
+import MapSidebar from './MapSidebar';
+import SidebarPortal from './SidebarPortal';
 import ListPlaces from './ListPlaces';
 import UrlFilterButton from './UrlFilterButton';
 import Legend from './Tabs/Legend';
@@ -14,19 +14,32 @@ import MapSavedQueries from './Tabs/MapSavedQueries';
 import ClearButton from './ClearButton';
 import Loading from '../Loading/Loading';
 import ShowError from '../ShowError/ShowError';
-
 import Layers from './Map/Layers';
 
 import Database from '../Services/Database/Database';
+import SavedQueries from '../Services/SavedQueries';
+import { withRouter } from '../Utils/withRouter';
 
 import './PathsMap.css';
 
 
+/**
+ * Bridge component: listens to Leaflet map viewport events (move/zoom) and
+ * forwards bounds + zoom level to the parent class component via a callback.
+ * Must live inside <MapContainer>.
+ */
+function ViewportListener({ onChange }) {
+  useMapEvents({
+    moveend: (e) => onChange(e.target.getBounds(), e.target.getZoom()),
+    zoomend: (e) => onChange(e.target.getBounds(), e.target.getZoom()),
+  });
+  return null;
+}
 
-export default class PathsMap extends Component {
+
+class PathsMap extends Component {
 
   constructor(props) {
-
     super(props);
     this.state = {
       places: null,
@@ -40,221 +53,229 @@ export default class PathsMap extends Component {
       zoom: false,
       geoJsonBounds: false
     };
-    this.placesLayerRef = React.createRef();
+    // In react-leaflet v4, MapContainer forwards its ref to the Leaflet Map
+    // instance directly (no .leafletElement indirection).
     this.mapRef = React.createRef();
+    this.onTabClick = this.onTabClick.bind(this);
+    this.onViewportChanged = this.onViewportChanged.bind(this);
   }
 
-  onSidebarClose() {
-    this.setState({
-      sidebarCollapsed: true
-    });
-  }
-
-  onSidebarOpen(id) {
-    this.setState({
-      sidebarCollapsed: false,
-      selected: id,
-    })
+  onTabClick(id) {
+    if (id === null) {
+      this.setState(s => ({ sidebarCollapsed: !s.sidebarCollapsed }));
+    } else if (id === this.state.selected && !this.state.sidebarCollapsed) {
+      this.setState({ sidebarCollapsed: true });
+    } else {
+      this.setState({ selected: id, sidebarCollapsed: false });
+    }
   }
 
   filterPlaces(e) {
-    const str =  e.target.value;
-    let fgj = {};
-    if (str === ''){
+    const str = e.target.value;
+    let fgj;
+    if (str === '') {
       fgj = this.state.places;
     } else {
-      fgj = {
-        "type": "FeatureCollection",
-        "features": []
-      };
+      fgj = { type: 'FeatureCollection', features: [] };
       for (const val of Object.values(this.state.places.features)) {
-        if (Object.values(val.properties).join('|').toLowerCase().includes(str.toLowerCase())){
+        if (Object.values(val.properties).join('|').toLowerCase().includes(str.toLowerCase())) {
           fgj.features.push(val);
         }
       }
     }
-
-    this.setState({
-      manualFilter: str,
-      shownPlaces: fgj
-    });
+    this.setState({ manualFilter: str, shownPlaces: fgj });
     this.fitMapToBounds();
   }
 
-  clearFiltered(){
-    this.setState({
-      manualFilter: '',
-      shownPlaces: this.state.places
-    });
+  clearFiltered() {
+    this.setState({ manualFilter: '', shownPlaces: this.state.places });
     this.fitMapToBounds();
   }
 
-  fitMapToBounds(){
+  fitMapToBounds() {
+    // mapRef.current is the Leaflet Map instance directly in react-leaflet v4+
+    const map = this.mapRef.current;
+    if (!map) return;
+
+    // Default bounds covering Egypt
     let bounds = [ [19.700194, 16.570227], [35.4737, 32.869317] ];
-    if (this.state.geoJsonBounds && bounds._northEast && bounds._southWest){
+    if (this.state.geoJsonBounds && this.state.geoJsonBounds._northEast && this.state.geoJsonBounds._southWest) {
       bounds = this.state.geoJsonBounds;
-      if(bounds._northEast.lat === bounds._southWest.lat && bounds._northEast.lng === bounds._southWest.lng){
-        bounds.pad();
+      if (bounds._northEast.lat === bounds._southWest.lat && bounds._northEast.lng === bounds._southWest.lng) {
+        bounds = bounds.pad(0.1);
       }
     }
-    this.mapRef.current.leafletElement.fitBounds(bounds);
+
+    // If the container has no width yet (hidden tab, ancestor still laying out,
+    // route transition) fitBounds resolves to the minimum zoom and never
+    // recovers — nothing re-fits on resize. Defer; the ResizeObserver set up in
+    // componentDidMount calls this again once the map has a real size.
+    if (map.getSize().x < 1) {
+      this._needsFit = true;
+      return;
+    }
+    this._needsFit = false;
+    map.fitBounds(bounds);
   }
 
+  fetchData(savedQ, locationSearch) {
+    // `urlFilter` drives the "Filter active — click to disable" button: it must
+    // reflect whether a filter is *actually* applied, not merely that the URL
+    // looked like a saved-query / filtered one.
+    const onGeoData = (data, urlFilter = false) => {
+      if (!data || data.status === 'error') {
+        this.setState({
+          error: <div>Sorry. There was an error loading map data. Please report this to <a href="mailto:julian.bogdani@uniroma1.it">julian.bogdani@uniroma1.it</a>.</div>
+        });
+        return;
+      }
+      this.setState({ places: data, shownPlaces: data, urlFilter });
+      this.fitMapToBounds();
+    };
 
-  fetchData(savedQ, locationSearch){
     if (savedQ) {
-      Database.getSaved('map', savedQ, null, data => {
-        this.setState({
-          places: data,
-          shownPlaces: data,
-          urlFilter: true
-        });
-        this.fitMapToBounds()
-      });
+      const sq = SavedQueries.map && SavedQueries.map[savedQ];
+      Database.getPlaces(sq ? sq.filter : null, data => onGeoData(data, !!(sq && sq.filter)));
     } else if (locationSearch) {
-      const qstring = qs.parse(this.props.location.search, {ignoreQueryPrefix: true})
+      const qstring = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
+      const filter = qstring.filter ? JSON.parse(qstring.filter) : null;
       if (qstring.tb === 'manuscripts') {
-        Database.getMsPlaces(qstring.shortsql, data => {
-          this.setState({
-            places: data,
-            shownPlaces: data,
-            urlFilter: qstring.shortsql
-          });
-          this.fitMapToBounds()
-        });
+        Database.getMsPlaces(filter, data => onGeoData(data, !!filter));
       } else if (qstring.tb === 'places') {
-        Database.getPlaces(qstring.shortsql, data => {
-          this.setState({
-            places: data,
-            shownPlaces: data,
-            urlFilter: qstring.shortsql
-          });
-          this.fitMapToBounds()
-        });
+        Database.getPlaces(filter, data => onGeoData(data, !!filter));
       } else {
-        return false;
+        Database.getPlaces(null, onGeoData);
       }
-
     } else {
-      Database.getPlaces(null, data => {
-        if (data.type && data.type === 'error') {
-          this.setState({
-            error: <div>Sorry. There was an error in getting the data from database. Please report this error to <a href="mailto:julian.bogdani@uniroma1.it">julian.bogdani@uniroma1.it</a> and be sure to copy and paste the following lines:<br /><div className="border p-3 mt-3"><code>{window.location.href}</code><pre>{data.text}</pre></div></div>
-          });
-          return;
-        }
-        this.setState({
-          places: data,
-          shownPlaces: data,
-        });
-        this.fitMapToBounds();
-      });
+      Database.getPlaces(null, onGeoData);
     }
   }
 
-  onViewportChanged(e){
-    const mapBounds = this.mapRef.current.leafletElement.getBounds();
-    const zoom = e.zoom;
-    this.setState({
-      mapBounds: mapBounds,
-      zoom: zoom
-    });
+  // Called by ViewportListener whenever the map moves or zooms.
+  onViewportChanged(bounds, zoom) {
+    this.setState({ mapBounds: bounds, zoom });
   }
 
-
-
-  UNSAFE_componentWillReceiveProps(nextProps){
-    if(nextProps !== this.props ){
-      this.setState({
-        places: null,
-        urlFilter: null
-      });
-      this.fetchData(nextProps.match.params.data, null);
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.data !== this.props.match.params.data) {
+      this.setState({ places: null, urlFilter: null });
+      this.fetchData(this.props.match.params.data, null);
     }
   }
 
-
-  componentDidMount(){
+  componentDidMount() {
     this.fetchData(this.props.match.params.data, this.props.location.search);
-  }
 
-  showGeoJson(){
-    if (!this.state.shownPlaces){
-      return <div style={{ textAlign: 'center', zIndex: 999, marginTop: '5rem'}}>
-          <Loading>Loading map data...</Loading>
-        </div>
+    // Keep the Leaflet canvas in sync with its container. Covers the map being
+    // created while its box is 0-wide (hidden tab / mid-layout): Leaflet caches
+    // the size once and never re-measures on its own, so without this the map
+    // stays locked at the wrong zoom. Mirrors the bdus-app GeoFace fix.
+    const map = this.mapRef.current;
+    if (map && typeof ResizeObserver !== 'undefined') {
+      this._ro = new ResizeObserver(() => {
+        const m = this.mapRef.current;
+        if (!m) return;
+        m.invalidateSize();
+        if (this._needsFit && m.getSize().x > 0) {
+          this.fitMapToBounds();
+        }
+      });
+      this._ro.observe(map.getContainer());
     }
   }
-  onAddgeoJson(e){
-    this.setState({
-      geoJsonBounds: e.target.getBounds()
-    });
+
+  componentWillUnmount() {
+    if (this._ro) {
+      this._ro.disconnect();
+      this._ro = null;
+    }
+  }
+
+  onAddgeoJson(e) {
+    this.setState({ geoJsonBounds: e.target.getBounds() });
   }
 
   render() {
+    const tabs = [
+      {
+        id: 'home',
+        header: 'Places',
+        icon: <FontAwesomeIcon icon="home" />,
+        content: (
+          <div>
+            <InputGroup className="my-2">
+              <span className="input-group-text">Search:</span>
+              <Input
+                type="search"
+                value={this.state.manualFilter}
+                onChange={this.filterPlaces.bind(this)}
+                placeholder="filter places…"
+              />
+              <ClearButton show={this.state.manualFilter} onClick={this.clearFiltered.bind(this)} />
+            </InputGroup>
+            <UrlFilterButton urlFilter={this.state.urlFilter} filter={this.state.filter} />
+            <ListPlaces places={this.state.shownPlaces} />
+          </div>
+        )
+      },
+      {
+        id: 'savedQueries',
+        header: 'Saved queries',
+        icon: <FontAwesomeIcon icon="save" />,
+        content: <MapSavedQueries />
+      },
+      {
+        id: 'legend',
+        header: 'Legend',
+        icon: <FontAwesomeIcon icon="info" />,
+        content: <Legend />
+      }
+    ];
+
     return (
       <div className="maxHeight">
-        <Header location={this.props.location} />
-          <main role="main" className="maxHeight">
-
-          <Sidebar id="sidebar" collapsed={this.state.sidebarCollapsed} selected={this.state.selected}
-                   onOpen={this.onSidebarOpen.bind(this)} onClose={this.onSidebarClose.bind(this)}
-                   closeIcon={<FontAwesomeIcon icon="caret-left" />}>
-            <Tab id="home" header="Home" icon={<FontAwesomeIcon icon="home" />}>
-
-              <div className="sidebarSearch">
-                <InputGroup className="my-2">
-                  <InputGroupAddon addonType="prepend">
-                    Search:
-                  </InputGroupAddon>
-                  <Input type="search" value={this.state.manualFilter} onChange={this.filterPlaces.bind(this)} placeholder="start typing to filter places..." />
-                    <ClearButton show={this.state.manualFilter} onClick={ this.clearFiltered.bind(this) } />
-                </InputGroup>
-              </div>
-
-              <div className="mt-2">
-                <UrlFilterButton urlFilter={ this.state.urlFilter } filter={ this.state.filter }/>
-                <ListPlaces places={ this.state.shownPlaces } />
-              </div>
-            </Tab>
-
-            <Tab id="savedQueries" header="Saved queries" icon={<FontAwesomeIcon icon="save" />}>
-              <div className="mt-5">
-                <MapSavedQueries />
-              </div>
-            </Tab>
-
-            <Tab id="legend" header="Legend" icon={<FontAwesomeIcon icon="info" />}>
-              <div className="mt-5">
-                <Legend />
-              </div>
-            </Tab>
-          </Sidebar>
+        <Header />
+        <main role="main" className="maxHeight">
 
           {this.state.error && <ShowError>{this.state.error}</ShowError>}
 
-          { !this.state.shownPlaces && <div style={{ position: 'absolute', top: '5rem', textAlign: 'center', zIndex: 999, width: '100%'}}>
+          <MapContainer
+            className="maxHeight"
+            zoomControl={false}
+            ref={this.mapRef}
+            center={[27, 30]}
+            zoom={6}
+            maxZoom={25}
+          >
+            <ViewportListener onChange={this.onViewportChanged} />
+            <ZoomControl position="topright" />
+
+            <SidebarPortal>
+              <MapSidebar
+                tabs={tabs}
+                activeTab={this.state.selected}
+                collapsed={this.state.sidebarCollapsed}
+                onTabClick={this.onTabClick}
+              />
+            </SidebarPortal>
+
+            {!this.state.shownPlaces && (
+              <div style={{ position: 'absolute', top: '5rem', textAlign: 'center', zIndex: 999, width: '100%' }}>
                 <Loading>Loading map data...</Loading>
               </div>
-          }
+            )}
 
-          <Map
-              className="sidebar-map maxHeight"
-              zoomControl={true}
-              ref={this.mapRef}
-              onViewportChanged={ this.onViewportChanged.bind(this) }
-              maxZoom="25"
-              >
-
-          <Layers
-              shownPlaces={ this.state.shownPlaces }
-              onAdd={this.onAddgeoJson.bind(this) }
+            <Layers
+              shownPlaces={this.state.shownPlaces}
+              onAdd={this.onAddgeoJson.bind(this)}
               mapBounds={this.state.mapBounds}
               zoom={this.state.zoom}
             />
-          </Map>
+          </MapContainer>
         </main>
       </div>
     );
   }
 }
+
+export default withRouter(PathsMap);

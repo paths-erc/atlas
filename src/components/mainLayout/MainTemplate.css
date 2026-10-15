@@ -2,6 +2,17 @@
   font-family: Antinoou;
   src: url('fonts/Antinoou.ttf');
 }
+/* Coptic-only face: the browser picks it per character, so Coptic runs inside
+   English text (e.g. manuscripts.gennotes) are rendered in Antinoou without markup */
+@font-face {
+  font-family: 'Antinoou-Coptic';
+  src: url('fonts/Antinoou.ttf');
+  unicode-range: U+2C80-2CFF, U+03E2-03EF, U+0304-0305, U+0307, U+0323, U+FE24-FE26;
+  size-adjust: 110%;
+}
+html body {
+  font-family: 'Antinoou-Coptic', var(--bs-body-font-family);
+}
 .coptic{
   font-family: Antinoou !important;
   font-size: 1.1rem;
@@ -27,24 +38,27 @@ main{
   min-height: 600px;
 }
 
-#sidebar{
-  margin-top: 60px;
-}
-
-.sidebar-header{
-  margin-bottom: 20px;
-}
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255,255,255,.7);
 }
+.navbar-dark .navbar-nav .nav-link.active {
+  text-decoration: underline;
+}
 
-nav.bg-dark,
-.sidebar-header,
-.sidebar-tabs>li.active,
-.sidebar-tabs>ul>li.active{
-  background: #273c75 !important;
-  background: #c23616 !important;
+.pagination .page-link {
+  color: #b33939;
+}
+.pagination .page-link:hover {
+  color: #8a2929;
+}
+.pagination .page-item.active .page-link {
+  background-color: #b33939;
+  border-color: #b33939;
+  color: #fff;
+}
+
+nav.bg-dark {
   background: #b33939 !important;
 }
 footer a{

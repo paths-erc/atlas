@@ -2,11 +2,12 @@ import React from 'react';
 import qs from 'qs';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import Cfg from '../Services/Cfg/Cfg';
 
 
 function build_object(path, queryString, tot_rows, curr_page = 1) {
 
-  const rpp = 30;
+  const rpp = Cfg.rpp;
 
   let tot_pages = Math.ceil(tot_rows / rpp);
   let result = [];

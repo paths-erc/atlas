@@ -1,43 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Badge } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class ListPlaces extends Component {
 
   render() {
-
     if (!this.props.places || !this.props.places.features) {
       return null;
     }
+    const features = this.props.places.features;
     return (
       <div className="mt-3">
-        <h5>Found { this.props.places.features.length } places</h5>
+        <h5>Found {features.length} places</h5>
         <ol>
-          {
-            this.props.places.features.map( (e, i)=>{
-
-              return <li key={i} className="border-bottom border-info mb-3 pb-1">
-                <strong>{ e.properties.name }</strong>
-                <br /><small><span className="coptic">{e.properties.copticname}</span></small>
-                {
-                  ['greekname', 'egyptianname'].map( (ee, ii)=>{
-                    if (e[ee]){
-                      return (<div key={ii}><small>{e.properties[ee]}</small></div>);
-                    } else {
-                      return null;
-                    }
-                  } )
-                }
-
-                {
-                  e.properties['tot_ms'] && e.properties['tot_ms'] !== '0' ?  <div className="text-right"><Badge color="secondary">{ e.properties['tot_ms'] } manuscripts related</Badge></div>  : null
-                }
-
-                <div><small><FontAwesomeIcon icon="id-badge" /> <Link to={ '/places/' + e.properties.id }>paths.places.{e.properties.id}</Link></small></div>
+          {features.map((e, i) => {
+            const p = e.properties;
+            return (
+              <li key={i} className="border-bottom border-info mb-3 pb-1">
+                <strong>{p['Site name']}</strong>
+                {p['Region'] && <div><small>{p['Region']}</small></div>}
+                <div>
+                  <small>
+                    <FontAwesomeIcon icon="id-badge" />{' '}
+                    <Link to={'/places/' + p.id}>paths.places.{p.id}</Link>
+                  </small>
+                </div>
               </li>
-            } )
-          }
+            );
+          })}
         </ol>
       </div>
     );

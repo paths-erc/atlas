@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Database from '../Services/Database/Database';
+import { withRouter } from '../Utils/withRouter';
 import SubHead from '../SubHead/SubHead';
 import Body from './Bodies/Body';
 import RecordLinks from './RecordLinks';
@@ -13,7 +14,7 @@ import MiniMap from './MiniMap';
 import Loading from '../Loading/Loading';
 import ExternalLinks from './ExternalLinks';
 
-export default class ViewOne extends Component {
+class ViewOne extends Component {
 
   constructor(props) {
     super(props);
@@ -23,16 +24,13 @@ export default class ViewOne extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps){
-    if(nextProps !== this.props ){
-      this.setState({
-        rec: null
-      });
-
-      Database.getOne(nextProps.match.params.table, nextProps.match.params.id, (d) =>{
-        this.setState({
-          rec: d
-        });
+  componentDidUpdate(prevProps) {
+    const { table: prevTable, id: prevId } = prevProps.match.params;
+    const { table, id } = this.props.match.params;
+    if (table !== prevTable || id !== prevId) {
+      this.setState({ rec: null });
+      Database.getOne(table, id, (d) => {
+        this.setState({ rec: d });
       });
     }
   }
@@ -47,22 +45,22 @@ export default class ViewOne extends Component {
 
   renderTemplate(rec) {
 
-    if (rec.type === 'error'){
-      return (<pre className="text-danger p-5">{ rec.text }</pre>)
+    if (rec.status === 'error'){
+      return (<pre className="text-danger p-5">{ rec.detail || rec.code }</pre>)
     }
 
-    switch (rec.metadata.tb_stripped) {
+    switch (rec.metadata.tb_id) {
       // case 'titles':
       //   return (<ViewOneTitle record={ rec } />);
       default:
         // No record found!
-        if (rec.core.length < 1){
+        if (!rec.core || Object.keys(rec.core).length === 0){
           return (
             <div className="container">
-              <SubHead tb={ rec.metadata.tb_stripped } tblabel={rec.metadata.tb_label} text="View record" />
+              <SubHead tb={ rec.metadata.tb_id } tblabel={rec.metadata.tb_label} text="View record" />
                 <Card className="mt-2">
                   <CardHeader>
-                    <h3 className="text-danger">Record paths.{ rec.metadata.tb_stripped }.{ this.props.match.params.id }  not found!</h3>
+                    <h3 className="text-danger">Record paths.{ rec.metadata.tb_id }.{ this.props.match.params.id }  not found!</h3>
                   </CardHeader>
                 </Card>
             </div>
@@ -71,22 +69,22 @@ export default class ViewOne extends Component {
         return(
           <div className="container">
 
-            <SubHead tb={ rec.metadata.tb_stripped } tblabel={rec.metadata.tb_label} text="View record" />
+            <SubHead tb={ rec.metadata.tb_id } tblabel={rec.metadata.tb_label} text="View record" />
 
             <Row className="mt-2">
               <Col sm="8">
                 <Card>
                   <CardHeader>
                     <h3>
-                      paths.{ rec.metadata.tb_stripped }.{ rec.core.id.val }
+                      paths.{ rec.metadata.tb_id }.{ rec.core.id.val }
                     </h3>
                       <div className="text-secondary d-flex justify-content-between">
                         <div>
-                          <FontAwesomeIcon icon="link" /> http://paths.uniroma1.it/atlas/{ rec.metadata.tb_stripped }/{ rec.core.id.val }
+                          <FontAwesomeIcon icon="link" /> http://paths.uniroma1.it/atlas/{ rec.metadata.tb_id }/{ rec.core.id.val }
                         </div>
                         <div>
                           <CopyToClipboard
-                            text={ 'http://paths.uniroma1.it/atlas/' + rec.metadata.tb_stripped + '/' + rec.core.id.val }
+                            text={ 'http://paths.uniroma1.it/atlas/' + rec.metadata.tb_id + '/' + rec.core.id.val }
                             onCopy={() => { this.setState({copied: true}); window.setTimeout(()=>{ this.setState({copied: false}); }, 2000); } }
                             >
                             <Button size="sm" color={ this.state.copied ? 'primary': 'secondary'}>
@@ -108,7 +106,7 @@ export default class ViewOne extends Component {
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
                 <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
                 <UserLinks links={ rec.manualLinks } />
-                <ExternalLinks rec={ rec.core } tb={ rec.metadata.tb_stripped } />
+                <ExternalLinks rec={ rec.core } tb={ rec.metadata.tb_id } />
               </Col>
             </Row>
           </div>
@@ -128,3 +126,5 @@ export default class ViewOne extends Component {
     );
   }
 }
+
+export default withRouter(ViewOne);

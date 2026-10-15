@@ -54,7 +54,7 @@ export default function Home(){
    const showContentAndToc = function(){
      return (
        <div>
-         <div className="border p-3 d-inline-block bg-light float-right ml-5 mb-5 shadow">
+         <div className="border p-3 d-inline-block bg-light float-end ms-5 mb-5 shadow">
            <h4>Table of contents</h4>
            <ul className="p-0 m-0">
              {titles.map( (k, i) =>{

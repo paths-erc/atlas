@@ -14,10 +14,8 @@ export default class SavedQueriesList extends Component {
     return (
       <div>
         <Card className="mt-5 mb-5" color="light">
-          <div className="text-right">
-            <button type="button" className="close mr-2 mt-2" aria-label="Close" onClick={this.props.closeFn}>
-              <span aria-hidden="true">&times;</span>
-            </button>
+          <div className="text-end">
+            <button type="button" className="btn-close me-2 mt-2" aria-label="Close" onClick={this.props.closeFn} />
           </div>
         <CardBody>
           <CardTitle>Saved queries for {tblabel}</CardTitle>

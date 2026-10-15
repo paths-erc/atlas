@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,28 +36,23 @@ class SubHead extends Component {
         text: 'Show all'
       },
       {
-        to: '/search/' + tb ,
+        to: '/search/' + tb,
         icon: 'search',
         text: 'Search'
-      },
-      {
-        to: '/search/' + tb + '/adv',
-        icon: 'search-plus',
-        text: 'Advanced search'
       }
     ];
 
     return (
       <div>
-        <Jumbotron className="p-4">
+        <div className="p-4 bg-light rounded-3 mb-3">
 
         <div className="container">
           <h2>{text}</h2>
-          <Navbar color="light" light expand="xs" className="ml-auto">
+          <Navbar color="light" light expand="xs" className="ms-auto">
             <NavbarBrand>
               <h3><small>{ tblabel }</small></h3>
             </NavbarBrand>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ms-auto" navbar>
               {
                 menuItems.map( (e, k) => {
                   return (
@@ -75,7 +70,7 @@ class SubHead extends Component {
 
           {this.state.showSaved && <SavedQueriesList  tb={tb} tblabel={tblabel} closeFn={this.toggleSaved.bind(this)}/>}
         </div>
-      </Jumbotron>
+      </div>
       </div>
     );
   }

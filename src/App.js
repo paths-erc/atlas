@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -7,27 +7,27 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faIdBadge, faLink, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+// Eager — part of the app shell, always needed immediately
 import MainTemplate from './components/mainLayout/MainTemplate';
-import Home from './components/Home/Home';
 import BrowserNotSupported from './components/Home/BrowserNotSupported';
-import PathsMap from './components/PathsMap/PathsMap';
+import Loading from './components/Loading/Loading';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
-import SearchSaved from './components/Search/SearchSaved';
-import SearchSimple from './components/Search/SearchSimple';
-import SearchAdv from './components/Search/SearchAdv';
-import SearchShortSQL from './components/Search/SearchShortSQL';
-import SearchAll from './components/Search/SearchAll';
-
-import Intro from './components/Intro/Intro';
-
-import ViewOne from './components/Record/ViewOne';
-import Charts from './components/Charts/Charts';
-import Cite from './components/Cite/Cite';
-import Api from './components/Api/Api';
 import { detect } from 'detect-browser';
 
-const browser = detect();
+// Lazy — each route is a separate chunk loaded on demand
+const Home          = lazy(() => import('./components/Home/Home'));
+const PathsMap      = lazy(() => import('./components/PathsMap/PathsMap'));
+const Intro         = lazy(() => import('./components/Intro/Intro'));
+const ViewOne       = lazy(() => import('./components/Record/ViewOne'));
+const SearchSaved   = lazy(() => import('./components/Search/SearchSaved'));
+const SearchAdv     = lazy(() => import('./components/Search/SearchAdv'));
+const SearchShortSQL= lazy(() => import('./components/Search/SearchShortSQL'));
+const SearchAll     = lazy(() => import('./components/Search/SearchAll'));
+const Cite          = lazy(() => import('./components/Cite/Cite'));
+const Api           = lazy(() => import('./components/Api/Api'));
 
+const browser = detect();
 
 const compatibility = {
   'ie': 10000,
@@ -35,51 +35,65 @@ const compatibility = {
   'bb10': 10000,
   'edge': 14,
   'firefox': 39,
-  'chrome': 42, // 42
+  'chrome': 42,
   'safari': 11,
   'opera': 29,
   'android': 67,
-}
+};
 
 let notSupported = false;
-if (browser){
+if (browser) {
   const bName = browser.name;
   const bVersion = browser.version.split('.')[0];
-
-  if ( Object.keys(compatibility).indexOf(bName) > -1 && bVersion < compatibility[bName] ) {
+  if (Object.keys(compatibility).indexOf(bName) > -1 && bVersion < compatibility[bName]) {
     notSupported = true;
   }
 }
 
 library.add(fas, fab, faArrowCircleRight, faBug, faEye, faExternalLinkSquareAlt, faFilter, faGithub, faIdBadge, faLink, faMapMarkerAlt);
 
+const fallback = (
+  <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '60vh' }}>
+    <Loading />
+  </div>
+);
 
-export default function App () {
+export default function App() {
 
-    if (notSupported){
-      return <BrowserNotSupported browser={browser} compatibility={compatibility} />
-    }
+  if (notSupported) {
+    return <BrowserNotSupported browser={browser} compatibility={compatibility} />;
+  }
 
-    return (
-      <BrowserRouter basename="/">
-        <Switch>
-          <Route path='/map/:action?/:data?' component={PathsMap}/>
-          <MainTemplate>
-            <Route exact path='/' component={ Home } />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={Intro} />
-            <Route exact path='/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/:id' component={ViewOne} />
+  return (
+    <BrowserRouter basename="/">
+      <ErrorBoundary>
+      <Suspense fallback={fallback}>
+        <Routes>
+          {/* Map — full-screen, no main layout shell */}
+          <Route path='/map/:action?/:data?' element={<PathsMap />} />
 
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/saved' component={SearchSaved} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/all' component={SearchAll} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/adv' component={SearchAdv} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)/shortsql' component={SearchShortSQL} />
-            <Route exact path='/search/:table(places|titles|works|manuscripts|authors|colophons|persons|collections)' component={SearchSimple} />
+          {/* All other pages share the MainTemplate layout (Header + Footer) */}
+          <Route element={<MainTemplate />}>
+            <Route index element={<Home />} />
 
-            <Route exact path='/charts/:id?' component={Charts} />
-            <Route exact path='/cite' component={Cite} />
-            <Route exact path='/api' component={Api} />
+            {/* Table intro pages: /places, /manuscripts, … */}
+            <Route path='/:table' element={<Intro />} />
 
-          </MainTemplate>
-        </Switch>
-      </BrowserRouter>
-    );}
+            {/* Single record view: /places/1234 */}
+            <Route path='/:table/:id' element={<ViewOne />} />
+
+            {/* Search routes — more-specific paths before the generic one */}
+            <Route path='/search/:table/saved'    element={<SearchSaved />} />
+            <Route path='/search/:table/all'      element={<SearchAll />} />
+            <Route path='/search/:table/shortsql' element={<SearchShortSQL />} />
+            <Route path='/search/:table'          element={<SearchAdv />} />
+
+            <Route path='/cite' element={<Cite />} />
+            <Route path='/api'  element={<Api />} />
+          </Route>
+        </Routes>
+      </Suspense>
+      </ErrorBoundary>
+    </BrowserRouter>
+  );
+}

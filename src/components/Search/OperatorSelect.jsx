@@ -7,34 +7,15 @@ export default class OperatorSelect extends Component {
   render() {
 
     const operators = [
-      {
-        'k': 'LIKE',
-        'v': 'Contains'
-      },
-      {
-        'k': '=',
-        'v': 'Is exactly'},
-      {
-        'k': 'NOT LIKE',
-        'v': 'Does not contain'},
-      {
-        'k': 'starts_with',
-        'v': 'Starts with'},
-      {
-        'k': 'ends_with',
-        'v': 'Ends with'},
-      {
-        'k': 'is_empty',
-        'v': 'Is empty'},
-      {
-        'k': 'is_not_empty',
-        'v': 'Is not empty'},
-      {
-        'k': '>',
-        'v': 'Is bigger than'},
-      {
-        'k': '<',
-        'v': 'Is smaller than'}
+      { k: '_icontains',   v: 'Contains' },
+      { k: '_eq',          v: 'Is exactly' },
+      { k: '_ncontains',   v: 'Does not contain' },
+      { k: '_starts_with', v: 'Starts with' },
+      { k: '_ends_with',   v: 'Ends with' },
+      { k: '_empty',       v: 'Is empty' },
+      { k: '_nempty',      v: 'Is not empty' },
+      { k: '_gt',          v: 'Is bigger than' },
+      { k: '_lt',          v: 'Is smaller than' },
     ];
 
     return (

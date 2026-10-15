@@ -18,7 +18,7 @@ export default function Footer () {
             <small>Literary Texts in their Geographical Context:<br />
             Production, Copying, Usage, Dissemination and Preservation</small></p>
           </div>
-          <div className="col text-right">
+          <div className="col text-end">
             <p>An <a href="https://erc.europa.eu/" target="_blank" rel="noopener noreferrer" title="European Research Council">ERC</a> funded project hosted at the <a href="https://www.uniroma1.it" target="_blank" rel="noopener noreferrer" title="Sapienza University of Rome">Sapienza University of Rome</a></p>
             <p>Principal Investigator <a href="http://www.lettere.uniroma1.it/users/paola-buzi" title="Paola Buzi" target="_blank" rel="noopener noreferrer">Paola Buzi</a> [<a href="mailto:paola.buzi@uniroma1.it" title="Email to Paola Buzi">paola.buzi(at)uniroma1.it</a>]</p>
             <p>

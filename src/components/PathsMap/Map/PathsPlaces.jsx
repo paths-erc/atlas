@@ -1,6 +1,7 @@
 import React from 'react';
 import { GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
+import escapeHtml from '../../Utils/escapeHtml';
 import hash from 'object-hash';
 
 
@@ -51,10 +52,15 @@ const pointToLayer = (t, i) => {
 
 const onEachFeature = (feature, layer) => {
   const base = window.location.pathname.replace(/\/map(.*)/, '');
-  layer.bindPopup(`<strong>${feature.properties.name}</strong>` +
-     (feature.properties.copticname ? '<br /><span class="coptic">' + feature.properties.copticname + '</span>': '') +
-     (feature.properties.type ? `<br /><span class="text-secondary">${feature.properties.type}</span>` : '') +
-     `<br /><a href="${base}/places/${feature.properties.id}">paths/places/${feature.properties.id}</a>`
+  const p = feature.properties;
+  // /geoface keys the properties by field *label* (e.g. "Site name"), matching
+  // ListPlaces. Fall back through the likely name keys so a label rename in the
+  // bdus config never turns the popup title into "undefined".
+  const name = p['Site name'] || p.name || p['Toponym'] || p['Nome'] || `paths.places.${p.id}`;
+  layer.bindPopup(`<strong>${escapeHtml(name)}</strong>` +
+     (p.copticname ? '<br /><span class="coptic">' + escapeHtml(p.copticname) + '</span>' : '') +
+     (p.type ? `<br /><span class="text-secondary">${escapeHtml(p.type)}</span>` : '') +
+     `<br /><a href="${escapeHtml(base)}/places/${encodeURIComponent(p.id)}">paths/places/${escapeHtml(p.id)}</a>`
   );
   layer.on('mouseover', function() { layer.openPopup(); });
 };
@@ -64,7 +70,7 @@ export default function PathsPlaces(props){
   return(
     <React.Fragment>
       { props.shownPlaces && <GeoJSON
-        onAdd={props.onAdd}
+        eventHandlers={{ add: props.onAdd }}
         key={ hash(props.shownPlaces) }
         data={ props.shownPlaces }
         pointToLayer={ pointToLayer }

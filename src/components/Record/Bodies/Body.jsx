@@ -13,7 +13,7 @@ export default class ViewOne extends Component {
 
   renderTemplate(rec) {
 
-    switch (rec.metadata.tb_stripped) {
+    switch (rec.metadata.tb_id) {
       case 'manuscripts':
         return (<ManuscriptsBody rec={ rec } /> )
       default:
@@ -21,18 +21,18 @@ export default class ViewOne extends Component {
           <div>
             {
               Object.values(rec.core).map( (i, k) => {
-                if (Cfg.hidden.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1){
+                if (Cfg.hidden.indexOf(rec.metadata.tb_id + '.' + i.name) > -1){
                   return null;
                 }
                 
                 return <RecordCell
-                    coptic= { Cfg.coptic.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
-                    greek= { Cfg.greek.indexOf(rec.metadata.tb_stripped + '.' + i.name) > -1}
+                    coptic= { Cfg.coptic.indexOf(rec.metadata.tb_id + '.' + i.name) > -1}
+                    greek= { Cfg.greek.indexOf(rec.metadata.tb_id + '.' + i.name) > -1}
                     label={ i.label }
                     name={ i.name }
                     val={ i.val_label ? i.val_label : i.val }
                     key={k} 
-                    colophonId={ (rec.metadata.tb_stripped === 'colophons' && i.name === 'text') ? rec.core.id.val : false}
+                    colophonId={ (rec.metadata.tb_id === 'colophons' && i.name === 'text') ? rec.core.id.val : false}
                     />
               })
             }

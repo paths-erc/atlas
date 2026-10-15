@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import DOMPurify from 'dompurify';
 import Loading from '../Loading/Loading';
 import './ColophonText.css';
 // import { JSDOM } from 'jsdom';
@@ -13,14 +14,17 @@ const formatColophon = (xml) => {
   xml = xml.replace(/\([0-9]{1,2}\)/gmi, '')
   const parser = new DOMParser();
   const doc = parser.parseFromString(xml.trim(), "application/xml");
-  doc.querySelectorAll('roleName,persName,date,gap,org,quote,rs,b').forEach(e => e.replaceWith(e.innerHTML));
+  // Turn referenced names (ref="paths.<tb>.<id>") into links to the record
   doc.querySelectorAll('placeName, persName').forEach(e => {
-    const ref_parts = e.getAttribute('ref').split('.');
-    if (!ref_parts[0] && !ref_parts[1]) {
-      return e.innerHTML.trim();
+    const ref_parts = (e.getAttribute('ref') || '').split('.');
+    if (ref_parts[1] && ref_parts[2]) {
+      const a = doc.createElement('a');
+      a.setAttribute('href', `/${encodeURIComponent(ref_parts[1])}/${encodeURIComponent(ref_parts[2])}`);
+      a.innerHTML = e.innerHTML.trim();
+      e.replaceWith(a);
     }
-    return `<a href="/${ref_parts[1]}/${ref_parts[2]}">${e.innerHTML.trim()}</a>`;
   });
+  doc.querySelectorAll('roleName,persName,placeName,date,gap,org,quote,rs,b').forEach(e => e.replaceWith(e.innerHTML));
   const allParagraphs = Array.from(doc.querySelectorAll('body p')).map(e => {
     return {
       fol: e.getAttribute('fol'),
@@ -41,7 +45,7 @@ const ColophonTextItem = ({ paragraph }) => (
     {paragraph.fol && <small>fol. {paragraph.fol}</small>}
     <ol className='colophons'>
       {paragraph.content.split('\n').map((line, key) => (
-        <li key={key} dangerouslySetInnerHTML={{ __html: line.trim() }} />
+        <li key={key} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(line.trim()) }} />
       ))}
     </ol>
   </React.Fragment>
