@@ -5,6 +5,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-10-15
+### Added
+- Users can choose which fields are shown in the result cards: a cog button opens
+  the selector, the choice is saved per table in the browser (uses the API
+  `columns` parameter)
+- Coptic text embedded in other-language fields (e.g. `manuscripts.gennotes`) is
+  rendered in Antinoou per character, via an `unicode-range` font face, without
+  marking up the database
+
+### Fixed
+- Autocomplete in advanced search returned "No matches found" for integer fields
+  (e.g. CLM ID): the values returned by the API are now converted to strings
+
+## [3.0.0] - 2026-10-15
+### Changed
+- **Breaking:** the frontend now uses the BraDypUS v5 API (v5.9.0, app-scoped
+  `/{app}/api/…` URLs, read-only API key injected at build time from the
+  `REACT_APP_API_KEY` repository secret)
+- Dependencies updated: React 17→19, react-router 5→7, react-leaflet 2→5,
+  reactstrap 8→9 and Bootstrap 4→5; unused and deprecated dependencies removed
+  (`gh-pages`, `react-scroll-up`, `react-nl2br`, `react-leaflet-sidebarv2`, chart.js)
+- Code splitting with `React.lazy`, an error boundary around the whole app,
+  highlighted active navigation item
+- Deploy is automatic: GitHub Actions builds and publishes every push to `master`
+  to GitHub Pages, after a `npm audit` gate on runtime dependencies
+- Map: custom sidebar, the map no longer locks at minimum zoom when initialised
+  hidden, popups show the toponym instead of `undefined`, the saved query
+  `all_ms_places` and the "Filter active" button state are consistent with the
+  displayed data
+- Untrusted HTML is escaped/sanitized in popups and text previews; colophon name
+  links fixed
+
+### Removed
+- Charts feature and chart.js dependencies
+
+## [2.7.8] - 2026-09-04
+### Changed
+- Updated project descriptions (home and mission statement) and the update date of
+  works without Clavis
+- Typo fixes
+
 ## [2.7.7] - 2025-12-11
 ### Changed
 - Removed saved query manuscripts.wandering_ms

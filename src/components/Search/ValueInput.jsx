@@ -12,7 +12,9 @@ export default function ValueInput (props) {
     setIsLoading(true);
     const [tb, fld] = props.fld.split(':');
     Database.getUniqueVal(tb, fld, string, d => {
-      setOptions(d);
+      // the API returns raw column values: integer fields (e.g. manuscripts:id)
+      // come back as numbers, but the typeahead needs string labels to filter on
+      setOptions(d.filter(v => v !== null && v !== '').map(String));
       setIsLoading(false)
     });
   }, [props.fld]);
