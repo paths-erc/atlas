@@ -2,6 +2,17 @@
   font-family: Antinoou;
   src: url('fonts/Antinoou.ttf');
 }
+/* Coptic-only face: the browser picks it per character, so Coptic runs inside
+   English text (e.g. manuscripts.gennotes) are rendered in Antinoou without markup */
+@font-face {
+  font-family: 'Antinoou-Coptic';
+  src: url('fonts/Antinoou.ttf');
+  unicode-range: U+2C80-2CFF, U+03E2-03EF, U+0304-0305, U+0307, U+0323, U+FE24-FE26;
+  size-adjust: 110%;
+}
+html body {
+  font-family: 'Antinoou-Coptic', var(--bs-body-font-family);
+}
 .coptic{
   font-family: Antinoou !important;
   font-size: 1.1rem;
