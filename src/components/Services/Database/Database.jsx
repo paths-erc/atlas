@@ -12,7 +12,9 @@ const AUTH = { api_key: API_KEY };
 const api = axios.create({
   baseURL: `${API_BASE}/${APP}/api`,
   headers: { 'Content-Type': 'application/json' },
-  paramsSerializer: params => qs.stringify(params, { arrayFormat: 'brackets', encode: false }),
+  // encodeValuesOnly: keys keep their readable brackets, but values MUST be encoded:
+  // raw `&`, `#`, `+`, `%` corrupt the query and raw line breaks are dropped by URL parsing
+  paramsSerializer: params => qs.stringify(params, { arrayFormat: 'brackets', encodeValuesOnly: true }),
 });
 
 const onError = (err, cb) => {
@@ -94,7 +96,9 @@ export default class Database {
   }
 
   static getUniqueVal(tb, fld, string, cb) {
-    api.get(`/search/${tb}/values`, { params: { ...AUTH, fld } })
+    // bdus >= the release adding `q`/`limit`: substring match + cap done server-side
+    // (older servers ignore both and return every distinct value)
+    api.get(`/search/${tb}/values`, { params: { ...AUTH, fld, q: string, limit: 50 } })
       .then(res => cb(res.data.values || []))
       .catch(() => cb([]));
   }

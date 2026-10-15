@@ -5,6 +5,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.1] - 2026-10-15
+### Changed
+- Value autocomplete in advanced search is filtered server-side (`q`/`limit`
+  parameters of `/search/{tb}/values`, BraDypUS release with value filtering)
+
+### Fixed
+- Advanced search with a value picked from the autocomplete of a multi-line field
+  (e.g. `manuscripts.gennotes`): the value was lost when clicking Search, the first
+  click on Search was swallowed by the autocomplete menu and a loader flashed after
+  the selection
+- Search values containing line breaks, `&`, `#`, `+` or `%` were sent to the API
+  unencoded and matched nothing: query-string values are now encoded
+- Long values in the autocomplete menu are truncated (full text in the tooltip)
+
 ## [3.1.0] - 2026-10-15
 ### Added
 - Users can choose which fields are shown in the result cards: a cog button opens
