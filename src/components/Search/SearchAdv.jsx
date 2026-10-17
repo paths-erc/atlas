@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col, Button, Alert, Collapse } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import qs from 'qs';
 
 import SubHead from '../SubHead/SubHead';
@@ -8,7 +9,14 @@ import FldSelect from './FldSelect';
 import ValueInput from './ValueInput';
 import OperatorSelect from './OperatorSelect';
 import ConnectorSelect from './ConnectorSelect';
+import Cfg from '../Services/Cfg/Cfg';
+import { parseLinked } from './LinkedFilter';
 import { withRouter } from '../Utils/withRouter';
+
+// more conditions than this make the form too long to scroll: collapse it
+const MAX_OPEN_ROWS = 5;
+
+const defaultRows = () => ({ 'a': { f: '', o: '_icontains', v: '' } });
 
 
 class AdvSearchForm extends Component {
@@ -21,14 +29,9 @@ class AdvSearchForm extends Component {
     let rows;
     let show = false;
 
-    if(Object.getOwnPropertyNames(qstring).length === 0){
-      rows = {
-        'a': {
-          f: '',
-          o: '_icontains',
-          v: ''
-        }
-      };
+    // linked searches (record links) are not edited through the form
+    if(Object.getOwnPropertyNames(qstring).length === 0 || parseLinked(props.location.search)){
+      rows = defaultRows();
     } else {
       rows = qstring;
       show = true;
@@ -37,7 +40,8 @@ class AdvSearchForm extends Component {
     this.state = {
       rows: rows,
       showResults: show,
-      page: false
+      page: false,
+      formOpen: !this._shouldCollapse(rows, props.match.params.table)
     };
 
     this._changeOperator = this._changeOperator.bind(this);
@@ -47,6 +51,16 @@ class AdvSearchForm extends Component {
 
   }
 
+
+  /**
+   * A form is collapsed when it has too many rows, or a row on a field that
+   * the field selector cannot show (not whitelisted, e.g. `id`)
+   */
+  _shouldCollapse(rows, tb){
+    const list = Object.values(rows);
+    if (list.length > MAX_OPEN_ROWS) { return true; }
+    return list.some(r => r && r.f && !Cfg.fld_whitelist.includes(r.f.includes(':') ? r.f : `${tb}:${r.f}`));
+  }
 
   _removeRow(e){
     let rows = this.state.rows;
@@ -120,14 +134,61 @@ class AdvSearchForm extends Component {
         page: qstring.page
       });
     }
+
+    // back from a linked search to a blank form ("New search")
+    if(parseLinked(prevProps.location.search) && !this.props.location.search){
+      this.setState({ rows: defaultRows(), showResults: false, formOpen: true });
+    }
+  }
+
+  _renderLinked(linked){
+    const tb = this.props.match.params.table;
+    const [fromTb, fromId] = (linked.from || '').split(':');
+
+    return (
+      <div>
+        <SubHead tb={ tb } text='Linked records' />
+        <div className="container mt-3">
+          <Alert color="info" className="d-flex justify-content-between align-items-center">
+            <span>
+              { fromTb && fromId
+                ? <>Records linked to <Link to={`/${fromTb}/${fromId}`}>paths.{fromTb}.{fromId}</Link></>
+                : 'Records selected from a link' }
+            </span>
+            <Button tag={Link} to={`/search/${tb}`} color="info" outline size="sm">New search</Button>
+          </Alert>
+        </div>
+        <Results
+          tb={tb}
+          type="filter"
+          filter={linked.filter}
+          page={qs.parse(this.props.location.search, {ignoreQueryPrefix: true}).page}
+        />
+      </div>
+    );
   }
 
   render() {
+    const linked = parseLinked(this.props.location.search);
+    if (linked) {
+      return this._renderLinked(linked);
+    }
+
+    const nRows = Object.keys(this.state.rows).length;
+    const collapsible = this.state.showResults && this._shouldCollapse(this.state.rows, this.props.match.params.table);
+
     return (
       <div>
         <SubHead tb={ this.props.match.params.table } text='Search' />
 
         <div className="mt-3 p-1 container">
+          { collapsible && <Alert color="info" className="d-flex justify-content-between align-items-center">
+            <span>Search with { nRows } conditions</span>
+            <Button color="info" outline size="sm" onClick={ () => this.setState({ formOpen: !this.state.formOpen }) }>
+              { this.state.formOpen ? 'Hide' : 'Show' } conditions
+            </Button>
+          </Alert> }
+          <Collapse isOpen={ !collapsible || this.state.formOpen }>
           <form onSubmit={this._handleSubmit.bind(this)} className="form">
             {
               Object.entries(this.state.rows).map((e, i)=>{
@@ -178,6 +239,7 @@ class AdvSearchForm extends Component {
 
             <Button type="submit" color="success" block>Search!</Button>
           </form>
+          </Collapse>
           <hr />
         </div>
 

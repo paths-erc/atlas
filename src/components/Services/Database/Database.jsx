@@ -89,6 +89,13 @@ export default class Database {
       .catch(err => onError(err, cb));
   }
 
+  // `filter` is a ready-made API filter object (record links, backlinks)
+  static getFiltered(tb, filter, page, cb, columns) {
+    api.get(`/records/${tb}`, { params: listParams({ filter }, page, columns) })
+      .then(res => cb(res.data))
+      .catch(err => onError(err, cb));
+  }
+
   static getStr(tb, string, page, cb) {
     api.get(`/records/${tb}`, { params: listParams({ search: string }, page) })
       .then(res => cb(res.data))

@@ -4,6 +4,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Record links and backlinks open a "linked" search (`/search/{tb}?filter=<json>&from=tb:id`):
+  the API filter travels in the URL as is, the search form is hidden and replaced by a
+  banner ("Records linked to paths.places.53" + "New search"), results come first.
+  Previously a backlink with N ids produced N form rows (and an unbounded URL)
+- Old backlink URLs (one `id _eq` row per id, joined by OR) are recognised and shown the same way
+- Advanced search: the form collapses behind a "Search with N conditions" bar when
+  there are more than 5 conditions or a condition on a field the selector cannot show
+- Blank members of `_in` lists (emitted by BraDypUS) are dropped from the filter
 
 ## [3.1.1] - 2026-10-15
 ### Changed

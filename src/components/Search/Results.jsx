@@ -59,6 +59,12 @@ class Results extends Component {
         }, cols);
         break;
 
+      case 'filter':
+        Database.getFiltered(this.props.tb, this.props.filter, this.props.page, d => {
+          this.setState({ result: d, shown: columns });
+        }, cols);
+        break;
+
       case 'all':
         Database.getAll(this.props.tb, this.props.page, d => {
           this.setState({ result: d, shown: columns });
@@ -92,6 +98,7 @@ class Results extends Component {
       || this.props.strict !== prevProps.strict
       || this.props.query !== prevProps.query
       || this.props.data !== prevProps.data
+      || JSON.stringify(this.props.filter) !== JSON.stringify(prevProps.filter)
     ) {
       this._fetchData();
     }
@@ -116,6 +123,10 @@ class Results extends Component {
 
     if (type === 'saved') {
       return SavedQueries[tb]?.[query]?.filter || null;
+    }
+
+    if (type === 'filter') {
+      return this.props.filter || null;
     }
 
     return null;

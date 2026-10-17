@@ -2,32 +2,20 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import qs from 'qs';
+import { linkedQuery } from '../Search/LinkedFilter';
 
 
 class RecordLinks extends Component {
 
+  // Every filter is sent as a ready-made filter (`?filter=`) rather than expanded
+  // into form rows: long id lists and relational filters do not fit the form
   makeHref(tbId, filter) {
-    const tb = tbId;
-    if (filter) {
-      const entries = Object.entries(filter);
-      if (entries.length === 1) {
-        const [fld, ops] = entries[0];
-        if (ops._eq !== undefined) {
-          const rows = { a: { f: fld, o: '_eq', v: String(ops._eq) } };
-          return `/search/${tb}?${qs.stringify(rows)}`;
-        }
-        if (ops._in !== undefined && Array.isArray(ops._in)) {
-          const keys = 'abcdefghijklmnopqrstuvwxyz';
-          const rows = {};
-          ops._in.forEach((val, i) => {
-            rows[keys[i] || `r${i}`] = { f: fld, o: '_eq', v: String(val), ...(i > 0 ? { c: 'OR' } : {}) };
-          });
-          return `/search/${tb}?${qs.stringify(rows)}`;
-        }
-      }
+    if (!filter || Object.keys(filter).length === 0) {
+      return `/search/${tbId}/all`;
     }
-    return `/search/${tb}/all`;
+    const { source } = this.props;
+    const from = source ? `${source.tb}:${source.id}` : undefined;
+    return `/search/${tbId}?${linkedQuery(filter, from)}`;
   }
 
   renderLinks(links) {

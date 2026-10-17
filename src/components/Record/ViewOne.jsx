@@ -104,7 +104,11 @@ class ViewOne extends Component {
               </Col>
               <Col sm="4">
                 <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
-                <RecordLinks links={ rec.links } backlinks={ rec.backlinks } />
+                <RecordLinks
+                  links={ rec.links }
+                  backlinks={ rec.backlinks }
+                  source={{ tb: rec.metadata.tb_id, id: rec.core.id.val }}
+                />
                 <UserLinks links={ rec.manualLinks } />
                 <ExternalLinks rec={ rec.core } tb={ rec.metadata.tb_id } />
               </Col>
