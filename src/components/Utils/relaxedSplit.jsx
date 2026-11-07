@@ -6,7 +6,7 @@
  * @return {Array}             Array of two elements containing the splitted string
  */
 
-export default function relaxedSplit (str : String, offset : Number, until = '.') {
+export default function relaxedSplit (str, offset, until = '.') {
 
   // String is empty or shorter than offset.
   if (!str || str.length <= offset){

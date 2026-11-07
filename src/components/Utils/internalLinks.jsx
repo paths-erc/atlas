@@ -3,7 +3,7 @@
  * @param  {String} text Text to parse
  * @return {String}      Replaces text
  */
-export default function internalLinks(text : String) {
+export default function internalLinks(text) {
   return text.replace(
     /@([a-z]+)\.([a-z0-9/]+)(\[([^\]]+)\])?/gi,
     function(match, p1, p2, p3, p4, offset, string){

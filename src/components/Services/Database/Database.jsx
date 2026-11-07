@@ -1,9 +1,9 @@
 import axios from 'axios';
 import qs from 'qs';
 
-const API_BASE = process.env.REACT_APP_API_BASE || '';
-const API_KEY  = process.env.REACT_APP_API_KEY;
-const APP      = process.env.REACT_APP_APP || 'paths';
+const API_BASE = import.meta.env.REACT_APP_API_BASE || '';
+const API_KEY  = import.meta.env.REACT_APP_API_KEY;
+const APP      = import.meta.env.REACT_APP_APP || 'paths';
 
 // Since BraDypUS v5.9.0 the API is application-scoped in the URL: `/{app}/api/…`.
 // The `?app=` query parameter was removed; the API key alone identifies the app.
