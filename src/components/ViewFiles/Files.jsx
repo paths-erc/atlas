@@ -10,7 +10,9 @@ export default class Files extends Component {
     let files = Object.values(this.props.files) || [];
 
     files = files.map( f => {
-      if (['jpg', 'png', 'gif', 'tif', 'tiff', 'jpeg'].includes(f.ext.toLowerCase())){
+      // bdus v5 flags images itself (`is_image`); the extension list is a fallback.
+      // Images were converted to webp, so it must be accepted.
+      if (f.is_image || ['jpg', 'png', 'gif', 'tif', 'tiff', 'jpeg', 'webp'].includes((f.ext || '').toLowerCase())){
         return f;
       } else {
         return false;
