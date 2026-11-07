@@ -28,9 +28,8 @@ export default class MoreImages extends Component {
       <div>
         <div style={{ display: this.state.shown ? 'block' : 'none' }}>
         {
-          this.props.files.map( (f, id) => {
-            return <PreviewModal key={id}
-              file={this.props.baseUrl + 'files/' + f.id + '.' + f.ext} description={f.description} />
+          this.props.files.map( f => {
+            return <PreviewModal key={f.id} file={f} />
           })
         }
         </div>

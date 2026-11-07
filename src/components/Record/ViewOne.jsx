@@ -103,7 +103,7 @@ class ViewOne extends Component {
                 </Card>
               </Col>
               <Col sm="4">
-                <Files files={ rec.files } baseUrl={ Database.getBaseUrl() } />
+                <Files files={ rec.files } />
                 <RecordLinks
                   links={ rec.links }
                   backlinks={ rec.backlinks }

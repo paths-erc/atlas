@@ -51,6 +51,24 @@ export default class Database {
     return `${API_BASE}/projects/${APP}/`;
   }
 
+  // Image presets (BraDypUS >= 5.18) are defined by an administrator in the app's
+  // settings (System configuration → App settings → Images). The names below must
+  // exist there, as WebP:  card  = ~700 px wide, inside   (record sidebar, 2x retina)
+  //                        large = ~1600 px wide, inside  (full-size modal)
+  static get IMAGE_PRESETS() {
+    return { card: 'card', large: 'large' };
+  }
+
+  // URL of a file attached to a record: the original, or a derived version when
+  // `preset` is given. The preset route is public and answers 404 when the preset
+  // does not exist, so callers should fall back to the original (see PreviewModal).
+  static getFileUrl(file, preset) {
+    if (preset) {
+      return `${API_BASE}/${APP}/api/file/${preset}/${file.id}.webp`;
+    }
+    return `${Database.getBaseUrl()}files/${file.id}.${file.ext}`;
+  }
+
   static getApp() {
     return APP;
   }

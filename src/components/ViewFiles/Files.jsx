@@ -30,12 +30,11 @@ export default class Files extends Component {
       <div className="mt-3">
         <h5>Attached images</h5>
         {
-          firstFiles.map( (f, id) => {
-            return <PreviewModal key={id}
-              file={this.props.baseUrl + 'files/' + f.id + '.' + f.ext} description={f.description} />
+          firstFiles.map( f => {
+            return <PreviewModal key={f.id} file={f} />
           })
         }
-        <MoreImages files={otherFiles} baseUrl={this.props.baseUrl} />
+        <MoreImages files={otherFiles} />
       </div>
 
     );

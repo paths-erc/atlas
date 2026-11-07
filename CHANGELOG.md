@@ -4,7 +4,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Attached images were missing from record cards: images are now WebP and the file
+  filter only knew jpg/png/gif/tif. Files flagged `is_image` by the API are shown
+
+### Added
+- Image presets (BraDypUS >= 5.18): cards request the `card` preset and the modal the
+  `large` preset (`/{app}/api/file/{preset}/{id}.webp`), falling back to the original
+  when a preset does not exist. Both must be defined as WebP in the BraDypUS app
+  settings (Images): `card` ~700 px wide, `large` ~1600 px wide, fit *inside*
+- File attribution (BraDypUS >= 5.18) is shown under the image caption
+- Attached images are loaded lazily
+
 ### Changed
+- Build tooling: Create React App replaced by Vite (`npm start` / `npm run build` unchanged;
+  `REACT_APP_*` variable names unchanged). Dev dependencies drop from ~1200 to ~15 packages
+- Dependencies updated, security advisories (dompurify, follow-redirects, qs, yaml) fixed
+- CI builds with Node 22
 - Record links and backlinks open a "linked" search (`/search/{tb}?filter=<json>&from=tb:id`):
   the API filter travels in the URL as is, the search form is hidden and replaced by a
   banner ("Records linked to paths.places.53" + "New search"), results come first.
