@@ -4,19 +4,18 @@ import { Card, CardImg, Modal, ModalFooter, ModalBody } from 'reactstrap';
 import Database from '../Services/Database/Database';
 import Caption from './Caption';
 
-const { card: CARD, large: LARGE } = Database.IMAGE_PRESETS;
+const { card: CARD } = Database.IMAGE_PRESETS;
 
-// Shows a right-sized derived image (preset) and falls back to the original file
-// when the server has no such preset (older BraDypUS, preset not defined yet,
-// or a format the server cannot convert, e.g. TIFF).
+// The card shows a right-sized derived image (preset) and falls back to the original
+// file when the server has no such preset (older BraDypUS, preset not defined yet,
+// or a format the server cannot convert, e.g. TIFF). The modal shows the original.
 export default class PreviewModal extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      cardFailed: false,
-      largeFailed: false
+      cardFailed: false
     };
 
     this.toggle = this.toggle.bind(this);
@@ -30,9 +29,9 @@ export default class PreviewModal extends Component {
 
   render(){
     const { file } = this.props;
-    const { cardFailed, largeFailed } = this.state;
+    const { cardFailed } = this.state;
     const cardSrc  = Database.getFileUrl(file, cardFailed ? null : CARD);
-    const largeSrc = Database.getFileUrl(file, largeFailed ? null : LARGE);
+    const originalSrc = Database.getFileUrl(file);
 
     return (
       <div>
@@ -52,9 +51,8 @@ export default class PreviewModal extends Component {
           <ModalBody>
             <div>
               <img style={ { width: "100%" } }
-                  src={largeSrc}
-                  alt={ file.description || file.filename || '' }
-                  onError={() => { if (!largeFailed) this.setState({ largeFailed: true }); }} />
+                  src={originalSrc}
+                  alt={ file.description || file.filename || '' } />
             </div>
           </ModalBody>
           <ModalFooter><Caption text={file.description} attribution={file.attribution} /></ModalFooter>

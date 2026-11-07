@@ -9,10 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   filter only knew jpg/png/gif/tif. Files flagged `is_image` by the API are shown
 
 ### Added
-- Image presets (BraDypUS >= 5.18): cards request the `card` preset and the modal the
-  `large` preset (`/{app}/api/file/{preset}/{id}.webp`), falling back to the original
-  when a preset does not exist. Both must be defined as WebP in the BraDypUS app
-  settings (Images): `card` ~700 px wide, `large` ~1600 px wide, fit *inside*
+- Image preset (BraDypUS >= 5.18): record cards request the `card` preset
+  (`/{app}/api/file/card/{id}.webp`), falling back to the original when it does not exist.
+  Define it in the BraDypUS app settings (Images): WebP, ~800 px wide, fit *inside*.
+  The modal keeps showing the original file
 - File attribution (BraDypUS >= 5.18) is shown under the image caption
 - Attached images are loaded lazily
 
