@@ -15,11 +15,11 @@ repository: [https://www.zotero.org/groups/2189557/erc-paths/](https://www.zoter
 
 The atlas uses the **BraDypUS v5 API**. Since bdus v5.9.0 every endpoint is
 application-scoped: the application name (`paths`) is the first path segment,
-`https://<host>/paths/api/…`. Requests carry a single query parameter:
+`https://<host>/paths/api/…`. Requests authenticate with a single HTTP header:
 
-| Parameter | Value |
-|-----------|-------|
-| `api_key` | *Contact the [project team](mailto:paola.buzi@uniroma1.it).* The key is bound to the `paths` application. |
+| Header | Value |
+|--------|-------|
+| `Authorization` | `Bearer <key>` — *Contact the [project team](mailto:paola.buzi@uniroma1.it).* The key is bound to the `paths` application. |
 
 ### Endpoints
 

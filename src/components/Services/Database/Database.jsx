@@ -7,11 +7,15 @@ const APP      = import.meta.env.REACT_APP_APP || 'paths';
 
 // Since BraDypUS v5.9.0 the API is application-scoped in the URL: `/{app}/api/…`.
 // The `?app=` query parameter was removed; the API key alone identifies the app.
-const AUTH = { api_key: API_KEY };
+// The key must be sent as `Authorization: Bearer <key>`: the `?api_key=` query
+// parameter and the `X-API-Key` header are rejected with 401 `unauthenticated`.
 
 const api = axios.create({
   baseURL: `${API_BASE}/${APP}/api`,
-  headers: { 'Content-Type': 'application/json' },
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${API_KEY}`,
+  },
   // encodeValuesOnly: keys keep their readable brackets, but values MUST be encoded:
   // raw `&`, `#`, `+`, `%` corrupt the query and raw line breaks are dropped by URL parsing
   paramsSerializer: params => qs.stringify(params, { arrayFormat: 'brackets', encodeValuesOnly: true }),
@@ -26,7 +30,6 @@ const onError = (err, cb) => {
 // `columns` (array of field names, no table prefix) limits the fields returned
 // for every record; when empty the server applies the table's default preview.
 const listParams = (extra, page, columns) => ({
-  ...AUTH,
   page: page || 1,
   ...(columns && columns.length ? { columns: columns.join(',') } : {}),
   ...extra
@@ -74,7 +77,7 @@ export default class Database {
   }
 
   static getOne(tb, id, cb) {
-    api.get(`/record/${tb}/${id}`, { params: AUTH })
+    api.get(`/record/${tb}/${id}`)
       .then(res => cb(res.data))
       .catch(err => onError(err, cb));
   }
@@ -123,13 +126,13 @@ export default class Database {
   static getUniqueVal(tb, fld, string, cb) {
     // bdus >= the release adding `q`/`limit`: substring match + cap done server-side
     // (older servers ignore both and return every distinct value)
-    api.get(`/search/${tb}/values`, { params: { ...AUTH, fld, q: string, limit: 50 } })
+    api.get(`/search/${tb}/values`, { params: { fld, q: string, limit: 50 } })
       .then(res => cb(res.data.values || []))
       .catch(() => cb([]));
   }
 
   static inspect(tb, cb) {
-    api.get(`/search/${tb}/config`, { params: AUTH })
+    api.get(`/search/${tb}/config`)
       .then(res => {
         const fields = {};
         (res.data.fields || []).forEach(f => { fields[f.value] = { label: f.label }; });
@@ -151,7 +154,7 @@ export default class Database {
   }
 
   static getPlaces(filter, cb) {
-    const params = { ...AUTH, tb: 'places' };
+    const params = { tb: 'places' };
     if (filter) params.filter = filter;
     api.get('/geoface', { params })
       .then(res => {
