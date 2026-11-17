@@ -5,6 +5,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.2.1] - 2026-11-17
+### Changed
+- Advanced search: when the field list cannot be loaded (e.g. API error) an explicit
+  message is shown instead of an empty form
+
 ## [3.2.0] - 2026-11-07
 ### Fixed
 - Attached images were missing from record cards: images are now WebP and the file

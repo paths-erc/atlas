@@ -138,7 +138,7 @@ export default class Database {
         (res.data.fields || []).forEach(f => { fields[f.value] = { label: f.label }; });
         cb({ fields });
       })
-      .catch(() => cb({ fields: {} }));
+      .catch(err => onError(err, e => cb({ fields: {}, error: e.detail })));
   }
 
   static getSaved(grp, queryKey, page, cb, columns) {
